@@ -4,6 +4,7 @@
   --color-text-default: #333;
   --color-primary: hsl(202, 79%, 63%);
   --color-primary-light: hsl(202, 79%, 80%);
+  --color-primary-dark: hsl(202, 79%, 45%);
   --color-background-code: #e9ecef;
 }
 
@@ -94,7 +95,7 @@ span.wpmr-pdf-page-break {
   }
 }
 @page chapter {
-  background-color: var(--color-primary-light);
+  background-color: whitesmoke;
   @top-right {
     content: none;
   }
@@ -115,6 +116,7 @@ span.wpmr-pdf-page-break {
   }
 }
 @page :blank {
+  background-color: whitesmoke;
   @top-right {
     content: none;
   }
@@ -150,7 +152,7 @@ body {
   padding: 0;
 }
 
-.wpmr-pdf-strucuture-chapter, .wpmr-pdf-page-chapter {
+.wpmr-pdf-structure-chapter, .wpmr-pdf-page-chapter {
   margin: 0;
   padding: 0;
 }
@@ -181,7 +183,7 @@ body {
 }
 .wpmr-pdf-page-chapter-title span {
   display: block;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
   color: white;
   font-size: 34pt;
   text-align: center;
@@ -403,20 +405,20 @@ body {
   counter-reset: counterchapter;
 }
 
-body .wpmr-pdf-structure-section:first-child {
+#wmpr-pdf-structure-content .wpmr-pdf-structure-section:first-child {
   counter-increment: counterchapter;
   bookmark-label: counter(counterchapter) ". Introduction";
   bookmark-level: 1;
   counter-reset: countersection;
 }
 
-body > .wpmr-pdf-structure-section h1 {
+#wmpr-pdf-structure-content > .wpmr-pdf-structure-section h1 {
   counter-increment: countersection;
   bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
   bookmark-level: 2;
   counter-reset: countersubsection;
 }
-body > .wpmr-pdf-structure-section h2 {
+#wmpr-pdf-structure-content > .wpmr-pdf-structure-section h2 {
   counter-increment: countersubsection;
   bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
   bookmark-level: 3;
@@ -660,6 +662,62 @@ body > .wpmr-pdf-structure-section h2 {
   content: "";
 }
 
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/5100-cover/print.scss */
+#wpmr-pdf-page-cover {
+  break-after: always;
+}
+
+#wpmr-pdf-page-last {
+  break-before: right;
+}
+
+#wpmr-pdf-page-cover, #wpmr-pdf-page-last {
+  page: cover-last;
+}
+#wpmr-pdf-page-cover div, #wpmr-pdf-page-last div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -2cm;
+  left: -2cm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+#wpmr-pdf-page-cover div h1, #wpmr-pdf-page-last div h1 {
+  display: block;
+  color: white;
+  font-size: 34pt;
+  text-align: center;
+  margin: 0;
+  padding: 10pt;
+  width: 100%;
+  font-family: SansSerifBold;
+}
+
+@page cover-last {
+  background-color: var(--color-primary-dark);
+  @top-right {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/print.scss */
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1030-pages/print.scss */
@@ -669,3 +727,4 @@ body > .wpmr-pdf-structure-section h2 {
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-pdf-bookmarks/print.scss */
 /* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
 /* /project/mkdocs-docs/matrix/15-pymdownx/1310-highlight/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/5100-cover/print.scss */

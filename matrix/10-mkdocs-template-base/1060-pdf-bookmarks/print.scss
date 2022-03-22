@@ -10,14 +10,14 @@ body {
 
 // sections without chapter at the beginning
 // => fake chapter
-body .wpmr-pdf-structure-section:first-child { 
+#wmpr-pdf-structure-content .wpmr-pdf-structure-section:first-child { 
     counter-increment: counterchapter;
     bookmark-label: counter(counterchapter) ". Introduction";
     bookmark-level: 1;
     counter-reset: countersection;
 }
 
-body > .wpmr-pdf-structure-section {
+#wmpr-pdf-structure-content > .wpmr-pdf-structure-section {
     h1 {
         counter-increment: countersection;
         bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);

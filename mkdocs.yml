@@ -19,7 +19,6 @@ theme:
 nav:
     - Home: index.md
     - Getting Started: getting-started.md
-    - Getting Started: getting-started-two.md
     # - getting-started.md # title from h1 of page
     - User Guide:
         - Overview: user-guide/index.md

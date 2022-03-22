@@ -47,7 +47,7 @@ span.wpmr-pdf-page-break {
 }
 
 @page chapter {
-  background-color: var(--color-primary-light);
+  background-color: whitesmoke;
   @top-right {
     content: none;
   }
@@ -69,6 +69,7 @@ span.wpmr-pdf-page-break {
 }
 
 @page:blank {
+  background-color: whitesmoke;
   @top-right {
     content: none;
   }

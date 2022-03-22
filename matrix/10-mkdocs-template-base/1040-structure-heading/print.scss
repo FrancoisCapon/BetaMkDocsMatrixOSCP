@@ -13,7 +13,7 @@ body {
     padding: 0
 }
 
-.wpmr-pdf-strucuture-chapter, .wpmr-pdf-page-chapter {
+.wpmr-pdf-structure-chapter, .wpmr-pdf-page-chapter {
     margin: 0;
     padding: 0;
 }
@@ -44,7 +44,7 @@ body {
     padding: 0;
     span {
         display: block;
-        background-color: var(--color-primary);
+        background-color: var(--color-primary-dark);
         color: white;
         font-size: 34pt;
         text-align: center;
