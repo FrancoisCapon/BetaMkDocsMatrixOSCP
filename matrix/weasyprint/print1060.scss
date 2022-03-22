@@ -1,5 +1,5 @@
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-pdf-bookmarks/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-numbering/print.scss */
 // Attention visualiseur Mint génère tout seul !
 h1, h2, h3, h4, h5, h6 {
     bookmark-level: none;
@@ -26,6 +26,12 @@ body {
         bookmark-level: 2;
         counter-reset: countersubsection;
     }
+    h1::before {
+        content: counter(counterchapter) "." counter(countersection) ". ";
+    }
+    h2::before {
+        content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". ";
+    }
     h2 {
         counter-increment: countersubsection;
         bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
@@ -34,23 +40,39 @@ body {
 }
 
 .wpmr-pdf-structure-chapter {
-    h1 {
+    .wpmr-pdf-page-chapter span::before {
+        content: counter(counterchapter) ". ";
+    }
+    .wpmr-pdf-page-chapter span {
         counter-increment: counterchapter;
         bookmark-label: counter(counterchapter) ". " content(text);
         bookmark-level: 1;
-        counter-reset: countersection; 
     }
+    counter-reset: countersection; 
     .wpmr-pdf-page-section  {
+        h1::before {
+            content: counter(counterchapter) "." counter(countersection) ". ";
+        }
         h1 {
             counter-increment: countersection;
             bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
             bookmark-level: 2;
             counter-reset: countersubsection;
         }
+        h2::before {
+            content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". ";
+        }
         h2 {
             counter-increment: countersubsection;
             bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
             bookmark-level: 3;
+            counter-reset: countersubsubsection;
+        }
+        h3::before {
+            content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) "." counter(countersubsubsection) ". ";
+        }
+        h3 {
+            counter-increment: countersubsubsection;
         }
     }
 }

@@ -396,7 +396,7 @@ div.admonition + div.admonition {
   margin-top: 0.5rem;
 }
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-pdf-bookmarks/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-numbering/print.scss */
 h1, h2, h3, h4, h5, h6 {
   bookmark-level: none;
 }
@@ -418,17 +418,31 @@ body {
   bookmark-level: 2;
   counter-reset: countersubsection;
 }
+#wmpr-pdf-structure-content > .wpmr-pdf-structure-section h1::before {
+  content: counter(counterchapter) "." counter(countersection) ". ";
+}
+#wmpr-pdf-structure-content > .wpmr-pdf-structure-section h2::before {
+  content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". ";
+}
 #wmpr-pdf-structure-content > .wpmr-pdf-structure-section h2 {
   counter-increment: countersubsection;
   bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
   bookmark-level: 3;
 }
 
-.wpmr-pdf-structure-chapter h1 {
+.wpmr-pdf-structure-chapter {
+  counter-reset: countersection;
+}
+.wpmr-pdf-structure-chapter .wpmr-pdf-page-chapter span::before {
+  content: counter(counterchapter) ". ";
+}
+.wpmr-pdf-structure-chapter .wpmr-pdf-page-chapter span {
   counter-increment: counterchapter;
   bookmark-label: counter(counterchapter) ". " content(text);
   bookmark-level: 1;
-  counter-reset: countersection;
+}
+.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h1::before {
+  content: counter(counterchapter) "." counter(countersection) ". ";
 }
 .wpmr-pdf-structure-chapter .wpmr-pdf-page-section h1 {
   counter-increment: countersection;
@@ -436,10 +450,20 @@ body {
   bookmark-level: 2;
   counter-reset: countersubsection;
 }
+.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h2::before {
+  content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". ";
+}
 .wpmr-pdf-structure-chapter .wpmr-pdf-page-section h2 {
   counter-increment: countersubsection;
   bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
   bookmark-level: 3;
+  counter-reset: countersubsubsection;
+}
+.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h3::before {
+  content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) "." counter(countersubsubsection) ". ";
+}
+.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h3 {
+  counter-increment: countersubsubsection;
 }
 
 /* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
@@ -724,7 +748,7 @@ body {
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1040-structure-heading/print.scss */
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1045-content/print.scss */
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-pdf-bookmarks/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
 /* /project/mkdocs-docs/matrix/15-pymdownx/1310-highlight/print.scss */
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/5100-cover/print.scss */
