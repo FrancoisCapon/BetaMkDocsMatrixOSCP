@@ -25,10 +25,10 @@ nav:
         - Installation: user-guide/installation.md
         - Writing Your Docs: user-guide/writing-your-docs.md
         - Choosing Your Theme: user-guide/choosing-your-theme.md
-        # - Customizing Your Theme: user-guide/customizing-your-theme.md
-        # - Localizing Your Theme: user-guide/localizing-your-theme.md
-        # - Configuration: user-guide/configuration.md
-        # - Deploying Your Docs: user-guide/deploying-your-docs.md
+        - Customizing Your Theme: user-guide/customizing-your-theme.md
+        - Localizing Your Theme: user-guide/localizing-your-theme.md
+        - Configuration: user-guide/configuration.md
+        - Deploying Your Docs: user-guide/deploying-your-docs.md
     - Developer Guide:
         - Overview: dev-guide/index.md
         # - Themes: 
@@ -37,8 +37,8 @@ nav:
         - Plugins: dev-guide/plugins.md
     - About:
         - Release Notes: about/release-notes.md
-        # - Contributing: about/contributing.md
-        # - License: about/license.md
+        - Contributing: about/contributing.md
+        - License: about/license.md
 
 extra_css:
     - css/extra.css

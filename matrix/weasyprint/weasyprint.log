@@ -1,6 +1,11 @@
 [WARNING] Ignored `content: chapter-title` at 184:3, invalid value.
 [WARNING] Anchor defined twice: 'mkdocs'
+[WARNING] Anchor defined twice: 'installation'
+[WARNING] Anchor defined twice: 'nav'
+[WARNING] Anchor defined twice: 'locale'
+[WARNING] Anchor defined twice: 'static_templates'
 [WARNING] Anchor defined twice: 'config'
 [WARNING] Anchor defined twice: 'global-context'
+[WARNING] Anchor defined twice: 'search'
 [WARNING] fsSelection bits 7, 8 and 9 are only defined in OS/2 table version 4 and up: version 3
 [WARNING] fsSelection bits 7, 8 and 9 are only defined in OS/2 table version 4 and up: version 3

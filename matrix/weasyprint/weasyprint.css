@@ -259,6 +259,7 @@ figure {
   padding: 0;
   width: 100%;
   text-align: center;
+  break-inside: avoid;
 }
 figure img {
   max-width: 100%;
@@ -321,13 +322,21 @@ div.admonition {
   padding-top: 0;
   padding-bottom: 0;
   break-inside: avoid;
-  /*     pre {
-          width: calc(100%);
-      } */
 }
 div.admonition p.admonition-title {
   margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
   font-family: SansSerifBold;
+}
+div.admonition p.admonition-title + * {
+  margin-top: 0;
+}
+div.admonition p {
+  text-align: justify;
+}
+
+div.admonition + div.admonition {
+  margin-top: 0.5rem;
 }
 
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */

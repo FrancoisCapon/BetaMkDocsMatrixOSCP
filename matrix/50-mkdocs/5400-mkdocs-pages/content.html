@@ -927,7 +927,1027 @@ set this to <code>True</code>. Default: <code>False</code>.</p>
 </ul>
 <h2 id="third-party-themes">Third Party Themes</h2>
 <p>A list of third party themes can be found in the MkDocs <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">community wiki</a>. If you
-have created your own, please feel free to add it to the list.</p></div></div><div class="wpmr-pdf-structure-chapter wpmr-md-section"><div class="wpmr-pdf-page-chapter"><h1>Developer Guide</h1><div class="wpmr-pdf-page-chapter-title"><span>Developer Guide</span></div></div><div class="wpmr-pdf-strucuture-section wpmr-pdf-page-section wpmr-md-page"><h1 id="developer-guide">Developer Guide</h1>
+have created your own, please feel free to add it to the list.</p></div><div class="wpmr-pdf-strucuture-section wpmr-pdf-page-section wpmr-md-page"><h1 id="customizing-your-theme">Customizing Your Theme</h1>
+<p>Altering a theme to suit your needs.</p>
+<hr/>
+<p>If you would like to make a few tweaks to an existing theme, there is no need
+to create your own theme from scratch. For minor tweaks which only require
+some CSS and/or JavaScript, you can <span>use the docs_dir</span>.
+However, for more complex customizations, including overriding templates, you
+will need to <span>use the theme custom_dir</span> setting.</p>
+<h2 id="using-the-docs_dir">Using the docs_dir</h2>
+<p>The <span>extra_css</span> and <span>extra_javascript</span> configuration options can be used to
+make tweaks and customizations to existing themes. To use these, you simply
+need to include either CSS or JavaScript files within your <span>documentation
+directory</span>.</p>
+<p>For example, to change the color of the headers in your documentation, create
+a file called <code>extra.css</code> and place it next to the documentation Markdown. In
+that file add the following CSS.</p>
+<pre><code class="language-CSS">h1 {
+  color: red;
+}
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are deploying your documentation with <span>ReadTheDocs</span>. You will need
+to explicitly list the CSS and JavaScript files you want to include in
+your config. To do this, add the following to your mkdocs.yml.</p>
+<pre><code>extra_css: [extra.css]
+</code></pre>
+</div>
+<p>After making these changes, they should be visible when you run
+<code>mkdocs serve</code> - if you already had this running, you should see that the CSS
+changes were automatically picked up and the documentation will be updated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any extra CSS or JavaScript files will be added to the generated HTML
+document after the page content. If you desire to include a JavaScript
+library, you may have better success including the library by using the
+theme <span>custom_dir</span>.</p>
+</div>
+<h2 id="using-the-theme-custom_dir">Using the theme custom_dir</h2>
+<p>The <span><code>theme.custom_dir</code></span> configuration option can be used to point
+to a directory of files which override the files in a parent theme. The parent
+theme would be the theme defined in the <span><code>theme.name</code></span> configuration
+option. Any file in the <code>custom_dir</code> with the same name as a file in the
+parent theme will replace the file of the same name in the parent theme. Any
+additional files in the <code>custom_dir</code> will be added to the parent theme. The
+contents of the <code>custom_dir</code> should mirror the directory structure of the
+parent theme. You may include templates, JavaScript files, CSS files, images,
+fonts, or any other media included in a theme.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For this to work, the <code>theme.name</code> setting must be set to a known
+installed theme. If the <code>name</code> setting is instead set to <code>null</code> (or not
+defined), then there is no theme to override and the contents of the
+<code>custom_dir</code> must be a complete, standalone theme. See the <span>Theme
+Developer Guide</span> for more information.</p>
+</div>
+<p>For example, the <span>mkdocs</span> theme (<a href="https://github.com/mkdocs/mkdocs/tree/master/mkdocs/themes/mkdocs">browse source</a>), contains the following
+directory structure (in part):</p>
+<pre><code class="language-nohighlight">- css\
+- fonts\
+- img\
+  - favicon.ico
+  - grid.png
+- js\
+- 404.html
+- base.html
+- content.html
+- nav-sub.html
+- nav.html
+- toc.html
+</code></pre>
+<p>To override any of the files contained in that theme, create a new directory
+next to your <code>docs_dir</code>:</p>
+<pre><code class="language-bash">mkdir custom_theme
+</code></pre>
+<p>And then point your <code>mkdocs.yml</code> configuration file at the new directory:</p>
+<pre><code class="language-yaml">theme:
+    name: mkdocs
+    custom_dir: custom_theme/
+</code></pre>
+<p>To override the 404 error page ("file not found"), add a new template file named
+<code>404.html</code> to the <code>custom_theme</code> directory. For information on what can be
+included in a template, review the <span>Theme Developer Guide</span>.</p>
+<p>To override the favicon, you can add a new icon file at
+<code>custom_theme/img/favicon.ico</code>.</p>
+<p>To include a JavaScript library, copy the library to the <code>custom_theme/js/</code>
+directory.</p>
+<p>Your directory structure should now look like this:</p>
+<pre><code class="language-nohighlight">- docs/
+  - index.html
+- custom_theme/
+  - img/
+    - favicon.ico
+  - js/
+    - somelib.js
+  - 404.html
+- config.yml
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any files included in the parent theme (defined in <code>name</code>) but not
+included in the <code>custom_dir</code> will still be utilized. The <code>custom_dir</code> will
+only override/replace files in the parent theme. If you want to remove
+files, or build a theme from scratch, then you should review the <span>Theme
+Developer Guide</span>.</p>
+</div>
+<h3 id="overriding-template-blocks">Overriding Template Blocks</h3>
+<p>The built-in themes implement many of their parts inside template blocks which
+can be individually overridden in the <code>main.html</code> template. Simply create a
+<code>main.html</code> template file in your <code>custom_dir</code> and define replacement blocks
+within that file. Just make sure that the <code>main.html</code> extends <code>base.html</code>. For
+example, to alter the title of the MkDocs theme, your replacement <code>main.html</code>
+template would contain the following:</p>
+<pre><code class="language-django">{% extends "base.html" %}
+
+{% block htmltitle %}
+&lt;title&gt;Custom title goes here&lt;/title&gt;
+{% endblock %}
+</code></pre>
+<p>In the above example, the <code>htmltitle</code> block defined in your custom <code>main.html</code> file
+will be used in place of the default <code>htmltitle</code> block defined in the parent theme.
+You may re-define as many blocks as you desire, as long as those blocks are
+defined in the parent. For example, you could replace the Google Analytics
+script with one for a different service or replace the search feature with your
+own. You will need to consult the parent theme you are using to determine what
+blocks are available to override. The MkDocs and ReadTheDocs themes provide the
+following blocks:</p>
+<ul>
+<li><code>site_meta</code>: Contains meta tags in the document head.</li>
+<li><code>htmltitle</code>: Contains the page title in the document head.</li>
+<li><code>styles</code>: Contains the link tags for stylesheets.</li>
+<li><code>libs</code>: Contains the JavaScript libraries (jQuery, etc) included in the page header.</li>
+<li><code>scripts</code>: Contains JavaScript scripts which should execute after a page loads.</li>
+<li><code>analytics</code>: Contains the analytics script.</li>
+<li><code>extrahead</code>: An empty block in the <code>&lt;head&gt;</code> to insert custom tags/scripts/etc.</li>
+<li><code>site_name</code>: Contains the site name in the navigation bar.</li>
+<li><code>site_nav</code>: Contains the site navigation in the navigation bar.</li>
+<li><code>search_button</code>: Contains the search box in the navigation bar.</li>
+<li><code>next_prev</code>: Contains the next and previous buttons in the navigation bar.</li>
+<li><code>repo</code>: Contains the repository link in the navigation bar.</li>
+<li><code>content</code>: Contains the page content and table of contents for the page.</li>
+<li><code>footer</code>: Contains the page footer.</li>
+</ul>
+<p>You may need to view the source template files to ensure your modifications will
+work with the structure of the site. See <span>Template Variables</span> for a list of
+variables you can use within your custom blocks. For a more complete
+explanation of blocks, consult the <a href="http://jinja.pocoo.org/docs/dev/templates/#template-inheritance">Jinja documentation</a>.</p>
+<h3 id="combining-the-custom_dir-and-template-blocks">Combining the custom_dir and Template Blocks</h3>
+<p>Adding a JavaScript library to the <code>custom_dir</code> will make it available, but
+won't include it in the pages generated by MkDocs. Therefore, a link needs to
+be added to the library from the HTML.</p>
+<p>Starting the with directory structure above (truncated):</p>
+<pre><code class="language-nohighlight">- docs/
+- custom_theme/
+  - js/
+    - somelib.js
+- config.yml
+</code></pre>
+<p>A link to the <code>custom_theme/js/somelib.js</code> file needs to be added to the
+template. As <code>somelib.js</code> is a JavaScript library, it would logically go in the
+<code>libs</code> block. However, a new <code>libs</code> block that only includes the new script will
+replace the block defined in the parent template and any links to libraries in
+the parent template will be removed. To avoid breaking the template, a
+<a href="http://jinja.pocoo.org/docs/dev/templates/#super-blocks">super block</a> can be used with a call to <code>super</code> from within the block:</p>
+<pre><code class="language-django">{% extends "base.html" %}
+
+{% block libs %}
+    {{ super() }}
+    &lt;script src="{{ base_url }}/js/somelib.js"&gt;&lt;/script&gt;
+{% endblock %}
+</code></pre>
+<p>Note that the <span>base_url</span> template variable was used to ensure that the link is
+always relative to the current page.</p>
+<p>Now the generated pages will include links to the template provided libraries as
+well as the library included in the <code>custom_dir</code>. The same would be required for
+any additional CSS files included in the <code>custom_dir</code>.</p></div><div class="wpmr-pdf-strucuture-section wpmr-pdf-page-section wpmr-md-page"><h1 id="localizing-your-theme">Localizing Your Theme</h1>
+<p>Display your theme in your preferred language.</p>
+<hr/>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Theme localization only translates the text elements of the theme itself
+(such as "next" and "previous" links), not the actual content of your
+documentation. If you wish to create multilingual documentation, you need
+to combine theme localization as described here with a third-party
+internationalization/localization plugin.</p>
+</div>
+<h2 id="installation">Installation</h2>
+<p>For theme localization to work, you must use a theme which supports it and
+enable <code>i18n</code> (internationalization) support by installing <code>mkdocs[i18n]</code>:</p>
+<pre><code class="language-bash">pip install mkdocs[i18n]
+</code></pre>
+<h2 id="supported-locales">Supported locales</h2>
+<p>In most cases a locale is designated by the <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO-639-1</a> (2-letter) abbreviation
+for your language. However, a locale may also include a territory (or region or
+county) code as well. The language and territory must be separated by an
+underscore. For example, some possible locales for English might include <code>en</code>,
+<code>en_AU</code>, <code>en_GB</code>, and <code>en_US</code>.</p>
+<p>For a list of locales supported by the theme you are using, see that theme's
+documentation.</p>
+<ul>
+<li><span>mkdocs</span></li>
+<li><span>readthedocs</span></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you configure a language locale which is not yet supported by the theme
+that you are using, MkDocs will fall back to the theme's default locale.</p>
+</div>
+<h2 id="usage">Usage</h2>
+<p>To specify the locale that MkDocs should use, set the <span>locale</span>
+parameter of the <span>theme</span> configuration option to the appropriate code.</p>
+<p>For example, to build the <code>mkdocs</code> theme in French you would use the following
+in your <code>mkdocs.yml</code> configuration file:</p>
+<pre><code class="language-yaml"> theme:
+     name: mkdocs
+     locale: fr
+</code></pre>
+<h2 id="contributing-theme-translations">Contributing theme translations</h2>
+<p>If a theme has not yet been translated into your language, feel free to
+contribute a translation using the <span>Translation Guide</span>.</p></div><div class="wpmr-pdf-strucuture-section wpmr-pdf-page-section wpmr-md-page"><h1 id="configuration">Configuration</h1>
+<p>Guide to all available configuration settings.</p>
+<hr/>
+<h2 id="introduction">Introduction</h2>
+<p>Project settings are configured by default using a YAML configuration file in
+the project directory named <code>mkdocs.yml</code>. You can specify another path for it
+by using the <code>-f</code>/<code>--config-file</code> option (see <code>mkdocs build --help</code>).</p>
+<p>As a minimum, this configuration file must contain the <code>site_name</code> and
+<code>site_url</code> settings. All other settings are optional.</p>
+<h2 id="project-information">Project information</h2>
+<h3 id="site_name">site_name</h3>
+<p>This is a <strong>required setting</strong>, and should be a string that is used as the main
+title for the project documentation. For example:</p>
+<pre><code class="language-yaml">site_name: Marshmallow Generator
+</code></pre>
+<p>When rendering the theme this setting will be passed as the <code>site_name</code> context
+variable.</p>
+<h3 id="site_url">site_url</h3>
+<p>Set the canonical URL of the site. This will add a <code>link</code> tag with the
+<code>canonical</code> URL to the <code>head</code> section of each HTML page. If the 'root' of the
+MkDocs site will be within a subdirectory of a domain, be sure to include that
+subdirectory in the setting (<code>https://example.com/foo/</code>).</p>
+<p>This setting is also used for <code>mkdocs serve</code>: the server will be mounted onto a
+path taken from the path component of the URL, e.g. <code>some/page.md</code> will be
+served from <code>http://127.0.0.1:8000/foo/some/page/</code> to mimic the expected remote
+layout.</p>
+<p><strong>default</strong>: <code>null</code></p>
+<h3 id="repo_url">repo_url</h3>
+<p>When set, provides a link to your repository (GitHub, Bitbucket, GitLab, ...)
+on each page.</p>
+<pre><code class="language-yaml">repo_url: https://github.com/example/repository/
+</code></pre>
+<p><strong>default</strong>: <code>null</code></p>
+<h3 id="repo_name">repo_name</h3>
+<p>When set, provides the name for the link to your repository on each page.</p>
+<p><strong>default</strong>: <code>'GitHub'</code>, <code>'Bitbucket'</code> or <code>'GitLab'</code> if the <code>repo_url</code> matches
+those domains, otherwise the hostname from the <code>repo_url</code>.</p>
+<h3 id="edit_uri">edit_uri</h3>
+<p>The path from the base <code>repo_url</code> to the docs directory when directly viewing a
+page, accounting for specifics of the repository host (e.g. GitHub, Bitbucket,
+etc), the branch, and the docs directory itself. MkDocs concatenates <code>repo_url</code>
+and <code>edit_uri</code>, and appends the input path of the page.</p>
+<p>When set, and if your theme supports it, provides a link directly to the page in
+your source repository. This makes it easier to find and edit the source for the
+page. If <code>repo_url</code> is not set, this option is ignored. On some themes, setting
+this option may cause an edit link to be used in place of a repository link.
+Other themes may show both links.</p>
+<p>The <code>edit_uri</code> supports query ('?') and fragment ('#') characters. For
+repository hosts that use a query or a fragment to access the files, the
+<code>edit_uri</code> might be set as follows. (Note the <code>?</code> and <code>#</code> in the URI...)</p>
+<pre><code class="language-yaml"># Query string example
+edit_uri: '?query=root/path/docs/'
+</code></pre>
+<pre><code class="language-yaml"># Hash fragment example
+edit_uri: '#root/path/docs/'
+</code></pre>
+<p>For other repository hosts, simply specify the relative path to the docs
+directory.</p>
+<pre><code class="language-yaml"># Query string example
+edit_uri: root/path/docs/
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a few known hosts (specifically GitHub, Bitbucket and GitLab), the
+<code>edit_uri</code> is derived from the 'repo_url' and does not need to be set
+manually. Simply defining a <code>repo_url</code> will automatically populate the
+<code>edit_uri</code> configs setting.</p>
+<p>For example, for a GitHub- or GitLab-hosted repository, the <code>edit_uri</code>
+would be automatically set as <code>edit/master/docs/</code> (Note the <code>edit</code> path
+and <code>master</code> branch).</p>
+<p>For a Bitbucket-hosted repository, the equivalent <code>edit_uri</code> would be
+automatically set as <code>src/default/docs/</code> (note the <code>src</code> path and <code>default</code>
+branch).</p>
+<p>To use a different URI than the default (for example a different branch),
+simply set the <code>edit_uri</code> to your desired string. If you do not want any
+"edit URL link" displayed on your pages, then set <code>edit_uri</code> to an empty
+string to disable the automatic setting.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On GitHub and GitLab, the default "edit" path (<code>edit/master/docs/</code>) opens
+the page in the online editor. This functionality requires that the user
+have and be logged in to a GitHub/GitLab account. Otherwise, the user will
+be redirected to a login/signup page. Alternatively, use the "blob" path
+(<code>blob/master/docs/</code>) to open a read-only view, which supports anonymous
+access.</p>
+</div>
+<p><strong>default</strong>: <code>edit/master/docs/</code> for GitHub and GitLab repos or
+<code>src/default/docs/</code> for a Bitbucket repo, if <code>repo_url</code> matches those domains,
+otherwise <code>null</code></p>
+<h3 id="site_description">site_description</h3>
+<p>Set the site description. This will add a meta tag to the generated HTML header.</p>
+<p><strong>default</strong>: <code>null</code></p>
+<h3 id="site_author">site_author</h3>
+<p>Set the name of the author. This will add a meta tag to the generated HTML
+header.</p>
+<p><strong>default</strong>: <code>null</code></p>
+<h3 id="copyright">copyright</h3>
+<p>Set the copyright information to be included in the documentation by the theme.</p>
+<p><strong>default</strong>: <code>null</code></p>
+<h3 id="remote_branch">remote_branch</h3>
+<p>Set the remote branch to commit to when using <code>gh-deploy</code> to deploy to GitHub
+Pages. This option can be overridden by a command line option in <code>gh-deploy</code>.</p>
+<p><strong>default</strong>: <code>gh-pages</code></p>
+<h3 id="remote_name">remote_name</h3>
+<p>Set the remote name to push to when using <code>gh-deploy</code> to deploy to GitHub Pages.
+This option can be overridden by a command line option in <code>gh-deploy</code>.</p>
+<p><strong>default</strong>: <code>origin</code></p>
+<h2 id="documentation-layout">Documentation layout</h2>
+<h3 id="nav">nav</h3>
+<p>This setting is used to determine the format and layout of the global navigation
+for the site. A minimal navigation configuration could look like this:</p>
+<pre><code class="language-yaml">nav:
+    - 'index.md'
+    - 'about.md'
+</code></pre>
+<p>All paths in the navigation configuration must be relative to the
+<span><code>docs_dir</code></span> configuration option. See the section on <span>configuring
+pages and navigation</span> for a more detailed breakdown, including how to create
+sub-sections.</p>
+<p>Navigation items may also include links to external sites. While titles are
+optional for internal links, they are required for external links. An external
+link may be a full URL or a relative URL. Any path which is not found in the
+files is assumed to be an external link. See the section about [Meta-Data] on
+how MkDocs determines the page title of a document.</p>
+<pre><code class="language-yaml">nav:
+    - Introduction: 'index.md'
+    - 'about.md'
+    - 'Issue Tracker': 'https://example.com/'
+</code></pre>
+<p>In the above example, the first two items point to local files while the third
+points to an external site.</p>
+<p>However, sometimes the MkDocs site is hosted in a subdirectory of a project's
+site and you may want to link to other parts of the same site without including
+the full domain. In that case, you may use an appropriate relative URL.</p>
+<pre><code class="language-yaml">site_url: https://example.com/foo/
+
+nav:
+    - Home: '../'
+    - 'User Guide': 'user-guide.md'
+    - 'Bug Tracker': '/bugs/'
+</code></pre>
+<p>In the above example, two different styles of external links are used. First,
+note that the <code>site_url</code> indicates that the MkDocs site is hosted in the <code>/foo/</code>
+subdirectory of the domain. Therefore, the <code>Home</code> navigation item is a relative
+link that steps up one level to the server root and effectively points to
+<code>https://example.com/</code>. The <code>Bug Tracker</code> item uses an absolute path from the
+server root and effectively points to <code>https://example.com/bugs/</code>. Of course, the
+<code>User Guide</code> points to a local MkDocs page.</p>
+<p><strong>default</strong>: By default <code>nav</code> will contain an alphanumerically sorted, nested
+list of all the Markdown files found within the <code>docs_dir</code> and its
+sub-directories. Index files will always be listed first within a sub-section.</p>
+<h2 id="build-directories">Build directories</h2>
+<h3 id="theme">theme</h3>
+<p>Sets the theme and theme specific configuration of your documentation site.
+May be either a string or a set of key/value pairs.</p>
+<p>If a string, it must be the string name of a known installed theme. For a list
+of available themes visit <span>Choosing Your Theme</span>.</p>
+<p>An example set of key/value pairs might look something like this:</p>
+<pre><code class="language-yaml">theme:
+    name: mkdocs
+    locale: en
+    custom_dir: my_theme_customizations/
+    static_templates:
+        - sitemap.html
+    include_sidebar: false
+</code></pre>
+<p>If a set of key/value pairs, the following nested keys can be defined:</p>
+<div class="admonition block">
+<h4 id="name">name:</h4>
+<p>The string name of a known installed theme. For a list of available themes
+visit <span>Choosing Your Theme</span>.</p>
+<h4 id="locale">locale:</h4>
+<p>A code representing the language of your site. See <span>Localizing your theme</span>
+for details.</p>
+<h4 id="custom_dir">custom_dir:</h4>
+<p>A directory containing a custom theme. This can either be a relative
+directory, in which case it is resolved relative to the directory containing
+your configuration file or it can be an absolute directory path from the
+root of your local file system.</p>
+<p>See <span>Customizing Your Theme</span> for details if you would like to tweak an
+existing theme.</p>
+<p>See the <span>Theme Developer Guide</span> if you would like to build your own theme
+from the ground up.</p>
+<h4 id="static_templates">static_templates:</h4>
+<p>A list of templates to render as static pages. The templates must be located
+in either the theme's template directory or in the <code>custom_dir</code> defined in
+the theme configuration.</p>
+<h4 id="theme-specific-keywords">(theme specific keywords)</h4>
+<p>Any additional keywords supported by the theme can also be defined. See the
+documentation for the theme you are using for details.</p>
+</div>
+<p><strong>default</strong>: <code>'mkdocs'</code></p>
+<h3 id="docs_dir">docs_dir</h3>
+<p>The directory containing the documentation source markdown files. This can
+either be a relative directory, in which case it is resolved relative to the
+directory containing your configuration file, or it can be an absolute directory
+path from the root of your local file system.</p>
+<p><strong>default</strong>: <code>'docs'</code></p>
+<h3 id="site_dir">site_dir</h3>
+<p>The directory where the output HTML and other files are created. This can either
+be a relative directory, in which case it is resolved relative to the directory
+containing your configuration file, or it can be an absolute directory path from
+the root of your local file system.</p>
+<p><strong>default</strong>: <code>'site'</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note:</p>
+<p>If you are using source code control you will normally want to ensure that
+your <em>build output</em> files are not committed into the repository, and only
+keep the <em>source</em> files under version control. For example, if using <code>git</code>
+you might add the following line to your <code>.gitignore</code> file:</p>
+<pre><code>site/
+</code></pre>
+<p>If you're using another source code control tool, you'll want to check its
+documentation on how to ignore specific directories.</p>
+</div>
+<h3 id="extra_css">extra_css</h3>
+<p>Set a list of CSS files in your <code>docs_dir</code> to be included by the theme. For
+example, the following example will include the extra.css file within the
+css subdirectory in your <span>docs_dir</span>.</p>
+<pre><code class="language-yaml">extra_css:
+    - css/extra.css
+    - css/second_extra.css
+</code></pre>
+<p><strong>default</strong>: <code>[]</code> (an empty list).</p>
+<h3 id="extra_javascript">extra_javascript</h3>
+<p>Set a list of JavaScript files in your <code>docs_dir</code> to be included by the theme.
+See the example in <span>extra_css</span> for usage.</p>
+<p><strong>default</strong>: <code>[]</code> (an empty list).</p>
+<h3 id="extra_templates">extra_templates</h3>
+<p>Set a list of templates in your <code>docs_dir</code> to be built by MkDocs. To see more
+about writing templates for MkDocs read the documentation about [custom themes]
+and specifically the section about the [available variables] to
+templates. See the example in <span>extra_css</span> for usage.</p>
+<p><strong>default</strong>: <code>[]</code> (an empty list).</p>
+<h3 id="extra">extra</h3>
+<p>A set of key-value pairs, where the values can be any valid YAML construct, that
+will be passed to the template. This allows for great flexibility when creating
+custom themes.</p>
+<p>For example, if you are using a theme that supports displaying the project
+version, you can pass it to the theme like this:</p>
+<pre><code class="language-yaml">extra:
+    version: 1.0
+</code></pre>
+<p><strong>default</strong>: By default <code>extra</code> will be an empty key-value mapping.</p>
+<h2 id="preview-controls">Preview controls</h2>
+<h2 id="live-reloading">Live Reloading</h2>
+<h3 id="watch">watch</h3>
+<p>Determines additional directories to watch when running <code>mkdocs serve</code>.
+Configuration is a YAML list.</p>
+<pre><code class="language-yaml">watch:
+- directory_a
+- directory_b
+</code></pre>
+<p>Allows a custom default to be set without the need to pass it through the <code>-w</code>/<code>--watch</code>
+option every time the <code>mkdocs serve</code> command is called.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The paths provided via the configuration file are relative to the configuration file.</p>
+<p>The paths provided via the <code>-w</code>/<code>--watch</code> CLI parameters are not. </p>
+</div>
+<h3 id="use_directory_urls">use_directory_urls</h3>
+<p>This setting controls the style used for linking to pages within the
+documentation.</p>
+<p>The following table demonstrates how the URLs used on the site differ when
+setting <code>use_directory_urls</code> to <code>true</code> or <code>false</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Source file</th>
+<th>use_directory_urls: true</th>
+<th>use_directory_urls: false</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index.md</td>
+<td>/</td>
+<td>/index.html</td>
+</tr>
+<tr>
+<td>api-guide.md</td>
+<td>/api-guide/</td>
+<td>/api-guide.html</td>
+</tr>
+<tr>
+<td>about/license.md</td>
+<td>/about/license/</td>
+<td>/about/license.html</td>
+</tr>
+</tbody>
+</table>
+<p>The default style of <code>use_directory_urls: true</code> creates more user friendly URLs,
+and is usually what you'll want to use.</p>
+<p>The alternate style can be useful if you want your documentation to remain
+properly linked when opening pages directly from the file system, because it
+creates links that point directly to the target <em>file</em> rather than the target
+<em>directory</em>.</p>
+<p><strong>default</strong>: <code>true</code></p>
+<h3 id="strict">strict</h3>
+<p>Determines how warnings are handled. Set to <code>true</code> to halt processing when a
+warning is raised. Set to <code>false</code> to print a warning and continue processing.</p>
+<p><strong>default</strong>: <code>false</code></p>
+<h3 id="dev_addr">dev_addr</h3>
+<p>Determines the address used when running <code>mkdocs serve</code>. Must be of the format
+<code>IP:PORT</code>.</p>
+<p>Allows a custom default to be set without the need to pass it through the
+<code>--dev-addr</code> option every time the <code>mkdocs serve</code> command is called.</p>
+<p><strong>default</strong>: <code>'127.0.0.1:8000'</code></p>
+<p>See also: <span>site_url</span>.</p>
+<h2 id="formatting-options">Formatting options</h2>
+<h3 id="markdown_extensions">markdown_extensions</h3>
+<p>MkDocs uses the <a href="https://python-markdown.github.io/">Python Markdown</a> library to translate Markdown files
+into HTML. Python Markdown supports a variety of <a href="https://python-markdown.github.io/extensions/">extensions</a>
+that customize how pages are formatted. This setting lets you enable a list of
+extensions beyond the ones that MkDocs uses by default (<code>meta</code>, <code>toc</code>, <code>tables</code>,
+and <code>fenced_code</code>).</p>
+<p>For example, to enable the <a href="https://python-markdown.github.io/extensions/smarty/">SmartyPants typography extension</a>, use:</p>
+<pre><code class="language-yaml">markdown_extensions:
+    - smarty
+</code></pre>
+<p>Some extensions provide configuration options of their own. If you would like to
+set any configuration options, then you can nest a key/value mapping
+(<code>option_name: option value</code>) of any options that a given extension supports.
+See the documentation for the extension you are using to determine what options
+they support.</p>
+<p>For example, to enable permalinks in the (included) <code>toc</code> extension, use:</p>
+<pre><code class="language-yaml">markdown_extensions:
+    - toc:
+        permalink: True
+</code></pre>
+<p>Note that a colon (<code>:</code>) must follow the extension name (<code>toc</code>) and then on a new
+line the option name and value must be indented and separated by a colon. If you
+would like to define multiple options for a single extension, each option must be
+defined on a separate line:</p>
+<pre><code class="language-yaml">markdown_extensions:
+    - toc:
+        permalink: True
+        separator: "_"
+</code></pre>
+<p>Add an additional item to the list for each extension. If you have no
+configuration options to set for a specific extension, then simply omit options
+for that extension:</p>
+<pre><code class="language-yaml">markdown_extensions:
+    - smarty
+    - toc:
+        permalink: True
+    - sane_lists
+</code></pre>
+<p>In the above examples, each extension is a list item (starts with a <code>-</code>). As an
+alternative, key/value pairs can be used instead. However, in that case an empty
+value must be provided for extensions for which no options are defined.
+Therefore, the last example above could also be defined as follows:</p>
+<pre><code class="language-yaml">markdown_extensions:
+    smarty: {}
+    toc:
+        permalink: True
+    sane_lists: {}
+</code></pre>
+<p>This alternative syntax is required if you intend to override some options via
+<span>inheritance</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">See Also:</p>
+<p>The Python-Markdown documentation provides a <a href="https://python-markdown.github.io/extensions/">list of extensions</a>
+which are available out-of-the-box. For a list of configuration options
+available for a given extension, see the documentation for that extension.</p>
+<p>You may also install and use various <a href="https://github.com/Python-Markdown/markdown/wiki/Third-Party-Extensions">third party extensions</a>. Consult
+the documentation provided by those extensions for installation instructions
+and available configuration options.</p>
+</div>
+<p><strong>default</strong>: <code>[]</code> (an empty list).</p>
+<h3 id="plugins">plugins</h3>
+<p>A list of plugins (with optional configuration settings) to use when building
+the site. See the <span>Plugins</span> documentation for full details.</p>
+<p>If the <code>plugins</code> config setting is defined in the <code>mkdocs.yml</code> config file, then
+any defaults (such as <code>search</code>) are ignored and you need to explicitly re-enable
+the defaults if you would like to continue using them:</p>
+<pre><code class="language-yaml">plugins:
+    - search
+    - your_other_plugin
+</code></pre>
+<p>To define options for a given plugin, use a nested set of key/value pairs:</p>
+<pre><code class="language-yaml">plugins:
+    - search
+    - your_other_plugin:
+        option1: value
+        option2: other value
+</code></pre>
+<p>In the above examples, each plugin is a list item (starts with a <code>-</code>). As an
+alternative, key/value pairs can be used instead. However, in that case an empty
+value must be provided for plugins for which no options are defined. Therefore,
+the last example above could also be defined as follows:</p>
+<pre><code class="language-yaml">plugins:
+    search: {}
+    your_other_plugin:
+        option1: value
+        option2: other value
+</code></pre>
+<p>This alternative syntax is required if you intend to override some options via
+<span>inheritance</span>.</p>
+<p>To completely disable all plugins, including any defaults, set the <code>plugins</code>
+setting to an empty list:</p>
+<pre><code class="language-yaml">plugins: []
+</code></pre>
+<p><strong>default</strong>: <code>['search']</code> (the "search" plugin included with MkDocs).</p>
+<h4 id="search">Search</h4>
+<p>A search plugin is provided by default with MkDocs which uses <a href="https://lunrjs.com/">lunr.js</a> as a
+search engine. The following config options are available to alter the behavior
+of the search plugin:</p>
+<h5 id="separator"><strong>separator</strong></h5>
+<p>A regular expression which matches the characters used as word separators when
+building the index. By default whitespace and the hyphen (<code>-</code>) are used. To add
+the dot (<code>.</code>) as a word separator you might do this:</p>
+<pre><code class="language-yaml">plugins:
+    - search:
+        separator: '[\s\-\.]+'
+</code></pre>
+<p><strong>default</strong>: <code>'[\s\-]+'</code></p>
+<h5 id="min_search_length"><strong>min_search_length</strong></h5>
+<p>An integer value that defines the minimum length for a search query. By default
+searches shorter than 3 chars in length are ignored as search result quality with
+short search terms are poor. However, for some use cases (such as documentation
+about Message Queues which might generate searches for 'MQ') it may be preferable
+to set a shorter limit.</p>
+<pre><code class="language-yaml">plugins:
+    - search:
+        min_search_length: 2
+</code></pre>
+<p><strong>default</strong>: 3</p>
+<h5 id="lang"><strong>lang</strong></h5>
+<p>A list of languages to use when building the search index as identified by their
+<a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> language codes. With <a href="https://github.com/MihaiValentin/lunr-languages#lunr-languages-----">Lunr Languages</a>, the following languages are
+supported:</p>
+<ul>
+<li><code>ar</code>: Arabic</li>
+<li><code>da</code>: Danish</li>
+<li><code>nl</code>: Dutch</li>
+<li><code>en</code>: English</li>
+<li><code>fi</code>: Finnish</li>
+<li><code>fr</code>: French</li>
+<li><code>de</code>: German</li>
+<li><code>hu</code>: Hungarian</li>
+<li><code>it</code>: Italian</li>
+<li><code>ja</code>: Japanese</li>
+<li><code>no</code>: Norwegian</li>
+<li><code>pt</code>: Portuguese</li>
+<li><code>ro</code>: Romanian</li>
+<li><code>ru</code>: Russian</li>
+<li><code>es</code>: Spanish</li>
+<li><code>sv</code>: Swedish</li>
+<li><code>th</code>: Thai</li>
+<li><code>tr</code>: Turkish</li>
+<li><code>vi</code>: Vietnamese</li>
+</ul>
+<p>You may <a href="https://github.com/MihaiValentin/lunr-languages/blob/master/CONTRIBUTING.md">contribute additional languages</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>While search does support using multiple languages together, it is best not
+to add additional languages unless you really need them. Each additional
+language adds significant bandwidth requirements and uses more browser
+resources. Generally, it is best to keep each instance of MkDocs to a single
+language.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lunr Languages does not currently include support for Chinese or other Asian
+languages. However, some users have reported decent results using Japanese.</p>
+</div>
+<p><strong>default</strong>: The value of <code>theme.locale</code> if set, otherwise <code>[en]</code>.</p>
+<h5 id="prebuild_index"><strong>prebuild_index</strong></h5>
+<p>Optionally generates a pre-built index of all pages, which provides some
+performance improvements for larger sites. Before enabling, confirm that the
+theme you are using explicitly supports using a prebuilt index (the builtin
+themes do). Set to <code>true</code> to enable.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This option requires that <a href="https://nodejs.org/">Node.js</a> be installed and the command <code>node</code> be
+on the system path. If the call to <code>node</code> fails for any reason, a warning
+is issued and the build continues uninterrupted. You may use the <code>--strict</code>
+flag when building to cause such a failure to raise an error instead.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On smaller sites, using a pre-built index is not recommended as it creates a
+significant increase is bandwidth requirements with little to no noticeable
+improvement to your users. However, for larger sites (hundreds of pages),
+the bandwidth increase is relatively small and your users will notice a
+significant improvement in search performance.</p>
+</div>
+<p><strong>default</strong>: <code>False</code></p>
+<h5 id="indexing"><strong>indexing</strong></h5>
+<p>Configures what strategy the search indexer will use when building the index
+for your pages. This property is particularly useful if your project is large
+in scale, and the index takes up an enormous amount of disk space.</p>
+<pre><code class="language-yaml">plugins:
+    - search:
+        indexing: 'full'
+</code></pre>
+<h6 id="options">Options</h6>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>full</code></td>
+<td>Indexes the title, section headings, and full text of each page.</td>
+</tr>
+<tr>
+<td><code>sections</code></td>
+<td>Indexes the title and section headings of each page.</td>
+</tr>
+<tr>
+<td><code>titles</code></td>
+<td>Indexes only the title of each page.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>default</strong>: <code>full</code></p>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>In most cases, the value of a configuration option is set directly in the
+configuration file. However, as an option, the value of a configuration option
+may be set to the value of an environment variable using the <code>!ENV</code> tag. For
+example, to set the value of the <code>site_name</code> option to the value of the
+variable <code>SITE_NAME</code> the YAML file may contain the following:</p>
+<pre><code class="language-yaml">site_name: !ENV SITE_NAME
+</code></pre>
+<p>If the environment variable is not defined, then the configuration setting
+would be assigned a <code>null</code> (or <code>None</code> in Python) value. A default value can be
+defined as the last value in a list. Like this:</p>
+<pre><code class="language-yaml">site_name: !ENV [SITE_NAME, 'My default site name']
+</code></pre>
+<p>Multiple fallback variables can be used as well. Note that the last value is
+not an environment variable, but must be a value to use as a default if none
+of the specified environment variables are defined.</p>
+<pre><code class="language-yaml">site_name: !ENV [SITE_NAME, OTHER_NAME, 'My default site name']
+</code></pre>
+<p>Simple types defined within an environment variable such as string, bool,
+integer, float, datestamp and null are parsed as if they were defined directly
+in the YAML file, which means that the value will be converted to the
+appropriate type. However, complex types such as lists and key/value pairs
+cannot be defined within a single environment variable.</p>
+<p>For more details, see the <a href="https://github.com/waylan/pyyaml-env-tag">pyyaml_env_tag</a>
+project.</p>
+<h2 id="configuration-inheritance">Configuration Inheritance</h2>
+<p>Generally, a single file would hold the entire configuration for a site.
+However, some organizations may maintain multiple sites which all share a common
+configuration across them. Rather than maintaining separate configurations for
+each, the common configuration options can be defined in a parent configuration
+while which each site's primary configuration file inherits.</p>
+<p>To define the parent for a configuration file, set the <code>INHERIT</code> (all caps) key
+to the path of the parent file. The path must be relative to the location of the
+primary file.</p>
+<p>For configuration options to be merged with a parent configuration, those
+options must be defined as key/value pairs. Specifically, the
+<span>markdown_extensions</span> and <span>plugins</span> options must use the alternative syntax
+which does not use list items (lines which start with  <code>-</code>).</p>
+<p>For example, suppose the common (parent) configuration is defined in <code>base.yml</code>:</p>
+<pre><code class="language-yaml">theme:
+    name: mkdocs
+    locale: en
+    highlightjs: true
+
+markdown_extensions:
+    toc:
+        permalink: true
+    admonition: {}
+</code></pre>
+<p>Then, for the "foo" site, the primary configuration file would be defined at
+<code>foo/mkdocs.yml</code>:</p>
+<pre><code class="language-yml">INHERIT: ../base.yml
+site_name: Foo Project
+site_url: https://example.com/foo
+</code></pre>
+<p>When running <code>mkdocs build</code>, the file at <code>foo/mkdocs.yml</code> would be passed in as
+the configuration file. MkDocs will then parse that file, retrieve and parse the
+parent file <code>base.yml</code> and deep merge the two. This would result in MkDocs
+receiving the following merged configuration:</p>
+<pre><code class="language-yaml">site_name: Foo Project
+site_url: https://example.com/foo
+
+theme:
+    name: mkdocs
+    locale: en
+    highlightjs: true
+
+markdown_extensions:
+    toc:
+        permalink: true
+    admonition: {}
+</code></pre>
+<p>Deep merging allows you to add and/or override various values in your primary
+configuration file. For example, suppose for one site you wanted to add support
+for definition lists, use a different symbol for permalinks, and define a
+different separator. In that site's primary configuration file you could do:</p>
+<pre><code class="language-yaml">INHERIT: ../base.yml
+site_name: Bar Project
+site_url: https://example.com/bar
+
+markdown_extensions:
+    def_list: {}
+    toc:
+        permalink: 
+        separator: "_"
+</code></pre>
+<p>In that case, the above configuration would be deep merged with <code>base.yml</code> and
+result in the following configuration:</p>
+<pre><code class="language-yaml">site_name: Bar Project
+site_url: https://example.com/bar
+
+theme:
+    name: mkdocs
+    locale: en
+    highlightjs: true
+
+markdown_extensions:
+    def_list: {}
+    toc:
+        permalink: 
+        separator: "_"
+    admonition: {}
+</code></pre>
+<p>Notice that the <code>admonition</code> extension was retained from the parent
+configuration, the <code>def_list</code> extension was added, the value of
+<code>toc.permalink</code> was replaced, and the value of <code>toc.separator</code> was added.</p>
+<p>You can replace or merge the value of any key. However, any non-key is always
+replaced. Therefore, you cannot append items to a list. You must redefine the
+entire list.</p>
+<p>As the <span>nav</span> configuration is made up of nested lists, this means that you
+cannot merge navigation items. Of course, you can replace the entire <code>nav</code>
+configuration with a new one. However, it is generally expected that the entire
+navigation would be defined in the primary configuration file for a project.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As a reminder, all path based configuration options must be relative to the
+primary configuration file and MkDocs does not alter the paths when merging.
+Therefore, defining paths in a parent file which is inherited by multiple
+different sites may not work as expected. It is generally best to define
+path based options in the primary configuration file only.</p>
+</div></div><div class="wpmr-pdf-strucuture-section wpmr-pdf-page-section wpmr-md-page"><h1 id="deploying-your-docs">Deploying your docs</h1>
+<p>A basic guide to deploying your docs to various hosting providers</p>
+<hr/>
+<h2 id="github-pages">GitHub Pages</h2>
+<p>If you host the source code for a project on <a href="https://github.com/">GitHub</a>, you can easily use
+<a href="https://pages.github.com/">GitHub Pages</a> to host the documentation for your project. There are two basic
+types of GitHub Pages sites: <a href="https://help.github.com/articles/user-organization-and-project-pages/#project-pages-sites">Project Pages</a> sites, and <a href="https://help.github.com/articles/user-organization-and-project-pages/#user-and-organization-pages-sites">User and Organization
+Pages</a> sites. They are nearly identical but have some important differences,
+which require a different work flow when deploying.</p>
+<h3 id="project-pages">Project Pages</h3>
+<p>Project Pages sites are simpler as the site files get deployed to a branch
+within the project repository (<code>gh-pages</code> by default). After you <code>checkout</code> the
+primary working branch (usually <code>master</code>) of the git repository where you
+maintain the source documentation for your project, run the following command:</p>
+<pre><code class="language-sh">mkdocs gh-deploy
+</code></pre>
+<p>That's it! Behind the scenes, MkDocs will build your docs and use the
+<a href="https://github.com/davisp/ghp-import">ghp-import</a> tool to commit them to the <code>gh-pages</code> branch and push the
+<code>gh-pages</code> branch to GitHub.</p>
+<p>Use <code>mkdocs gh-deploy --help</code> to get a full list of options available for the
+<code>gh-deploy</code> command.</p>
+<p>Be aware that you will not be able to review the built site before it is pushed
+to GitHub. Therefore, you may want to verify any changes you make to the docs
+beforehand by using the <code>build</code> or <code>serve</code> commands and reviewing the built
+files locally.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should never edit files in your pages repository by hand if you're using
+the <code>gh-deploy</code> command because you will lose your work the next time you
+run the command.</p>
+</div>
+<h3 id="organization-and-user-pages">Organization and User Pages</h3>
+<p>User and Organization Pages sites are not tied to a specific project, and the
+site files are deployed to the <code>master</code> branch in a dedicated repository named
+with the GitHub account name. Therefore, you need working copies of two
+repositories on our local system. For example, consider the following file
+structure:</p>
+<pre><code class="language-no-highlight">my-project/
+    mkdocs.yml
+    docs/
+orgname.github.io/
+</code></pre>
+<p>After making and verifying updates to your project you need to change
+directories to the <code>orgname.github.io</code> repository and call the
+<code>mkdocs gh-deploy</code> command from there:</p>
+<pre><code class="language-sh">cd ../orgname.github.io/
+mkdocs gh-deploy --config-file ../my-project/mkdocs.yml --remote-branch master
+</code></pre>
+<p>Note that you need to explicitly point to the <code>mkdocs.yml</code> configuration file as
+it is no longer in the current working directory. You also need to inform the
+deploy script to commit to the <code>master</code> branch. You may override the default
+with the <span>remote_branch</span> configuration setting, but if you forget to change
+directories before running the deploy script, it will commit to the <code>master</code>
+branch of your project, which you probably don't want.</p>
+<h3 id="custom-domains">Custom Domains</h3>
+<p>GitHub Pages includes support for using a <a href="https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site">Custom Domain</a> for your site. In
+addition to the steps documented by GitHub, you need to take one additional step
+so that MkDocs will work with your custom domain. You need to add a <code>CNAME</code> file
+to the root of your <span>docs_dir</span>. The file must contain a single bare domain or
+subdomain on a single line (see MkDocs' own <a href="https://github.com/mkdocs/mkdocs/blob/master/docs/CNAME">CNAME file</a> as an example). You may
+create the file manually, or use GitHub's web interface to set up the custom
+domain (under Settings / Custom Domain). If you use the web interface, GitHub
+will create the <code>CNAME</code> file for you and save it to the root of your "pages"
+branch. So that the file does not get removed the next time you deploy, you need
+to copy the file to your <code>docs_dir</code>. With the file properly included in your
+<code>docs_dir</code>, MkDocs will include the file in your built site and push it to your
+"pages" branch each time you run the <code>gh-deploy</code> command.</p>
+<p>If you are having problems getting a custom domain to work, see GitHub's
+documentation on <a href="https://help.github.com/articles/troubleshooting-custom-domains/">Troubleshooting custom domains</a>.</p>
+<h2 id="read-the-docs">Read the Docs</h2>
+<p><a href="https://readthedocs.org/">Read the Docs</a> offers free documentation hosting. You can import your docs
+using any major version control system, including Mercurial, Git, Subversion,
+and Bazaar. Read the Docs supports MkDocs out-of-the-box. Follow the
+<a href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-mkdocs.html">instructions</a> on their site to arrange the files in your repository properly,
+create an account and point it at your publicly hosted repository. If properly
+configured, your documentation will update each time you push commits to your
+public repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To benefit from all of the <a href="https://docs.readthedocs.io/en/latest/features.html">features</a> offered by Read the Docs, you will need
+to use the <span>Read the Docs theme</span> which ships with MkDocs. The various
+themes which may be referenced in Read the Docs' documentation are Sphinx
+specific themes and will not work with MkDocs.</p>
+</div>
+<h2 id="other-providers">Other Providers</h2>
+<p>Any hosting provider which can serve static files can be used to serve
+documentation generated by MkDocs. While it would be impossible to document how
+to upload the docs to every hosting provider out there, the following guidelines
+should provide some general assistance.</p>
+<p>When you build your site (using the <code>mkdocs build</code> command), all of the files
+are written to the directory assigned to the <span>site_dir</span> configuration option
+(defaults to <code>"site"</code>) in your <code>mkdocs.yaml</code> config file. Generally, you will
+simply need to copy the contents of that directory to the root directory of your
+hosting provider's server. Depending on your hosting provider's setup, you may
+need to use a graphical or command line <a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">ftp</a>, <a href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> or <a href="https://en.wikipedia.org/wiki/Secure_copy">scp</a> client to transfer
+the files.</p>
+<p>For example, a typical set of commands from the command line might look
+something like this:</p>
+<pre><code class="language-sh">mkdocs build
+scp -r ./site user@host:/path/to/server/root
+</code></pre>
+<p>Of course, you will need to replace <code>user</code> with the username you have with your
+hosting provider and <code>host</code> with the appropriate domain name. Additionally, you
+will need to adjust the <code>/path/to/server/root</code> to match the configuration of
+your hosts' file system.</p>
+<p>See your host's documentation for specifics. You will likely want to search
+their documentation for "ftp" or "uploading site".</p>
+<h2 id="local-files">Local Files</h2>
+<p>Rather than hosting your documentation on a server, you may instead distribute
+the files directly, which can then be viewed in a browser using the <code>file://</code>
+scheme.</p>
+<p>Note that, due to the security settings of all modern browsers, some things
+will not work the same and some features may not work at all. In fact, a few
+settings will need to be customized in very specific ways.</p>
+<ul>
+<li>
+<p><span>site_url</span>:</p>
+<p>The <code>site_url</code> must be set to an empty string, which instructs MkDocs to
+build your site so that it will work with the <code>file://</code> scheme.</p>
+<pre><code>site_url: ""
+</code></pre>
+</li>
+<li>
+<p><span>use_directory_urls</span>:</p>
+<p>Set <code>use_directory_urls</code> to <code>false</code>. Otherwise, internal links between
+pages will not work properly.</p>
+<pre><code>use_directory_urls: false
+</code></pre>
+</li>
+<li>
+<p><span>search</span>:</p>
+<p>You will need to either disable the search plugin, or use a third-party
+search plugin which is specifically designed to work with the <code>file://</code>
+scheme. To disable all plugins, set the <code>plugins</code> setting to an empty list.</p>
+<pre><code>plugins: []
+</code></pre>
+<p>If you have other plugins enabled, simply ensure that <code>search</code> is not
+included in the list.</p>
+</li>
+</ul>
+<p>When writing your documentation, it is imperative that all internal links use
+relative URLs as <span>documented</span>. Remember, each reader of your
+documentation will be using a different device and the files will likely be in a
+different location on that device.</p>
+<p>If you expect your documentation to be viewed off-line, you may also need to be
+careful about which themes you choose. Many themes make use of CDNs for various
+support files, which require a live Internet connection. You will need to choose
+a theme which includes all support files directly in the theme.</p>
+<p>When you build your site (using the <code>mkdocs build</code> command), all of the files
+are written to the directory assigned to the <span>site_dir</span> configuration option
+(defaults to <code>"site"</code>) in your <code>mkdocs.yaml</code> config file. Generally, you will
+simply need to copy the contents of that directory and distribute it to your
+readers. Alternatively, you may choose to use a third party tool to convert the
+HTML files to some other documentation format.</p>
+<h2 id="404-pages">404 Pages</h2>
+<p>When MkDocs builds the documentation it will include a 404.html file in the
+<span>build directory</span>. This file will be automatically used when
+deploying to <span>GitHub</span> but only on a custom domain. Other web
+servers may be configured to use it but the feature won't always be available.
+See the documentation for your server of choice for more information.</p></div></div><div class="wpmr-pdf-structure-chapter wpmr-md-section"><div class="wpmr-pdf-page-chapter"><h1>Developer Guide</h1><div class="wpmr-pdf-page-chapter-title"><span>Developer Guide</span></div></div><div class="wpmr-pdf-strucuture-section wpmr-pdf-page-section wpmr-md-page"><h1 id="developer-guide">Developer Guide</h1>
 <p>Extending MkDocs</p>
 <hr/>
 <p>The MkDocs Developer Guide provides documentation for developers of third
@@ -3689,4 +4709,105 @@ documentation.</p>
 <li>Bugfix: Fix the mkdocs command creation under Windows. (#122)</li>
 <li>Bugfix: Correctly handle external <code>extra_javascript</code> and <code>extra_css</code>. (#92)</li>
 <li>Bugfix: Fixed favicon support. (#87)</li>
-</ul></div></div>
+</ul></div><div class="wpmr-pdf-strucuture-section wpmr-pdf-page-section wpmr-md-page"><h1 id="contributing-to-mkdocs">Contributing to MkDocs</h1>
+<p>An introduction to contributing to the MkDocs project.</p>
+<p>The MkDocs project welcomes, and depends, on contributions from developers and
+users in the open source community. Contributions can be made in a number of
+ways, a few examples are:</p>
+<ul>
+<li>Code patches via pull requests</li>
+<li>Documentation improvements</li>
+<li>Bug reports and patch reviews</li>
+</ul>
+<p>For information about available communication channels please refer to the
+<a href="https://github.com/mkdocs/mkdocs/blob/master/README.md">README</a> file in our
+GitHub repository.</p>
+<h2 id="code-of-conduct">Code of Conduct</h2>
+<p>Everyone interacting in the MkDocs project's codebases, issue trackers, chat
+rooms, and mailing lists is expected to follow the <a href="https://www.pypa.io/en/latest/code-of-conduct/">PyPA Code of Conduct</a>.</p>
+<h2 id="reporting-an-issue">Reporting an Issue</h2>
+<p>Please include as much detail as you can. Let us know your platform and MkDocs
+version. If the problem is visual (for example a theme or design issue) please
+add a screenshot and if you get an error please include the full error and
+traceback.</p>
+<h2 id="testing-the-development-version">Testing the Development Version</h2>
+<p>If you want to just install and try out the latest development version of
+MkDocs you can do so with the following command. This can be useful if you
+want to provide feedback for a new feature or want to confirm if a bug you
+have encountered is fixed in the git master. It is <strong>strongly</strong> recommended
+that you do this within a <a href="https://virtualenv.pypa.io/en/latest/user_guide.html">virtualenv</a>.</p>
+<pre><code class="language-bash">pip install https://github.com/mkdocs/mkdocs/archive/master.tar.gz
+</code></pre>
+<h2 id="installing-for-development">Installing for Development</h2>
+<p>First you'll need to fork and clone the repository. Once you have a local
+copy, run the following command. It is <strong>strongly</strong> recommended that you do
+this within a <a href="https://virtualenv.pypa.io/en/latest/user_guide.html">virtualenv</a>.</p>
+<pre><code class="language-bash">pip install --editable .
+</code></pre>
+<p>This will install MkDocs in development mode which binds the <code>mkdocs</code> command
+to the git repository.</p>
+<h2 id="running-the-tests">Running the tests</h2>
+<p>To run the tests, it is recommended that you use <a href="https://tox.readthedocs.io/en/latest/">tox</a>.</p>
+<p>Install Tox using <a href="https://pip.pypa.io/en/stable/">pip</a> by running the command <code>pip install tox</code>.
+Then the test suite can be run for MkDocs by running the command <code>tox</code> in the
+root of your MkDocs repository.</p>
+<p>It will attempt to run the tests against all of the Python versions we
+support. So don't be concerned if you are missing some and they fail. The rest
+will be verified by <a href="https://docs.github.com/actions">Github Actions</a> when you submit a pull request.</p>
+<h2 id="translating-themes">Translating themes</h2>
+<p>To localize a theme to your favorite language, follow the guide on <span>Translating
+Themes</span>. We welcome translation Pull Requests!</p>
+<h2 id="submitting-pull-requests">Submitting Pull Requests</h2>
+<p>If you're considering a large code contribution to MkDocs, please prefer to
+open an issue first to get early feedback on the idea.</p>
+<p>Once you think the code is ready to be reviewed, push
+it to your fork and send a pull request. For a change to be accepted it will
+most likely need to have tests and documentation if it is a new feature.</p>
+<h3 id="submitting-changes-to-the-builtin-themes">Submitting changes to the builtin themes</h3>
+<p>When installed with <code>i18n</code> support (<code>pip install mkdocs[i18n]</code>), MkDocs allows
+themes to support being translated into various languages (referred to as
+locales) if they respect <a href="https://jinja.palletsprojects.com/en/latest/extensions/#i18n-extension">Jinja's i18n extension</a> by wrapping text placeholders
+with <code>{% trans %}</code> and <code>{% endtrans %}</code> tags.</p>
+<p>Each time a translatable text placeholder is added, removed or changed in a
+theme template, the theme's Portable Object Template (<code>pot</code>) file needs to be
+updated by running the <code>extract_messages</code> command. For example, to update the
+<code>pot</code> file of the <code>mkdocs</code> theme, run the following command:</p>
+<pre><code class="language-bash">python setup.py extract_messages -t mkdocs
+</code></pre>
+<p>The updated <code>pot</code> file should be included in a PR with the updated template.
+The updated <code>pot</code> file will allow translation contributors to propose the
+translations needed for their preferred language. See the guide on <span>Translating
+Themes</span> for details.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Contributors are not expected to provide translations with their changes to
+a theme's templates. However, they are expected to include an updated <code>pot</code>
+file so that everything is ready for translators to do their job.</p>
+</div></div><div class="wpmr-pdf-strucuture-section wpmr-pdf-page-section wpmr-md-page"><h1 id="license">License</h1>
+<p>The legal stuff.</p>
+<hr/>
+<h2 id="included-projects">Included projects</h2>
+<p>Themes used under license from the ReadTheDocs projects.</p>
+<ul>
+<li>ReadTheDocs theme - <a href="https://github.com/snide/sphinx_rtd_theme/blob/master/LICENSE">View license</a>.</li>
+</ul>
+<p>Many thanks to the authors and contributors of those wonderful projects.</p>
+<h2 id="mkdocs-license-bsd">MkDocs License (BSD)</h2>
+<p>Copyright © 2014, Tom Christie. All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:</p>
+<p>Redistributions of source code must retain the above copyright notice, this list
+of conditions and the following disclaimer. Redistributions in binary form must
+reproduce the above copyright notice, this list of conditions and the following
+disclaimer in the documentation and/or other materials provided with the
+distribution.</p>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p></div></div>
