@@ -234,6 +234,163 @@ you're done. For specific instructions on a number of common hosts, see the
 <span>Deploying your Docs</span> page.</p>
 <h2 id="getting-help">Getting help</h2>
 <p>See the <span>User Guide</span> for more complete documentation of all of MkDocs' features.</p>
+<p>To get help with MkDocs, please use the <a href="https://github.com/mkdocs/mkdocs/discussions">GitHub discussions</a> or <a href="https://github.com/mkdocs/mkdocs/issues">GitHub issues</a>.</p></div><div class="wpmr-pdf-structure-section wpmr-pdf-page-section wpmr-md-page"><h1 id="getting-started-with-mkdocs-ii">Getting Started with MkDocs II</h1>
+<p>An introductory tutorial!</p>
+<hr/>
+<h2 id="installation">Installation</h2>
+<p>To install MkDocs, run the following command from the command line:</p>
+<div class="highlight"><pre><span></span><code><span></span>pip install mkdocs
+</code></pre></div>
+<p>For more details, see the <span>Installation Guide</span>.</p>
+<h2 id="creating-a-new-project">Creating a new project</h2>
+<p>Getting started is super easy. To create a new project, run the following
+command from the command line:</p>
+<div class="highlight"><pre><span></span><code><span></span>mkdocs new my-project
+<span></span><span class="nb">cd</span> my-project
+</code></pre></div>
+<p>Take a moment to review the initial project that has been created for you.</p>
+<p>
+<figure><img src="/project/mkdocs-docs/docs/img/initial-layout.png"/><figcaption>The initial MkDocs layout</figcaption>
+</figure>
+</p>
+<p>There's a single configuration file named <code>mkdocs.yml</code>, and a folder named
+<code>docs</code> that will contain your documentation source files (<code>docs</code> is
+the default value for the <span>docs_dir</span> configuration setting). Right now the <code>docs</code>
+folder just contains a single documentation page, named <code>index.md</code>.</p>
+<p>MkDocs comes with a built-in dev-server that lets you preview your documentation
+as you work on it. Make sure you're in the same directory as the <code>mkdocs.yml</code>
+configuration file, and then start the server by running the <code>mkdocs serve</code>
+command:</p>
+<div class="highlight"><pre><span></span><code><span></span>$ mkdocs serve
+<span></span>INFO    -  Building documentation...
+<span></span>INFO    -  Cleaning site directory
+<span></span><span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 server:271<span class="o">]</span> Serving on http://127.0.0.1:8000
+<span></span><span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 handlers:58<span class="o">]</span> Start watching changes
+<span></span><span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 handlers:60<span class="o">]</span> Start detecting changes
+</code></pre></div>
+<p>Open up <code>http://127.0.0.1:8000/</code> in your browser, and you'll see the default
+home page being displayed:</p>
+<p>
+<figure><img src="/project/mkdocs-docs/docs/img/screenshot.png"/><figcaption>The MkDocs live server</figcaption>
+</figure>
+</p>
+<p>The dev-server also supports auto-reloading, and will rebuild your documentation
+whenever anything in the configuration file, documentation directory, or theme
+directory changes.</p>
+<p>Open the <code>docs/index.md</code> document in your text editor of choice, change the
+initial heading to <code>MkLorum</code>, and save your changes. Your browser will
+auto-reload and you should see your updated documentation immediately.</p>
+<p>Now try editing the configuration file: <code>mkdocs.yml</code>. Change the
+<span><code>site_name</code></span> setting to <code>MkLorum</code> and save the file.</p>
+<div class="highlight"><pre><span></span><code><span></span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span><span class="w"></span>
+<span></span><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/</span><span class="w"></span>
+</code></pre></div>
+<p>Your browser should immediately reload, and you'll see your new site name take
+effect.</p>
+<p>
+<figure><img src="/project/mkdocs-docs/docs/img/site-name.png"/><figcaption>The <code>site_name</code> setting</figcaption>
+</figure>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <span><code>site_name</code></span> and <span><code>site_url</code></span> configuration
+options are the only two required options in your configuration file. When
+you create a new project, the <code>site_url</code> option is assigned the placeholder
+value: <code>https://example.com</code>. If the final location is known, you can change
+the setting now to point to it. Or you may choose to leave it alone for now.
+Just be sure to edit it before you deploy your site to a production server.</p>
+</div>
+<h2 id="adding-pages">Adding pages</h2>
+<p>Now add a second page to your documentation:</p>
+<div class="highlight"><pre><span></span><code><span></span>curl <span class="s1">'https://jaspervdj.be/lorem-markdownum/markdown.txt'</span> &gt; docs/about.md
+</code></pre></div>
+<p>As our documentation site will include some navigation headers, you may want to
+edit the configuration file and add some information about the order, title, and
+nesting of each page in the navigation header by adding a <span><code>nav</code></span>
+setting:</p>
+<div class="highlight"><pre><span></span><code><span></span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span><span class="w"></span>
+<span></span><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/</span><span class="w"></span>
+<span></span><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span><span class="w"></span>
+</code></pre></div>
+<p>Save your changes and you'll now see a navigation bar with <code>Home</code> and <code>About</code>
+items on the left as well as <code>Search</code>, <code>Previous</code>, and <code>Next</code> items on the
+right.</p>
+<p>
+<figure><img src="/project/mkdocs-docs/docs/img/multipage.png"/><figcaption>Screenshot</figcaption>
+</figure>
+</p>
+<p>Try the menu items and navigate back and forth between pages. Then click on
+<code>Search</code>. A search dialog will appear, allowing you to search for any text on
+any page. Notice that the search results include every occurrence of the search
+term on the site and links directly to the section of the page in which the
+search term appears. You get all of that with no effort or configuration on your
+part!</p>
+<p>
+<figure><img src="/project/mkdocs-docs/docs/img/search.png"/><figcaption>Screenshot</figcaption>
+</figure>
+</p>
+<h2 id="theming-our-documentation">Theming our documentation</h2>
+<p>Now change the configuration file to alter how the documentation is displayed by
+changing the theme. Edit the <code>mkdocs.yml</code> file and add a <span><code>theme</code></span> setting:</p>
+<div class="highlight"><pre><span></span><code><span></span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span><span class="w"></span>
+<span></span><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/</span><span class="w"></span>
+<span></span><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span><span class="w"></span>
+<span></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readthedocs</span><span class="w"></span>
+</code></pre></div>
+<p>Save your changes, and you'll see the ReadTheDocs theme being used.</p>
+<p>
+<figure><img src="/project/mkdocs-docs/docs/img/readthedocs.png"/><figcaption>Screenshot</figcaption>
+</figure>
+</p>
+<h2 id="changing-the-favicon-icon">Changing the Favicon Icon</h2>
+<p>By default, MkDocs uses the <span>MkDocs favicon</span> icon. To use a different icon, create
+an <code>img</code> subdirectory in the <code>docs</code> directory and copy your custom <code>favicon.ico</code>
+file to that directory. MkDocs will automatically detect and use that file as your
+favicon icon.</p>
+<h2 id="building-the-site">Building the site</h2>
+<p>That's looking good. You're ready to deploy the first pass of your <code>MkLorum</code>
+documentation. First build the documentation:</p>
+<div class="highlight"><pre><span></span><code><span></span>mkdocs build
+</code></pre></div>
+<p>This will create a new directory, named <code>site</code>. Take a look inside the
+directory:</p>
+<div class="highlight"><pre><span></span><code><span></span>$ ls site
+<span></span>about  fonts  index.html  license  search.html
+<span></span>css    img    js          mkdocs   sitemap.xml
+</code></pre></div>
+<p>Notice that your source documentation has been output as two HTML files named
+<code>index.html</code> and <code>about/index.html</code>. You also have various other media that's
+been copied into the <code>site</code> directory as part of the documentation theme. You
+even have a <code>sitemap.xml</code> file and <code>mkdocs/search_index.json</code>.</p>
+<p>If you're using source code control such as <code>git</code> you probably don't want to
+check your documentation builds into the repository. Add a line containing
+<code>site/</code> to your <code>.gitignore</code> file.</p>
+<div class="highlight"><pre><span></span><code><span></span><span class="nb">echo</span> <span class="s2">"site/"</span> &gt;&gt; .gitignore
+</code></pre></div>
+<p>If you're using another source code control tool you'll want to check its
+documentation on how to ignore specific directories.</p>
+<h2 id="other-commands-and-options">Other Commands and Options</h2>
+<p>There are various other commands and options available. For a complete list of
+commands, use the <code>--help</code> flag:</p>
+<div class="highlight"><pre><span></span><code><span></span>mkdocs --help
+</code></pre></div>
+<p>To view a list of options available on a given command, use the <code>--help</code> flag
+with that command. For example, to get a list of all options available for the
+<code>build</code> command run the following:</p>
+<div class="highlight"><pre><span></span><code><span></span>mkdocs build --help
+</code></pre></div>
+<h2 id="deploying">Deploying</h2>
+<p>The documentation site that you just built only uses static files so you'll be
+able to host it from pretty much anywhere. Simply upload the contents of the
+entire <code>site</code> directory to wherever you're hosting your website from and
+you're done. For specific instructions on a number of common hosts, see the
+<span>Deploying your Docs</span> page.</p>
+<h2 id="getting-help">Getting help</h2>
+<p>See the <span>User Guide</span> for more complete documentation of all of MkDocs' features.</p>
 <p>To get help with MkDocs, please use the <a href="https://github.com/mkdocs/mkdocs/discussions">GitHub discussions</a> or <a href="https://github.com/mkdocs/mkdocs/issues">GitHub issues</a>.</p></div><div class="wpmr-pdf-structure-chapter wpmr-md-section"><div class="wpmr-pdf-page-chapter"><h1>User Guide</h1><div class="wpmr-pdf-page-chapter-title"><span>User Guide</span></div></div><div class="wpmr-pdf-structure-section wpmr-pdf-page-section wpmr-md-page"><h1 id="user-guide">User Guide</h1>
 <p>Building Documentation with MkDocs</p>
 <hr/>
