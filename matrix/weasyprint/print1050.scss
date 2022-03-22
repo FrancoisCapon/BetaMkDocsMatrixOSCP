@@ -1,11 +1,12 @@
 
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
 div.admonition {
-    border-top: solid 1px;
-    border-top-color: var(--color-primary);
-    border-bottom: solid 1px;
-    border-bottom-color: var(--color-primary);
-    padding: 1rem;
+    border-left: solid 2px;
+    border-left-color: var(--color-primary);
+    //border-bottom: solid 1px;
+    //border-bottom-color: var(--color-primary);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     padding-top: 0;
     padding-bottom: 0;
     break-inside: avoid;

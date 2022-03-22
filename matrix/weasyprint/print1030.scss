@@ -3,6 +3,11 @@
 // https://www.w3.org/TR/css-page-3/#progression
 html { break-before: left }
 
+span.wpmr-pdf-page-break {
+  display: block;
+  page-break-after: always;
+}
+
 @page {
   size: A4;
   margin: 2cm;

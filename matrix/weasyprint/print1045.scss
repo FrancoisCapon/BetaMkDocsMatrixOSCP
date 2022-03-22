@@ -46,6 +46,14 @@ pre + figcaption::before {
     content: "Listing - ";
 }
 
+div.highlight + figcaption {
+    margin-top: -0.5rem;
+}
+
+div.highlight + figcaption::before {
+    content: "Listing - ";
+}
+
 code {
     font-family: Monospace;
     background-color: var(--color-background-code);

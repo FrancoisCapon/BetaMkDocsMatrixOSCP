@@ -151,6 +151,7 @@ nav:
         - 'License': 'license.md'
         - 'Release Notes': 'release-notes.md'
 ```
+<figcaption><code>nav</code> example</figcaption>
 
 With the above configuration we have three top level items: "Home", "User Guide"
 and "About." "Home" is a link to the homepage for the site. Under the "User

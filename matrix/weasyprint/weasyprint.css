@@ -50,6 +50,11 @@ html {
   break-before: left;
 }
 
+span.wpmr-pdf-page-break {
+  display: block;
+  page-break-after: always;
+}
+
 @page {
   size: A4;
   margin: 2cm;
@@ -293,6 +298,14 @@ pre + figcaption::before {
   content: "Listing - ";
 }
 
+div.highlight + figcaption {
+  margin-top: -0.5rem;
+}
+
+div.highlight + figcaption::before {
+  content: "Listing - ";
+}
+
 code {
   font-family: Monospace;
   background-color: var(--color-background-code);
@@ -357,11 +370,10 @@ table tr:nth-child(even) td {
 
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
 div.admonition {
-  border-top: solid 1px;
-  border-top-color: var(--color-primary);
-  border-bottom: solid 1px;
-  border-bottom-color: var(--color-primary);
-  padding: 1rem;
+  border-left: solid 2px;
+  border-left-color: var(--color-primary);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   padding-top: 0;
   padding-bottom: 0;
   break-inside: avoid;

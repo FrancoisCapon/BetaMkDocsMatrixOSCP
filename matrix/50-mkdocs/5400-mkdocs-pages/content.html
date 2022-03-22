@@ -427,6 +427,7 @@ section title. For example:</p>
 <span></span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'License'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'license.md'</span><span class="w"></span>
 <span></span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Release</span><span class="nv"> </span><span class="s">Notes'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'release-notes.md'</span><span class="w"></span>
 </code></pre></div>
+<figcaption><code>nav</code> example</figcaption>
 <p>With the above configuration we have three top level items: "Home", "User Guide"
 and "About." "Home" is a link to the homepage for the site. Under the "User
 Guide" section two pages are listed: "Writing your docs" and "Styling your
@@ -1711,7 +1712,7 @@ options must be defined as key/value pairs. Specifically, the
 <span>markdown_extensions</span> and <span>plugins</span> options must use the alternative syntax
 which does not use list items (lines which start with  <code>-</code>).</p>
 <p>For example, suppose the common (parent) configuration is defined in <code>base.yml</code>:</p>
-<div class="highlight"><pre><span></span><code><span></span><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span></span><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
 <span></span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
 <span></span><span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="w"></span>
 <span></span><span class="w">    </span><span class="nt">highlightjs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
@@ -1721,7 +1722,8 @@ which does not use list items (lines which start with  <code>-</code>).</p>
 <span></span><span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span></span><span class="w">    </span><span class="nt">admonition</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
 </code></pre></div>
-<p>Then, for the "foo" site, the primary configuration file would be defined at
+<span class="wpmr-pdf-page-break"></span>
+Then, for the "foo" site, the primary configuration file would be defined at
 <code>foo/mkdocs.yml</code>:</p>
 <div class="highlight"><pre><span></span><code><span></span>INHERIT: ../base.yml
 <span></span>site_name: Foo Project
@@ -3873,7 +3875,7 @@ configuration looked like this:</p>
 <span></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
 <span></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">User Guide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user-guide.md</span><span class="w"></span>
 </code></pre></div>
-<figcaption>`pages` become <code>nav</code></figcaption>
+<figcaption><code>pages</code> become <code>nav</code></figcaption>
 <p>In the current release, any configuration which includes a <code>pages</code> setting, but
 no <code>nav</code> setting, the <code>pages</code> configuration will be copied to <code>nav</code> and a
 warning will be issued. However, in a future release, that may no longer happen.
