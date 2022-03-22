@@ -491,6 +491,7 @@ As you can see below, the new URLs are much more sensible.
 | `index.md`      | `index.html`         | `index.html`   |
 | `foo.md`        | `foo/index.html`     | `foo.html`     |
 | `foo/bar.md`    | `foo/bar/index.html` | `foo/bar.html` |
+<figcaption>Old and New ULR</figcaption>
 
 Note that there has been no change to URLs or file paths when
 `use_directory_urls` is set to `True` (the default), except that MkDocs more
@@ -518,6 +519,7 @@ nav:
     - Home: index.md
     - User Guide: user-guide.md
 ```
+<figcaption><code>pages</code> become <code>nav</code></figcaption>
 
 In the current release, any configuration which includes a `pages` setting, but
 no `nav` setting, the `pages` configuration will be copied to `nav` and a

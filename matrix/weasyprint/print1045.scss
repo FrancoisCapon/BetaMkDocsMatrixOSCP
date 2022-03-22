@@ -22,10 +22,28 @@ figure {
 
 figcaption {
     font-size: 80%;
+    width: 100%;
+    text-align: center;
 }
 
 img + figcaption::before {
     content: "Screenshot - ";
+}
+
+table + figcaption {
+    margin-top: 0.5rem;
+}
+
+table + figcaption::before {
+    content: "Table - ";
+}
+
+pre + figcaption {
+    margin-top: -0.5rem;
+}
+
+pre + figcaption::before {
+    content: "Listing - ";
 }
 
 code {
@@ -82,9 +100,10 @@ table {
         padding: 0.5rem;
         border: 1px solid;
     }
+
     th {
         background-color: var(--color-primary-light);
-        //background-color: var(--color-primary);
+
     }
     tr:nth-child(even) td {
         background-color: whitesmoke;
