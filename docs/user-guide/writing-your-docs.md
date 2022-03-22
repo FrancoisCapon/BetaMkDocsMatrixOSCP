@@ -141,7 +141,7 @@ within the page itself.
 Navigation sub-sections can be created by listing related pages together under a
 section title. For example:
 
-```no-highlight
+```yaml
 nav:
     - Home: 'index.md'
     - 'User Guide':

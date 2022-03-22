@@ -519,7 +519,7 @@ nav:
     - Home: index.md
     - User Guide: user-guide.md
 ```
-<figcaption><code>pages</code> become <code>nav</code></figcaption>
+<figcaption>`pages` become <code>nav</code></figcaption>
 
 In the current release, any configuration which includes a `pages` setting, but
 no `nav` setting, the `pages` configuration will be copied to `nav` and a
