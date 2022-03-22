@@ -1,0 +1,23 @@
+
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
+//<div class="admonition note">
+//<p class="admonition-title">Note</p>
+
+div.admonition {
+    border-top: solid 1px;
+    border-top-color: var(--color-primary);
+    border-bottom: solid 1px;
+    border-bottom-color: var(--color-primary);
+    padding: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    break-inside: avoid;
+    // background-color: var(--color-background-code);
+    p.admonition-title {
+        margin-top: 0.5rem;
+        font-family: SansSerifBold;
+    }
+/*     pre {
+        width: calc(100%);
+    } */
+}

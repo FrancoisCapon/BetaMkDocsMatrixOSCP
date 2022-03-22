@@ -1,0 +1,338 @@
+@charset "UTF-8";
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */
+:root {
+  --color-text-default: #333;
+  --color-primary: #54b4eb;
+  --color-background-code: #e9ecef;
+}
+
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/print.scss */
+@font-face {
+  font-family: SansSerif;
+  font-weight: 400;
+  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-regular.otf");
+}
+@font-face {
+  font-family: SansSerifItalic;
+  font-style: italic;
+  font-weight: 400;
+  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-italic.otf");
+}
+@font-face {
+  font-family: SansSerifLight;
+  font-weight: 300;
+  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-light.otf");
+}
+@font-face {
+  font-family: SansSerifLightItalic;
+  font-style: italic;
+  font-weight: 300;
+  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-lightitalic.otf");
+}
+@font-face {
+  font-family: SansSerifBold;
+  font-weight: 600;
+  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-bold.otf");
+}
+@font-face {
+  font-family: Monospace;
+  font-weight: 400;
+  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firamono-regular.ttf");
+}
+@font-face {
+  font-family: MonospaceBold;
+  font-weight: 500;
+  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firamono-medium.ttf");
+}
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1030-pages/print.scss */
+html {
+  break-before: left;
+}
+
+@page {
+  size: A4;
+  margin: 2cm;
+  margin-top: 2.5cm;
+  @top-left {
+    content: string(chapter-title);
+    font-size: 9pt;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: 0.25cm;
+  }
+  @top-center {
+    content: "";
+    display: block;
+    border-bottom: 2px solid;
+    border-bottom-color: var(--color-primary);
+    width: 100%;
+    margin-bottom: 0.5cm;
+  }
+  @top-right {
+    content: string(section-title);
+    font-size: 9pt;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: 0.25cm;
+  }
+  @bottom-center {
+    background-color: var(--color-primary);
+    color: white;
+    content: counter(page);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+    margin-top: 0.25cm;
+  }
+}
+@page chapter {
+  @top-right {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
+@page :blank {
+  @top-right {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1040-structure-heading/print.scss */
+html {
+  color: var(--color-text-default);
+  font-family: SansSerif;
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wpmr-pdf-strucuture-chapter, .wpmr-pdf-page-chapter {
+  margin: 0;
+  padding: 0;
+}
+
+.wpmr-pdf-page-chapter {
+  break-before: left;
+  break-after: always;
+  page: chapter;
+}
+
+.wpmr-pdf-page-chapter h1 {
+  position: relative;
+  top: -100cm;
+  string-set: chapter-title content();
+}
+
+.wpmr-pdf-page-chapter-title {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.wpmr-pdf-page-chapter-title span {
+  display: block;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 34pt;
+  text-align: center;
+  margin: 0;
+  padding: 10pt;
+  width: 100%;
+  content: chapter-title;
+  font-family: SansSerifBold;
+}
+
+.wpmr-pdf-page-section h1 {
+  break-before: always;
+  color: var(--color-primary);
+  font-size: 30pt;
+  margin: 0;
+  page: section;
+  width: 100%;
+  string-set: section-title content();
+}
+
+h1 {
+  font-family: SansSerifBold;
+  font-weight: 600;
+}
+
+h2, h3, h4 {
+  color: black;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 20pt;
+}
+
+h3 {
+  font-family: SansSerif;
+  font-size: 15pt;
+}
+
+h4, h5, h6 {
+  font-family: SansSerifBold;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+h4 {
+  font-size: 13pt;
+}
+
+h5 {
+  font-size: 12pt;
+}
+
+h6 {
+  font-size: 11pt;
+}
+
+h4 + * {
+  margin-top: 0.5rem;
+}
+
+h5 + * {
+  margin-top: 0.5rem;
+}
+
+h6 + * {
+  margin-top: 0.5rem;
+}
+
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1045-content/print.scss */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+strong {
+  font-family: SansSerifBold;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+}
+
+figcaption {
+  font-size: 80%;
+}
+
+code {
+  font-family: Monospace;
+  background-color: var(--color-background-code);
+  font-size: 90%;
+  display: inline-block;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+  border-radius: 0.2rem;
+}
+
+strong code {
+  font-family: MonospaceBold;
+}
+
+pre {
+  background-color: var(--color-background-code);
+  box-sizing: border-box;
+  padding: 1rem;
+  line-height: 1rem;
+  border-radius: 0.35rem;
+  width: 100%;
+  overflow: hidden;
+}
+pre code {
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 1.25rem;
+  list-style-type: "●  ";
+}
+ul li::marker {
+  color: var(--color-primary);
+  font-size: 0.65rem;
+  line-height: 1.5rem;
+  font-family: Monospace;
+}
+
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
+div.admonition {
+  border-top: solid 1px;
+  border-top-color: var(--color-primary);
+  border-bottom: solid 1px;
+  border-bottom-color: var(--color-primary);
+  padding: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  break-inside: avoid;
+  /*     pre {
+          width: calc(100%);
+      } */
+}
+div.admonition p.admonition-title {
+  margin-top: 0.5rem;
+  font-family: SansSerifBold;
+}
+
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1030-pages/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1040-structure-heading/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1045-content/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
