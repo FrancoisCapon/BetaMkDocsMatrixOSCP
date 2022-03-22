@@ -65,7 +65,7 @@ span.wpmr-pdf-page-break {
     height: 1cm;
     vertical-align: middle;
     width: 100%;
-    margin-bottom: 0.25cm;
+    margin-bottom: 0.35cm;
   }
   @top-center {
     content: "";
@@ -81,7 +81,7 @@ span.wpmr-pdf-page-break {
     height: 1cm;
     vertical-align: middle;
     width: 100%;
-    margin-bottom: 0.25cm;
+    margin-bottom: 0.35cm;
   }
   @bottom-center {
     background-color: var(--color-primary);
@@ -394,6 +394,45 @@ div.admonition + div.admonition {
   margin-top: 0.5rem;
 }
 
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-pdf-bookmarks/print.scss */
+h1, h2, h3, h4, h5, h6 {
+  bookmark-level: none;
+}
+
+body {
+  counter-reset: counterchapter;
+}
+
+body .wpmr-pdf-structure-section:first-child {
+  counter-increment: counterchapter;
+  bookmark-label: counter(counterchapter) ". Introduction";
+  bookmark-level: 1;
+}
+
+body > .wpmr-pdf-structure-section h1 {
+  counter-increment: countersection;
+  bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
+  bookmark-level: 2;
+}
+
+.wpmr-pdf-structure-chapter h1 {
+  counter-increment: counterchapter;
+  bookmark-label: counter(counterchapter) ". " content(text);
+  bookmark-level: 1;
+  counter-reset: countersection;
+}
+.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h1 {
+  counter-increment: countersection;
+  bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
+  bookmark-level: 2;
+  counter-reset: countersubsection;
+}
+.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h2 {
+  counter-increment: countersubsection;
+  bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
+  bookmark-level: 3;
+}
+
 /* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
 :root {
   --md-default-fg-color: hsla(0, 0%, 0%, 0.87);
@@ -620,5 +659,6 @@ div.admonition + div.admonition {
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1040-structure-heading/print.scss */
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1045-content/print.scss */
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-pdf-bookmarks/print.scss */
 /* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
 /* /project/mkdocs-docs/matrix/15-pymdownx/1310-highlight/print.scss */

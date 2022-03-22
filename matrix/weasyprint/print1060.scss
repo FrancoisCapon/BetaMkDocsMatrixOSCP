@@ -1,0 +1,59 @@
+
+/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-pdf-bookmarks/print.scss */
+// Attention visualiseur Mint génère tout seul !
+h1, h2, h3, h4, h5, h6 {
+    bookmark-level: none;
+}
+
+body {
+    // https://stackoverflow.com/questions/52022919/css-counter-not-incrementing
+    counter-reset: counterchapter;
+}
+
+// sections without chapter at the beginning
+body .wpmr-pdf-structure-section:first-child { 
+    counter-increment: counterchapter;
+    bookmark-label: counter(counterchapter) ". Introduction";
+    bookmark-level: 1;
+    // h1 {
+    //     counter-increment: countersection;
+    //     bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
+    //     bookmark-level: 2;
+    // }
+}
+
+body > .wpmr-pdf-structure-section { // sections without chapter at the beginning
+    h1 {
+        counter-increment: countersection;
+        bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
+        bookmark-level: 2;
+    }
+}
+
+.wpmr-pdf-structure-chapter {
+    h1 {
+        counter-increment: counterchapter;
+        bookmark-label: counter(counterchapter) ". " content(text);
+        bookmark-level: 1;
+        counter-reset: countersection; 
+    }
+    .wpmr-pdf-page-section  {
+        h1 {
+            counter-increment: countersection;
+            bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
+            bookmark-level: 2;
+            counter-reset: countersubsection;
+        }
+        h2 {
+            counter-increment: countersubsection;
+            bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
+            bookmark-level: 3;
+        }
+    }
+}
+
+// img + figcaption {
+//     counter-increment: counterfigure;
+//     bookmark-label: 'Figure ' counter(counterfigure) ' - ' content(text);
+//     bookmark-level: 3; 
+//   }
