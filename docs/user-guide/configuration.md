@@ -386,11 +386,11 @@ documentation.
 The following table demonstrates how the URLs used on the site differ when
 setting `use_directory_urls` to `true` or `false`.
 
-Source file      | use_directory_urls: true  | use_directory_urls: false
----------------- | ------------------------- | -------------------------
-index.md         | /                         | /index.html
-api-guide.md     | /api-guide/               | /api-guide.html
-about/license.md | /about/license/           | /about/license.html
+Source file      | use_directory_urls: true  | use_directory_urls: false | more column
+---------------- | :------------------------: | -------------------------   | ---:
+index.md         | /                         | /index.html | /index.html 
+api-guide.md     | /api-guide/               | /api-guide.html | /api-guide.html
+about/license.md | /about/license/           | /about/license.html | /about/license.html
 
 The default style of `use_directory_urls: true` creates more user friendly URLs,
 and is usually what you'll want to use.

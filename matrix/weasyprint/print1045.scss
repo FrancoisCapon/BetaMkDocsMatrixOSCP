@@ -24,6 +24,10 @@ figcaption {
     font-size: 80%;
 }
 
+img + figcaption::before {
+    content: "Screenshot - ";
+}
+
 code {
     font-family: Monospace;
     background-color: var(--color-background-code);
@@ -64,5 +68,25 @@ ul {
         font-size: 0.65rem;
         line-height: 1.5rem;
         font-family: Monospace;
+    }
+}
+
+table {
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 100%;
+    border-collapse: collapse;
+    border: 1px solid;
+    border-color: var(--color-text-default);
+    th, td {
+        padding: 0.5rem;
+        border: 1px solid;
+    }
+    th {
+        background-color: var(--color-primary-light);
+        //background-color: var(--color-primary);
+    }
+    tr:nth-child(even) td {
+        background-color: whitesmoke;
     }
 }

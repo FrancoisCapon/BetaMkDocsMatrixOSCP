@@ -2,7 +2,8 @@
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */
 :root {
   --color-text-default: #333;
-  --color-primary: #54b4eb;
+  --color-primary: hsl(202, 79%, 63%);
+  --color-primary-light: hsl(202, 79%, 80%);
   --color-background-code: #e9ecef;
 }
 
@@ -88,6 +89,7 @@ html {
   }
 }
 @page chapter {
+  background-color: var(--color-primary-light);
   @top-right {
     content: none;
   }
@@ -164,8 +166,8 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
-  left: 0;
+  right: -2cm;
+  left: -2cm;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,6 +271,10 @@ figcaption {
   font-size: 80%;
 }
 
+img + figcaption::before {
+  content: "Screenshot - ";
+}
+
 code {
   font-family: Monospace;
   background-color: var(--color-background-code);
@@ -310,6 +316,25 @@ ul li::marker {
   font-size: 0.65rem;
   line-height: 1.5rem;
   font-family: Monospace;
+}
+
+table {
+  margin: auto;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-collapse: collapse;
+  border: 1px solid;
+  border-color: var(--color-text-default);
+}
+table th, table td {
+  padding: 0.5rem;
+  border: 1px solid;
+}
+table th {
+  background-color: var(--color-primary-light);
+}
+table tr:nth-child(even) td {
+  background-color: whitesmoke;
 }
 
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */

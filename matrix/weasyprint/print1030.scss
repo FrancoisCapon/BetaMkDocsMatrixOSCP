@@ -44,6 +44,7 @@ html { break-before: left }
 }
 
 @page chapter {
+  background-color: var(--color-primary-light);
   @top-right {
     content: none;
   }

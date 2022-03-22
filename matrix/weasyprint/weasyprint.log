@@ -1,4 +1,4 @@
-[WARNING] Ignored `content: chapter-title` at 184:3, invalid value.
+[WARNING] Ignored `content: chapter-title` at 186:3, invalid value.
 [WARNING] Anchor defined twice: 'mkdocs'
 [WARNING] Anchor defined twice: 'installation'
 [WARNING] Anchor defined twice: 'nav'
