@@ -272,6 +272,9 @@ figure {
 }
 figure img {
   max-width: 100%;
+  border-radius: 0.35rem;
+  border: solid 1px;
+  border-color: var(--color-background-code);
 }
 
 figcaption {
@@ -356,8 +359,8 @@ table {
   box-sizing: border-box;
   max-width: 100%;
   border-collapse: collapse;
-  border: 1px solid;
-  border-color: var(--color-text-default);
+  border: 2px solid;
+  border-color: black;
 }
 table th, table td {
   padding: 0.5rem;
@@ -368,6 +371,12 @@ table th {
 }
 table tr:nth-child(even) td {
   background-color: whitesmoke;
+}
+
+hr {
+  border: none;
+  border-bottom: solid 2px;
+  border-bottom-color: var(--color-background-code);
 }
 
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */

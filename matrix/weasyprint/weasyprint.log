@@ -1,42 +1,141 @@
 [WARNING] Ignored `content: chapter-title` at 193:3, invalid value.
-[WARNING] Ignored `margin: 0 px2em(-2px)` at 562:3, invalid value.
-[WARNING] Ignored `padding: 0 px2em(2px)` at 563:3, invalid value.
-[WARNING] Ignored `border-radius: px2rem(2px)` at 564:3, invalid value.
-[WARNING] Ignored `margin: 0 px2em(-16px, 13.6px)` at 574:3, invalid value.
-[WARNING] Ignored `padding: 0 px2em(16px, 13.6px)` at 575:3, invalid value.
-[WARNING] Ignored `padding: px2em(9px, 13.6px) px2em(16px, 13.6px)` at 582:3, invalid value.
-[WARNING] Ignored `font-size: px2em(13.6px)` at 584:3, invalid value.
-[WARNING] Ignored `border-bottom: px2rem(1px) solid var(--md-default-fg-color--lightest)` at 586:3, invalid value.
-[WARNING] Ignored `border-top-left-radius: px2rem(2px)` at 587:3, invalid value.
-[WARNING] Ignored `border-top-right-radius: px2rem(2px)` at 588:3, invalid value.
-[WARNING] Ignored `position: sticky` at 598:3, invalid value.
-[WARNING] Ignored `left: px2em(-16px, 13.6px)` at 599:3, invalid value.
-[WARNING] Ignored `margin-right: px2em(16px, 13.6px)` at 602:3, invalid value.
-[WARNING] Ignored `margin-left: px2em(-16px, 13.6px)` at 603:3, invalid value.
-[WARNING] Ignored `padding-left: px2em(16px, 13.6px)` at 604:3, invalid value.
-[WARNING] Ignored `box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset` at 607:3, unknown property.
-[WARNING] Ignored `user-select: none` at 609:3, unknown property.
-[WARNING] Ignored `display: contents` at 616:3, invalid value.
-[WARNING] Ignored `padding: px2em(10.5px, 13.6px) px2em(16px, 13.6px)` at 641:3, invalid value.
-[WARNING] Ignored `font-size: px2em(13.6px)` at 643:3, invalid value.
-[WARNING] Ignored `border-top-left-radius: px2rem(2px)` at 645:3, invalid value.
-[WARNING] Ignored `border-bottom-left-radius: px2rem(2px)` at 646:3, invalid value.
-[WARNING] Ignored `user-select: none` at 647:3, unknown property.
-[WARNING] Ignored `padding-right: px2em(8px, 13.6px)` at 650:3, invalid value.
-[WARNING] Ignored `box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset` at 651:3, unknown property.
-[WARNING] Ignored `margin-top: calc(-1em + px2em(-2px))` at 675:3, invalid value.
-[WARNING] Ignored `padding: 0 px2em(16px)` at 676:3, invalid value.
-[WARNING] Ignored `border: px2rem(1px) solid var(--md-code-bg-color)` at 678:3, invalid value.
-[WARNING] Ignored `border-top-width: px2rem(2px)` at 679:3, invalid value.
-[WARNING] Ignored `border-bottom-right-radius: px2rem(2px)` at 680:3, invalid value.
-[WARNING] Ignored `border-bottom-left-radius: px2rem(2px)` at 681:3, invalid value.
-[WARNING] Anchor defined twice: 'mkdocs'
-[WARNING] Anchor defined twice: 'installation'
-[WARNING] Anchor defined twice: 'nav'
-[WARNING] Anchor defined twice: 'locale'
-[WARNING] Anchor defined twice: 'static_templates'
-[WARNING] Anchor defined twice: 'config'
-[WARNING] Anchor defined twice: 'global-context'
-[WARNING] Anchor defined twice: 'search'
+[WARNING] Ignored `margin: 0 px2em(-2px)` at 571:3, invalid value.
+[WARNING] Ignored `padding: 0 px2em(2px)` at 572:3, invalid value.
+[WARNING] Ignored `border-radius: px2rem(2px)` at 573:3, invalid value.
+[WARNING] Ignored `margin: 0 px2em(-16px, 13.6px)` at 583:3, invalid value.
+[WARNING] Ignored `padding: 0 px2em(16px, 13.6px)` at 584:3, invalid value.
+[WARNING] Ignored `padding: px2em(9px, 13.6px) px2em(16px, 13.6px)` at 591:3, invalid value.
+[WARNING] Ignored `font-size: px2em(13.6px)` at 593:3, invalid value.
+[WARNING] Ignored `border-bottom: px2rem(1px) solid var(--md-default-fg-color--lightest)` at 595:3, invalid value.
+[WARNING] Ignored `border-top-left-radius: px2rem(2px)` at 596:3, invalid value.
+[WARNING] Ignored `border-top-right-radius: px2rem(2px)` at 597:3, invalid value.
+[WARNING] Ignored `position: sticky` at 607:3, invalid value.
+[WARNING] Ignored `left: px2em(-16px, 13.6px)` at 608:3, invalid value.
+[WARNING] Ignored `margin-right: px2em(16px, 13.6px)` at 611:3, invalid value.
+[WARNING] Ignored `margin-left: px2em(-16px, 13.6px)` at 612:3, invalid value.
+[WARNING] Ignored `padding-left: px2em(16px, 13.6px)` at 613:3, invalid value.
+[WARNING] Ignored `box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset` at 616:3, unknown property.
+[WARNING] Ignored `user-select: none` at 618:3, unknown property.
+[WARNING] Ignored `display: contents` at 625:3, invalid value.
+[WARNING] Ignored `padding: px2em(10.5px, 13.6px) px2em(16px, 13.6px)` at 650:3, invalid value.
+[WARNING] Ignored `font-size: px2em(13.6px)` at 652:3, invalid value.
+[WARNING] Ignored `border-top-left-radius: px2rem(2px)` at 654:3, invalid value.
+[WARNING] Ignored `border-bottom-left-radius: px2rem(2px)` at 655:3, invalid value.
+[WARNING] Ignored `user-select: none` at 656:3, unknown property.
+[WARNING] Ignored `padding-right: px2em(8px, 13.6px)` at 659:3, invalid value.
+[WARNING] Ignored `box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset` at 660:3, unknown property.
+[WARNING] Ignored `margin-top: calc(-1em + px2em(-2px))` at 684:3, invalid value.
+[WARNING] Ignored `padding: 0 px2em(16px)` at 685:3, invalid value.
+[WARNING] Ignored `border: px2rem(1px) solid var(--md-code-bg-color)` at 687:3, invalid value.
+[WARNING] Ignored `border-top-width: px2rem(2px)` at 688:3, invalid value.
+[WARNING] Ignored `border-bottom-right-radius: px2rem(2px)` at 689:3, invalid value.
+[WARNING] Ignored `border-bottom-left-radius: px2rem(2px)` at 690:3, invalid value.
+[ERROR] No anchor #/project/mkdocs-docs/docs/getting-started for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/choosing-your-theme for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/choosing-your-theme/@mkdocs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/choosing-your-theme/@readthedocs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/customizing-your-theme for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/configuration/@plugins for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/configuration/@markdown_extensions for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/configuration for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/deploying-your-docs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/img/favicon.ico for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@installing-mkdocs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@writing-with-markdown for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@writing-with-markdown for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@index-pages for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@linking-to-images-and-media for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@linking-to-images-and-media for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@mkdocs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@readthedocs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@third-party-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@using-the-docs_dir for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@using-the-theme-custom_dir for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/deploying-your-docs.html@readthedocs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@docs_dir for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@docs_dir for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/customizing-your-theme.html@using-the-theme_dir for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@docs_dir for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@extra_css for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@extra_css for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@site_url for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@configuration-inheritance for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@plugins for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@configuration-inheritance for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@markdown_extensions for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@plugins for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@nav for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/@github-pages for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@theme-configuration for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@packaging-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@static_templates for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@locale for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/configuration.html@google_analytics for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@navigation-objects for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@navigation-objects for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@pages for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@url for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@nav for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@navigation-objects for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@nav for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@pages for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@url for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@base_url for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@base_url for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@base_url for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@nav for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@nav for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@section for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@link for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@base_url for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@theme-configuration for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@theme-configuration for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@supporting-theme-localizationtranslation for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@locale for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@locale for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@packaging-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@initializing-the-localization-catalogs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/user-guide/custom-themes/@localizing-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@translating-the-mkdocs-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@testing-theme-translations for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@updating-theme-documentation for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@contributing-translations for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@translating-the-mkdocs-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@updating-the-translation-catalogs for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@translating-the-mkdocs-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@testing-theme-translations for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@contributing-translations for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@translating-the-mkdocs-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@testing-theme-translations for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@testing-theme-translations for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@using-plugins for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@installing-plugins for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@baseplugin for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@entry-point for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@events for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@global-events for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page-events for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@template-events for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page-events for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@handling-errors for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@on_env for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page-events for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@page-events for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@on_post_template for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@on_post_build for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@config_scheme for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@on_build_error for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/@baseplugin for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/themes.html@search_and_themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/about/user-guide/configuration.md for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/about/@add-support-for-installable-themes for internal URI reference
+[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@multilevel-documentation for internal URI reference
 [WARNING] fsSelection bits 7, 8 and 9 are only defined in OS/2 table version 4 and up: version 3
 [WARNING] fsSelection bits 7, 8 and 9 are only defined in OS/2 table version 4 and up: version 3

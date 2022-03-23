@@ -17,6 +17,9 @@ figure {
     break-inside: avoid;
     img {
         max-width: 100%;
+        border-radius: 0.35rem;
+        border: solid 1px;
+        border-color: var(--color-background-code);
     }
 }
 
@@ -76,6 +79,8 @@ pre {
     padding: 1rem;
     line-height: 1rem;
     border-radius: 0.35rem;
+    // border: solid 1px;
+    // border-color: var(--color-text-default);
     width: 100%;
     overflow: hidden;
     code {
@@ -102,8 +107,9 @@ table {
     box-sizing: border-box;
     max-width: 100%;
     border-collapse: collapse;
-    border: 1px solid;
-    border-color: var(--color-text-default);
+    border: 2px solid;
+    //border-color: var(--color-text-default);
+    border-color: black;
     th, td {
         padding: 0.5rem;
         border: 1px solid;
@@ -116,4 +122,10 @@ table {
     tr:nth-child(even) td {
         background-color: whitesmoke;
     }
+}
+
+hr {
+    border: none;
+    border-bottom: solid 2px;
+    border-bottom-color: var(--color-background-code);
 }
