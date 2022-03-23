@@ -23,8 +23,8 @@ source files are written in Markdown, and configured with a single YAML
 configuration file. Start by reading the <a href="#/project/mkdocs-docs/docs/getting-started.html">introductory tutorial</a>, then check the
 <a href="#/project/mkdocs-docs/docs/user-guide/index.html">User Guide</a> for more information.</p>
 <div class="text-center">
-<a class="btn btn-primary" href="#/project/mkdocs-docs/docs/getting-started" role="button">Getting Started</a>
-<a class="btn btn-primary" href="#/project/mkdocs-docs/docs/user-guide" role="button">User Guide</a>
+<a class="btn btn-primary wpmr-error" href="getting-started/" role="button">Getting Started</a>
+<a class="btn btn-primary wpmr-error" href="user-guide/" role="button">User Guide</a>
 </div>
 <div class="jumbotron">
 <h2 class="display-4 text-center">Features</h2>
@@ -34,10 +34,10 @@ configuration file. Start by reading the <a href="#/project/mkdocs-docs/docs/get
 <div class="card-body">
 <h3 class="card-title">Great themes available</h3>
 <p class="card-text">
-            There's a stack of good looking <a href="#/project/mkdocs-docs/docs/user-guide/choosing-your-theme">themes</a> available for
-            MkDocs. Choose between the built in themes: <a href="#/project/mkdocs-docs/docs/user-guide/choosing-your-theme/@mkdocs">mkdocs</a> and <a href="#/project/mkdocs-docs/docs/user-guide/choosing-your-theme/@readthedocs">readthedocs</a>,
+            There's a stack of good looking <a class="wpmr-error" href="user-guide/choosing-your-theme/">themes</a> available for
+            MkDocs. Choose between the built in themes: <a class="wpmr-error" href="/user-guide/choosing-your-theme.md#mkdocs">mkdocs</a> and <a class="wpmr-error" href="/user-guide/choosing-your-theme.md#readthedocs">readthedocs</a>,
             select one of the third-party themes listed on the <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">MkDocs
-            Themes</a> wiki page, or <a href="#/project/mkdocs-docs/docs/dev-guide/themes">build your
+            Themes</a> wiki page, or <a class="wpmr-error" href="dev-guide/themes/">build your
             own</a>.
         </p>
 </div>
@@ -49,10 +49,10 @@ configuration file. Start by reading the <a href="#/project/mkdocs-docs/docs/get
 <h3 class="card-title">Easy to customize</h3>
 <p class="card-text">
             Get your project documentation looking just the way you want it by
-            <a href="#/project/mkdocs-docs/docs/user-guide/customizing-your-theme">customizing your
-            theme</a> and/or installing some <a href="#/project/mkdocs-docs/docs/user-guide/configuration/@plugins">plugins</a>. Modify
-            Markdown's behavior with <a href="#/project/mkdocs-docs/docs/user-guide/configuration/@markdown_extensions">Markdown
-            extensions</a>. Many <a href="#/project/mkdocs-docs/docs/user-guide/configuration">configuration options</a> are
+            <a class="wpmr-error" href="user-guide/customizing-your-theme/">customizing your
+            theme</a> and/or installing some <a class="wpmr-error" href="user-guide/configuration/#plugins">plugins</a>. Modify
+            Markdown's behavior with <a class="wpmr-error" href="user-guide/configuration/#markdown_extensions">Markdown
+            extensions</a>. Many <a class="wpmr-error" href="user-guide/configuration/">configuration options</a> are
             available.
         </p>
 </div>
@@ -78,7 +78,7 @@ configuration file. Start by reading the <a href="#/project/mkdocs-docs/docs/get
 <h3 class="card-title">Host anywhere</h3>
 <p class="card-text">
             MkDocs builds completely static HTML sites that you can host on
-            GitHub pages, Amazon S3, or <a href="#/project/mkdocs-docs/docs/user-guide/deploying-your-docs">anywhere</a> else you
+            GitHub pages, Amazon S3, or <a class="wpmr-error" href="user-guide/deploying-your-docs/">anywhere</a> else you
             choose.
         </p>
 </div>
@@ -198,7 +198,7 @@ changing the theme. Edit the <code>mkdocs.yml</code> file and add a <a href="#/p
 </figure>
 </p>
 <h2 id="/project/mkdocs-docs/docs/getting-started.html@changing-the-favicon-icon">Changing the Favicon Icon</h2>
-<p>By default, MkDocs uses the <a href="#/project/mkdocs-docs/docs/img/favicon.ico">MkDocs favicon</a> icon. To use a different icon, create
+<p>By default, MkDocs uses the <a class="wpmr-error" href="img/favicon.ico">MkDocs favicon</a> icon. To use a different icon, create
 an <code>img</code> subdirectory in the <code>docs</code> directory and copy your custom <code>favicon.ico</code>
 file to that directory. MkDocs will automatically detect and use that file as your
 favicon icon.</p>
@@ -268,7 +268,7 @@ Python <span class="m">3</span>.8.2
 $ pip --version
 pip <span class="m">20</span>.0.2 from /usr/local/lib/python3.8/site-packages/pip <span class="o">(</span>python <span class="m">3</span>.8<span class="o">)</span>
 </code></pre></div>
-<p>If you already have those packages installed, you may skip down to <a href="#/project/mkdocs-docs/docs/user-guide/@installing-mkdocs">Installing
+<p>If you already have those packages installed, you may skip down to <a href="#/project/mkdocs-docs/docs/user-guide/installation.html@installing-mkdocs">Installing
 MkDocs</a>.</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/installation.html@installing-python">Installing Python</h3>
 <p>Install <a href="https://www.python.org/">Python</a> using your package manager of choice, or by downloading an
@@ -333,7 +333,7 @@ clicking on it. Alternatively, you can download the <a href="https://github.com/
 <hr/>
 <h2 id="/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@file-layout">File layout</h2>
 <p>Your documentation source should be written as regular Markdown files (see
-<a href="#/project/mkdocs-docs/docs/user-guide/@writing-with-markdown">Writing with Markdown</a> below), and placed in the
+<a href="#/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@writing-with-markdown">Writing with Markdown</a> below), and placed in the
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@docs_dir">documentation directory</a>. By default, this directory
 will be named <code>docs</code> and will exist at the top level of your project, alongside
 the <code>mkdocs.yml</code> configuration file.</p>
@@ -342,7 +342,7 @@ the <code>mkdocs.yml</code> configuration file.</p>
 docs/
     index.md
 </code></pre></div>
-<p>By convention your project homepage should be named <code>index.md</code> (see <a href="#/project/mkdocs-docs/docs/user-guide/@index-pages">Index
+<p>By convention your project homepage should be named <code>index.md</code> (see <a href="#/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@index-pages">Index
 pages</a> below for details). Any of the following file
 extensions may be used for your Markdown source files: <code>markdown</code>, <code>mdown</code>,
 <code>mkdn</code>, <code>mkd</code>, <code>md</code>. All Markdown files included in your documentation
@@ -386,7 +386,7 @@ nested URLs, like so:</p>
 <p>Any files which are not identified as Markdown files (by their file extension)
 within the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@docs_dir">documentation directory</a> are copied by
 MkDocs to the built site unaltered. See
-<a href="#/project/mkdocs-docs/docs/user-guide/@linking-to-images-and-media">how to link to images and media</a> below for details.</p>
+<a href="#/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@linking-to-images-and-media">how to link to images and media</a> below for details.</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@index-pages">Index pages</h3>
 <p>When a directory is requested, by default, most web servers will return an index
 file (usually named <code>index.html</code>) contained within that directory if one exists.
@@ -731,8 +731,8 @@ def fn():
 nested inside list items, blockquotes, etc.</p></div><div class="wpmr-pdf-structure-section wpmr-pdf-page-section wpmr-md-page" id="/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html"><h1 id="/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html@choosing-your-theme">Choosing your Theme</h1>
 <p>Selecting and configuring a theme.</p>
 <hr/>
-<p>MkDocs includes two built-in themes (<a href="#/project/mkdocs-docs/docs/user-guide/@mkdocs">mkdocs</a> and
-<a href="#/project/mkdocs-docs/docs/user-guide/@readthedocs">readthedocs</a>), as documented below. However, many <a href="#/project/mkdocs-docs/docs/user-guide/@third-party-themes">third party
+<p>MkDocs includes two built-in themes (<a href="#/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html@mkdocs">mkdocs</a> and
+<a href="#/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html@readthedocs">readthedocs</a>), as documented below. However, many <a href="#/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html@third-party-themes">third party
 themes</a> are available to choose from as well.</p>
 <p>To choose a theme, set the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@theme">theme</a> configuration option in your <code>mkdocs.yml</code>
 config file.</p>
@@ -949,9 +949,9 @@ have created your own, please feel free to add it to the list.</p></div><div cla
 <hr/>
 <p>If you would like to make a few tweaks to an existing theme, there is no need
 to create your own theme from scratch. For minor tweaks which only require
-some CSS and/or JavaScript, you can <a href="#/project/mkdocs-docs/docs/user-guide/@using-the-docs_dir">use the docs_dir</a>.
+some CSS and/or JavaScript, you can <a href="#/project/mkdocs-docs/docs/user-guide/customizing-your-theme.html@using-the-docs_dir">use the docs_dir</a>.
 However, for more complex customizations, including overriding templates, you
-will need to <a href="#/project/mkdocs-docs/docs/user-guide/@using-the-theme-custom_dir">use the theme custom_dir</a> setting.</p>
+will need to <a href="#/project/mkdocs-docs/docs/user-guide/customizing-your-theme.html@using-the-theme-custom_dir">use the theme custom_dir</a> setting.</p>
 <h2 id="/project/mkdocs-docs/docs/user-guide/customizing-your-theme.html@using-the-docs_dir">Using the docs_dir</h2>
 <p>The <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@extra_css">extra_css</a> and <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@extra_javascript">extra_javascript</a> configuration options can be used to
 make tweaks and customizations to existing themes. To use these, you simply
@@ -1280,7 +1280,7 @@ for the site. A minimal navigation configuration could look like this:</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'about.md'</span><span class="w"></span>
 </code></pre></div>
 <p>All paths in the navigation configuration must be relative to the
-<a href="#/project/mkdocs-docs/docs/user-guide/@docs_dir"><code>docs_dir</code></a> configuration option. See the section on <a href="#/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@configure-pages-and-navigation">configuring
+<a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@docs_dir"><code>docs_dir</code></a> configuration option. See the section on <a href="#/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@configure-pages-and-navigation">configuring
 pages and navigation</a> for a more detailed breakdown, including how to create
 sub-sections.</p>
 <p>Navigation items may also include links to external sites. While titles are
@@ -1382,7 +1382,7 @@ documentation on how to ignore specific directories.</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@extra_css">extra_css</h3>
 <p>Set a list of CSS files in your <code>docs_dir</code> to be included by the theme. For
 example, the following example will include the extra.css file within the
-css subdirectory in your <a href="#/project/mkdocs-docs/docs/user-guide/@docs_dir">docs_dir</a>.</p>
+css subdirectory in your <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@docs_dir">docs_dir</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">extra_css</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">css/extra.css</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">css/second_extra.css</span><span class="w"></span>
@@ -1390,13 +1390,13 @@ css subdirectory in your <a href="#/project/mkdocs-docs/docs/user-guide/@docs_di
 <p><strong>default</strong>: <code>[]</code> (an empty list).</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@extra_javascript">extra_javascript</h3>
 <p>Set a list of JavaScript files in your <code>docs_dir</code> to be included by the theme.
-See the example in <a href="#/project/mkdocs-docs/docs/user-guide/@extra_css">extra_css</a> for usage.</p>
+See the example in <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@extra_css">extra_css</a> for usage.</p>
 <p><strong>default</strong>: <code>[]</code> (an empty list).</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@extra_templates">extra_templates</h3>
 <p>Set a list of templates in your <code>docs_dir</code> to be built by MkDocs. To see more
 about writing templates for MkDocs read the documentation about [custom themes]
 and specifically the section about the [available variables] to
-templates. See the example in <a href="#/project/mkdocs-docs/docs/user-guide/@extra_css">extra_css</a> for usage.</p>
+templates. See the example in <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@extra_css">extra_css</a> for usage.</p>
 <p><strong>default</strong>: <code>[]</code> (an empty list).</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@extra">extra</h3>
 <p>A set of key-value pairs, where the values can be any valid YAML construct, that
@@ -1476,7 +1476,7 @@ warning is raised. Set to <code>false</code> to print a warning and continue pro
 <p>Allows a custom default to be set without the need to pass it through the
 <code>--dev-addr</code> option every time the <code>mkdocs serve</code> command is called.</p>
 <p><strong>default</strong>: <code>'127.0.0.1:8000'</code></p>
-<p>See also: <a href="#/project/mkdocs-docs/docs/user-guide/@site_url">site_url</a>.</p>
+<p>See also: <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_url">site_url</a>.</p>
 <h2 id="/project/mkdocs-docs/docs/user-guide/configuration.html@formatting-options">Formatting options</h2>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@markdown_extensions">markdown_extensions</h3>
 <p>MkDocs uses the <a href="https://python-markdown.github.io/">Python Markdown</a> library to translate Markdown files
@@ -1527,7 +1527,7 @@ Therefore, the last example above could also be defined as follows:</p>
 <span class="w">    </span><span class="nt">sane_lists</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
 </code></pre></div>
 <p>This alternative syntax is required if you intend to override some options via
-<a href="#/project/mkdocs-docs/docs/user-guide/@configuration-inheritance">inheritance</a>.</p>
+<a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@configuration-inheritance">inheritance</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">See Also:</p>
 <p>The Python-Markdown documentation provides a <a href="https://python-markdown.github.io/extensions/">list of extensions</a>
@@ -1540,7 +1540,7 @@ and available configuration options.</p>
 <p><strong>default</strong>: <code>[]</code> (an empty list).</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@plugins">plugins</h3>
 <p>A list of plugins (with optional configuration settings) to use when building
-the site. See the <a href="#/project/mkdocs-docs/docs/user-guide/@plugins">Plugins</a> documentation for full details.</p>
+the site. See the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@plugins">Plugins</a> documentation for full details.</p>
 <p>If the <code>plugins</code> config setting is defined in the <code>mkdocs.yml</code> config file, then
 any defaults (such as <code>search</code>) are ignored and you need to explicitly re-enable
 the defaults if you would like to continue using them:</p>
@@ -1566,7 +1566,7 @@ the last example above could also be defined as follows:</p>
 <span class="w">        </span><span class="nt">option2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other value</span><span class="w"></span>
 </code></pre></div>
 <p>This alternative syntax is required if you intend to override some options via
-<a href="#/project/mkdocs-docs/docs/user-guide/@configuration-inheritance">inheritance</a>.</p>
+<a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@configuration-inheritance">inheritance</a>.</p>
 <p>To completely disable all plugins, including any defaults, set the <code>plugins</code>
 setting to an empty list:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
@@ -1725,7 +1725,7 @@ to the path of the parent file. The path must be relative to the location of the
 primary file.</p>
 <p>For configuration options to be merged with a parent configuration, those
 options must be defined as key/value pairs. Specifically, the
-<a href="#/project/mkdocs-docs/docs/user-guide/@markdown_extensions">markdown_extensions</a> and <a href="#/project/mkdocs-docs/docs/user-guide/@plugins">plugins</a> options must use the alternative syntax
+<a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@markdown_extensions">markdown_extensions</a> and <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@plugins">plugins</a> options must use the alternative syntax
 which does not use list items (lines which start with  <code>-</code>).</p>
 <p>For example, suppose the common (parent) configuration is defined in <code>base.yml</code>:</p>
 <p><div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
@@ -1799,7 +1799,7 @@ configuration, the <code>def_list</code> extension was added, the value of
 <p>You can replace or merge the value of any key. However, any non-key is always
 replaced. Therefore, you cannot append items to a list. You must redefine the
 entire list.</p>
-<p>As the <a href="#/project/mkdocs-docs/docs/user-guide/@nav">nav</a> configuration is made up of nested lists, this means that you
+<p>As the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@nav">nav</a> configuration is made up of nested lists, this means that you
 cannot merge navigation items. Of course, you can replace the entire <code>nav</code>
 configuration with a new one. However, it is generally expected that the entire
 navigation would be defined in the primary configuration file for a project.</p>
@@ -1967,7 +1967,7 @@ HTML files to some other documentation format.</p>
 <h2 id="/project/mkdocs-docs/docs/user-guide/deploying-your-docs.html@404-pages">404 Pages</h2>
 <p>When MkDocs builds the documentation it will include a 404.html file in the
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_dir">build directory</a>. This file will be automatically used when
-deploying to <a href="#/project/mkdocs-docs/docs/user-guide/@github-pages">GitHub</a> but only on a custom domain. Other web
+deploying to <a href="#/project/mkdocs-docs/docs/user-guide/deploying-your-docs.html@github-pages">GitHub</a> but only on a custom domain. Other web
 servers may be configured to use it but the feature won't always be available.
 See the documentation for your server of choice for more information.</p></div></div><div class="wpmr-pdf-structure-chapter wpmr-md-section"><div class="wpmr-pdf-page-chapter"><h1>Developer Guide</h1><div class="wpmr-pdf-page-chapter-title"><span>Developer Guide</span></div></div><div class="wpmr-pdf-structure-section wpmr-pdf-page-section wpmr-md-page" id="/project/mkdocs-docs/docs/dev-guide/index.html"><h1 id="/project/mkdocs-docs/docs/dev-guide/index.html@developer-guide">Developer Guide</h1>
 <p>Extending MkDocs</p>
@@ -2030,11 +2030,11 @@ small adjustments to an existing theme.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>A theme's <a href="#/project/mkdocs-docs/docs/dev-guide/@theme-configuration">configuration</a> defined in a <code>mkdocs_theme.yml</code> file is not loaded
+<p>A theme's <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@theme-configuration">configuration</a> defined in a <code>mkdocs_theme.yml</code> file is not loaded
 from <code>theme.custom_dir</code>. When an entire theme exists in <code>theme.custom_dir</code>
 and <code>theme.name</code> is set to <code>null</code>, then the entire theme configuration must
 be defined in the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@theme">theme</a> configuration option in the <code>mkdocs.yml</code> file.</p>
-<p>However, when a theme is <a href="#/project/mkdocs-docs/docs/dev-guide/@packaging-themes">packaged</a> up for distribution, and loaded using
+<p>However, when a theme is <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@packaging-themes">packaged</a> up for distribution, and loaded using
 the <code>theme.name</code> configuration option, then a <code>mkdocs_theme.yml</code> file
 is required for the theme.</p>
 </div>
@@ -2078,7 +2078,7 @@ will replace the theme file.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@template-files">Template Files</h3>
 <p>Any files with the <code>.html</code> extension are considered to be template files and are
 not copied from the theme directory or any subdirectories. Also, any files
-listed in <a href="#/project/mkdocs-docs/docs/dev-guide/@static_templates">static_templates</a> are treated as templates regardless of their file
+listed in <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@static_templates">static_templates</a> are treated as templates regardless of their file
 extension.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@theme-meta-files">Theme Meta Files</h3>
 <p>The various files required for packaging a theme are also ignored. Specifically,
@@ -2114,7 +2114,7 @@ used options include:</p>
 <li><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_author">config.site_author</a></li>
 <li><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_description">config.site_description</a></li>
 <li><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@locale">config.theme.locale</a> (See also
-  <a href="#/project/mkdocs-docs/docs/dev-guide/@locale">Theme Configuration</a> below)</li>
+  <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@locale">Theme Configuration</a> below)</li>
 <li><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@extra_javascript">config.extra_javascript</a></li>
 <li><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@extra_css">config.extra_css</a></li>
 <li><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@repo_url">config.repo_url</a></li>
@@ -2124,18 +2124,18 @@ used options include:</p>
 </ul>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/themes.html@nav">nav</h4>
 <p>The <code>nav</code> variable is used to create the navigation for the documentation. The
-<code>nav</code> object is an iterable of <a href="#/project/mkdocs-docs/docs/dev-guide/@navigation-objects">navigation objects</a> as
+<code>nav</code> object is an iterable of <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@navigation-objects">navigation objects</a> as
 defined by the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@nav">nav</a> configuration setting.</p>
-<p>In addition to the iterable of <a href="#/project/mkdocs-docs/docs/dev-guide/@navigation-objects">navigation objects</a>, the
+<p>In addition to the iterable of <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@navigation-objects">navigation objects</a>, the
 <code>nav</code> object contains the following attributes:</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@navhomepage">nav.homepage</h5>
-<p>The <a href="#/project/mkdocs-docs/docs/dev-guide/@page">page</a> object for the homepage of the site.</p>
+<p>The <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@page">page</a> object for the homepage of the site.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@navpages">nav.pages</h5>
-<p>A flat list of all <a href="#/project/mkdocs-docs/docs/dev-guide/@page">page</a> objects contained in the navigation. This list
+<p>A flat list of all <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@page">page</a> objects contained in the navigation. This list
 is not necessarily a complete list of all site pages as it does not contain
 pages which are not included in the navigation. This list does match the list
 and order of pages used for all "next page" and "previous page" links. For a
-list of all pages, use the <a href="#/project/mkdocs-docs/docs/dev-guide/@pages">pages</a> template variable.</p>
+list of all pages, use the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@pages">pages</a> template variable.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@nav-example">Nav Example</h5>
 <p>Following is a basic usage example which outputs the first and second level
 navigation as a nested list.</p>
@@ -2164,7 +2164,7 @@ navigation as a nested list.</p>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/themes.html@base_url">base_url</h4>
 <p>The <code>base_url</code> provides a relative path to the root of the MkDocs project. While
 this can be used directly by prepending it to a local relative URL, it is best
-to use the <a href="#/project/mkdocs-docs/docs/dev-guide/@url">url</a> template filter, which is smarter about how it applies
+to use the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@url">url</a> template filter, which is smarter about how it applies
 <code>base_url</code>.</p>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/themes.html@mkdocs_version">mkdocs_version</h4>
 <p>Contains the current MkDocs version.</p>
@@ -2174,15 +2174,15 @@ was built in UTC. This is useful for showing how recently the documentation
 was updated.</p>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pages">pages</h4>
 <p>A flat list of <code>File</code> objects for <em>all</em> pages in the project. This list can
-contain pages not included in the global <a href="#/project/mkdocs-docs/docs/dev-guide/@nav">navigation</a> and may not match
-the order of pages within that navigation. The <a href="#/project/mkdocs-docs/docs/dev-guide/@page">page</a> object for each
+contain pages not included in the global <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@nav">navigation</a> and may not match
+the order of pages within that navigation. The <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@page">page</a> object for each
 <code>File</code> can be accessed from <code>file.page</code>.</p>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/themes.html@page">page</h4>
 <p>In templates which are not rendered from a Markdown source file, the <code>page</code>
 variable is <code>None</code>. In templates which are rendered from a Markdown source file,
 the <code>page</code> variable contains a <code>page</code> object. The same <code>page</code> objects are used
-as <code>page</code> <a href="#/project/mkdocs-docs/docs/dev-guide/@navigation-objects">navigation objects</a> in the global
-<a href="#/project/mkdocs-docs/docs/dev-guide/@nav">navigation</a> and in the <a href="#/project/mkdocs-docs/docs/dev-guide/@pages">pages</a> template variable.</p>
+as <code>page</code> <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@navigation-objects">navigation objects</a> in the global
+<a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@nav">navigation</a> and in the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@pages">pages</a> template variable.</p>
 <p>All <code>page</code> objects contain the following attributes:</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pagetitle">page.title</h5>
 <p>Contains the Title for the current page.</p>
@@ -2229,14 +2229,14 @@ documentation page.</p>
 </code></pre></div>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pageurl">page.url</h5>
 <p>The URL of the page relative to the MkDocs <code>site_dir</code>. It is expected that this
-be used with the <a href="#/project/mkdocs-docs/docs/dev-guide/@url">url</a> filter to ensure the URL is relative to the current
+be used with the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@url">url</a> filter to ensure the URL is relative to the current
 page.</p>
 <div class="highlight"><pre><span></span><code><span class="x">&lt;a href="</span><span class="cp">{{</span> <span class="nv">page.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
 </code></pre></div>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pageabs_url">page.abs_url</h5>
 <p>The absolute URL of the page from the server root as determined by the value
 assigned to the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_url">site_url</a> configuration setting. The value includes any
-subdirectory included in the <code>site_url</code>, but not the domain. <a href="#/project/mkdocs-docs/docs/dev-guide/@base_url">base_url</a> should
+subdirectory included in the <code>site_url</code>, but not the domain. <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@base_url">base_url</a> should
 not be used with this variable.</p>
 <p>For example, if <code>site_url: https://example.com/</code>, then the value of
 <code>page.abs_url</code> for the page <code>foo.md</code> would be <code>/foo/</code>. However, if
@@ -2245,11 +2245,11 @@ page <code>foo.md</code> would be <code>/bar/foo/</code>.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pagecanonical_url">page.canonical_url</h5>
 <p>The full, canonical URL to the current page as determined by the value assigned
 to the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_url">site_url</a> configuration setting. The value includes the domain and any
-subdirectory included in the <code>site_url</code>. <a href="#/project/mkdocs-docs/docs/dev-guide/@base_url">base_url</a> should not be used with this
+subdirectory included in the <code>site_url</code>. <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@base_url">base_url</a> should not be used with this
 variable.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pageedit_url">page.edit_url</h5>
 <p>The full URL to the source page in the source repository. Typically used to
-provide a link to edit the source page. <a href="#/project/mkdocs-docs/docs/dev-guide/@base_url">base_url</a> should not be used with this
+provide a link to edit the source page. <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@base_url">base_url</a> should not be used with this
 variable.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pageis_homepage">page.is_homepage</h5>
 <p>Evaluates to <code>True</code> for the homepage of the site and <code>False</code> for all other
@@ -2269,7 +2269,7 @@ current page is the last item in the site navigation or if the current page is
 not included in the navigation at all. When the value is a page object, the
 usage is the same as for <code>page</code>.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pageparent">page.parent</h5>
-<p>The immediate parent of the page in the <a href="#/project/mkdocs-docs/docs/dev-guide/@nav">site navigation</a>. <code>None</code> if the
+<p>The immediate parent of the page in the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@nav">site navigation</a>. <code>None</code> if the
 page is at the top level.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pagechildren">page.children</h5>
 <p>Pages do not contain children and the attribute is always <code>None</code>.</p>
@@ -2286,11 +2286,11 @@ page objects.</p>
 <p>Indicates that the navigation object is a "link" object. Always <code>False</code> for
 page objects.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@navigation-objects">Navigation Objects</h3>
-<p>Navigation objects contained in the <a href="#/project/mkdocs-docs/docs/dev-guide/@nav">nav</a> template variable may be one of
-<a href="#/project/mkdocs-docs/docs/dev-guide/@section">section</a> objects, <a href="#/project/mkdocs-docs/docs/dev-guide/@page">page</a> objects, and <a href="#/project/mkdocs-docs/docs/dev-guide/@link">link</a> objects.
+<p>Navigation objects contained in the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@nav">nav</a> template variable may be one of
+<a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@section">section</a> objects, <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@page">page</a> objects, and <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@link">link</a> objects.
 While section objects may contain nested navigation objects, pages and links do
 not.</p>
-<p>Page objects are the full page object as used for the current <a href="#/project/mkdocs-docs/docs/dev-guide/@page">page</a> with
+<p>Page objects are the full page object as used for the current <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@page">page</a> with
 all of the same attributes available. Section and Link objects contain a subset
 of those attributes as defined below:</p>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/themes.html@section">Section</h4>
@@ -2376,7 +2376,7 @@ available to use in MkDocs templates:</p>
 <p>Normalizes a URL. Absolute URLs are passed through unaltered. If the URL is
 relative and the template context includes a page object, then the URL is
 returned relative to the page object. Otherwise, the URL is returned with
-<a href="#/project/mkdocs-docs/docs/dev-guide/@base_url">base_url</a> prepended.</p>
+<a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@base_url">base_url</a> prepended.</p>
 <div class="highlight"><pre><span></span><code><span class="x">&lt;a href="</span><span class="cp">{{</span> <span class="nv">page.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
 </code></pre></div>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@tojson">tojson</h3>
@@ -2422,7 +2422,7 @@ full search implementation to your theme.</p>
 above HTML. The form input for the user to type the search query must be
 identified with <code>id="mkdocs-search-query"</code> and the div where the results will be
 placed must be identified with <code>id="mkdocs-search-results"</code>.</p>
-<p>The plugin supports the following options being set in the <a href="#/project/mkdocs-docs/docs/dev-guide/@theme-configuration">theme's
+<p>The plugin supports the following options being set in the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@theme-configuration">theme's
 configuration file</a>, <code>mkdocs_theme.yml</code>:</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@include_search_page">include_search_page</h3>
 <p>Determines whether the search plugin expects the theme to provide a dedicated
@@ -2476,7 +2476,7 @@ can be contained in the <code>custom_dir</code>. If you have created a "one-off 
 that should be sufficient. However, if you intend to distribute your theme
 for others to use, packaging the theme has some advantages. By packaging
 your theme, your users can more easily install it, they can rely on a default
-<a href="#/project/mkdocs-docs/docs/dev-guide/@theme-configuration">configuration</a> being defined, and they can then take advantage of the
+<a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@theme-configuration">configuration</a> being defined, and they can then take advantage of the
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@custom_dir">custom_dir</a> to make tweaks to your theme to better suit their needs.</p>
 </div>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@package-layout">Package Layout</h3>
@@ -2570,7 +2570,7 @@ value is not defined in the <code>mkdocs_theme.yml</code> file and the user does
 set it in <code>mkdocs.yml</code> then it will default to <code>en</code> (English). The value
 is expected to match the language used in the text provided by the theme
 (such a "next" and "previous" links) and should be used as the value of
-the <code>&lt;html&gt;</code> tag's <code>lang</code> attribute. See <a href="#/project/mkdocs-docs/docs/dev-guide/@supporting-theme-localizationtranslation">Supporting theme localization/
+the <code>&lt;html&gt;</code> tag's <code>lang</code> attribute. See <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@supporting-theme-localizationtranslation">Supporting theme localization/
 translation</a> for more
 information.</p>
 <p>Note that during configuration validation, the provided string is converted
@@ -2617,7 +2617,7 @@ documentation for <a href="https://packaging.python.org/en/latest/distributing/"
 <h2 id="/project/mkdocs-docs/docs/dev-guide/themes.html@supporting-theme-localizationtranslation">Supporting theme Localization/Translation</h2>
 <p>While the built-in themes provide support for <a href="#/project/mkdocs-docs/docs/user-guide/localizing-your-theme.html">localization/translation</a> of
 templates, custom themes and third-party themes may choose not to. Regardless,
-the <a href="#/project/mkdocs-docs/docs/dev-guide/@locale"><code>locale</code></a> setting of the <code>theme</code> configuration option is always
+the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@locale"><code>locale</code></a> setting of the <code>theme</code> configuration option is always
 present and is relied upon by other parts of the system. Therefore, it is
 recommended that all third-party themes use the same setting for designating a
 language regardless of the system they use for translation. In that way, users
@@ -2782,7 +2782,7 @@ running.</p>
 editing translations, they are not used by MkDocs directly and do not need to
 be included in a packaged release of a theme. When MkDocs builds a site with
 translations, it only makes use of the binary <code>mo</code> files(s) for the specified
-locale. Therefore, when <a href="#/project/mkdocs-docs/docs/dev-guide/@packaging-themes">packaging a theme</a>, you would need to make the
+locale. Therefore, when <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@packaging-themes">packaging a theme</a>, you would need to make the
 following addition to your <code>MANIFEST.in</code> file:</p>
 <div class="highlight"><pre><span></span><code>recursive-include theme_name *.mo
 </code></pre></div>
@@ -2839,18 +2839,18 @@ built-in themes (<code>mkdocs</code> and <code>readthedocs</code>), you can easi
 translation by following the steps below.</p>
 <p>Here is a quick summary of what you'll need to do:</p>
 <ol>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@initializing-the-localization-catalogs">Initialize new localization
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@initializing-the-localization-catalogs">Initialize new localization
    catalogs</a> for your language (if a
    translation for your locale already exists, follow the instructions for
-   <a href="#/project/mkdocs-docs/docs/dev-guide/user-guide/custom-themes/@localizing-themes">updating theme localization
+   <a class="wpmr-error" href="/user-guide/custom-themes/#localizing-themes">updating theme localization
    files</a> instead).</li>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@translating-the-mkdocs-themes">Add a translation</a> for every text
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@translating-the-mkdocs-themes">Add a translation</a> for every text
    placeholder in the localized catalogs.</li>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@testing-theme-translations">Locally serve and test</a> the translated themes
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@testing-theme-translations">Locally serve and test</a> the translated themes
    for your language.</li>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@updating-theme-documentation">Update the documentation</a> about
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@updating-theme-documentation">Update the documentation</a> about
    supported translations for each translated theme.</li>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@contributing-translations">Contribute your translation</a> through a
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@contributing-translations">Contribute your translation</a> through a
    Pull Request.</li>
 </ol>
 <div class="admonition note">
@@ -2879,7 +2879,7 @@ for the Spanish <code>es</code> language to the <code>mkdocs</code> theme, run t
 │   └── LC_MESSAGES
 │       └── messages.po
 </code></pre></div>
-<p>You can now move on to the next step and <a href="#/project/mkdocs-docs/docs/dev-guide/@translating-the-mkdocs-themes">add a
+<p>You can now move on to the next step and <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@translating-the-mkdocs-themes">add a
 translation</a> for every text placeholder in the
 localized catalog.</p>
 <h2 id="/project/mkdocs-docs/docs/dev-guide/translations.html@updating-a-theme-translation">Updating a theme translation</h2>
@@ -2887,13 +2887,13 @@ localized catalog.</p>
 since the <code>messages.po</code> was last updated for your locale, follow the steps
 below to update the theme's <code>messages.po</code> file:</p>
 <ol>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@updating-the-translation-catalogs">Update the theme's translation catalog</a>
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@updating-the-translation-catalogs">Update the theme's translation catalog</a>
    to refresh the translatable text placeholders of each theme.</li>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@translating-the-mkdocs-themes">Translate</a> the newly added translatable
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@translating-the-mkdocs-themes">Translate</a> the newly added translatable
    text placeholders on every <code>messages.po</code> catalog file language you can.</li>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@testing-theme-translations">Locally serve and test</a> the translated themes
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@testing-theme-translations">Locally serve and test</a> the translated themes
    for your language.</li>
-<li><a href="#/project/mkdocs-docs/docs/dev-guide/@contributing-translations">Contribute your translation</a> through a
+<li><a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@contributing-translations">Contribute your translation</a> through a
    Pull Request.</li>
 </ol>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/translations.html@updating-the-translation-catalogs">Updating the translation catalogs</h3>
@@ -2903,7 +2903,7 @@ for.</p>
 command:</p>
 <div class="highlight"><pre><span></span><code>python setup.py update_catalog -t mkdocs -l fr
 </code></pre></div>
-<p>You can now move on to the next step and <a href="#/project/mkdocs-docs/docs/dev-guide/@translating-the-mkdocs-themes">add a translation</a> for every updated
+<p>You can now move on to the next step and <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@translating-the-mkdocs-themes">add a translation</a> for every updated
 text placeholder in the localized catalog.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/translations.html@translating-the-mkdocs-themes">Translating the MkDocs themes</h3>
 <p>Now that your localized <code>messages.po</code> files are ready, all you need to do is
@@ -2917,7 +2917,7 @@ msgstr "Siguiente"
 its translation in the <code>msgstr</code> item.</p>
 </div>
 <p>Once you have finished translating all of the terms listed in the <code>po</code> file,
-you'll want to <a href="#/project/mkdocs-docs/docs/dev-guide/@testing-theme-translations">test your localized theme</a>.</p>
+you'll want to <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@testing-theme-translations">test your localized theme</a>.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/translations.html@testing-theme-translations">Testing theme translations</h3>
 <p>To test a theme with translations, you need to first compile the <code>messages.po</code>
 files of your theme into <code>messages.mo</code> files. The following command will compile
@@ -2966,13 +2966,13 @@ appropriate package name and install it using <code>pip</code>:</p>
 <div class="highlight"><pre><span></span><code>pip install mkdocs-foo-plugin
 </code></pre></div>
 <p>Once a plugin has been successfully installed, it is ready to use. It just needs
-to be <a href="#/project/mkdocs-docs/docs/dev-guide/@using-plugins">enabled</a> in the configuration file. The <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">MkDocs Plugins</a>
+to be <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@using-plugins">enabled</a> in the configuration file. The <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">MkDocs Plugins</a>
 wiki page has a growing list of plugins that you can install and use.</p>
 <h2 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@using-plugins">Using Plugins</h2>
 <p>The <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@plugins"><code>plugins</code></a> configuration option should contain a list of plugins to
 use when building the site. Each "plugin" must be a string name assigned to the
 plugin (see the documentation for a given plugin to determine its "name"). A
-plugin listed here must already be <a href="#/project/mkdocs-docs/docs/dev-guide/@installing-plugins">installed</a>.</p>
+plugin listed here must already be <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@installing-plugins">installed</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"></span>
 </code></pre></div>
@@ -2996,7 +2996,7 @@ see that plugin's documentation.</p>
 <p>Like MkDocs, plugins must be written in Python. It is generally expected that
 each plugin would be distributed as a separate Python module, although it is
 possible to define multiple plugins in the same module. At a minimum, a MkDocs
-Plugin must consist of a <a href="#/project/mkdocs-docs/docs/dev-guide/@baseplugin">BasePlugin</a> subclass and an <a href="#/project/mkdocs-docs/docs/dev-guide/@entry-point">entry point</a> which
+Plugin must consist of a <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@baseplugin">BasePlugin</a> subclass and an <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@entry-point">entry point</a> which
 points to it.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@baseplugin">BasePlugin</h3>
 <p>A subclass of <code>mkdocs.plugins.BasePlugin</code> should define the behavior of the plugin.
@@ -3047,7 +3047,7 @@ validation and should not need to be called by the plugin.</dd>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@on_event_name">on_&lt;event_name&gt;()</h4>
 <dl>
 <dd>
-<p>Optional methods which define the behavior for specific <a href="#/project/mkdocs-docs/docs/dev-guide/@events">events</a>. The plugin
+<p>Optional methods which define the behavior for specific <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@events">events</a>. The plugin
 should define its behavior within these methods. Replace <code>&lt;event_name&gt;</code> with
 the actual name of the event. For example, the <code>pre_build</code> event would be
 defined in the <code>on_pre_build</code> method.</p>
@@ -3070,8 +3070,8 @@ the theme config:</p>
 </dd>
 </dl>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@events">Events</h3>
-<p>There are three kinds of events: <a href="#/project/mkdocs-docs/docs/dev-guide/@global-events">Global Events</a>, <a href="#/project/mkdocs-docs/docs/dev-guide/@page-events">Page Events</a> and
-<a href="#/project/mkdocs-docs/docs/dev-guide/@template-events">Template Events</a>.</p>
+<p>There are three kinds of events: <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@global-events">Global Events</a>, <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@page-events">Page Events</a> and
+<a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@template-events">Template Events</a>.</p>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@global-events">Global Events</h4>
 <p>Global events are called once per build at either the beginning or end of the
 build process. Any changes made in these events will have a global effect on the
@@ -3124,7 +3124,7 @@ pre-build scripts.</p>
 <p>The <code>files</code> event is called after the files collection is populated from the
 <code>docs_dir</code>. Use this event to add, remove, or alter files in the
 collection. Note that Page objects have not yet been associated with the
-file objects in the collection. Use <a href="#/project/mkdocs-docs/docs/dev-guide/@page-events">Page Events</a> to manipulate page
+file objects in the collection. Use <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@page-events">Page Events</a> to manipulate page
 specific data.</p>
 <dl>
 <dt>Parameters:</dt>
@@ -3183,7 +3183,7 @@ post-build scripts.</p>
 is caught by MkDocs during the build process.
 Use this event to clean things up before MkDocs terminates. Note that any other
 events which were scheduled to run after the error will have been skipped. See
-<a href="#/project/mkdocs-docs/docs/dev-guide/@handling-errors">Handling Errors</a> for more details.</p>
+<a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@handling-errors">Handling Errors</a> for more details.</p>
 <dl>
 <dt>Parameters:</dt>
 <dd><strong>error:</strong> exception raised</dd>
@@ -3194,7 +3194,7 @@ events which were scheduled to run after the error will have been skipped. See
 <p>Template events are called once for each non-page template. Each template event
 will be called for each template defined in the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@extra_templates">extra_templates</a> config setting
 as well as any <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@static_templates">static_templates</a> defined in the theme. All template events are
-called after the <a href="#/project/mkdocs-docs/docs/dev-guide/@on_env">env</a> event and before any <a href="#/project/mkdocs-docs/docs/dev-guide/@page-events">page events</a>.</p>
+called after the <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@on_env">env</a> event and before any <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@page-events">page events</a>.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@on_pre_template">on_pre_template</h5>
 <dl>
 <dd>
@@ -3245,8 +3245,8 @@ written to disc.</p>
 </dl>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@page-events">Page Events</h4>
 <p>Page events are called once for each Markdown page included in the site. All
-page events are called after the <a href="#/project/mkdocs-docs/docs/dev-guide/@on_post_template">post_template</a> event and before the
-<a href="#/project/mkdocs-docs/docs/dev-guide/@on_post_build">post_build</a> event.</p>
+page events are called after the <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@on_post_template">post_template</a> event and before the
+<a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@on_post_build">post_build</a> event.</p>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@on_pre_page">on_pre_page</h5>
 <dl>
 <dd>
@@ -3355,7 +3355,7 @@ not be raised directly. One of the subclasses should be raised instead.</dd>
 <dl>
 <dd>This error is raised by configuration validation when a validation error
 is encountered. This error should be raised by any configuration options
-defined in a plugin's <a href="#/project/mkdocs-docs/docs/dev-guide/@config_scheme">config_scheme</a>.</dd>
+defined in a plugin's <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@config_scheme">config_scheme</a>.</dd>
 </dl>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@mkdocsexceptionsbuilderror"><code>mkdocs.exceptions.BuildError</code></h4>
 <dl>
@@ -3376,7 +3376,7 @@ to the user.</p>
 <p>Therefore, you might want to catch any exceptions within your plugin and raise a
 <code>PluginError</code>, passing in your own custom-crafted message, so that the build
 process is aborted with a helpful message.</p>
-<p>The <a href="#/project/mkdocs-docs/docs/dev-guide/@on_build_error">on_build_error</a> event will be triggered for any exception.</p>
+<p>The <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@on_build_error">on_build_error</a> event will be triggered for any exception.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mkdocs.exceptions</span> <span class="kn">import</span> <span class="n">PluginError</span>
 <span class="kn">from</span> <span class="nn">mkdocs.plugins</span> <span class="kn">import</span> <span class="n">BasePlugin</span>
@@ -3407,7 +3407,7 @@ Add the following to your <code>setup.py</code> script:</p>
 <p>The <code>pluginname</code> would be the name used by users (in the config file) and
 <code>path.to.some_plugin:SomePluginClass</code> would be the importable plugin itself
 (<code>from path.to.some_plugin import SomePluginClass</code>) where <code>SomePluginClass</code> is a
-subclass of <a href="#/project/mkdocs-docs/docs/dev-guide/@baseplugin">BasePlugin</a> which defines the plugin behavior. Naturally, multiple
+subclass of <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@baseplugin">BasePlugin</a> which defines the plugin behavior. Naturally, multiple
 Plugin classes could exist in the same module. Simply define each as a separate
 entry point.</p>
 <div class="highlight"><pre><span></span><code><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
@@ -4327,7 +4327,7 @@ template instead. Users can simply save a copy of their custom favicon icon to
 Those variables are being deprecated and will issue a warning but continue to
 work for version 0.16, but may be removed in a future version. Use
 <code>config.var_name</code> instead, where <code>var_name</code> is the name of one of the
-<a href="#/project/mkdocs-docs/docs/about/user-guide/configuration.md">configuration</a> variables.</p>
+<a href="#/project/mkdocs-docs/docs/user-guide/configuration.html">configuration</a> variables.</p>
 <p>Below is a summary of all of the changes made to the global context:</p>
 <table>
 <thead>
@@ -4486,7 +4486,7 @@ better conform with the documented <a href="#/project/mkdocs-docs/docs/user-guid
 </ul>
 <h2 id="/project/mkdocs-docs/docs/about/release-notes.html@version-0152-2016-02-08">Version 0.15.2 (2016-02-08)</h2>
 <ul>
-<li>Fix an incorrect warning that states external themes <a href="#/project/mkdocs-docs/docs/about/@add-support-for-installable-themes">will be removed from
+<li>Fix an incorrect warning that states external themes <a href="#/project/mkdocs-docs/docs/about/release-notes.html@add-support-for-installable-themes">will be removed from
   MkDocs</a>.</li>
 </ul>
 <h2 id="/project/mkdocs-docs/docs/about/release-notes.html@version-0151-2016-01-30">Version 0.15.1 (2016-01-30)</h2>

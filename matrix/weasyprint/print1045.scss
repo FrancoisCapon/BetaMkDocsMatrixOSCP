@@ -1,7 +1,8 @@
 
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1045-content/print.scss */
 a {
-    color: var(--color-primary);
+    //color: var(--color-primary);
+    color: var(--color-primary-dark);
     text-decoration: none;
 }
 
@@ -128,4 +129,8 @@ hr {
     border: none;
     border-bottom: solid 2px;
     border-bottom-color: var(--color-background-code);
+}
+
+.wpmr-error {
+    color: red;
 }

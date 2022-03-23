@@ -28,10 +28,10 @@ configuration file. Start by reading the [introductory tutorial], then check the
         <h3 class="card-title">Great themes available</h3>
         <p class="card-text">
             There's a stack of good looking <a
-            href="user-guide/choosing-your-theme">themes</a> available for
+            href="user-guide/choosing-your-theme/">themes</a> available for
             MkDocs. Choose between the built in themes: <a
-            href="user-guide/choosing-your-theme/#mkdocs">mkdocs</a> and <a
-            href="user-guide/choosing-your-theme/#readthedocs">readthedocs</a>,
+            href="/user-guide/choosing-your-theme.md#mkdocs">mkdocs</a> and <a
+            href="/user-guide/choosing-your-theme.md#readthedocs">readthedocs</a>,
             select one of the third-party themes listed on the <a
             href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">MkDocs
             Themes</a> wiki page, or <a href="dev-guide/themes/">build your
