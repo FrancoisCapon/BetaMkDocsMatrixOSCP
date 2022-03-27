@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
 html {
   color: var(--color-text-default);
@@ -276,6 +277,20 @@ html {
   content: "Listing - ";
 }
 
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1025-section-list/print.scss */
+.pdf-section ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 1.25rem;
+  list-style-type: "●  ";
+}
+.pdf-section ul li::marker {
+  color: var(--color-primary);
+  font-size: 0.65rem;
+  line-height: 1.5rem;
+  font-family: Monospace;
+}
+
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
 .pdf-section table, .pdf-section figure, .pdf-section img, .pdf-section pre, .pdf-section hr {
   margin-top: 1rem;
@@ -311,9 +326,18 @@ h1, h2, h3, h4, h5, h6 {
   counter-increment: subsection-counter;
   bookmark-label: counter(section-counter) "." counter(subsection-counter) ". " content(text);
   bookmark-level: 2;
+  counter-reset: subsubsection-counter;
 }
 #pdf-content .pdf-section h2::before {
   content: counter(section-counter) "." counter(subsection-counter) ". ";
+}
+#pdf-content .pdf-section h3 {
+  counter-increment: subsubsection-counter;
+  bookmark-label: counter(section-counter) "." counter(subsection-counter) counter(subsubsection-counter) ". " content(text);
+  bookmark-level: 3;
+}
+#pdf-content .pdf-section h3::before {
+  content: counter(section-counter) "." counter(subsection-counter) counter(subsubsection-counter) ". ";
 }
 
 /* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
@@ -326,5 +350,6 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1022-section-table/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1025-section-list/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-numbering-pdf-toc/print.scss */

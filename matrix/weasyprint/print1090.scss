@@ -20,29 +20,18 @@ h1, h2, h3, h4, h5, h6 {
             counter-increment: subsection-counter;
             bookmark-label: counter(section-counter) "." counter(subsection-counter)". " content(text);
             bookmark-level: 2;
+            counter-reset: subsubsection-counter;
         }
         h2::before {
             content: counter(section-counter)  "." counter(subsection-counter) ". ";
         }
+        h3 {
+            counter-increment: subsubsection-counter;
+            bookmark-label: counter(section-counter) "." counter(subsection-counter) counter(subsubsection-counter) ". " content(text);
+            bookmark-level: 3;
+        }
+        h3::before {
+            content: counter(section-counter) "." counter(subsection-counter) counter(subsubsection-counter) ". ";
+        }
     }
 }
-
-    // h2 {
-    //     bookmark-label: content(text) ' [Subsection]';
-    //     bookmark-level: 2;
-    // }
-
-    // figure > figcaption {
-    //     bookmark-label: content(text) ' [Figure]';
-    //     bookmark-level: 2;
-    // }
-
-    // table + figcaption {
-    //     bookmark-label: content(text) ' [Table]';
-    //     bookmark-level: 2;
-    // }
-
-    // pre + figcaption {
-    //     bookmark-label: content(text) ' [Listing]';
-    //     bookmark-level: 2;
-    // }
