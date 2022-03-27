@@ -1,0 +1,14 @@
+#pdf-content {
+    counter-reset: section-counter;
+    .pdf-section {
+        h1::before {
+            content: counter(section-counter) ". ";
+        }
+        h2::before {
+            content: counter(section-counter)  "." counter(subsection-counter) ". ";
+        }
+        h3::before {
+            content: counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". ";
+        }
+    }
+}

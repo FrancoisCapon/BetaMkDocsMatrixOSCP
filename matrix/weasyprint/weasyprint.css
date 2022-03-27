@@ -118,6 +118,11 @@ html {
   --color-primary-light: #b3b3b3;
 }
 
+/* /project/mkdocs-docs/matrix/05-pdf-base/0514-pdf-boomarks-none/print.scss */
+h1, h2, h3, h4, h5, h6 {
+  bookmark-level: none;
+}
+
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
 @page section {
   size: A4;
@@ -305,11 +310,7 @@ html {
   border-radius: 0.35rem;
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-numbering-pdf-toc/print.scss */
-h1, h2, h3, h4, h5, h6 {
-  bookmark-level: none;
-}
-
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
 #pdf-content {
   counter-reset: section-counter;
 }
@@ -319,31 +320,37 @@ h1, h2, h3, h4, h5, h6 {
   bookmark-level: 1;
   counter-reset: subsection-counter;
 }
-#pdf-content .pdf-section h1::before {
-  content: counter(section-counter) ". ";
-}
 #pdf-content .pdf-section h2 {
   counter-increment: subsection-counter;
   bookmark-label: counter(section-counter) "." counter(subsection-counter) ". " content(text);
   bookmark-level: 2;
   counter-reset: subsubsection-counter;
 }
+#pdf-content .pdf-section h3 {
+  counter-increment: subsubsection-counter;
+  bookmark-label: counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". " content(text);
+  bookmark-level: 3;
+}
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1091-sections-heading-numbering/print.scss */
+#pdf-content {
+  counter-reset: section-counter;
+}
+#pdf-content .pdf-section h1::before {
+  content: counter(section-counter) ". ";
+}
 #pdf-content .pdf-section h2::before {
   content: counter(section-counter) "." counter(subsection-counter) ". ";
 }
-#pdf-content .pdf-section h3 {
-  counter-increment: subsubsection-counter;
-  bookmark-label: counter(section-counter) "." counter(subsection-counter) counter(subsubsection-counter) ". " content(text);
-  bookmark-level: 3;
-}
 #pdf-content .pdf-section h3::before {
-  content: counter(section-counter) "." counter(subsection-counter) counter(subsubsection-counter) ". ";
+  content: counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". ";
 }
 
 /* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0514-pdf-boomarks-none/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1020-section-headings/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
@@ -352,4 +359,5 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1025-section-list/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-numbering-pdf-toc/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1091-sections-heading-numbering/print.scss */

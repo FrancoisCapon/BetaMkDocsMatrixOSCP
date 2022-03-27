@@ -1,7 +1,3 @@
-h1, h2, h3, h4, h5, h6 {
-    bookmark-level: none;
-}
-
 #pdf-content {
     counter-reset: section-counter;
     .pdf-section {
@@ -11,25 +7,16 @@ h1, h2, h3, h4, h5, h6 {
             bookmark-level: 1;
             counter-reset: subsection-counter;
         }
-        h1::before {
-            content: counter(section-counter) ". ";
-        }
         h2 {
             counter-increment: subsection-counter;
             bookmark-label: counter(section-counter) "." counter(subsection-counter)". " content(text);
             bookmark-level: 2;
             counter-reset: subsubsection-counter;
         }
-        h2::before {
-            content: counter(section-counter)  "." counter(subsection-counter) ". ";
-        }
         h3 {
             counter-increment: subsubsection-counter;
-            bookmark-label: counter(section-counter) "." counter(subsection-counter) counter(subsubsection-counter) ". " content(text);
+            bookmark-label: counter(section-counter) "." counter(subsection-counter)  "." counter(subsubsection-counter) ". " content(text);
             bookmark-level: 3;
-        }
-        h3::before {
-            content: counter(section-counter) "." counter(subsection-counter) counter(subsubsection-counter) ". ";
         }
     }
 }

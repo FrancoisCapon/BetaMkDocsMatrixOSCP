@@ -1,0 +1,16 @@
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1091-sections-heading-numbering/print.scss */
+#pdf-content {
+    counter-reset: section-counter;
+    .pdf-section {
+        h1::before {
+            content: counter(section-counter) ". ";
+        }
+        h2::before {
+            content: counter(section-counter)  "." counter(subsection-counter) ". ";
+        }
+        h3::before {
+            content: counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". ";
+        }
+    }
+}
