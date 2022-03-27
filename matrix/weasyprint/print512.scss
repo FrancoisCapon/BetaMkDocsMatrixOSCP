@@ -1,0 +1,53 @@
+
+/* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
+// https://www.w3.org/TR/css-page-3/#progression
+html { break-before: left }
+
+@page {
+  size: A4;
+  margin: 2cm;
+  margin-top: 2.5cm;
+
+  @top-left {
+    display: block;
+    content: '@top-left';
+    font-size: 0.80rem;
+    margin-bottom: 0.35cm;
+    padding-bottom: 0.15cm;
+    vertical-align: bottom;
+    width: 33%;
+  }
+  @top-center {
+    content: '@top-center';
+    display: block;
+    border-bottom: 0.05cm solid;
+    border-bottom-color: var(--color-primary);
+    width: 100%;
+    margin-bottom: 0.35cm;
+    padding-bottom: 0.1cm; // 0.15 - 0.05 (border)
+    vertical-align: bottom;
+    font-size: 0.80rem;
+  }
+  @top-right {
+    display: block;
+    content: '@top-right';
+    font-size:  0.80rem;
+    margin-bottom: 0.35cm;
+    padding-bottom: 0.15cm;
+    vertical-align: bottom;
+    width: 33%;
+  }
+  @bottom-center {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    content: counter(page);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+    margin-top: 0.25cm;
+  }
+}
+
+.pdf-section {
+  page-break-before: always;
+}

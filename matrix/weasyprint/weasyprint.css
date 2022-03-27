@@ -1,62 +1,59 @@
-@charset "UTF-8";
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */
-:root {
-  --color-text-default: #333;
-  --color-background-code: #e9ecef;
+/* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
+html {
+  color: var(--color-text-default);
+  font-family: SansSerif;
+  font-size: 11pt;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
-:root {
-  --color-primary: dodgerblue;
-  --color-primary-dark: #005db7;
-  --color-primary-light: #84c2ff;
+html * {
+  margin: 0;
+  padding: 0;
 }
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
 @font-face {
   font-family: SansSerif;
   font-weight: 400;
-  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-regular.otf");
+  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-regular.otf");
 }
 @font-face {
   font-family: SansSerifItalic;
   font-style: italic;
   font-weight: 400;
-  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-italic.otf");
+  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-italic.otf");
 }
 @font-face {
   font-family: SansSerifLight;
   font-weight: 300;
-  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-light.otf");
+  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-light.otf");
 }
 @font-face {
   font-family: SansSerifLightItalic;
   font-style: italic;
   font-weight: 300;
-  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-lightitalic.otf");
+  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-lightitalic.otf");
 }
 @font-face {
   font-family: SansSerifBold;
   font-weight: 600;
-  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firasans-bold.otf");
+  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-bold.otf");
 }
 @font-face {
   font-family: Monospace;
   font-weight: 400;
-  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firamono-regular.ttf");
+  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firamono-regular.ttf");
 }
 @font-face {
   font-family: MonospaceBold;
   font-weight: 500;
-  src: url("/project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/firamono-medium.ttf");
+  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firamono-medium.ttf");
 }
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1030-pages/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
 html {
   break-before: left;
-}
-
-span.wpmr-pdf-page-break {
-  display: block;
-  page-break-after: always;
 }
 
 @page {
@@ -64,32 +61,37 @@ span.wpmr-pdf-page-break {
   margin: 2cm;
   margin-top: 2.5cm;
   @top-left {
-    content: string(chapter-title);
-    font-size: 9pt;
-    height: 1cm;
-    vertical-align: middle;
-    width: 100%;
+    display: block;
+    content: "@top-left";
+    font-size: 0.8rem;
     margin-bottom: 0.35cm;
+    padding-bottom: 0.15cm;
+    vertical-align: bottom;
+    width: 33%;
   }
   @top-center {
-    content: "";
+    content: "@top-center";
     display: block;
-    border-bottom: 2px solid;
+    border-bottom: 0.05cm solid;
     border-bottom-color: var(--color-primary);
     width: 100%;
-    margin-bottom: 0.5cm;
+    margin-bottom: 0.35cm;
+    padding-bottom: 0.1cm;
+    vertical-align: bottom;
+    font-size: 0.8rem;
   }
   @top-right {
-    content: string(section-title);
-    font-size: 9pt;
-    height: 1cm;
-    vertical-align: middle;
-    width: 100%;
+    display: block;
+    content: "@top-right";
+    font-size: 0.8rem;
     margin-bottom: 0.35cm;
+    padding-bottom: 0.15cm;
+    vertical-align: bottom;
+    width: 33%;
   }
   @bottom-center {
     background-color: var(--color-primary);
-    color: white;
+    color: var(--color-text-on-primary);
     content: counter(page);
     height: 1cm;
     text-align: center;
@@ -97,224 +99,101 @@ span.wpmr-pdf-page-break {
     margin-top: 0.25cm;
   }
 }
-@page chapter {
-  background-color: whitesmoke;
-  @top-right {
-    content: none;
+.pdf-section {
+  page-break-before: always;
+}
+
+/* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
+:root {
+  --color-text-default: #333;
+  --color-background-code: #e9ecef;
+  --color-text-heading: black;
+}
+
+:root {
+  --color-primary: gray;
+  --color-text-on-primary: white;
+  --color-primary-dark: #4d4d4d;
+  --color-primary-light: #b3b3b3;
+}
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
+@page section {
+  size: A4;
+  margin: 2cm;
+  margin-top: 2.5cm;
+  @top-left {
+    content: "";
   }
   @top-center {
-    content: none;
+    content: string(section-title);
   }
-  @top-left {
-    content: none;
-  }
-  @bottom-left {
-    content: none;
-  }
-  @bottom-center {
-    content: none;
-  }
-  @bottom-right {
-    content: none;
-  }
-}
-@page :blank {
-  background-color: whitesmoke;
   @top-right {
-    content: none;
-  }
-  @top-center {
-    content: none;
-  }
-  @top-left {
-    content: none;
-  }
-  @bottom-left {
-    content: none;
-  }
-  @bottom-center {
-    content: none;
-  }
-  @bottom-right {
-    content: none;
+    content: "";
   }
 }
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1040-structure-heading/print.scss */
-html {
-  color: var(--color-text-default);
-  font-family: SansSerif;
-  font-size: 11pt;
-  font-weight: 300;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
+.pdf-section {
+  page-break-before: always;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.wpmr-pdf-structure-chapter, .wpmr-pdf-page-chapter {
-  margin: 0;
-  padding: 0;
-}
-
-.wpmr-pdf-page-chapter {
-  break-before: always;
-  break-after: always;
-  page: chapter;
-}
-
-.wpmr-pdf-page-chapter h1 {
-  position: relative;
-  top: -100cm;
-  string-set: chapter-title content();
-}
-
-.wpmr-pdf-page-chapter-title {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -2cm;
-  left: -2cm;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-.wpmr-pdf-page-chapter-title span {
-  display: block;
-  background-color: var(--color-primary-dark);
-  color: white;
-  font-size: 34pt;
-  text-align: center;
-  margin: 0;
-  padding: 10pt;
-  width: 100%;
-  content: chapter-title;
-  font-family: SansSerifBold;
-}
-
-.wpmr-pdf-page-section h1 {
-  break-before: always;
-  color: var(--color-primary);
-  font-size: 30pt;
-  margin: 0;
+.pdf-section {
   page: section;
-  width: 100%;
+}
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1020-section-headings/print.scss */
+.pdf-section h1 {
+  font-family: SansSerifBold;
+  font-size: 2.3rem;
   string-set: section-title content();
 }
-
-h1 {
-  font-family: SansSerifBold;
-  font-weight: 600;
-}
-
-h2, h3, h4 {
-  color: black;
-  font-weight: 400;
-}
-
-h2 {
-  font-size: 20pt;
-}
-
-h3 {
+.pdf-section h2 {
   font-family: SansSerif;
-  font-size: 15pt;
+  font-size: 1.8rem;
 }
-
-h4, h5, h6 {
-  font-family: SansSerifBold;
+.pdf-section h3 {
+  font-family: SansSerif;
+  font-size: 1.35rem;
+}
+.pdf-section h2, .pdf-section h3 {
   margin-top: 1rem;
-  margin-bottom: 0rem;
+}
+.pdf-section h1 + *, .pdf-section h2 + *, .pdf-section h3 + * {
+  margin-top: 1rem;
+}
+.pdf-section h4 {
+  font-family: SansSerifBold;
+  font-size: 1.2rem;
+}
+.pdf-section h4 code, .pdf-section h5 code, .pdf-section h6 code {
+  font-family: MonospaceBold;
+}
+.pdf-section h5 {
+  font-family: SansSerifBold;
+  font-size: 1.1rem;
+}
+.pdf-section h6 {
+  font-family: SansSerifBold;
+  font-size: 1rem;
+}
+.pdf-section h4, .pdf-section h5, .pdf-section h6 {
+  margin-top: 1rem;
+}
+.pdf-section h4 + *, .pdf-section h5 + *, .pdf-section h6 + * {
+  margin-top: 0.5rem !important;
+}
+.pdf-section h1, .pdf-section h2, .pdf-section h3, .pdf-section h4, .pdf-section h5, .pdf-section h6, .pdf-section h1 *, .pdf-section h2 *, .pdf-section h3 *, .pdf-section h4 *, .pdf-section h5 *, .pdf-section h6 * {
+  color: var(--color-text-heading);
 }
 
-h4 {
-  font-size: 13pt;
-}
-
-h5 {
-  font-size: 12pt;
-}
-
-h6 {
-  font-size: 11pt;
-}
-
-h4 + * {
-  margin-top: 0.5rem;
-}
-
-h5 + * {
-  margin-top: 0.5rem;
-}
-
-h6 + * {
-  margin-top: 0.5rem;
-}
-
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1045-content/print.scss */
-a {
-  color: var(--color-primary-dark);
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
+.pdf-section a {
+  color: var(--color-primary);
   text-decoration: none;
 }
-
-strong {
+.pdf-section strong {
   font-family: SansSerifBold;
 }
-
-figure {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  break-inside: avoid;
-}
-figure img {
-  max-width: 100%;
-  border-radius: 0.35rem;
-  border: solid 1px;
-  border-color: var(--color-background-code);
-}
-
-figcaption {
-  font-size: 80%;
-  width: 100%;
-  text-align: center;
-}
-
-img + figcaption::before {
-  content: "Screenshot - ";
-}
-
-table + figcaption {
-  margin-top: 0.5rem;
-}
-
-table + figcaption::before {
-  content: "Table - ";
-}
-
-pre + figcaption {
-  margin-top: -0.5rem;
-}
-
-pre + figcaption::before {
-  content: "Listing - ";
-}
-
-div.highlight + figcaption {
-  margin-top: -0.5rem;
-}
-
-div.highlight + figcaption::before {
-  content: "Listing - ";
-}
-
-code {
+.pdf-section code {
   font-family: Monospace;
   background-color: var(--color-background-code);
   font-size: 90%;
@@ -325,39 +204,12 @@ code {
   padding-right: 0.35rem;
   border-radius: 0.2rem;
 }
-
-strong code {
+.pdf-section strong code {
   font-family: MonospaceBold;
 }
 
-pre {
-  background-color: var(--color-background-code);
-  box-sizing: border-box;
-  padding: 1rem;
-  line-height: 1rem;
-  border-radius: 0.35rem;
-  width: 100%;
-  overflow: hidden;
-}
-pre code {
-  padding: 0;
-  font-size: 0.85rem;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  padding-left: 1.25rem;
-  list-style-type: "●  ";
-}
-ul li::marker {
-  color: var(--color-primary);
-  font-size: 0.65rem;
-  line-height: 1.5rem;
-  font-family: Monospace;
-}
-
-table {
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1022-section-table/print.scss */
+.pdf-section table {
   margin: auto;
   box-sizing: border-box;
   max-width: 100%;
@@ -365,121 +217,96 @@ table {
   border: 2px solid;
   border-color: black;
 }
-table th, table td {
+.pdf-section table th, .pdf-section table td {
   padding: 0.5rem;
   border: 1px solid;
 }
-table th {
+.pdf-section table th {
   background-color: var(--color-primary-light);
 }
-table tr:nth-child(even) td {
+.pdf-section table tr:nth-child(even) td {
   background-color: whitesmoke;
 }
-
-hr {
-  border: none;
-  border-bottom: solid 2px;
-  border-bottom-color: var(--color-background-code);
+.pdf-section table + figcaption {
+  margin-top: 0.5rem;
+}
+.pdf-section table + figcaption::before {
+  content: "Table - ";
 }
 
-.wpmr-error {
-  color: red;
-}
-
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
-div.admonition {
-  border-left: solid 2px;
-  border-left-color: var(--color-primary);
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0;
-  padding-bottom: 0;
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
+.pdf-section figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
   break-inside: avoid;
+  font-size: 0;
 }
-div.admonition p.admonition-title {
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
-  font-family: SansSerifBold;
+.pdf-section figure img {
+  margin: 0;
+  max-width: 100%;
+  border: solid 1px;
+  border-color: var(--color-background-code);
 }
-div.admonition p.admonition-title + * {
-  margin-top: 0;
+.pdf-section figcaption {
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.25rem;
 }
-div.admonition p {
-  text-align: justify;
+.pdf-section img + figcaption::before {
+  content: "Figure - ";
 }
 
-div.admonition + div.admonition {
-  margin-top: 0.5rem;
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
+.pdf-section pre {
+  background-color: var(--color-background-code);
+  box-sizing: border-box;
+  padding: 1rem;
+  line-height: 1rem;
+  width: 100%;
+  overflow: hidden;
+}
+.pdf-section pre code {
+  padding: 0;
+  font-size: 0.85rem;
+}
+.pdf-section pre + figcaption::before {
+  content: "Listing - ";
 }
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
+.pdf-section table, .pdf-section figure, .pdf-section img, .pdf-section pre, .pdf-section hr {
+  margin-top: 1rem;
+}
+.pdf-section * + p {
+  margin-top: 1rem;
+}
+.pdf-section p + p {
+  margin-top: 0.75rem;
+}
+.pdf-section figure img, .pdf-section pre {
+  border-radius: 0.35rem;
+}
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
 h1, h2, h3, h4, h5, h6 {
   bookmark-level: none;
 }
 
-body {
-  counter-reset: counterchapter;
+.pdf-section h1, .pdf-section h2 {
+  bookmark-label: content(text);
 }
-
-#wmpr-pdf-structure-content .wpmr-pdf-structure-section:first-child {
-  counter-increment: counterchapter;
-  bookmark-label: counter(counterchapter) ". Introduction";
-  bookmark-level: 1;
-  counter-reset: countersection;
-}
-
-#wmpr-pdf-structure-content > .wpmr-pdf-structure-section h1 {
-  counter-increment: countersection;
-  bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
-  bookmark-level: 2;
-  counter-reset: countersubsection;
-}
-#wmpr-pdf-structure-content > .wpmr-pdf-structure-section h1::before {
-  content: counter(counterchapter) "." counter(countersection) ". ";
-}
-#wmpr-pdf-structure-content > .wpmr-pdf-structure-section h2::before {
-  content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". ";
-}
-#wmpr-pdf-structure-content > .wpmr-pdf-structure-section h2 {
-  counter-increment: countersubsection;
-  bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
-  bookmark-level: 3;
-}
-
-.wpmr-pdf-structure-chapter {
-  counter-reset: countersection;
-}
-.wpmr-pdf-structure-chapter .wpmr-pdf-page-chapter span::before {
-  content: counter(counterchapter) ". ";
-}
-.wpmr-pdf-structure-chapter .wpmr-pdf-page-chapter span {
-  counter-increment: counterchapter;
-  bookmark-label: counter(counterchapter) ". " content(text);
+.pdf-section h1 {
   bookmark-level: 1;
 }
-.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h1::before {
-  content: counter(counterchapter) "." counter(countersection) ". ";
-}
-.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h1 {
-  counter-increment: countersection;
-  bookmark-label: counter(counterchapter) "." counter(countersection) ". " content(text);
+.pdf-section h2 {
   bookmark-level: 2;
-  counter-reset: countersubsection;
 }
-.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h2::before {
-  content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". ";
-}
-.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h2 {
-  counter-increment: countersubsection;
-  bookmark-label: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) ". " content(text);
-  bookmark-level: 3;
-  counter-reset: countersubsubsection;
-}
-.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h3::before {
-  content: counter(counterchapter) "." counter(countersection) "." counter(countersubsection) "." counter(countersubsubsection) ". ";
-}
-.wpmr-pdf-structure-chapter .wpmr-pdf-page-section h3 {
-  counter-increment: countersubsubsection;
+.pdf-section figure > figcaption {
+  bookmark-label: content(text);
+  bookmark-level: 2;
 }
 
 /* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
@@ -702,69 +529,17 @@ body {
   content: "";
 }
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/5100-cover/print.scss */
-#wpmr-pdf-page-cover {
-  break-after: always;
-}
-
-#wpmr-pdf-page-last {
-  break-before: always;
-}
-
-#wpmr-pdf-page-cover, #wpmr-pdf-page-last {
-  page: cover-last;
-}
-#wpmr-pdf-page-cover div, #wpmr-pdf-page-last div {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -2cm;
-  left: -2cm;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-#wpmr-pdf-page-cover div h1, #wpmr-pdf-page-last div h1 {
-  display: block;
-  color: white;
-  font-size: 34pt;
-  text-align: center;
-  margin: 0;
-  padding: 10pt;
-  width: 100%;
-  font-family: SansSerifBold;
-}
-
-@page cover-last {
-  background-color: var(--color-primary-dark);
-  @top-right {
-    content: none;
-  }
-  @top-center {
-    content: none;
-  }
-  @top-left {
-    content: none;
-  }
-  @bottom-left {
-    content: none;
-  }
-  @bottom-center {
-    content: none;
-  }
-  @bottom-right {
-    content: none;
-  }
-}
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/print.scss */
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1030-pages/print.scss */
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1040-structure-heading/print.scss */
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1045-content/print.scss */
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1020-section-headings/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1022-section-table/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
 /* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
 /* /project/mkdocs-docs/matrix/15-pymdownx/1310-highlight/print.scss */
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/5100-cover/print.scss */

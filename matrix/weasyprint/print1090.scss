@@ -1,0 +1,24 @@
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
+h1, h2, h3, h4, h5, h6 {
+    bookmark-level: none;
+}
+
+.pdf-section {
+    h1, h2 {
+        bookmark-label: content(text);
+    }
+
+    h1 {
+        bookmark-level: 1;
+    }
+
+    h2 {
+        bookmark-level: 2;
+    }
+
+    figure > figcaption {
+        bookmark-label: content(text);
+        bookmark-level: 2;
+    }
+}

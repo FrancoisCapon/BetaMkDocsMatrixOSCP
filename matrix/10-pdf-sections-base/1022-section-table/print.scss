@@ -1,0 +1,30 @@
+.pdf-section {
+    table {
+        margin: auto;
+        box-sizing: border-box;
+        max-width: 100%;
+        border-collapse: collapse;
+        border: 2px solid;
+        border-color: black;
+        th, td {
+            padding: 0.5rem;
+            border: 1px solid;
+        }
+
+        th {
+            background-color: var(--color-primary-light);
+
+        }
+        tr:nth-child(even) td {
+            background-color: whitesmoke;
+        }
+    }
+
+    table + figcaption {
+        margin-top: 0.5rem;
+    }
+
+    table + figcaption::before {
+        content: "Table - ";
+    }
+}

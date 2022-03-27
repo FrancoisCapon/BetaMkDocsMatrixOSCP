@@ -45,11 +45,11 @@ extra_css:
 
 markdown_extensions:
     # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
-    - pymdownx.highlight:
+#    - pymdownx.highlight:
     #    anchor_linenums: true
     # - pymdownx.inlinehilite
     # - pymdownx.snippets
-    - pymdownx.superfences
+#    - pymdownx.superfences
 
     - markdown_captions # must be installed
     # - md_in_html # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/

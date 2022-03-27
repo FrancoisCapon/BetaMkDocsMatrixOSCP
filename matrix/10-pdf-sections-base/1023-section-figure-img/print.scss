@@ -1,0 +1,27 @@
+.pdf-section {
+    figure {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        break-inside: avoid;
+        font-size: 0;
+        img {
+            margin: 0;
+            max-width: 100%;
+            border: solid 1px;
+            border-color: var(--color-background-code);
+        }
+    }
+
+    figcaption {
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+        margin-top: 0.25rem;
+    }
+
+    img + figcaption::before {
+        content: "Figure - ";
+    }
+}

@@ -1,0 +1,28 @@
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
+.pdf-section {
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    strong {
+        font-family: SansSerifBold;
+    }
+
+    code {
+        font-family: Monospace;
+        background-color: var(--color-background-code);
+        font-size: 90%;
+        display: inline-block;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0.35rem;
+        padding-right: 0.35rem;
+        border-radius: 0.2rem;
+    }
+
+    strong code {
+        font-family: MonospaceBold;
+    }
+}

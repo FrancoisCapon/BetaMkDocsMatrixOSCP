@@ -1,30 +1,42 @@
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
+@use "print510.scss";
+
+/* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
+@use "print511.scss";
+
+/* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
+@use "print512.scss";
+
+/* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
+@use "print513.scss";
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
 @use "print1010.scss";
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1020-section-headings/print.scss */
 @use "print1020.scss";
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1030-pages/print.scss */
-@use "print1030.scss";
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
+@use "print1021.scss";
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1040-structure-heading/print.scss */
-@use "print1040.scss";
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1022-section-table/print.scss */
+@use "print1022.scss";
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1045-content/print.scss */
-@use "print1045.scss";
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
+@use "print1023.scss";
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1050-admonition/print.scss */
-@use "print1050.scss";
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
+@use "print1024.scss";
 
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1060-numbering/print.scss */
-@use "print1060.scss";
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
+@use "print1029.scss";
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
+@use "print1090.scss";
 
 /* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
 @use "print1300.scss";
 
 /* /project/mkdocs-docs/matrix/15-pymdownx/1310-highlight/print.scss */
 @use "print1310.scss";
-
-/* /project/mkdocs-docs/matrix/10-mkdocs-template-base/5100-cover/print.scss */
-@use "print5100.scss";
