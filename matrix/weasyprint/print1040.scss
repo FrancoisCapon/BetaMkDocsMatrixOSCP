@@ -2,6 +2,7 @@
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1040-structure-heading/print.scss */
 html {
     color: var(--color-text-default);
+    // color: $color-text-default;
     font-family: SansSerif;
     font-size: 11pt;
     font-weight: 300;
@@ -21,7 +22,7 @@ body {
 }
 
 .wpmr-pdf-page-chapter {
-    break-before: left;
+    break-before: always;
     break-after: always;
     page: chapter;
 }

@@ -2,10 +2,13 @@
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1010-root-variables/print.scss */
 :root {
   --color-text-default: #333;
-  --color-primary: hsl(202, 79%, 63%);
-  --color-primary-light: hsl(202, 79%, 80%);
-  --color-primary-dark: hsl(202, 79%, 45%);
   --color-background-code: #e9ecef;
+}
+
+:root {
+  --color-primary: dodgerblue;
+  --color-primary-dark: #005db7;
+  --color-primary-light: #84c2ff;
 }
 
 /* /project/mkdocs-docs/matrix/10-mkdocs-template-base/1020-fonts/print.scss */
@@ -158,7 +161,7 @@ body {
 }
 
 .wpmr-pdf-page-chapter {
-  break-before: left;
+  break-before: always;
   break-after: always;
   page: chapter;
 }
@@ -705,7 +708,7 @@ body {
 }
 
 #wpmr-pdf-page-last {
-  break-before: right;
+  break-before: always;
 }
 
 #wpmr-pdf-page-cover, #wpmr-pdf-page-last {

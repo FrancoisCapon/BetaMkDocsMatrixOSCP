@@ -1,8 +1,20 @@
+@use "sass:color";
+
 :root {
   --color-text-default: #333;
-  //--color-primary: #54b4eb;
-  --color-primary: hsl(202, 79%, 63%);
-  --color-primary-light: hsl(202, 79%, 80%);
-  --color-primary-dark: hsl(202, 79%, 45%);
   --color-background-code: #e9ecef;
 }
+
+//$primary: #54b4eb; //mkdocs
+$primary: dodgerblue;
+$primary-dark: color.adjust($primary, $lightness: -20%);
+$primary-light: color.adjust($primary, $lightness: +20%);
+
+:root {
+  --color-primary: #{$primary};
+  --color-primary-dark: #{$primary-dark};
+  --color-primary-light: #{$primary-light};
+}
+
+// $color-text-default: #333;
+// $color-text-default: magenta;

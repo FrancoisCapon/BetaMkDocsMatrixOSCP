@@ -1,35 +1,35 @@
-[WARNING] Ignored `content: chapter-title` at 193:3, invalid value.
-[WARNING] Ignored `margin: 0 px2em(-2px)` at 575:3, invalid value.
-[WARNING] Ignored `padding: 0 px2em(2px)` at 576:3, invalid value.
-[WARNING] Ignored `border-radius: px2rem(2px)` at 577:3, invalid value.
-[WARNING] Ignored `margin: 0 px2em(-16px, 13.6px)` at 587:3, invalid value.
-[WARNING] Ignored `padding: 0 px2em(16px, 13.6px)` at 588:3, invalid value.
-[WARNING] Ignored `padding: px2em(9px, 13.6px) px2em(16px, 13.6px)` at 595:3, invalid value.
-[WARNING] Ignored `font-size: px2em(13.6px)` at 597:3, invalid value.
-[WARNING] Ignored `border-bottom: px2rem(1px) solid var(--md-default-fg-color--lightest)` at 599:3, invalid value.
-[WARNING] Ignored `border-top-left-radius: px2rem(2px)` at 600:3, invalid value.
-[WARNING] Ignored `border-top-right-radius: px2rem(2px)` at 601:3, invalid value.
-[WARNING] Ignored `position: sticky` at 611:3, invalid value.
-[WARNING] Ignored `left: px2em(-16px, 13.6px)` at 612:3, invalid value.
-[WARNING] Ignored `margin-right: px2em(16px, 13.6px)` at 615:3, invalid value.
-[WARNING] Ignored `margin-left: px2em(-16px, 13.6px)` at 616:3, invalid value.
-[WARNING] Ignored `padding-left: px2em(16px, 13.6px)` at 617:3, invalid value.
-[WARNING] Ignored `box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset` at 620:3, unknown property.
-[WARNING] Ignored `user-select: none` at 622:3, unknown property.
-[WARNING] Ignored `display: contents` at 629:3, invalid value.
-[WARNING] Ignored `padding: px2em(10.5px, 13.6px) px2em(16px, 13.6px)` at 654:3, invalid value.
-[WARNING] Ignored `font-size: px2em(13.6px)` at 656:3, invalid value.
-[WARNING] Ignored `border-top-left-radius: px2rem(2px)` at 658:3, invalid value.
-[WARNING] Ignored `border-bottom-left-radius: px2rem(2px)` at 659:3, invalid value.
-[WARNING] Ignored `user-select: none` at 660:3, unknown property.
-[WARNING] Ignored `padding-right: px2em(8px, 13.6px)` at 663:3, invalid value.
-[WARNING] Ignored `box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset` at 664:3, unknown property.
-[WARNING] Ignored `margin-top: calc(-1em + px2em(-2px))` at 688:3, invalid value.
-[WARNING] Ignored `padding: 0 px2em(16px)` at 689:3, invalid value.
-[WARNING] Ignored `border: px2rem(1px) solid var(--md-code-bg-color)` at 691:3, invalid value.
-[WARNING] Ignored `border-top-width: px2rem(2px)` at 692:3, invalid value.
-[WARNING] Ignored `border-bottom-right-radius: px2rem(2px)` at 693:3, invalid value.
-[WARNING] Ignored `border-bottom-left-radius: px2rem(2px)` at 694:3, invalid value.
+[WARNING] Ignored `content: chapter-title` at 196:3, invalid value.
+[WARNING] Ignored `margin: 0 px2em(-2px)` at 578:3, invalid value.
+[WARNING] Ignored `padding: 0 px2em(2px)` at 579:3, invalid value.
+[WARNING] Ignored `border-radius: px2rem(2px)` at 580:3, invalid value.
+[WARNING] Ignored `margin: 0 px2em(-16px, 13.6px)` at 590:3, invalid value.
+[WARNING] Ignored `padding: 0 px2em(16px, 13.6px)` at 591:3, invalid value.
+[WARNING] Ignored `padding: px2em(9px, 13.6px) px2em(16px, 13.6px)` at 598:3, invalid value.
+[WARNING] Ignored `font-size: px2em(13.6px)` at 600:3, invalid value.
+[WARNING] Ignored `border-bottom: px2rem(1px) solid var(--md-default-fg-color--lightest)` at 602:3, invalid value.
+[WARNING] Ignored `border-top-left-radius: px2rem(2px)` at 603:3, invalid value.
+[WARNING] Ignored `border-top-right-radius: px2rem(2px)` at 604:3, invalid value.
+[WARNING] Ignored `position: sticky` at 614:3, invalid value.
+[WARNING] Ignored `left: px2em(-16px, 13.6px)` at 615:3, invalid value.
+[WARNING] Ignored `margin-right: px2em(16px, 13.6px)` at 618:3, invalid value.
+[WARNING] Ignored `margin-left: px2em(-16px, 13.6px)` at 619:3, invalid value.
+[WARNING] Ignored `padding-left: px2em(16px, 13.6px)` at 620:3, invalid value.
+[WARNING] Ignored `box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset` at 623:3, unknown property.
+[WARNING] Ignored `user-select: none` at 625:3, unknown property.
+[WARNING] Ignored `display: contents` at 632:3, invalid value.
+[WARNING] Ignored `padding: px2em(10.5px, 13.6px) px2em(16px, 13.6px)` at 657:3, invalid value.
+[WARNING] Ignored `font-size: px2em(13.6px)` at 659:3, invalid value.
+[WARNING] Ignored `border-top-left-radius: px2rem(2px)` at 661:3, invalid value.
+[WARNING] Ignored `border-bottom-left-radius: px2rem(2px)` at 662:3, invalid value.
+[WARNING] Ignored `user-select: none` at 663:3, unknown property.
+[WARNING] Ignored `padding-right: px2em(8px, 13.6px)` at 666:3, invalid value.
+[WARNING] Ignored `box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset` at 667:3, unknown property.
+[WARNING] Ignored `margin-top: calc(-1em + px2em(-2px))` at 691:3, invalid value.
+[WARNING] Ignored `padding: 0 px2em(16px)` at 692:3, invalid value.
+[WARNING] Ignored `border: px2rem(1px) solid var(--md-code-bg-color)` at 694:3, invalid value.
+[WARNING] Ignored `border-top-width: px2rem(2px)` at 695:3, invalid value.
+[WARNING] Ignored `border-bottom-right-radius: px2rem(2px)` at 696:3, invalid value.
+[WARNING] Ignored `border-bottom-left-radius: px2rem(2px)` at 697:3, invalid value.
 [ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/deploying-your-docs.html@readthedocs for internal URI reference
 [ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/customizing-your-theme.html@using-the-theme_dir for internal URI reference
 [ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/configuration.html@google_analytics for internal URI reference
