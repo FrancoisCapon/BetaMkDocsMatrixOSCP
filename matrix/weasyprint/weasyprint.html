@@ -82,15 +82,15 @@ configuration file. Start by reading the <a href="#/project/mkdocs-docs/docs/get
 <hr/>
 <h2 id="/project/mkdocs-docs/docs/getting-started.html@installation">Installation</h2>
 <p>To install MkDocs, run the following command from the command line:</p>
-<pre><code class="language-bash">pip install mkdocs
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install mkdocs
+</code></pre></div>
 <p>For more details, see the <a href="#/project/mkdocs-docs/docs/user-guide/installation.html">Installation Guide</a>.</p>
 <h2 id="/project/mkdocs-docs/docs/getting-started.html@creating-a-new-project">Creating a new project</h2>
 <p>Getting started is super easy. To create a new project, run the following
 command from the command line:</p>
-<pre><code class="language-bash">mkdocs new my-project
-cd my-project
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs new my-project
+<span class="nb">cd</span> my-project
+</code></pre></div>
 <p>Take a moment to review the initial project that has been created for you.</p>
 <p>
 <figure><img src="/project/mkdocs-docs/docs/img/initial-layout.png"/><figcaption>The initial MkDocs layout</figcaption>
@@ -104,13 +104,13 @@ folder just contains a single documentation page, named <code>index.md</code>.</
 as you work on it. Make sure you're in the same directory as the <code>mkdocs.yml</code>
 configuration file, and then start the server by running the <code>mkdocs serve</code>
 command:</p>
-<pre><code class="language-bash">$ mkdocs serve
+<div class="highlight"><pre><span></span><code>$ mkdocs serve
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
-[I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
-[I 160402 15:50:43 handlers:58] Start watching changes
-[I 160402 15:50:43 handlers:60] Start detecting changes
-</code></pre>
+<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 server:271<span class="o">]</span> Serving on http://127.0.0.1:8000
+<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 handlers:58<span class="o">]</span> Start watching changes
+<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 handlers:60<span class="o">]</span> Start detecting changes
+</code></pre></div>
 <p>Open up <code>http://127.0.0.1:8000/</code> in your browser, and you'll see the default
 home page being displayed:</p>
 <p>
@@ -125,9 +125,9 @@ initial heading to <code>MkLorum</code>, and save your changes. Your browser wil
 auto-reload and you should see your updated documentation immediately.</p>
 <p>Now try editing the configuration file: <code>mkdocs.yml</code>. Change the
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_name"><code>site_name</code></a> setting to <code>MkLorum</code> and save the file.</p>
-<pre><code class="language-yaml">site_name: MkLorum
-site_url: https://example.com/
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span><span class="w"></span>
+<span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/</span><span class="w"></span>
+</code></pre></div>
 <p>Your browser should immediately reload, and you'll see your new site name take
 effect.</p>
 <p>
@@ -145,18 +145,18 @@ Just be sure to edit it before you deploy your site to a production server.</p>
 </div>
 <h2 id="/project/mkdocs-docs/docs/getting-started.html@adding-pages">Adding pages</h2>
 <p>Now add a second page to your documentation:</p>
-<pre><code class="language-bash">curl 'https://jaspervdj.be/lorem-markdownum/markdown.txt' &gt; docs/about.md
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl <span class="s1">'https://jaspervdj.be/lorem-markdownum/markdown.txt'</span> &gt; docs/about.md
+</code></pre></div>
 <p>As our documentation site will include some navigation headers, you may want to
 edit the configuration file and add some information about the order, title, and
 nesting of each page in the navigation header by adding a <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@nav"><code>nav</code></a>
 setting:</p>
-<pre><code class="language-yaml">site_name: MkLorum
-site_url: https://example.com/
-nav:
-    - Home: index.md
-    - About: about.md
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span><span class="w"></span>
+<span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/</span><span class="w"></span>
+<span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span><span class="w"></span>
+</code></pre></div>
 <p>Save your changes and you'll now see a navigation bar with <code>Home</code> and <code>About</code>
 items on the left as well as <code>Search</code>, <code>Previous</code>, and <code>Next</code> items on the
 right.</p>
@@ -177,13 +177,13 @@ part!</p>
 <h2 id="/project/mkdocs-docs/docs/getting-started.html@theming-our-documentation">Theming our documentation</h2>
 <p>Now change the configuration file to alter how the documentation is displayed by
 changing the theme. Edit the <code>mkdocs.yml</code> file and add a <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@theme"><code>theme</code></a> setting:</p>
-<pre><code class="language-yaml">site_name: MkLorum
-site_url: https://example.com/
-nav:
-    - Home: index.md
-    - About: about.md
-theme: readthedocs
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span><span class="w"></span>
+<span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/</span><span class="w"></span>
+<span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span><span class="w"></span>
+<span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readthedocs</span><span class="w"></span>
+</code></pre></div>
 <p>Save your changes, and you'll see the ReadTheDocs theme being used.</p>
 <p>
 <figure><img src="/project/mkdocs-docs/docs/img/readthedocs.png"/><figcaption>Screenshot</figcaption>
@@ -197,14 +197,14 @@ favicon icon.</p>
 <h2 id="/project/mkdocs-docs/docs/getting-started.html@building-the-site">Building the site</h2>
 <p>That's looking good. You're ready to deploy the first pass of your <code>MkLorum</code>
 documentation. First build the documentation:</p>
-<pre><code class="language-bash">mkdocs build
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs build
+</code></pre></div>
 <p>This will create a new directory, named <code>site</code>. Take a look inside the
 directory:</p>
-<pre><code class="language-bash">$ ls site
+<div class="highlight"><pre><span></span><code>$ ls site
 about  fonts  index.html  license  search.html
 css    img    js          mkdocs   sitemap.xml
-</code></pre>
+</code></pre></div>
 <p>Notice that your source documentation has been output as two HTML files named
 <code>index.html</code> and <code>about/index.html</code>. You also have various other media that's
 been copied into the <code>site</code> directory as part of the documentation theme. You
@@ -212,20 +212,20 @@ even have a <code>sitemap.xml</code> file and <code>mkdocs/search_index.json</co
 <p>If you're using source code control such as <code>git</code> you probably don't want to
 check your documentation builds into the repository. Add a line containing
 <code>site/</code> to your <code>.gitignore</code> file.</p>
-<pre><code class="language-bash">echo "site/" &gt;&gt; .gitignore
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"site/"</span> &gt;&gt; .gitignore
+</code></pre></div>
 <p>If you're using another source code control tool you'll want to check its
 documentation on how to ignore specific directories.</p>
 <h2 id="/project/mkdocs-docs/docs/getting-started.html@other-commands-and-options">Other Commands and Options</h2>
 <p>There are various other commands and options available. For a complete list of
 commands, use the <code>--help</code> flag:</p>
-<pre><code class="language-bash">mkdocs --help
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs --help
+</code></pre></div>
 <p>To view a list of options available on a given command, use the <code>--help</code> flag
 with that command. For example, to get a list of all options available for the
 <code>build</code> command run the following:</p>
-<pre><code class="language-bash">mkdocs build --help
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs build --help
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/getting-started.html@deploying">Deploying</h2>
 <p>The documentation site that you just built only uses static files so you'll be
 able to host it from pretty much anywhere. Simply upload the contents of the
@@ -255,11 +255,11 @@ bar at the top of the page to move through the documentation in order.</p>
 <p>MkDocs requires a recent version of <a href="https://www.python.org/">Python</a> and the Python package
 manager, <a href="https://pip.readthedocs.io/en/stable/installing/">pip</a>, to be installed on your system.</p>
 <p>You can check if you already have these installed from the command line:</p>
-<pre><code class="language-bash">$ python --version
-Python 3.8.2
+<div class="highlight"><pre><span></span><code>$ python --version
+Python <span class="m">3</span>.8.2
 $ pip --version
-pip 20.0.2 from /usr/local/lib/python3.8/site-packages/pip (python 3.8)
-</code></pre>
+pip <span class="m">20</span>.0.2 from /usr/local/lib/python3.8/site-packages/pip <span class="o">(</span>python <span class="m">3</span>.8<span class="o">)</span>
+</code></pre></div>
 <p>If you already have those packages installed, you may skip down to <a href="#/project/mkdocs-docs/docs/user-guide/installation.html@installing-mkdocs">Installing
 MkDocs</a>.</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/installation.html@installing-python">Installing Python</h3>
@@ -279,28 +279,28 @@ normally off by default).</p>
 <p>If you're using a recent version of Python, the Python package manager, <a href="https://pip.readthedocs.io/en/stable/installing/">pip</a>,
 is most likely installed by default. However, you may need to upgrade pip to the
 lasted version:</p>
-<pre><code class="language-bash">pip install --upgrade pip
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install --upgrade pip
+</code></pre></div>
 <p>If you need to install pip for the first time, download <a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a>.
 Then run the following command to install it:</p>
-<pre><code class="language-bash">python get-pip.py
-</code></pre>
+<div class="highlight"><pre><span></span><code>python get-pip.py
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/user-guide/installation.html@installing-mkdocs">Installing MkDocs</h2>
 <p>Install the <code>mkdocs</code> package using pip:</p>
-<pre><code class="language-bash">pip install mkdocs
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install mkdocs
+</code></pre></div>
 <p>You should now have the <code>mkdocs</code> command installed on your system. Run <code>mkdocs
 --version</code> to check that everything worked okay.</p>
-<pre><code class="language-bash">$ mkdocs --version
-mkdocs, version 1.2.0 from /usr/local/lib/python3.8/site-packages/mkdocs (Python 3.8)
-</code></pre>
+<div class="highlight"><pre><span></span><code>$ mkdocs --version
+mkdocs, version <span class="m">1</span>.2.0 from /usr/local/lib/python3.8/site-packages/mkdocs <span class="o">(</span>Python <span class="m">3</span>.8<span class="o">)</span>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you would like manpages installed for MkDocs, the <a href="https://github.com/click-contrib/click-man">click-man</a> tool can
 generate and install them for you. Simply run the following two commands:</p>
-<pre><code>pip install click-man
+<div class="highlight"><pre><span></span><code>pip install click-man
 click-man --target path/to/man/pages mkdocs
-</code></pre>
+</code></pre></div>
 <p>See the <a href="https://github.com/click-contrib/click-man#automatic-man-page-installation-with-setuptools-and-pip">click-man documentation</a> for an explanation of why manpages are
 not automatically generated and installed by pip.</p>
 </div>
@@ -310,9 +310,9 @@ not automatically generated and installed by pip.</p>
 out-of-the-box.</p>
 <p>A quick solution may be to preface every Python command with <code>python -m</code>
 like this:</p>
-<pre><code>python -m pip install mkdocs
+<div class="highlight"><pre><span></span><code>python -m pip install mkdocs
 python -m mkdocs
-</code></pre>
+</code></pre></div>
 <p>For a more permanent solution, you may need to edit your <code>PATH</code> environment
 variable to include the <code>Scripts</code> directory of your Python installation.
 Recent versions of Python include a script to do this for you. Navigate to
@@ -330,10 +330,10 @@ clicking on it. Alternatively, you can download the <a href="https://github.com/
 will be named <code>docs</code> and will exist at the top level of your project, alongside
 the <code>mkdocs.yml</code> configuration file.</p>
 <p>The simplest project you can create will look something like this:</p>
-<pre><code class="language-no-highlight">mkdocs.yml
+<div class="highlight"><pre><span></span><code>mkdocs.yml
 docs/
     index.md
-</code></pre>
+</code></pre></div>
 <p>By convention your project homepage should be named <code>index.md</code> (see <a href="#/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@index-pages">Index
 pages</a> below for details). Any of the following file
 extensions may be used for your Markdown source files: <code>markdown</code>, <code>mdown</code>,
@@ -348,33 +348,33 @@ behavior.</p>
 </div>
 <p>You can also create multi-page documentation, by creating several Markdown
 files:</p>
-<pre><code class="language-no-highlight">mkdocs.yml
+<div class="highlight"><pre><span></span><code>mkdocs.yml
 docs/
     index.md
     about.md
     license.md
-</code></pre>
+</code></pre></div>
 <p>The file layout you use determines the URLs that are used for the generated
 pages. Given the above layout, pages would be generated for the following URLs:</p>
-<pre><code class="language-no-highlight">/
+<div class="highlight"><pre><span></span><code>/
 /about/
 /license/
-</code></pre>
+</code></pre></div>
 <p>You can also include your Markdown files in nested directories if that better
 suits your documentation layout.</p>
-<pre><code class="language-no-highlight">docs/
+<div class="highlight"><pre><span></span><code>docs/
     index.md
     user-guide/getting-started.md
     user-guide/configuration-options.md
     license.md
-</code></pre>
+</code></pre></div>
 <p>Source files inside nested directories will cause pages to be generated with
 nested URLs, like so:</p>
-<pre><code class="language-no-highlight">/
+<div class="highlight"><pre><span></span><code>/
 /user-guide/getting-started/
 /user-guide/configuration-options/
 /license/
-</code></pre>
+</code></pre></div>
 <p>Any files which are not identified as Markdown files (by their file extension)
 within the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@docs_dir">documentation directory</a> are copied by
 MkDocs to the built site unaltered. See
@@ -405,10 +405,10 @@ navigation configuration will always be sorted alphanumerically by file name
 will need to manually define your navigation configuration if you would like
 your navigation menu sorted differently.</p>
 <p>A minimal navigation configuration could look like this:</p>
-<pre><code class="language-no-highlight">nav:
+<div class="highlight"><pre><span></span><code>nav:
     - 'index.md'
     - 'about.md'
-</code></pre>
+</code></pre></div>
 <p>All paths in the navigation configuration must be relative to the <code>docs_dir</code>
 configuration option. If that option is set to the default value, <code>docs</code>, the
 source files for the above configuration would be located at <code>docs/index.md</code> and
@@ -417,24 +417,24 @@ source files for the above configuration would be located at <code>docs/index.md
 level and with their titles inferred from the contents of the Markdown file or,
 if no title is defined within the file, of the file name. To override the title
 in the <code>nav</code> setting add a title right before the filename.</p>
-<pre><code class="language-no-highlight">nav:
+<div class="highlight"><pre><span></span><code>nav:
     - Home: 'index.md'
     - About: 'about.md'
-</code></pre>
+</code></pre></div>
 <p>Note that if a title is defined for a page in the navigation, that title will be
 used throughout the site for that page and will override any title defined
 within the page itself.</p>
 <p>Navigation sub-sections can be created by listing related pages together under a
 section title. For example:</p>
-<pre><code class="language-yaml">nav:
-    - Home: 'index.md'
-    - 'User Guide':
-        - 'Writing your docs': 'writing-your-docs.md'
-        - 'Styling your docs': 'styling-your-docs.md'
-    - About:
-        - 'License': 'license.md'
-        - 'Release Notes': 'release-notes.md'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="s">'index.md'</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'User</span><span class="nv"> </span><span class="s">Guide'</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Writing</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">docs'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'writing-your-docs.md'</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Styling</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">docs'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'styling-your-docs.md'</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'License'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'license.md'</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Release</span><span class="nv"> </span><span class="s">Notes'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'release-notes.md'</span><span class="w"></span>
+</code></pre></div>
 <figcaption><code>nav</code> example</figcaption>
 <p>With the above configuration we have three top level items: "Home", "User Guide"
 and "About." "Home" is a link to the homepage for the site. Under the "User
@@ -470,8 +470,8 @@ specifically for MkDocs as outlined below.</p>
 <p>When linking between pages in the documentation you can simply use the regular
 Markdown <a href="https://daringfireball.net/projects/markdown/syntax#link">linking</a> syntax, including the <em>relative path</em> to the Markdown
 document you wish to link to.</p>
-<pre><code class="language-no-highlight">Please see the [project license](license.md) for further details.
-</code></pre>
+<div class="highlight"><pre><span></span><code>Please see the [project license](license.md) for further details.
+</code></pre></div>
 <p>When the MkDocs build runs, these Markdown links will automatically be
 transformed into an HTML hyperlink to the appropriate HTML page.</p>
 <div class="admonition warning">
@@ -484,14 +484,14 @@ them to your production server.</p>
 </div>
 <p>If the target documentation file is in another directory you'll need to make
 sure to include any relative directory path in the link.</p>
-<pre><code class="language-no-highlight">Please see the [project license](../about/license.md) for further details.
-</code></pre>
+<div class="highlight"><pre><span></span><code>Please see the [project license](../about/license.md) for further details.
+</code></pre></div>
 <p>The <a href="https://python-markdown.github.io/extensions/toc/">toc</a> extension is used by MkDocs to generate an ID for every header in your
 Markdown documents. You can use that ID to link to a section within a target
 document by using an anchor link. The generated HTML will correctly transform
 the path portion of the link, and leave the anchor portion intact.</p>
-<pre><code class="language-no-highlight">Please see the [project license](about.md#license) for further details.
-</code></pre>
+<div class="highlight"><pre><span></span><code>Please see the [project license](about.md#license) for further details.
+</code></pre></div>
 <p>Note that IDs are created from the text of a header. All text is converted to
 lowercase and any disallowed characters, including white-space, are converted to
 dashes. Consecutive dashes are then reduced to a single dash.</p>
@@ -504,10 +504,10 @@ can set in your <code>mkdocs.yml</code> configuration file to alter the default 
 <p>When set to True the paragraph symbol (¶ or <code>&amp;para;</code>) is used as the
 link text. When set to a string, the provided string is used as the link
 text. For example, to use the hash symbol (<code>#</code>) instead, do:</p>
-<pre><code>markdown_extensions:
+<div class="highlight"><pre><span></span><code>markdown_extensions:
     - toc:
         permalink: "#"
-</code></pre>
+</code></pre></div>
 </dd>
 <dt><code>baselevel</code>:</dt>
 <dd>
@@ -516,10 +516,10 @@ text. For example, to use the hash symbol (<code>#</code>) instead, do:</p>
 within the hierarchy of your HTML templates. For example, if the Markdown
 text for a page should not contain any headers higher than level 2 (<code>&lt;h2&gt;</code>),
 do:</p>
-<pre><code>markdown_extensions:
+<div class="highlight"><pre><span></span><code>markdown_extensions:
     - toc:
         baselevel: 2
-</code></pre>
+</code></pre></div>
 <p>Then any headers in your document would be increased by 1. For example, the
 header <code># Header</code> would be rendered as a level 2 header (<code>&lt;h2&gt;</code>) in the HTML
 output.</p>
@@ -529,21 +529,21 @@ output.</p>
 <p>Word separator. Default: <code>-</code>.</p>
 <p>Character which replaces white-space in generated IDs. If you prefer
 underscores, then do:</p>
-<pre><code>markdown_extensions:
+<div class="highlight"><pre><span></span><code>markdown_extensions:
     - toc:
         separator: "_"
-</code></pre>
+</code></pre></div>
 </dd>
 </dl>
 <p>Note that if you would like to define multiple of the above settings, you must
 do so under a single <code>toc</code> entry in the <code>markdown_extensions</code> configuration
 option.</p>
-<pre><code class="language-yml">markdown_extensions:
+<div class="highlight"><pre><span></span><code>markdown_extensions:
     - toc:
         permalink: "#"
         baselevel: 2
         separator: "_"
-</code></pre>
+</code></pre></div>
 <h4 id="/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@linking-to-images-and-media">Linking to images and media</h4>
 <p>As well as the Markdown source files, you can also include other file types in
 your documentation, which will be copied across when generating your
@@ -551,7 +551,7 @@ documentation site. These might include images and other media.</p>
 <p>For example, if your project documentation needed to include a <a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">GitHub pages
 CNAME file</a> and a PNG formatted screenshot image then your file layout might
 look as follows:</p>
-<pre><code class="language-no-highlight">mkdocs.yml
+<div class="highlight"><pre><span></span><code>mkdocs.yml
 docs/
     CNAME
     index.md
@@ -559,15 +559,15 @@ docs/
     license.md
     img/
         screenshot.png
-</code></pre>
+</code></pre></div>
 <p>To include images in your documentation source files, simply use any of the
 regular Markdown image syntaxes:</p>
-<pre><code class="language-Markdown">Cupcake indexer is a snazzy new project for indexing small cakes.
+<div class="highlight"><pre><span></span><code>Cupcake indexer is a snazzy new project for indexing small cakes.
 
-![Screenshot](img/screenshot.png)
+![<span class="nt">Screenshot</span>](<span class="na">img/screenshot.png</span>)
 
-*Above: Cupcake indexer in progress*
-</code></pre>
+<span class="ge">*Above: Cupcake indexer in progress*</span>
+</code></pre></div>
 <p>Your image will now be embedded when you build the documentation, and should
 also be previewed if you're working on the documentation with a Markdown editor.</p>
 <h4 id="/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@linking-from-raw-html">Linking from raw HTML</h4>
@@ -620,7 +620,7 @@ deliminators to mark the start and/or end of the meta-data. The first line of
 a document must be <code>---</code>. The meta-data ends at the first line containing an
 end deliminator (either <code>---</code> or <code>...</code>). The content between the deliminators is
 parsed as <a href="http://yaml.org">YAML</a>.</p>
-<pre><code class="language-no-highlight">---
+<div class="highlight"><pre><span></span><code>---
 title: My Document
 summary: A brief description of my document.
 authors:
@@ -630,7 +630,7 @@ date: 2018-07-10
 some_url: https://example.com
 ---
 This is the first paragraph of the document.
-</code></pre>
+</code></pre></div>
 <p>YAML is able to detect data types. Therefore, in the above example, the values
 of <code>title</code>, <code>summary</code> and <code>some_url</code> are strings, the value of <code>authors</code> is a
 list of strings and the value of <code>date</code> is a <code>datetime.date</code> object. Note that
@@ -644,7 +644,7 @@ removed from the document.</p>
 <p>MultiMarkdown style meta-data uses a format first introduced by the
 <a href="http://fletcherpenney.net/MultiMarkdown_Syntax_Guide#metadata">MultiMarkdown</a> project. The data consists of a series of keywords and values
 defined at the beginning of a Markdown document, like this:</p>
-<pre><code class="language-no-highlight">Title:   My Document
+<div class="highlight"><pre><span></span><code>Title:   My Document
 Summary: A brief description of my document.
 Authors: Waylan Limberg
          Tom Christie
@@ -653,7 +653,7 @@ blank-value:
 some_url: https://example.com
 
 This is the first paragraph of the document.
-</code></pre>
+</code></pre></div>
 <p>The keywords are case-insensitive and may consist of letters, numbers,
 underscores and dashes and must end with a colon. The values consist of anything
 following the colon on the line and may even be blank.</p>
@@ -677,23 +677,23 @@ style meta-data.</p>
 across multiple implementations. The syntax is rather simple and is generally
 only useful for simple tabular data.</p>
 <p>A simple table looks like this:</p>
-<pre><code class="language-no-highlight">First Header | Second Header | Third Header
+<div class="highlight"><pre><span></span><code>First Header | Second Header | Third Header
 ------------ | ------------- | ------------
 Content Cell | Content Cell  | Content Cell
 Content Cell | Content Cell  | Content Cell
-</code></pre>
+</code></pre></div>
 <p>If you wish, you can add a leading and tailing pipe to each line of the table:</p>
-<pre><code class="language-no-highlight">| First Header | Second Header | Third Header |
+<div class="highlight"><pre><span></span><code>| First Header | Second Header | Third Header |
 | ------------ | ------------- | ------------ |
 | Content Cell | Content Cell  | Content Cell |
 | Content Cell | Content Cell  | Content Cell |
-</code></pre>
+</code></pre></div>
 <p>Specify alignment for each column by adding colons to separator lines:</p>
-<pre><code class="language-no-highlight">First Header | Second Header | Third Header
+<div class="highlight"><pre><span></span><code>First Header | Second Header | Third Header
 :----------- |:-------------:| -----------:
 Left         | Center        | Right
 Left         | Center        | Right
-</code></pre>
+</code></pre></div>
 <p>Note that table cells cannot contain any block level elements and cannot contain
 multiple lines of text. They can, however, include inline Markdown as defined in
 Markdown's <a href="https://daringfireball.net/projects/markdown/syntax">syntax</a> rules.</p>
@@ -704,21 +704,21 @@ line before and after the table.</p>
 blocks without indentation.</p>
 <p>The first line should contain 3 or more backtick (<code>`</code>) characters, and the
 last line should contain the same number of backtick characters (<code>`</code>):</p>
-<pre><code class="language-no-highlight">```
+<div class="highlight"><pre><span></span><code>```
 Fenced code blocks are like Standard
 Markdown’s regular code blocks, except that
 they’re not indented and instead rely on
 start and end fence lines to delimit the
 code block.
 ```
-</code></pre>
+</code></pre></div>
 <p>With this approach, the language can optionally be specified on the first line
 after the backticks which informs any syntax highlighters of the language used:</p>
-<pre><code class="language-no-highlight">```python
+<div class="highlight"><pre><span></span><code>```python
 def fn():
     pass
 ```
-</code></pre>
+</code></pre></div>
 <p>Note that fenced code blocks can not be indented. Therefore, they cannot be
 nested inside list items, blockquotes, etc.</p></div><div class="pdf-section" id="/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html"><h1 id="/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html@choosing-your-theme">Choosing your Theme</h1>
 <p>Selecting and configuring a theme.</p>
@@ -728,9 +728,9 @@ nested inside list items, blockquotes, etc.</p></div><div class="pdf-section" id
 themes</a> are available to choose from as well.</p>
 <p>To choose a theme, set the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@theme">theme</a> configuration option in your <code>mkdocs.yml</code>
 config file.</p>
-<pre><code class="language-yaml">theme:
-    name: readthedocs
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readthedocs</span><span class="w"></span>
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html@mkdocs">mkdocs</h2>
 <p>The default theme, which was built as a custom <a href="https://getbootstrap.com/">Bootstrap</a> theme, supports most
 every feature of MkDocs.</p>
@@ -753,13 +753,13 @@ supports the following options:</p>
 <li>
 <p><strong><code>hljs_languages</code></strong>: By default, highlight.js only supports 23 common
   languages. List additional languages here to include support for them.</p>
-<pre><code>theme:
+<div class="highlight"><pre><span></span><code>theme:
     name: mkdocs
     highlightjs: true
     hljs_languages:
         - yaml
         - rust
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p><strong><code>analytics</code></strong>: Defines configuration options for an analytics service.
@@ -770,11 +770,11 @@ supports the following options:</p>
 tracking ID, which uses the <code>G-</code> format. See Google's documentation to
 <a href="https://support.google.com/analytics/answer/9304153?hl=en&amp;ref_topic=9303319">Set up Analytics for a website and/or app (GA4)</a> or to
 <a href="https://support.google.com/analytics/answer/9744165?hl=en&amp;ref_topic=9303319">Upgrade to a Google Analytics 4 property</a>.</p>
-<pre><code>theme:
+<div class="highlight"><pre><span></span><code>theme:
     name: mkdocs
     analytics:
         gtag: G-ABC123
-</code></pre>
+</code></pre></div>
 <p>When set to the default (<code>null</code>) Google Analytics is disabled for the
 site.</p>
 </li>
@@ -782,14 +782,14 @@ site.</p>
 </li>
 <li>
 <p><strong><code>shortcuts</code></strong>: Defines keyboard shortcut keys.</p>
-<pre><code>theme:
+<div class="highlight"><pre><span></span><code>theme:
     name: mkdocs
     shortcuts:
         help: 191    # ?
         next: 78     # n
         previous: 80 # p
         search: 83   # s
-</code></pre>
+</code></pre></div>
 <p>All values must be numeric key codes. It is best to use keys which are
 available on all keyboards. You may use <a href="https://keycode.info/">https://keycode.info/</a> to determine
 the key code for a given key.</p>
@@ -817,10 +817,10 @@ the key code for a given key.</p>
 <p><strong><code>nav_style</code></strong>: This adjusts the visual style for the top navigation bar; by
   default, this is set to <code>primary</code> (the default), but it can also be set to
   <code>dark</code> or <code>light</code>.</p>
-<pre><code>theme:
+<div class="highlight"><pre><span></span><code>theme:
     name: mkdocs
     nav_style: dark
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p><strong id="/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html@mkdocs-locale"><code>locale</code></strong>: The locale (language/location) used to
@@ -857,13 +857,13 @@ theme supports the following options:</p>
 <li>
 <p><strong><code>hljs_languages</code></strong>: By default, highlight.js only supports 23 common
   languages. List additional languages here to include support for them.</p>
-<pre><code>theme:
+<div class="highlight"><pre><span></span><code>theme:
     name: readthedocs
     highlightjs: true
     hljs_languages:
         - yaml
         - rust
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p><strong><code>analytics</code></strong>: Defines configuration options for an analytics service.</p>
@@ -873,11 +873,11 @@ theme supports the following options:</p>
 tracking ID, which uses the <code>G-</code> format. See Google's documentation to
 <a href="https://support.google.com/analytics/answer/9304153?hl=en&amp;ref_topic=9303319">Set up Analytics for a website and/or app (GA4)</a> or to
 <a href="https://support.google.com/analytics/answer/9744165?hl=en&amp;ref_topic=9303319">Upgrade to a Google Analytics 4 property</a>.</p>
-<pre><code>theme:
+<div class="highlight"><pre><span></span><code>theme:
     name: readthedocs
     analytics:
         gtag: G-ABC123
-</code></pre>
+</code></pre></div>
 <p>When set to the default (<code>null</code>) Google Analytics is disabled for the</p>
 </li>
 <li>
@@ -952,17 +952,17 @@ directory</a>.</p>
 <p>For example, to change the color of the headers in your documentation, create
 a file called <code>extra.css</code> and place it next to the documentation Markdown. In
 that file add the following CSS.</p>
-<pre><code class="language-CSS">h1 {
-  color: red;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">h1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are deploying your documentation with <a href="#/project/mkdocs-docs/docs/user-guide/deploying-your-docs.html@readthedocs">ReadTheDocs</a>. You will need
 to explicitly list the CSS and JavaScript files you want to include in
 your config. To do this, add the following to your mkdocs.yml.</p>
-<pre><code>extra_css: [extra.css]
-</code></pre>
+<div class="highlight"><pre><span></span><code>extra_css: [extra.css]
+</code></pre></div>
 </div>
 <p>After making these changes, they should be visible when you run
 <code>mkdocs serve</code> - if you already had this running, you should see that the CSS
@@ -994,7 +994,7 @@ Developer Guide</a> for more information.</p>
 </div>
 <p>For example, the <a href="#/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html@mkdocs">mkdocs</a> theme (<a href="https://github.com/mkdocs/mkdocs/tree/master/mkdocs/themes/mkdocs">browse source</a>), contains the following
 directory structure (in part):</p>
-<pre><code class="language-nohighlight">- css\
+<div class="highlight"><pre><span></span><code>- css\
 - fonts\
 - img\
   - favicon.ico
@@ -1006,16 +1006,16 @@ directory structure (in part):</p>
 - nav-sub.html
 - nav.html
 - toc.html
-</code></pre>
+</code></pre></div>
 <p>To override any of the files contained in that theme, create a new directory
 next to your <code>docs_dir</code>:</p>
-<pre><code class="language-bash">mkdir custom_theme
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdir custom_theme
+</code></pre></div>
 <p>And then point your <code>mkdocs.yml</code> configuration file at the new directory:</p>
-<pre><code class="language-yaml">theme:
-    name: mkdocs
-    custom_dir: custom_theme/
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom_theme/</span><span class="w"></span>
+</code></pre></div>
 <p>To override the 404 error page ("file not found"), add a new template file named
 <code>404.html</code> to the <code>custom_theme</code> directory. For information on what can be
 included in a template, review the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html">Theme Developer Guide</a>.</p>
@@ -1024,7 +1024,7 @@ included in a template, review the <a href="#/project/mkdocs-docs/docs/dev-guide
 <p>To include a JavaScript library, copy the library to the <code>custom_theme/js/</code>
 directory.</p>
 <p>Your directory structure should now look like this:</p>
-<pre><code class="language-nohighlight">- docs/
+<div class="highlight"><pre><span></span><code>- docs/
   - index.html
 - custom_theme/
   - img/
@@ -1033,7 +1033,7 @@ directory.</p>
     - somelib.js
   - 404.html
 - config.yml
-</code></pre>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Any files included in the parent theme (defined in <code>name</code>) but not
@@ -1049,12 +1049,12 @@ can be individually overridden in the <code>main.html</code> template. Simply cr
 within that file. Just make sure that the <code>main.html</code> extends <code>base.html</code>. For
 example, to alter the title of the MkDocs theme, your replacement <code>main.html</code>
 template would contain the following:</p>
-<pre><code class="language-django">{% extends "base.html" %}
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">"base.html"</span> <span class="cp">%}</span><span class="x"></span>
 
-{% block htmltitle %}
-&lt;title&gt;Custom title goes here&lt;/title&gt;
-{% endblock %}
-</code></pre>
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">htmltitle</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;title&gt;Custom title goes here&lt;/title&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <p>In the above example, the <code>htmltitle</code> block defined in your custom <code>main.html</code> file
 will be used in place of the default <code>htmltitle</code> block defined in the parent theme.
 You may re-define as many blocks as you desire, as long as those blocks are
@@ -1088,25 +1088,25 @@ explanation of blocks, consult the <a href="http://jinja.pocoo.org/docs/dev/temp
 won't include it in the pages generated by MkDocs. Therefore, a link needs to
 be added to the library from the HTML.</p>
 <p>Starting the with directory structure above (truncated):</p>
-<pre><code class="language-nohighlight">- docs/
+<div class="highlight"><pre><span></span><code>- docs/
 - custom_theme/
   - js/
     - somelib.js
 - config.yml
-</code></pre>
+</code></pre></div>
 <p>A link to the <code>custom_theme/js/somelib.js</code> file needs to be added to the
 template. As <code>somelib.js</code> is a JavaScript library, it would logically go in the
 <code>libs</code> block. However, a new <code>libs</code> block that only includes the new script will
 replace the block defined in the parent template and any links to libraries in
 the parent template will be removed. To avoid breaking the template, a
 <a href="http://jinja.pocoo.org/docs/dev/templates/#super-blocks">super block</a> can be used with a call to <code>super</code> from within the block:</p>
-<pre><code class="language-django">{% extends "base.html" %}
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">"base.html"</span> <span class="cp">%}</span><span class="x"></span>
 
-{% block libs %}
-    {{ super() }}
-    &lt;script src="{{ base_url }}/js/somelib.js"&gt;&lt;/script&gt;
-{% endblock %}
-</code></pre>
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">libs</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nb">super</span><span class="o">()</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">    &lt;script src="</span><span class="cp">{{</span> <span class="nv">base_url</span> <span class="cp">}}</span><span class="x">/js/somelib.js"&gt;&lt;/script&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <p>Note that the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@base_url">base_url</a> template variable was used to ensure that the link is
 always relative to the current page.</p>
 <p>Now the generated pages will include links to the template provided libraries as
@@ -1125,8 +1125,8 @@ internationalization/localization plugin.</p>
 <h2 id="/project/mkdocs-docs/docs/user-guide/localizing-your-theme.html@installation">Installation</h2>
 <p>For theme localization to work, you must use a theme which supports it and
 enable <code>i18n</code> (internationalization) support by installing <code>mkdocs[i18n]</code>:</p>
-<pre><code class="language-bash">pip install mkdocs[i18n]
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install mkdocs<span class="o">[</span>i18n<span class="o">]</span>
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/user-guide/localizing-your-theme.html@supported-locales">Supported locales</h2>
 <p>In most cases a locale is designated by the <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO-639-1</a> (2-letter) abbreviation
 for your language. However, a locale may also include a territory (or region or
@@ -1149,10 +1149,10 @@ that you are using, MkDocs will fall back to the theme's default locale.</p>
 parameter of the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@theme">theme</a> configuration option to the appropriate code.</p>
 <p>For example, to build the <code>mkdocs</code> theme in French you would use the following
 in your <code>mkdocs.yml</code> configuration file:</p>
-<pre><code class="language-yaml"> theme:
-     name: mkdocs
-     locale: fr
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="w">     </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fr</span><span class="w"></span>
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/user-guide/localizing-your-theme.html@contributing-theme-translations">Contributing theme translations</h2>
 <p>If a theme has not yet been translated into your language, feel free to
 contribute a translation using the <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html">Translation Guide</a>.</p></div><div class="pdf-section" id="/project/mkdocs-docs/docs/user-guide/configuration.html"><h1 id="/project/mkdocs-docs/docs/user-guide/configuration.html@configuration">Configuration</h1>
@@ -1168,8 +1168,8 @@ by using the <code>-f</code>/<code>--config-file</code> option (see <code>mkdocs
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@site_name">site_name</h3>
 <p>This is a <strong>required setting</strong>, and should be a string that is used as the main
 title for the project documentation. For example:</p>
-<pre><code class="language-yaml">site_name: Marshmallow Generator
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Marshmallow Generator</span><span class="w"></span>
+</code></pre></div>
 <p>When rendering the theme this setting will be passed as the <code>site_name</code> context
 variable.</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@site_url">site_url</h3>
@@ -1185,8 +1185,8 @@ layout.</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@repo_url">repo_url</h3>
 <p>When set, provides a link to your repository (GitHub, Bitbucket, GitLab, ...)
 on each page.</p>
-<pre><code class="language-yaml">repo_url: https://github.com/example/repository/
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/example/repository/</span><span class="w"></span>
+</code></pre></div>
 <p><strong>default</strong>: <code>null</code></p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@repo_name">repo_name</h3>
 <p>When set, provides the name for the link to your repository on each page.</p>
@@ -1205,17 +1205,17 @@ Other themes may show both links.</p>
 <p>The <code>edit_uri</code> supports query ('?') and fragment ('#') characters. For
 repository hosts that use a query or a fragment to access the files, the
 <code>edit_uri</code> might be set as follows. (Note the <code>?</code> and <code>#</code> in the URI...)</p>
-<pre><code class="language-yaml"># Query string example
-edit_uri: '?query=root/path/docs/'
-</code></pre>
-<pre><code class="language-yaml"># Hash fragment example
-edit_uri: '#root/path/docs/'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># Query string example</span><span class="w"></span>
+<span class="nt">edit_uri</span><span class="p">:</span><span class="w"> </span><span class="s">'?query=root/path/docs/'</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Hash fragment example</span><span class="w"></span>
+<span class="nt">edit_uri</span><span class="p">:</span><span class="w"> </span><span class="s">'#root/path/docs/'</span><span class="w"></span>
+</code></pre></div>
 <p>For other repository hosts, simply specify the relative path to the docs
 directory.</p>
-<pre><code class="language-yaml"># Query string example
-edit_uri: root/path/docs/
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># Query string example</span><span class="w"></span>
+<span class="nt">edit_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root/path/docs/</span><span class="w"></span>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On a few known hosts (specifically GitHub, Bitbucket and GitLab), the
@@ -1267,10 +1267,10 @@ This option can be overridden by a command line option in <code>gh-deploy</code>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@nav">nav</h3>
 <p>This setting is used to determine the format and layout of the global navigation
 for the site. A minimal navigation configuration could look like this:</p>
-<pre><code class="language-yaml">nav:
-    - 'index.md'
-    - 'about.md'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'index.md'</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'about.md'</span><span class="w"></span>
+</code></pre></div>
 <p>All paths in the navigation configuration must be relative to the
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@docs_dir"><code>docs_dir</code></a> configuration option. See the section on <a href="#/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@configure-pages-and-navigation">configuring
 pages and navigation</a> for a more detailed breakdown, including how to create
@@ -1280,23 +1280,23 @@ optional for internal links, they are required for external links. An external
 link may be a full URL or a relative URL. Any path which is not found in the
 files is assumed to be an external link. See the section about [Meta-Data] on
 how MkDocs determines the page title of a document.</p>
-<pre><code class="language-yaml">nav:
-    - Introduction: 'index.md'
-    - 'about.md'
-    - 'Issue Tracker': 'https://example.com/'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Introduction</span><span class="p">:</span><span class="w"> </span><span class="s">'index.md'</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'about.md'</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Issue</span><span class="nv"> </span><span class="s">Tracker'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'https://example.com/'</span><span class="w"></span>
+</code></pre></div>
 <p>In the above example, the first two items point to local files while the third
 points to an external site.</p>
 <p>However, sometimes the MkDocs site is hosted in a subdirectory of a project's
 site and you may want to link to other parts of the same site without including
 the full domain. In that case, you may use an appropriate relative URL.</p>
-<pre><code class="language-yaml">site_url: https://example.com/foo/
+<div class="highlight"><pre><span></span><code><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/foo/</span><span class="w"></span>
 
-nav:
-    - Home: '../'
-    - 'User Guide': 'user-guide.md'
-    - 'Bug Tracker': '/bugs/'
-</code></pre>
+<span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="s">'../'</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'User</span><span class="nv"> </span><span class="s">Guide'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'user-guide.md'</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Bug</span><span class="nv"> </span><span class="s">Tracker'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'/bugs/'</span><span class="w"></span>
+</code></pre></div>
 <p>In the above example, two different styles of external links are used. First,
 note that the <code>site_url</code> indicates that the MkDocs site is hosted in the <code>/foo/</code>
 subdirectory of the domain. Therefore, the <code>Home</code> navigation item is a relative
@@ -1314,14 +1314,14 @@ May be either a string or a set of key/value pairs.</p>
 <p>If a string, it must be the string name of a known installed theme. For a list
 of available themes visit <a href="#/project/mkdocs-docs/docs/user-guide/choosing-your-theme.html">Choosing Your Theme</a>.</p>
 <p>An example set of key/value pairs might look something like this:</p>
-<pre><code class="language-yaml">theme:
-    name: mkdocs
-    locale: en
-    custom_dir: my_theme_customizations/
-    static_templates:
-        - sitemap.html
-    include_sidebar: false
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="w"></span>
+<span class="w">    </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_theme_customizations/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">static_templates</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sitemap.html</span><span class="w"></span>
+<span class="w">    </span><span class="nt">include_sidebar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
 <p>If a set of key/value pairs, the following nested keys can be defined:</p>
 <div class="admonition block">
 <h4 id="/project/mkdocs-docs/docs/user-guide/configuration.html@name">name:</h4>
@@ -1366,8 +1366,8 @@ the root of your local file system.</p>
 your <em>build output</em> files are not committed into the repository, and only
 keep the <em>source</em> files under version control. For example, if using <code>git</code>
 you might add the following line to your <code>.gitignore</code> file:</p>
-<pre><code>site/
-</code></pre>
+<div class="highlight"><pre><span></span><code>site/
+</code></pre></div>
 <p>If you're using another source code control tool, you'll want to check its
 documentation on how to ignore specific directories.</p>
 </div>
@@ -1375,10 +1375,10 @@ documentation on how to ignore specific directories.</p>
 <p>Set a list of CSS files in your <code>docs_dir</code> to be included by the theme. For
 example, the following example will include the extra.css file within the
 css subdirectory in your <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@docs_dir">docs_dir</a>.</p>
-<pre><code class="language-yaml">extra_css:
-    - css/extra.css
-    - css/second_extra.css
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">extra_css</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">css/extra.css</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">css/second_extra.css</span><span class="w"></span>
+</code></pre></div>
 <p><strong>default</strong>: <code>[]</code> (an empty list).</p>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@extra_javascript">extra_javascript</h3>
 <p>Set a list of JavaScript files in your <code>docs_dir</code> to be included by the theme.
@@ -1396,19 +1396,19 @@ will be passed to the template. This allows for great flexibility when creating
 custom themes.</p>
 <p>For example, if you are using a theme that supports displaying the project
 version, you can pass it to the theme like this:</p>
-<pre><code class="language-yaml">extra:
-    version: 1.0
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">extra</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"></span>
+</code></pre></div>
 <p><strong>default</strong>: By default <code>extra</code> will be an empty key-value mapping.</p>
 <h2 id="/project/mkdocs-docs/docs/user-guide/configuration.html@preview-controls">Preview controls</h2>
 <h2 id="/project/mkdocs-docs/docs/user-guide/configuration.html@live-reloading">Live Reloading</h2>
 <h3 id="/project/mkdocs-docs/docs/user-guide/configuration.html@watch">watch</h3>
 <p>Determines additional directories to watch when running <code>mkdocs serve</code>.
 Configuration is a YAML list.</p>
-<pre><code class="language-yaml">watch:
-- directory_a
-- directory_b
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">watch</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory_a</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory_b</span><span class="w"></span>
+</code></pre></div>
 <p>Allows a custom default to be set without the need to pass it through the <code>-w</code>/<code>--watch</code>
 option every time the <code>mkdocs serve</code> command is called.</p>
 <div class="admonition note">
@@ -1477,47 +1477,47 @@ that customize how pages are formatted. This setting lets you enable a list of
 extensions beyond the ones that MkDocs uses by default (<code>meta</code>, <code>toc</code>, <code>tables</code>,
 and <code>fenced_code</code>).</p>
 <p>For example, to enable the <a href="https://python-markdown.github.io/extensions/smarty/">SmartyPants typography extension</a>, use:</p>
-<pre><code class="language-yaml">markdown_extensions:
-    - smarty
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">smarty</span><span class="w"></span>
+</code></pre></div>
 <p>Some extensions provide configuration options of their own. If you would like to
 set any configuration options, then you can nest a key/value mapping
 (<code>option_name: option value</code>) of any options that a given extension supports.
 See the documentation for the extension you are using to determine what options
 they support.</p>
 <p>For example, to enable permalinks in the (included) <code>toc</code> extension, use:</p>
-<pre><code class="language-yaml">markdown_extensions:
-    - toc:
-        permalink: True
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
 <p>Note that a colon (<code>:</code>) must follow the extension name (<code>toc</code>) and then on a new
 line the option name and value must be indented and separated by a colon. If you
 would like to define multiple options for a single extension, each option must be
 defined on a separate line:</p>
-<pre><code class="language-yaml">markdown_extensions:
-    - toc:
-        permalink: True
-        separator: "_"
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">        </span><span class="nt">separator</span><span class="p">:</span><span class="w"> </span><span class="s">"_"</span><span class="w"></span>
+</code></pre></div>
 <p>Add an additional item to the list for each extension. If you have no
 configuration options to set for a specific extension, then simply omit options
 for that extension:</p>
-<pre><code class="language-yaml">markdown_extensions:
-    - smarty
-    - toc:
-        permalink: True
-    - sane_lists
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">smarty</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sane_lists</span><span class="w"></span>
+</code></pre></div>
 <p>In the above examples, each extension is a list item (starts with a <code>-</code>). As an
 alternative, key/value pairs can be used instead. However, in that case an empty
 value must be provided for extensions for which no options are defined.
 Therefore, the last example above could also be defined as follows:</p>
-<pre><code class="language-yaml">markdown_extensions:
-    smarty: {}
-    toc:
-        permalink: True
-    sane_lists: {}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">smarty</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sane_lists</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+</code></pre></div>
 <p>This alternative syntax is required if you intend to override some options via
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@configuration-inheritance">inheritance</a>.</p>
 <div class="admonition note">
@@ -1536,33 +1536,33 @@ the site. See the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.h
 <p>If the <code>plugins</code> config setting is defined in the <code>mkdocs.yml</code> config file, then
 any defaults (such as <code>search</code>) are ignored and you need to explicitly re-enable
 the defaults if you would like to continue using them:</p>
-<pre><code class="language-yaml">plugins:
-    - search
-    - your_other_plugin
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your_other_plugin</span><span class="w"></span>
+</code></pre></div>
 <p>To define options for a given plugin, use a nested set of key/value pairs:</p>
-<pre><code class="language-yaml">plugins:
-    - search
-    - your_other_plugin:
-        option1: value
-        option2: other value
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">your_other_plugin</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">option1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span><span class="w"></span>
+<span class="w">        </span><span class="nt">option2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other value</span><span class="w"></span>
+</code></pre></div>
 <p>In the above examples, each plugin is a list item (starts with a <code>-</code>). As an
 alternative, key/value pairs can be used instead. However, in that case an empty
 value must be provided for plugins for which no options are defined. Therefore,
 the last example above could also be defined as follows:</p>
-<pre><code class="language-yaml">plugins:
-    search: {}
-    your_other_plugin:
-        option1: value
-        option2: other value
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">your_other_plugin</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">option1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span><span class="w"></span>
+<span class="w">        </span><span class="nt">option2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other value</span><span class="w"></span>
+</code></pre></div>
 <p>This alternative syntax is required if you intend to override some options via
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@configuration-inheritance">inheritance</a>.</p>
 <p>To completely disable all plugins, including any defaults, set the <code>plugins</code>
 setting to an empty list:</p>
-<pre><code class="language-yaml">plugins: []
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+</code></pre></div>
 <p><strong>default</strong>: <code>['search']</code> (the "search" plugin included with MkDocs).</p>
 <h4 id="/project/mkdocs-docs/docs/user-guide/configuration.html@search">Search</h4>
 <p>A search plugin is provided by default with MkDocs which uses <a href="https://lunrjs.com/">lunr.js</a> as a
@@ -1572,10 +1572,10 @@ of the search plugin:</p>
 <p>A regular expression which matches the characters used as word separators when
 building the index. By default whitespace and the hyphen (<code>-</code>) are used. To add
 the dot (<code>.</code>) as a word separator you might do this:</p>
-<pre><code class="language-yaml">plugins:
-    - search:
-        separator: '[\s\-\.]+'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">separator</span><span class="p">:</span><span class="w"> </span><span class="s">'[\s\-\.]+'</span><span class="w"></span>
+</code></pre></div>
 <p><strong>default</strong>: <code>'[\s\-]+'</code></p>
 <h5 id="/project/mkdocs-docs/docs/user-guide/configuration.html@min_search_length"><strong>min_search_length</strong></h5>
 <p>An integer value that defines the minimum length for a search query. By default
@@ -1583,10 +1583,10 @@ searches shorter than 3 chars in length are ignored as search result quality wit
 short search terms are poor. However, for some use cases (such as documentation
 about Message Queues which might generate searches for 'MQ') it may be preferable
 to set a shorter limit.</p>
-<pre><code class="language-yaml">plugins:
-    - search:
-        min_search_length: 2
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">min_search_length</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+</code></pre></div>
 <p><strong>default</strong>: 3</p>
 <h5 id="/project/mkdocs-docs/docs/user-guide/configuration.html@lang"><strong>lang</strong></h5>
 <p>A list of languages to use when building the search index as identified by their
@@ -1653,10 +1653,10 @@ significant improvement in search performance.</p>
 <p>Configures what strategy the search indexer will use when building the index
 for your pages. This property is particularly useful if your project is large
 in scale, and the index takes up an enormous amount of disk space.</p>
-<pre><code class="language-yaml">plugins:
-    - search:
-        indexing: 'full'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">indexing</span><span class="p">:</span><span class="w"> </span><span class="s">'full'</span><span class="w"></span>
+</code></pre></div>
 <h6 id="/project/mkdocs-docs/docs/user-guide/configuration.html@options">Options</h6>
 <table>
 <thead>
@@ -1687,18 +1687,18 @@ configuration file. However, as an option, the value of a configuration option
 may be set to the value of an environment variable using the <code>!ENV</code> tag. For
 example, to set the value of the <code>site_name</code> option to the value of the
 variable <code>SITE_NAME</code> the YAML file may contain the following:</p>
-<pre><code class="language-yaml">site_name: !ENV SITE_NAME
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SITE_NAME</span><span class="w"></span>
+</code></pre></div>
 <p>If the environment variable is not defined, then the configuration setting
 would be assigned a <code>null</code> (or <code>None</code> in Python) value. A default value can be
 defined as the last value in a list. Like this:</p>
-<pre><code class="language-yaml">site_name: !ENV [SITE_NAME, 'My default site name']
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">SITE_NAME</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'My</span><span class="nv"> </span><span class="s">default</span><span class="nv"> </span><span class="s">site</span><span class="nv"> </span><span class="s">name'</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
 <p>Multiple fallback variables can be used as well. Note that the last value is
 not an environment variable, but must be a value to use as a default if none
 of the specified environment variables are defined.</p>
-<pre><code class="language-yaml">site_name: !ENV [SITE_NAME, OTHER_NAME, 'My default site name']
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">SITE_NAME</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">OTHER_NAME</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'My</span><span class="nv"> </span><span class="s">default</span><span class="nv"> </span><span class="s">site</span><span class="nv"> </span><span class="s">name'</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
 <p>Simple types defined within an environment variable such as string, bool,
 integer, float, datestamp and null are parsed as if they were defined directly
 in the YAML file, which means that the value will be converted to the
@@ -1720,71 +1720,71 @@ options must be defined as key/value pairs. Specifically, the
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@markdown_extensions">markdown_extensions</a> and <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@plugins">plugins</a> options must use the alternative syntax
 which does not use list items (lines which start with  <code>-</code>).</p>
 <p>For example, suppose the common (parent) configuration is defined in <code>base.yml</code>:</p>
-<pre><code class="language-yaml">theme:
-    name: mkdocs
-    locale: en
-    highlightjs: true
+<p><div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="w"></span>
+<span class="w">    </span><span class="nt">highlightjs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-markdown_extensions:
-    toc:
-        permalink: true
-    admonition: {}
-</code></pre>
-<p><span class="wpmr-pdf-page-break"></span>
+<span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">admonition</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+</code></pre></div>
+<span class="wpmr-pdf-page-break"></span>
 Then, for the "foo" site, the primary configuration file would be defined at
 <code>foo/mkdocs.yml</code>:</p>
-<pre><code class="language-yml">INHERIT: ../base.yml
+<div class="highlight"><pre><span></span><code>INHERIT: ../base.yml
 site_name: Foo Project
 site_url: https://example.com/foo
-</code></pre>
+</code></pre></div>
 <p>When running <code>mkdocs build</code>, the file at <code>foo/mkdocs.yml</code> would be passed in as
 the configuration file. MkDocs will then parse that file, retrieve and parse the
 parent file <code>base.yml</code> and deep merge the two. This would result in MkDocs
 receiving the following merged configuration:</p>
-<pre><code class="language-yaml">site_name: Foo Project
-site_url: https://example.com/foo
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Foo Project</span><span class="w"></span>
+<span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/foo</span><span class="w"></span>
 
-theme:
-    name: mkdocs
-    locale: en
-    highlightjs: true
+<span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="w"></span>
+<span class="w">    </span><span class="nt">highlightjs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-markdown_extensions:
-    toc:
-        permalink: true
-    admonition: {}
-</code></pre>
+<span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">admonition</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+</code></pre></div>
 <p>Deep merging allows you to add and/or override various values in your primary
 configuration file. For example, suppose for one site you wanted to add support
 for definition lists, use a different symbol for permalinks, and define a
 different separator. In that site's primary configuration file you could do:</p>
-<pre><code class="language-yaml">INHERIT: ../base.yml
-site_name: Bar Project
-site_url: https://example.com/bar
+<div class="highlight"><pre><span></span><code><span class="nt">INHERIT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../base.yml</span><span class="w"></span>
+<span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bar Project</span><span class="w"></span>
+<span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/bar</span><span class="w"></span>
 
-markdown_extensions:
-    def_list: {}
-    toc:
-        permalink: 
-        separator: "_"
-</code></pre>
+<span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">def_list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain"></span><span class="w"></span>
+<span class="w">        </span><span class="nt">separator</span><span class="p">:</span><span class="w"> </span><span class="s">"_"</span><span class="w"></span>
+</code></pre></div>
 <p>In that case, the above configuration would be deep merged with <code>base.yml</code> and
 result in the following configuration:</p>
-<pre><code class="language-yaml">site_name: Bar Project
-site_url: https://example.com/bar
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bar Project</span><span class="w"></span>
+<span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/bar</span><span class="w"></span>
 
-theme:
-    name: mkdocs
-    locale: en
-    highlightjs: true
+<span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="w"></span>
+<span class="w">    </span><span class="nt">highlightjs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-markdown_extensions:
-    def_list: {}
-    toc:
-        permalink: 
-        separator: "_"
-    admonition: {}
-</code></pre>
+<span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">def_list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain"></span><span class="w"></span>
+<span class="w">        </span><span class="nt">separator</span><span class="p">:</span><span class="w"> </span><span class="s">"_"</span><span class="w"></span>
+<span class="w">    </span><span class="nt">admonition</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+</code></pre></div>
 <p>Notice that the <code>admonition</code> extension was retained from the parent
 configuration, the <code>def_list</code> extension was added, the value of
 <code>toc.permalink</code> was replaced, and the value of <code>toc.separator</code> was added.</p>
@@ -1816,8 +1816,8 @@ which require a different work flow when deploying.</p>
 within the project repository (<code>gh-pages</code> by default). After you <code>checkout</code> the
 primary working branch (usually <code>master</code>) of the git repository where you
 maintain the source documentation for your project, run the following command:</p>
-<pre><code class="language-sh">mkdocs gh-deploy
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs gh-deploy
+</code></pre></div>
 <p>That's it! Behind the scenes, MkDocs will build your docs and use the
 <a href="https://github.com/davisp/ghp-import">ghp-import</a> tool to commit them to the <code>gh-pages</code> branch and push the
 <code>gh-pages</code> branch to GitHub.</p>
@@ -1839,17 +1839,17 @@ site files are deployed to the <code>master</code> branch in a dedicated reposit
 with the GitHub account name. Therefore, you need working copies of two
 repositories on our local system. For example, consider the following file
 structure:</p>
-<pre><code class="language-no-highlight">my-project/
+<div class="highlight"><pre><span></span><code>my-project/
     mkdocs.yml
     docs/
 orgname.github.io/
-</code></pre>
+</code></pre></div>
 <p>After making and verifying updates to your project you need to change
 directories to the <code>orgname.github.io</code> repository and call the
 <code>mkdocs gh-deploy</code> command from there:</p>
-<pre><code class="language-sh">cd ../orgname.github.io/
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ../orgname.github.io/
 mkdocs gh-deploy --config-file ../my-project/mkdocs.yml --remote-branch master
-</code></pre>
+</code></pre></div>
 <p>Note that you need to explicitly point to the <code>mkdocs.yml</code> configuration file as
 it is no longer in the current working directory. You also need to inform the
 deploy script to commit to the <code>master</code> branch. You may override the default
@@ -1900,9 +1900,9 @@ need to use a graphical or command line <a href="https://en.wikipedia.org/wiki/F
 the files.</p>
 <p>For example, a typical set of commands from the command line might look
 something like this:</p>
-<pre><code class="language-sh">mkdocs build
+<div class="highlight"><pre><span></span><code>mkdocs build
 scp -r ./site user@host:/path/to/server/root
-</code></pre>
+</code></pre></div>
 <p>Of course, you will need to replace <code>user</code> with the username you have with your
 hosting provider and <code>host</code> with the appropriate domain name. Additionally, you
 will need to adjust the <code>/path/to/server/root</code> to match the configuration of
@@ -1921,23 +1921,23 @@ settings will need to be customized in very specific ways.</p>
 <p><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_url">site_url</a>:</p>
 <p>The <code>site_url</code> must be set to an empty string, which instructs MkDocs to
 build your site so that it will work with the <code>file://</code> scheme.</p>
-<pre><code>site_url: ""
-</code></pre>
+<div class="highlight"><pre><span></span><code>site_url: ""
+</code></pre></div>
 </li>
 <li>
 <p><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@use_directory_urls">use_directory_urls</a>:</p>
 <p>Set <code>use_directory_urls</code> to <code>false</code>. Otherwise, internal links between
 pages will not work properly.</p>
-<pre><code>use_directory_urls: false
-</code></pre>
+<div class="highlight"><pre><span></span><code>use_directory_urls: false
+</code></pre></div>
 </li>
 <li>
 <p><a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@search">search</a>:</p>
 <p>You will need to either disable the search plugin, or use a third-party
 search plugin which is specifically designed to work with the <code>file://</code>
 scheme. To disable all plugins, set the <code>plugins</code> setting to an empty list.</p>
-<pre><code>plugins: []
-</code></pre>
+<div class="highlight"><pre><span></span><code>plugins: []
+</code></pre></div>
 <p>If you have other plugins enabled, simply ensure that <code>search</code> is not
 included in the list.</p>
 </li>
@@ -1993,20 +1993,20 @@ template</a> file which is placed in a directory that is <em>not</em> a child of
 option to the path of the directory containing <code>main.html</code>. The path should be
 relative to the configuration file. For example, given this example project
 layout:</p>
-<pre><code class="language-no-highlight">mkdocs.yml
+<div class="highlight"><pre><span></span><code>mkdocs.yml
 docs/
     index.md
     about.md
 custom_theme/
     main.html
     ...
-</code></pre>
+</code></pre></div>
 <p>... you would include the following settings in <code>mkdocs.yml</code> to use the custom theme
 directory:</p>
-<pre><code class="language-yaml">theme:
-    name: null
-    custom_dir: 'custom_theme/'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
+<span class="w">    </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="s">'custom_theme/'</span><span class="w"></span>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Generally, when building your own custom theme, the theme.<a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@name">name</a>
@@ -2032,16 +2032,16 @@ is required for the theme.</p>
 </div>
 <h2 id="/project/mkdocs-docs/docs/dev-guide/themes.html@basic-theme">Basic theme</h2>
 <p>The simplest <code>main.html</code> file is the following:</p>
-<pre><code class="language-django">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    {{ page.content }}
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">  &lt;head&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">page.title</span> <span class="cp">%}{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x"> - </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}{{</span> <span class="nv">config.site_name</span> <span class="cp">}}</span><span class="x">&lt;/title&gt;</span>
+<span class="x">  &lt;/head&gt;</span>
+<span class="x">  &lt;body&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">page.content</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">  &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
 <p>The body content from each page specified in <code>mkdocs.yml</code> is inserted using the
 <code>{{ page.content }}</code> tag. Style-sheets and scripts can be brought into this
 theme as with a normal HTML file. Navbars and tables of contents can also be
@@ -2078,11 +2078,11 @@ the <code>mkdocs_theme.yml</code> configuration file and any Python files.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@dot-files">Dot Files</h3>
 <p>Theme authors can explicitly force MkDocs to ignore files by starting a file or
 directory name with a dot. Any of the following files would be ignored:</p>
-<pre><code class="language-text">.ignored.txt
+<div class="highlight"><pre><span></span><code>.ignored.txt
 .ignored/file.txt
 foo/.ignored.txt
 foo/.ignored/file.txt
-</code></pre>
+</code></pre></div>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@documentation-files">Documentation Files</h3>
 <p>All documentation files are ignored. Specifically, any Markdown files (using any
 of the file extensions supported by MKDocs). Additionally, any README files
@@ -2131,28 +2131,28 @@ list of all pages, use the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@nav-example">Nav Example</h5>
 <p>Following is a basic usage example which outputs the first and second level
 navigation as a nested list.</p>
-<pre><code class="language-django">{% if nav|length&gt;1 %}
-    &lt;ul&gt;
-    {% for nav_item in nav %}
-        {% if nav_item.children %}
-            &lt;li&gt;{{ nav_item.title }}
-                &lt;ul&gt;
-                {% for nav_item in nav_item.children %}
-                    &lt;li class="{% if nav_item.active%}current{% endif %}"&gt;
-                        &lt;a href="{{ nav_item.url|url }}"&gt;{{ nav_item.title }}&lt;/a&gt;
-                    &lt;/li&gt;
-                {% endfor %}
-                &lt;/ul&gt;
-            &lt;/li&gt;
-        {% else %}
-            &lt;li class="{% if nav_item.active%}current{% endif %}"&gt;
-                &lt;a href="{{ nav_item.url|url }}"&gt;{{ nav_item.title }}&lt;/a&gt;
-            &lt;/li&gt;
-        {% endif %}
-    {% endfor %}
-    &lt;/ul&gt;
-{% endif %}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">nav</span><span class="o">|</span><span class="nf">length</span><span class="o">&gt;</span><span class="m">1</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;ul&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">nav_item</span> <span class="k">in</span> <span class="nv">nav</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">nav_item.children</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            &lt;li&gt;</span><span class="cp">{{</span> <span class="nv">nav_item.title</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">                &lt;ul&gt;</span>
+<span class="x">                </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">nav_item</span> <span class="k">in</span> <span class="nv">nav_item.children</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                    &lt;li class="</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">nav_item.active</span><span class="cp">%}</span><span class="x">current</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x">"&gt;</span>
+<span class="x">                        &lt;a href="</span><span class="cp">{{</span> <span class="nv">nav_item.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">nav_item.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
+<span class="x">                    &lt;/li&gt;</span>
+<span class="x">                </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                &lt;/ul&gt;</span>
+<span class="x">            &lt;/li&gt;</span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            &lt;li class="</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">nav_item.active</span><span class="cp">%}</span><span class="x">current</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x">"&gt;</span>
+<span class="x">                &lt;a href="</span><span class="cp">{{</span> <span class="nv">nav_item.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">nav_item.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
+<span class="x">            &lt;/li&gt;</span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;/ul&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/themes.html@base_url">base_url</h4>
 <p>The <code>base_url</code> provides a relative path to the root of the MkDocs project. While
 this can be used directly by prepending it to a local relative URL, it is best
@@ -2191,40 +2191,40 @@ the <code>toc</code> is an <code>AnchorLink</code> which contains the following 
 </ul>
 <p>The following example would display the top two levels of the Table of Contents
 for a page.</p>
-<pre><code class="language-django">&lt;ul&gt;
-{% for toc_item in page.toc %}
-    &lt;li&gt;&lt;a href="{{ toc_item.url }}"&gt;{{ toc_item.title }}&lt;/a&gt;&lt;/li&gt;
-    {% for toc_item in toc_item.children %}
-        &lt;li&gt;&lt;a href="{{ toc_item.url }}"&gt;{{ toc_item.title }}&lt;/a&gt;&lt;/li&gt;
-    {% endfor %}
-{% endfor %}
-&lt;/ul&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;ul&gt;</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">toc_item</span> <span class="k">in</span> <span class="nv">page.toc</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;li&gt;&lt;a href="</span><span class="cp">{{</span> <span class="nv">toc_item.url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">toc_item.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">toc_item</span> <span class="k">in</span> <span class="nv">toc_item.children</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;li&gt;&lt;a href="</span><span class="cp">{{</span> <span class="nv">toc_item.url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">toc_item.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;/ul&gt;</span>
+</code></pre></div>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pagemeta">page.meta</h5>
 <p>A mapping of the metadata included at the top of the markdown page. In this
 example we define a <code>source</code> property above the page title.</p>
-<pre><code class="language-no-highlight">source: generics.py
+<div class="highlight"><pre><span></span><code>source: generics.py
         mixins.py
 
 # Page title
 
 Content...
-</code></pre>
+</code></pre></div>
 <p>A template can access this metadata for the page with the <code>meta.source</code>
 variable. This could then be used to link to source files related to the
 documentation page.</p>
-<pre><code class="language-django">{% for filename in page.meta.source %}
-  &lt;a class="github" href="https://github.com/.../{{ filename }}"&gt;
-    &lt;span class="label label-info"&gt;{{ filename }}&lt;/span&gt;
-  &lt;/a&gt;
-{% endfor %}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">for</span> <span class="nv">filename</span> <span class="k">in</span> <span class="nv">page.meta.source</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;a class="github" href="https://github.com/.../</span><span class="cp">{{</span> <span class="nv">filename</span> <span class="cp">}}</span><span class="x">"&gt;</span>
+<span class="x">    &lt;span class="label label-info"&gt;</span><span class="cp">{{</span> <span class="nv">filename</span> <span class="cp">}}</span><span class="x">&lt;/span&gt;</span>
+<span class="x">  &lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pageurl">page.url</h5>
 <p>The URL of the page relative to the MkDocs <code>site_dir</code>. It is expected that this
 be used with the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@url">url</a> filter to ensure the URL is relative to the current
 page.</p>
-<pre><code class="language-django">&lt;a href="{{ page.url|url }}"&gt;{{ page.title }}&lt;/a&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;a href="</span><span class="cp">{{</span> <span class="nv">page.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
+</code></pre></div>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pageabs_url">page.abs_url</h5>
 <p>The absolute URL of the page from the server root as determined by the value
 assigned to the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_url">site_url</a> configuration setting. The value includes any
@@ -2248,8 +2248,8 @@ variable.</p>
 pages. This can be used in conjunction with other attributes of the <code>page</code>
 object to alter the behavior. For example, to display a different title
 on the homepage:</p>
-<pre><code class="language-django">{% if not page.is_homepage %}{{ page.title }} - {% endif %}{{ site_name }}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="k">not</span> <span class="nv">page.is_homepage</span> <span class="cp">%}{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x"> - </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}{{</span> <span class="nv">site_name</span> <span class="cp">}}</span><span class="x"></span>
+</code></pre></div>
 <h5 id="/project/mkdocs-docs/docs/dev-guide/themes.html@pageprevious_page">page.previous_page</h5>
 <p>The page object for the previous page or <code>None</code>. The value will be <code>None</code> if the
 current page is the first item in the site navigation or if the current page is
@@ -2343,24 +2343,24 @@ set of key value pairs that can make custom templates far more flexible.</p>
 <p>For example, this could be used to include the project version of all pages
 and a list of links related to the project. This can be achieved with the
 following <code>extra</code> configuration:</p>
-<pre><code class="language-yaml">extra:
-    version: 0.13.0
-    links:
-        - https://github.com/mkdocs
-        - https://docs.readthedocs.org/en/latest/builds.html#mkdocs
-        - https://www.mkdocs.org/
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">extra</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.13.0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">links</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/mkdocs</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://docs.readthedocs.org/en/latest/builds.html#mkdocs</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.mkdocs.org/</span><span class="w"></span>
+</code></pre></div>
 <p>And then displayed with this HTML in the custom theme.</p>
-<pre><code class="language-django">{{ config.extra.version }}
+<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">config.extra.version</span> <span class="cp">}}</span><span class="x"></span>
 
-{% if config.extra.links %}
-  &lt;ul&gt;
-  {% for link in config.extra.links %}
-      &lt;li&gt;{{ link }}&lt;/li&gt;
-  {% endfor %}
-  &lt;/ul&gt;
-{% endif %}
-</code></pre>
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">config.extra.links</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;ul&gt;</span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">link</span> <span class="k">in</span> <span class="nv">config.extra.links</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">      &lt;li&gt;</span><span class="cp">{{</span> <span class="nv">link</span> <span class="cp">}}</span><span class="x">&lt;/li&gt;</span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;/ul&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/dev-guide/themes.html@template-filters">Template Filters</h2>
 <p>In addition to <a href="https://jinja.palletsprojects.com/en/latest/templates/#builtin-filters">Jinja's default filters</a>, the following custom filters are
 available to use in MkDocs templates:</p>
@@ -2369,14 +2369,14 @@ available to use in MkDocs templates:</p>
 relative and the template context includes a page object, then the URL is
 returned relative to the page object. Otherwise, the URL is returned with
 <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@base_url">base_url</a> prepended.</p>
-<pre><code class="language-django">&lt;a href="{{ page.url|url }}"&gt;{{ page.title }}&lt;/a&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;a href="</span><span class="cp">{{</span> <span class="nv">page.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
+</code></pre></div>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@tojson">tojson</h3>
 <p>Safety convert a Python object to a value in a JavaScript script.</p>
-<pre><code class="language-django">&lt;script&gt;
-    var mkdocs_page_name = {{ page.title|tojson|safe }};
-&lt;/script&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;script&gt;</span>
+<span class="x">    var mkdocs_page_name = </span><span class="cp">{{</span> <span class="nv">page.title</span><span class="o">|</span><span class="nf">tojson</span><span class="o">|</span><span class="nf">safe</span> <span class="cp">}}</span><span class="x">;</span>
+<span class="x">&lt;/script&gt;</span>
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/dev-guide/themes.html@search-and-themes">Search and themes</h2>
 <p>As of MkDocs version <em>0.17</em> client side search support has been added to MkDocs
 via the <code>search</code> plugin. A theme needs to provide a few things for the plugin to
@@ -2384,10 +2384,10 @@ work with the theme.</p>
 <p>While the <code>search</code> plugin is activated by default, users can disable the plugin
 and themes should account for this. It is recommended that theme templates wrap
 search specific markup with a check for the plugin:</p>
-<pre><code class="language-django">{% if 'search' in config['plugins'] %}
-    search stuff here...
-{% endif %}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="s1">'search'</span> <span class="k">in</span> <span class="nv">config</span><span class="o">[</span><span class="s1">'plugins'</span><span class="o">]</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    search stuff here...</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <p>At its most basic functionality, the search plugin will simply provide an index
 file which is no more than a JSON file containing the content of all pages.
 The theme would need to implement its own search functionality client-side.
@@ -2396,20 +2396,20 @@ a complete functioning client-side search tool based on <a href="https://lunrjs.
 <p>The following HTML needs to be added to the theme so that the provided
 JavaScript is able to properly load the search scripts and make relative links
 to the search results from the current page.</p>
-<pre><code class="language-django">&lt;script&gt;var base_url = '{{ base_url }}';&lt;/script&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;script&gt;var base_url = '</span><span class="cp">{{</span> <span class="nv">base_url</span> <span class="cp">}}</span><span class="x">';&lt;/script&gt;</span>
+</code></pre></div>
 <p>With properly configured settings, the following HTML in a template  will add a
 full search implementation to your theme.</p>
-<pre><code class="language-django">&lt;h1 id="search"&gt;Search Results&lt;/h1&gt;
+<div class="highlight"><pre><span></span><code><span class="x">&lt;h1 id="search"&gt;Search Results&lt;/h1&gt;</span>
 
-&lt;form action="search.html"&gt;
-  &lt;input name="q" id="mkdocs-search-query" type="text" &gt;
-&lt;/form&gt;
+<span class="x">&lt;form action="search.html"&gt;</span>
+<span class="x">  &lt;input name="q" id="mkdocs-search-query" type="text" &gt;</span>
+<span class="x">&lt;/form&gt;</span>
 
-&lt;div id="mkdocs-search-results"&gt;
-  Sorry, page not found.
-&lt;/div&gt;
-</code></pre>
+<span class="x">&lt;div id="mkdocs-search-results"&gt;</span>
+<span class="x">  Sorry, page not found.</span>
+<span class="x">&lt;/div&gt;</span>
+</code></pre></div>
 <p>The JavaScript in the plugin works by looking for the specific ID's used in the
 above HTML. The form input for the user to type the search query must be
 identified with <code>id="mkdocs-search-query"</code> and the div where the results will be
@@ -2438,12 +2438,12 @@ provided index file is the responsibility of the theme.</p>
 <p>The search index is written to a JSON file at <code>search/search_index.json</code> in the
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@site_dir">site_dir</a>. The JSON object contained within the file may contain up to three
 objects.</p>
-<pre><code class="language-json">{
-    config: {...},
-    docs: [...],
-    index: {...}
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">co</span><span class="kc">nf</span><span class="err">ig</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="err">docs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="err">i</span><span class="kc">n</span><span class="err">dex</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>If present, the <code>config</code> object contains the key/value pairs of config options
 defined for the plugin in the user's <code>mkdocs.yml</code> config file under
 <code>plugings.search</code>. The <code>config</code> object was new in MkDocs version <em>1.0</em>.</p>
@@ -2476,7 +2476,7 @@ your theme, your users can more easily install it, they can rely on a default
 directory called <code>MANIFEST.in</code> and <code>setup.py</code> beside the theme directory which
 contains an empty <code>__init__.py</code> file, a theme configuration file
 (<code>mkdocs_theme.yml</code>), and your template and media files.</p>
-<pre><code class="language-no-highlight">.
+<div class="highlight"><pre><span></span><code>.
 |-- MANIFEST.in
 |-- theme_name
 |   |-- __init__.py
@@ -2484,37 +2484,37 @@ contains an empty <code>__init__.py</code> file, a theme configuration file
 |   |-- main.html
 |   |-- styles.css
 `-- setup.py
-</code></pre>
+</code></pre></div>
 <p>The <code>MANIFEST.in</code> file should contain the following contents but with
 theme_name updated and any extra file extensions added to the include.</p>
-<pre><code class="language-no-highlight">recursive-include theme_name *.ico *.js *.css *.png *.html *.eot *.svg *.ttf *.woff
+<div class="highlight"><pre><span></span><code>recursive-include theme_name *.ico *.js *.css *.png *.html *.eot *.svg *.ttf *.woff
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
-</code></pre>
+</code></pre></div>
 <p>The <code>setup.py</code> should include the following text with the modifications
 described below.</p>
-<pre><code class="language-python">from setuptools import setup, find_packages
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
 
-VERSION = '0.0.1'
+<span class="n">VERSION</span> <span class="o">=</span> <span class="s1">'0.0.1'</span>
 
-setup(
-    name="mkdocs-themename",
-    version=VERSION,
-    url='',
-    license='',
-    description='',
-    author='',
-    author_email='',
-    packages=find_packages(),
-    include_package_data=True,
-    entry_points={
-        'mkdocs.themes': [
-            'themename = theme_name',
-        ]
-    },
-    zip_safe=False
-)
-</code></pre>
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"mkdocs-themename"</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="n">VERSION</span><span class="p">,</span>
+    <span class="n">url</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span>
+    <span class="n">license</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>
+    <span class="n">include_package_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'mkdocs.themes'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">'themename = theme_name'</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="n">zip_safe</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>Fill in the URL, license, description, author and author email address.</p>
 <p>The name should follow the convention <code>mkdocs-themename</code> (like
 <code>mkdocs-bootstrap</code> and <code>mkdocs-bootswatch</code>), starting with MkDocs, using
@@ -2540,19 +2540,19 @@ file as that file is not loaded from <code>theme.custom_dir</code>.</p>
 those options will be made available in the templates to control behavior.
 For example, a theme might want to make a sidebar optional and include the
 following in the <code>mkdocs_theme.yml</code> file:</p>
-<pre><code class="language-yaml">show_sidebar: true
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">show_sidebar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
 <p>Then in a template, that config option could be referenced:</p>
-<pre><code class="language-django">{% if config.theme.show_sidebar %}
-&lt;div id="sidebar"&gt;...&lt;/div&gt;
-{% endif %}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">config.theme.show_sidebar</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;div id="sidebar"&gt;...&lt;/div&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <p>And the user could override the default in their project's <code>mkdocs.yml</code> config
 file:</p>
-<pre><code class="language-yaml">theme:
-    name: themename
-    show_sidebar: false
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">themename</span><span class="w"></span>
+<span class="w">    </span><span class="nt">show_sidebar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
 <p>In addition to arbitrary options defined by the theme, MkDocs defines a few
 special options which alters its behavior:</p>
 <div class="admonition block">
@@ -2569,19 +2569,19 @@ information.</p>
 to a <code>Locale</code> object. The object contains <code>Locale.language</code> and
 <code>Locale.territory</code> attributes and will resolve as a string from within a
 template. Therefore, the following will work fine:</p>
-<pre><code>&lt;html lang="{ config.theme.locale }"&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>&lt;html lang="{ config.theme.locale }"&gt;
+</code></pre></div>
 <p>If the locale was set to <code>fr_CA</code> (Canadian French), then the above template
 would render as:</p>
-<pre><code>&lt;html lang="fr_CA"&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>&lt;html lang="fr_CA"&gt;
+</code></pre></div>
 <p>If you did not want the territory attribute to be included, then reference
 the <code>language</code> attribute directly:</p>
-<pre><code>&lt;html lang="{ config.theme.locale.language }"&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>&lt;html lang="{ config.theme.locale.language }"&gt;
+</code></pre></div>
 <p>That would render as:</p>
-<pre><code>&lt;html lang="fr"&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>&lt;html lang="fr"&gt;
+</code></pre></div>
 <h4 id="/project/mkdocs-docs/docs/dev-guide/themes.html@static_templates">static_templates</h4>
 <p>This option mirrors the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@theme">theme</a> config option of the same name and allows
 some defaults to be set by the theme. Note that while the user can add
@@ -2601,8 +2601,8 @@ done with pip, using <code>pip install .</code> if you are still in the same dir
 the setup.py.</p>
 <p>Most Python packages, including MkDocs, are distributed on PyPI. To do this,
 you should run the following command.</p>
-<pre><code class="language-no-highlight">python setup.py register
-</code></pre>
+<div class="highlight"><pre><span></span><code>python setup.py register
+</code></pre></div>
 <p>If you don't have an account setup, you should be prompted to create one.</p>
 <p>For a much more detailed guide, see the official Python packaging
 documentation for <a href="https://packaging.python.org/en/latest/distributing/">Packaging and Distributing Projects</a>.</p>
@@ -2622,13 +2622,13 @@ same commands utilized by MkDocs.</p>
 <p>MkDocs includes some helper commands which are light wrappers around <a href="https://babel.pocoo.org/en/latest/setup.html">pybabel's
 commands</a>. To use the commands on your own theme, add the following to
 your theme's <code>setup.py</code> script:</p>
-<pre><code class="language-python">from mkdocs.commands.setup import babel_cmdclass
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mkdocs.commands.setup</span> <span class="kn">import</span> <span class="n">babel_cmdclass</span>
 
-setup(
-    ...
-    cmdclass=babel_cmdclass
-)
-</code></pre>
+<span class="n">setup</span><span class="p">(</span>
+    <span class="o">...</span>
+    <span class="n">cmdclass</span><span class="o">=</span><span class="n">babel_cmdclass</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>Note that <code>cmdclass=babel_cmdclass</code> was added an a parameter passed to
 the <code>setup</code> function.</p>
 <div class="admonition warning">
@@ -2643,8 +2643,8 @@ available for use.</p>
 <p>Since the translation commands are embedded in the <code>setup.py</code> script of your
 custom theme they should be called from the root of your theme's working
 tree as follows:</p>
-<pre><code class="language-bash">python setup.py &lt;command_name&gt; [OPTIONS]
-</code></pre>
+<div class="highlight"><pre><span></span><code>python setup.py &lt;command_name&gt; <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
 <p>Each command provides a detailed list of options available with the <code>-h/--help</code>
 option.</p>
 <p>For an overview of the workflow used by MkDocs to translate the built-in
@@ -2734,37 +2734,37 @@ the same time, you may override any of parent theme's translations!</p>
 <p>Let's suppose that you're working on your own fork of the
 <a href="https://github.com/mkdocs/mkdocs-basic-theme">mkdocs-basic-theme</a> and want to add translations to it.</p>
 <p>You would first modify the <code>setup.py</code> like this:</p>
-<pre><code class="language-diff">--- a/setup.py
-+++ b/setup.py
-@@ -1,4 +1,5 @@
- from setuptools import setup, find_packages
-+from mkdocs.commands.setup import babel_cmdclass
+<div class="highlight"><pre><span></span><code><span class="gd">--- a/setup.py</span><span class="w"></span>
+<span class="gi">+++ b/setup.py</span><span class="w"></span>
+<span class="gu">@@ -1,4 +1,5 @@</span><span class="w"></span>
+<span class="w"> </span>from setuptools import setup, find_packages<span class="w"></span>
+<span class="gi">+from mkdocs.commands.setup import babel_cmdclass</span><span class="w"></span>
 
- VERSION = '1.1'
+<span class="w"> </span>VERSION = '1.1'<span class="w"></span>
 
-@@ -18,5 +19,6 @@ setup(
-             'basictheme = basic_theme',
-         ]
-     },
--    zip_safe=False
-+    zip_safe=False,
-+    cmdclass=babel_cmdclass
- )
-</code></pre>
+<span class="gu">@@ -18,5 +19,6 @@ setup(</span><span class="w"></span>
+<span class="w"> </span>            'basictheme = basic_theme',<span class="w"></span>
+<span class="w"> </span>        ]<span class="w"></span>
+<span class="w"> </span>    },<span class="w"></span>
+<span class="gd">-    zip_safe=False</span><span class="w"></span>
+<span class="gi">+    zip_safe=False,</span><span class="w"></span>
+<span class="gi">+    cmdclass=babel_cmdclass</span><span class="w"></span>
+<span class="w"> </span>)<span class="w"></span>
+</code></pre></div>
 <p>Next, you would edit the templates by wrapping text in your HTML sources with
 <code>{% trans %}</code> and <code>{% endtrans %}</code> as follows:</p>
-<pre><code class="language-diff">--- a/basic_theme/base.html
-+++ b/basic_theme/base.html
-@@ -88,7 +88,7 @@
+<div class="highlight"><pre><span></span><code><span class="gd">--- a/basic_theme/base.html</span><span class="w"></span>
+<span class="gi">+++ b/basic_theme/base.html</span><span class="w"></span>
+<span class="gu">@@ -88,7 +88,7 @@</span><span class="w"></span>
 
- &lt;body&gt;
+<span class="w"> </span>&lt;body&gt;<span class="w"></span>
 
--  &lt;h1&gt;This is an example theme for MkDocs.&lt;/h1&gt;
-+  &lt;h1&gt;{% trans %}This is an example theme for MkDocs.{% endtrans %}&lt;/h1&gt;
+<span class="gd">-  &lt;h1&gt;This is an example theme for MkDocs.&lt;/h1&gt;</span><span class="w"></span>
+<span class="gi">+  &lt;h1&gt;{% trans %}This is an example theme for MkDocs.{% endtrans %}&lt;/h1&gt;</span><span class="w"></span>
 
-   &lt;p&gt;
-     It is designed to be read by looking at the theme HTML which is heavily
-</code></pre>
+<span class="w"> </span>  &lt;p&gt;<span class="w"></span>
+<span class="w"> </span>    It is designed to be read by looking at the theme HTML which is heavily<span class="w"></span>
+</code></pre></div>
 <p>Then you would follow the <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html">Translation Guide</a> as usual to get your translations
 running.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/themes.html@packaging-translations-with-your-theme">Packaging Translations with your theme</h3>
@@ -2776,8 +2776,8 @@ be included in a packaged release of a theme. When MkDocs builds a site with
 translations, it only makes use of the binary <code>mo</code> files(s) for the specified
 locale. Therefore, when <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@packaging-themes">packaging a theme</a>, you would need to make the
 following addition to your <code>MANIFEST.in</code> file:</p>
-<pre><code class="language-no-highlight">recursive-include theme_name *.mo
-</code></pre>
+<div class="highlight"><pre><span></span><code>recursive-include theme_name *.mo
+</code></pre></div>
 <p>Then, before building your Python package, you will want to ensure that the
 binary <code>mo</code> file for each locale is up-to-date by running the <code>compile_catalog</code>
 command for each locale. MkDocs expects the binary <code>mo</code> files to be located at
@@ -2823,8 +2823,8 @@ git working tree on your local machine to make use of the helper scripts.</p>
 and <a href="#/project/mkdocs-docs/docs/about/contributing.html@submitting-pull-requests">Submit a Pull Request</a>. The instructions in this document assume that you
 are working from a properly configured development environment.</p>
 <p>Make sure translation requirements are installed in your environment:</p>
-<pre><code class="language-bash">pip install mkdocs[i18n]
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install mkdocs<span class="o">[</span>i18n<span class="o">]</span>
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/dev-guide/translations.html@adding-language-translations-to-themes">Adding language translations to themes</h2>
 <p>If your favorite language locale is not yet supported on one (or both) of the
 built-in themes (<code>mkdocs</code> and <code>readthedocs</code>), you can easily contribute a
@@ -2863,14 +2863,14 @@ directory structure for your desired language and prepare a Portable Object
 <p>Use the <code>init_catalog</code> command on each theme (<code>-t &lt;theme&gt;</code>) and provide the
 appropriate language code (<code>-l &lt;language&gt;</code>). For example, to add a translation
 for the Spanish <code>es</code> language to the <code>mkdocs</code> theme, run the following command:</p>
-<pre><code class="language-bash">python setup.py init_catalog -t mkdocs -l es
-</code></pre>
+<div class="highlight"><pre><span></span><code>python setup.py init_catalog -t mkdocs -l es
+</code></pre></div>
 <p>The above command will create the following file structure:</p>
-<pre><code class="language-text">mkdocs/themes/mkdocs/locales
+<div class="highlight"><pre><span></span><code>mkdocs/themes/mkdocs/locales
 ├── es
 │   └── LC_MESSAGES
 │       └── messages.po
-</code></pre>
+</code></pre></div>
 <p>You can now move on to the next step and <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@translating-the-mkdocs-themes">add a
 translation</a> for every text placeholder in the
 localized catalog.</p>
@@ -2893,16 +2893,16 @@ below to update the theme's <code>messages.po</code> file:</p>
 for.</p>
 <p>To update the <code>fr</code> translation catalog of the <code>mkdocs</code> theme, use the following
 command:</p>
-<pre><code class="language-bash">python setup.py update_catalog -t mkdocs -l fr
-</code></pre>
+<div class="highlight"><pre><span></span><code>python setup.py update_catalog -t mkdocs -l fr
+</code></pre></div>
 <p>You can now move on to the next step and <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@translating-the-mkdocs-themes">add a translation</a> for every updated
 text placeholder in the localized catalog.</p>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/translations.html@translating-the-mkdocs-themes">Translating the MkDocs themes</h3>
 <p>Now that your localized <code>messages.po</code> files are ready, all you need to do is
 add a translation in each <code>msgstr</code> item for each <code>msgid</code> item in the file.</p>
-<pre><code class="language-text">msgid "Next"
+<div class="highlight"><pre><span></span><code>msgid "Next"
 msgstr "Siguiente"
-</code></pre>
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not modify the <code>msgid</code> as it is common to all translations. Just add
@@ -2914,23 +2914,23 @@ you'll want to <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html@t
 <p>To test a theme with translations, you need to first compile the <code>messages.po</code>
 files of your theme into <code>messages.mo</code> files. The following command will compile
 the <code>es</code> translation for the <code>mkdocs</code> theme.</p>
-<pre><code class="language-bash">python setup.py compile_catalog -t mkdocs -l es
-</code></pre>
+<div class="highlight"><pre><span></span><code>python setup.py compile_catalog -t mkdocs -l es
+</code></pre></div>
 <p>The above command results in the following file structure:</p>
-<pre><code class="language-text">mkdocs/themes/mkdocs/locales
+<div class="highlight"><pre><span></span><code>mkdocs/themes/mkdocs/locales
 ├── es
 │   └── LC_MESSAGES
 │       ├── messages.mo
 │       └── messages.po
-</code></pre>
+</code></pre></div>
 <p>Note that the compiled <code>messages.mo</code> file was generated based on the
 <code>messages.po</code> file that you just edited.</p>
 <p>Then modify the <code>mkdocs.yml</code> file at the root of the project to test the new
 and/or updated locale:</p>
-<pre><code class="language-yaml">theme:
-    name: mkdocs
-    locale: es
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">es</span><span class="w"></span>
+</code></pre></div>
 <p>Finally, run <code>mkdocs serve</code> to check out your new localized version of the theme.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2955,8 +2955,8 @@ to the project. Thank you!</p></div><div class="pdf-section" id="/project/mkdocs
 using a plugin which comes with MkDocs, then it was installed when you installed
 MkDocs. However, to install third party plugins, you need to determine the
 appropriate package name and install it using <code>pip</code>:</p>
-<pre><code>pip install mkdocs-foo-plugin
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install mkdocs-foo-plugin
+</code></pre></div>
 <p>Once a plugin has been successfully installed, it is ready to use. It just needs
 to be <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@using-plugins">enabled</a> in the configuration file. The <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">MkDocs Plugins</a>
 wiki page has a growing list of plugins that you can install and use.</p>
@@ -2965,9 +2965,9 @@ wiki page has a growing list of plugins that you can install and use.</p>
 use when building the site. Each "plugin" must be a string name assigned to the
 plugin (see the documentation for a given plugin to determine its "name"). A
 plugin listed here must already be <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@installing-plugins">installed</a>.</p>
-<pre><code class="language-yaml">plugins:
-    - search
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"></span>
+</code></pre></div>
 <p>Some plugins may provide configuration options of their own. If you would like
 to set any configuration options, then you can nest a key/value mapping
 (<code>option_name: option value</code>) of any options that a given plugin supports. Note
@@ -2975,11 +2975,11 @@ that a colon (<code>:</code>) must follow the plugin name and then on a new line
 name and value must be indented and separated by a colon. If you would like to
 define multiple options for a single plugin, each option must be defined on a
 separate line.</p>
-<pre><code class="language-yaml">plugins:
-    - search:
-        lang: en
-        foo: bar
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="w"></span>
+<span class="w">        </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
+</code></pre></div>
 <p>For information regarding the configuration options available for a given plugin,
 see that plugin's documentation.</p>
 <p>For a list of default plugins and how to override them, see the
@@ -3003,13 +3003,13 @@ two item tuple in which the first item is the string name of the
 configuration option and the second item is an instance of
 <code>mkdocs.config.config_options.BaseConfigOption</code> or any of its subclasses.</p>
 <p>For example, the following <code>config_scheme</code> defines three configuration options: <code>foo</code>, which accepts a string; <code>bar</code>, which accepts an integer; and <code>baz</code>, which accepts a boolean value.</p>
-<pre><code>class MyPlugin(mkdocs.plugins.BasePlugin):
+<div class="highlight"><pre><span></span><code>class MyPlugin(mkdocs.plugins.BasePlugin):
     config_scheme = (
         ('foo', mkdocs.config.config_options.Type(str, default='a default value')),
         ('bar', mkdocs.config.config_options.Type(int, default=0)),
         ('baz', mkdocs.config.config_options.Type(bool, default=True))
     )
-</code></pre>
+</code></pre></div>
 <p>When the user's configuration is loaded, the above scheme will be used to
 validate the configuration and fill in any defaults for settings not
 provided by the user. The validation classes may be any of the classes
@@ -3023,10 +3023,10 @@ in the <code>config_scheme</code> will raise a <code>mkdocs.config.base.Validati
 <dl>
 <dd>A dictionary of configuration options for the plugin, which is populated by
 the <code>load_config</code> method after configuration validation has completed. Use
-this attribute to access options provided by the user.<pre><code>def on_pre_build(self, config):
+this attribute to access options provided by the user.<div class="highlight"><pre><span></span><code>def on_pre_build(self, config):
     if self.config['bool_option']:
         # implement "bool_option" functionality here...
-</code></pre>
+</code></pre></div>
 </dd>
 </dl>
 <p>All <code>BasePlugin</code> subclasses contain the following method(s):</p>
@@ -3054,11 +3054,11 @@ additional keywords are provided to an event in a future version of MkDocs,
 there will be no need to alter your plugin.</p>
 <p>For example, the following event would add an additional static_template to
 the theme config:</p>
-<pre><code>class MyPlugin(BasePlugin):
+<div class="highlight"><pre><span></span><code>class MyPlugin(BasePlugin):
     def on_config(self, config, **kwargs):
         config['theme'].static_templates.add('my_template.html')
         return config
-</code></pre>
+</code></pre></div>
 </dd>
 </dl>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@events">Events</h3>
@@ -3370,56 +3370,56 @@ to the user.</p>
 process is aborted with a helpful message.</p>
 <p>The <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@on_build_error">on_build_error</a> event will be triggered for any exception.</p>
 <p>For example:</p>
-<pre><code class="language-python">from mkdocs.exceptions import PluginError
-from mkdocs.plugins import BasePlugin
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mkdocs.exceptions</span> <span class="kn">import</span> <span class="n">PluginError</span>
+<span class="kn">from</span> <span class="nn">mkdocs.plugins</span> <span class="kn">import</span> <span class="n">BasePlugin</span>
 
 
-class MyPlugin(BasePlugin):
-    def on_post_page(self, output, page, config, **kwargs):
-        try:
-            # some code that could throw a KeyError
-            ...
-        except KeyError as error:
-            raise PluginError(str(error))
+<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">BasePlugin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_post_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># some code that could throw a KeyError</span>
+            <span class="o">...</span>
+        <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">PluginError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
 
-    def on_build_error(self, error):
-        # some code to clean things up
-        ...
-</code></pre>
+    <span class="k">def</span> <span class="nf">on_build_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
+        <span class="c1"># some code to clean things up</span>
+        <span class="o">...</span>
+</code></pre></div>
 <h3 id="/project/mkdocs-docs/docs/dev-guide/plugins.html@entry-point">Entry Point</h3>
 <p>Plugins need to be packaged as Python libraries (distributed on PyPI separate
 from MkDocs) and each must register as a Plugin via a setuptools <code>entry_points</code>.
 Add the following to your <code>setup.py</code> script:</p>
-<pre><code class="language-python">entry_points={
-    'mkdocs.plugins': [
-        'pluginname = path.to.some_plugin:SomePluginClass',
-    ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">'mkdocs.plugins'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'pluginname = path.to.some_plugin:SomePluginClass'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>The <code>pluginname</code> would be the name used by users (in the config file) and
 <code>path.to.some_plugin:SomePluginClass</code> would be the importable plugin itself
 (<code>from path.to.some_plugin import SomePluginClass</code>) where <code>SomePluginClass</code> is a
 subclass of <a href="#/project/mkdocs-docs/docs/dev-guide/plugins.html@baseplugin">BasePlugin</a> which defines the plugin behavior. Naturally, multiple
 Plugin classes could exist in the same module. Simply define each as a separate
 entry point.</p>
-<pre><code class="language-python">entry_points={
-    'mkdocs.plugins': [
-        'featureA = path.to.my_plugins:PluginA',
-        'featureB = path.to.my_plugins:PluginB'
-    ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">'mkdocs.plugins'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'featureA = path.to.my_plugins:PluginA'</span><span class="p">,</span>
+        <span class="s1">'featureB = path.to.my_plugins:PluginB'</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Note that registering a plugin does not activate it. The user still needs to
 tell MkDocs to use it via the config.</p></div></div><div class="pdf-chapter"><div class="pdf-chapter-page"><h1>About</h1><div class="pdf-chapter-page-title"><span>About</span></div></div><div class="pdf-section" id="/project/mkdocs-docs/docs/about/release-notes.html"><h1 id="/project/mkdocs-docs/docs/about/release-notes.html@release-notes">Release Notes</h1>
 <hr/>
 <h2 id="/project/mkdocs-docs/docs/about/release-notes.html@upgrading">Upgrading</h2>
 <p>To upgrade MkDocs to the latest version, use pip:</p>
-<pre><code>pip install -U mkdocs
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install -U mkdocs
+</code></pre></div>
 <p>You can determine your currently installed version using <code>mkdocs --version</code>:</p>
-<pre><code>$ mkdocs --version
+<div class="highlight"><pre><span></span><code>$ mkdocs --version
 mkdocs, version 1.0 from /path/to/mkdocs (Python 3.6)
-</code></pre>
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/about/release-notes.html@maintenance-team">Maintenance team</h2>
 <p>The current and past members of the MkDocs team.</p>
 <ul>
@@ -3507,8 +3507,8 @@ details on using the provided translations, see the <a href="#/project/mkdocs-do
 guide</a>. Note that translation will not
 happen by default. Users must first install the necessary dependencies with
 the following command:</p>
-<pre><code class="language-bash">pip install mkdocs[i18n]
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install mkdocs<span class="o">[</span>i18n<span class="o">]</span>
+</code></pre></div>
 <p>Translation contributions are welcome and detailed in the <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html">Translation
 Guide</a>.</p>
 <p>Developers of third party themes may want to review the relevant section of
@@ -3523,16 +3523,16 @@ specified in <code>theme.locale</code>.</p>
 <p>Environments variables may now be specified in the configuration file with the
 <code>!ENV</code> tag. The value of the variable will be parsed by the YAML parser and
 converted to the appropriate type.</p>
-<pre><code class="language-yaml">somekey: !ENV VAR_NAME
-otherkey: !ENV [VAR_NAME, FALLBACK_VAR, 'default value']
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">somekey</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VAR_NAME</span><span class="w"></span>
+<span class="nt">otherkey</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">VAR_NAME</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">FALLBACK_VAR</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'default</span><span class="nv"> </span><span class="s">value'</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
 <p>See <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@environment-variables">Environment Variables</a>
 in the Configuration documentation for details.</p>
 <h4 id="/project/mkdocs-docs/docs/about/release-notes.html@support-added-for-configuration-inheritance-2218">Support added for Configuration Inheritance (#2218)</h4>
 <p>A configuration file may now inherit from a parent configuration file. In the
 primary file set the <code>INHERIT</code> key to the relative path of the parent file.</p>
-<pre><code class="language-yaml">INHERIT: path/to/base.yml
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">INHERIT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">path/to/base.yml</span><span class="w"></span>
+</code></pre></div>
 <p>The two files will then be deep merged. See
 <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@configuration-inheritance">Configuration Inheritance</a>
 for details.</p>
@@ -3730,9 +3730,9 @@ documentation</a> for details.</p>
 Additionally, 2 filenames were changed in this update. If you are using a theme
 which inherits from the <code>mkdocs</code> theme, the theme developer may need to update
 these filenames as follows.</p>
-<pre><code class="language-text">css/bootstrap-custom.min.css =&gt; css/bootstrap.min.css
+<div class="highlight"><pre><span></span><code>css/bootstrap-custom.min.css =&gt; css/bootstrap.min.css
 js/bootstrap-3.0.3.min.js =&gt; js/bootstrap.min.js
-</code></pre>
+</code></pre></div>
 <h4 id="/project/mkdocs-docs/docs/about/release-notes.html@improved-configuration-support-on-the-command-line-1401">Improved configuration support on the command line (#1401)</h4>
 <p>The <code>build</code>, <code>serve</code>, and <code>gh-deploy</code> subcommands now support flags to control
 whether <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@use_directory_urls">directory URLs</a> should be created:
@@ -3874,15 +3874,15 @@ consistently includes an ending slash on all internally generated URLs.</p>
 in the configuration file. The setting has been renamed <code>nav</code>. To update your
 configuration, simply rename the setting to <code>nav</code>. In other words, if your
 configuration looked like this:</p>
-<pre><code class="language-yaml">pages:
-    - Home: index.md
-    - User Guide: user-guide.md
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">pages</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">User Guide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user-guide.md</span><span class="w"></span>
+</code></pre></div>
 <p>Simply edit the configuration as follows:</p>
-<pre><code class="language-yaml">nav:
-    - Home: index.md
-    - User Guide: user-guide.md
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">User Guide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user-guide.md</span><span class="w"></span>
+</code></pre></div>
 <figcaption><code>pages</code> become <code>nav</code></figcaption>
 <p>In the current release, any configuration which includes a <code>pages</code> setting, but
 no <code>nav</code> setting, the <code>pages</code> configuration will be copied to <code>nav</code> and a
@@ -3895,32 +3895,32 @@ been removed in that no URLs are modified before being added to the template
 context.</p>
 <p>For example, a theme template might have previously included a link to
 the <code>site_name</code> as:</p>
-<pre><code class="language-django">&lt;a href="{{ nav.homepage.url }}"&gt;{{ config.site_name }}&lt;/a&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;a href="</span><span class="cp">{{</span> <span class="nv">nav.homepage.url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">config.site_name</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
+</code></pre></div>
 <p>And MkDocs would magically return a URL for the homepage which was relative to
 the current page. That "magic" has been removed and the <a href="#/project/mkdocs-docs/docs/dev-guide/themes.html@url">url</a> template filter
 should be used:</p>
-<pre><code class="language-django">&lt;a href="{{ nav.homepage.url|url }}"&gt;{{ config.site_name }}&lt;/a&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;a href="</span><span class="cp">{{</span> <span class="nv">nav.homepage.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">config.site_name</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
+</code></pre></div>
 <p>This change applies to any navigation items and pages, as well as the
 <code>page.next_page</code> and <code>page.previous_page</code> attributes. For the time being, the
 <code>extra_javascript</code> and <code>extra_css</code> variables continue to work as previously
 (without the <code>url</code> template filter), but they have been deprecated and the
 corresponding configuration values (<code>config.extra_javascript</code> and
 <code>config.extra_css</code> respectively) should be used with the filter instead.</p>
-<pre><code class="language-django">{% for path in config['extra_css'] %}
-    &lt;link href="{{ path|url }}" rel="stylesheet"&gt;
-{% endfor %}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">for</span> <span class="nv">path</span> <span class="k">in</span> <span class="nv">config</span><span class="o">[</span><span class="s1">'extra_css'</span><span class="o">]</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;link href="</span><span class="cp">{{</span> <span class="nv">path</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">" rel="stylesheet"&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <p>Note that navigation can now include links to external sites. Obviously, the
 <code>base_url</code> should not be prepended to these items. However, the <code>url</code> template
 filter is smart enough to recognize the URL is absolute and does not alter it.
 Therefore, all navigation items can be passed to the filter and only those that
 need to will be altered.</p>
-<pre><code class="language-django">{% for nav_item in nav %}
-    &lt;a href="{{ nav_item.url|url }}"&gt;{{ nav_item.title }}&lt;/a&gt;
-{% endfor %}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">for</span> <span class="nv">nav_item</span> <span class="k">in</span> <span class="nv">nav</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;a href="</span><span class="cp">{{</span> <span class="nv">nav_item.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">"&gt;</span><span class="cp">{{</span> <span class="nv">nav_item.title</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <h4 id="/project/mkdocs-docs/docs/about/release-notes.html@path-based-settings-are-relative-to-configuration-file-543">Path Based Settings are Relative to Configuration File (#543)</h4>
 <p>Previously any relative paths in the various configuration options were
 resolved relative to the current working directory. They are now resolved
@@ -3930,8 +3930,8 @@ configuration file (project root), this change will not affect most users.
 However, it will make it much easier to implement automated builds or otherwise
 run commands from a location other than the project root.</p>
 <p>Simply use the <code>-f/--config-file</code> option and point it at the configuration file:</p>
-<pre><code class="language-sh">mkdocs build --config-file /path/to/my/config/file.yml
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs build --config-file /path/to/my/config/file.yml
+</code></pre></div>
 <p>As previously, if no file is specified, MkDocs looks for a file named
 <code>mkdocs.yml</code> in the current working directory.</p>
 <h4 id="/project/mkdocs-docs/docs/about/release-notes.html@added-support-for-yaml-meta-data-1542">Added support for YAML Meta-Data (#1542)</h4>
@@ -4061,14 +4061,14 @@ such nested option is the <a href="#/project/mkdocs-docs/docs/user-guide/configu
 <code>theme_dir</code> option. If users had previously set the <code>theme_dir</code> option, a
 warning will be issued, with an error expected in a future release.</p>
 <p>If a configuration previously defined a <code>theme_dir</code> like this:</p>
-<pre><code class="language-yaml">theme: mkdocs
-theme_dir: custom
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="nt">theme_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span><span class="w"></span>
+</code></pre></div>
 <p>Then the configuration should be adjusted as follows:</p>
-<pre><code class="language-yaml">theme:
-    name: mkdocs
-    custom_dir: custom
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span><span class="w"></span>
+</code></pre></div>
 <p>See the <a href="#/project/mkdocs-docs/docs/user-guide/configuration.html@theme">theme</a> configuration option documentation for details.</p>
 <h4 id="/project/mkdocs-docs/docs/about/release-notes.html@previously-deprecated-template-variables-removed-1168">Previously deprecated Template variables removed. (#1168)</h4>
 <h5 id="/project/mkdocs-docs/docs/about/release-notes.html@page-template">Page Template</h5>
@@ -4399,8 +4399,8 @@ will fail if no <code>main.html</code> template exists. Any custom and third par
 templates should be updated accordingly.</p>
 <p>The easiest way for a third party theme to be updated would be to simply add a
 <code>main.html</code> file which only contains the following line:</p>
-<pre><code class="language-django">{% extends "base.html" %}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">"base.html"</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
 <p>That way, the theme contains the <code>main.html</code> entry point, and also supports
 overriding blocks in the same manner as the built-in themes. Third party themes
 are encouraged to wrap the various pieces of their templates in blocks in order
@@ -4422,10 +4422,10 @@ thus a "dirty" build mode was created. This mode simply compares the modified ti
 of the generated HTML and source markdown. If the markdown has changed since the
 HTML then the page is re-constructed. Otherwise, the page remains as is. This mode
 may be invoked in both the <code>mkdocs serve</code> and <code>mkdocs build</code> commands:</p>
-<pre><code class="language-text">mkdocs serve --dirtyreload
-</code></pre>
-<pre><code class="language-text">mkdocs build --dirty
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs serve --dirtyreload
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>mkdocs build --dirty
+</code></pre></div>
 <p>It is important to note that this method for building the pages is for development
 of content only, since the navigation and other links do not get updated on other
 pages.</p>
@@ -4752,14 +4752,14 @@ MkDocs you can do so with the following command. This can be useful if you
 want to provide feedback for a new feature or want to confirm if a bug you
 have encountered is fixed in the git master. It is <strong>strongly</strong> recommended
 that you do this within a <a href="https://virtualenv.pypa.io/en/latest/user_guide.html">virtualenv</a>.</p>
-<pre><code class="language-bash">pip install https://github.com/mkdocs/mkdocs/archive/master.tar.gz
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install https://github.com/mkdocs/mkdocs/archive/master.tar.gz
+</code></pre></div>
 <h2 id="/project/mkdocs-docs/docs/about/contributing.html@installing-for-development">Installing for Development</h2>
 <p>First you'll need to fork and clone the repository. Once you have a local
 copy, run the following command. It is <strong>strongly</strong> recommended that you do
 this within a <a href="https://virtualenv.pypa.io/en/latest/user_guide.html">virtualenv</a>.</p>
-<pre><code class="language-bash">pip install --editable .
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install --editable .
+</code></pre></div>
 <p>This will install MkDocs in development mode which binds the <code>mkdocs</code> command
 to the git repository.</p>
 <h2 id="/project/mkdocs-docs/docs/about/contributing.html@running-the-tests">Running the tests</h2>
@@ -4788,8 +4788,8 @@ with <code>{% trans %}</code> and <code>{% endtrans %}</code> tags.</p>
 theme template, the theme's Portable Object Template (<code>pot</code>) file needs to be
 updated by running the <code>extract_messages</code> command. For example, to update the
 <code>pot</code> file of the <code>mkdocs</code> theme, run the following command:</p>
-<pre><code class="language-bash">python setup.py extract_messages -t mkdocs
-</code></pre>
+<div class="highlight"><pre><span></span><code>python setup.py extract_messages -t mkdocs
+</code></pre></div>
 <p>The updated <code>pot</code> file should be included in a PR with the updated template.
 The updated <code>pot</code> file will allow translation contributors to propose the
 translations needed for their preferred language. See the guide on <a href="#/project/mkdocs-docs/docs/dev-guide/translations.html">Translating
