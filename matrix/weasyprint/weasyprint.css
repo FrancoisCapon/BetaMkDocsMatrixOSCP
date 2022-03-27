@@ -290,243 +290,30 @@ html {
   border-radius: 0.35rem;
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-numbering-pdf-toc/print.scss */
 h1, h2, h3, h4, h5, h6 {
   bookmark-level: none;
 }
 
-.pdf-section h1, .pdf-section h2 {
-  bookmark-label: content(text);
+#pdf-content {
+  counter-reset: section-counter;
 }
-.pdf-section h1 {
+#pdf-content .pdf-section h1 {
+  counter-increment: section-counter;
+  bookmark-label: counter(section-counter) ". " content(text);
   bookmark-level: 1;
+  counter-reset: subsection-counter;
 }
-.pdf-section h2 {
+#pdf-content .pdf-section h1::before {
+  content: counter(section-counter) ". ";
+}
+#pdf-content .pdf-section h2 {
+  counter-increment: subsection-counter;
+  bookmark-label: counter(section-counter) "." counter(subsection-counter) ". " content(text);
   bookmark-level: 2;
 }
-.pdf-section figure > figcaption {
-  bookmark-label: content(text);
-  bookmark-level: 2;
-}
-
-/* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
-:root {
-  --md-default-fg-color: hsla(0, 0%, 0%, 0.87);
-  --md-default-fg-color--light: hsla(0, 0%, 0%, 0.54);
-  --md-default-fg-color--lighter: hsla(0, 0%, 0%, 0.32);
-  --md-default-fg-color--lightest: hsla(0, 0%, 0%, 0.07);
-  --md-default-bg-color: hsla(0, 0%, 100%, 1);
-  --md-default-bg-color--light: hsla(0, 0%, 100%, 0.7);
-  --md-default-bg-color--lighter: hsla(0, 0%, 100%, 0.3);
-  --md-default-bg-color--lightest: hsla(0, 0%, 100%, 0.12);
-  --md-primary-fg-color: hsla(hex2hsl(#3f51b5), 1);
-  --md-primary-fg-color--light: hsla(hex2hsl(#5c6bc0), 1);
-  --md-primary-fg-color--dark: hsla(hex2hsl(#303f9f), 1);
-  --md-primary-bg-color: hsla(0, 0%, 100%, 1);
-  --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
-  --md-accent-fg-color: hsla(hex2hsl(#536dfe), 1);
-  --md-accent-fg-color--transparent: hsla(hex2hsl(#536dfe), 0.1);
-  --md-accent-bg-color: hsla(0, 0%, 100%, 1);
-  --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
-  --md-code-fg-color: hsla(200, 18%, 26%, 1);
-  --md-code-bg-color: hsla(0, 0%, 96%, 1);
-  --md-code-hl-color: hsla(hex2hsl(#ffff00), 0.5);
-  --md-code-hl-number-color: hsla(0, 67%, 50%, 1);
-  --md-code-hl-special-color: hsla(340, 83%, 47%, 1);
-  --md-code-hl-function-color: hsla(291, 45%, 50%, 1);
-  --md-code-hl-constant-color: hsla(250, 63%, 60%, 1);
-  --md-code-hl-keyword-color: hsla(219, 54%, 51%, 1);
-  --md-code-hl-string-color: hsla(150, 63%, 30%, 1);
-  --md-code-hl-name-color: var(--md-code-fg-color);
-  --md-code-hl-operator-color: var(--md-default-fg-color--light);
-  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-  --md-code-hl-comment-color: var(--md-default-fg-color--light);
-  --md-code-hl-generic-color: var(--md-default-fg-color--light);
-  --md-code-hl-variable-color: var(--md-default-fg-color--light);
-  --md-typeset-color: var(--md-default-fg-color);
-  --md-typeset-a-color: var(--md-primary-fg-color);
-  --md-typeset-mark-color: hsla(hex2hsl(#ffff00), 0.5);
-  --md-typeset-del-color: hsla(6, 90%, 60%, 0.15);
-  --md-typeset-ins-color: hsla(150, 90%, 44%, 0.15);
-  --md-typeset-kbd-color: hsla(0, 0%, 98%, 1);
-  --md-typeset-kbd-accent-color: hsla(0, 100%, 100%, 1);
-  --md-typeset-kbd-border-color: hsla(0, 0%, 72%, 1);
-  --md-typeset-table-color: hsla(0, 0%, 0%, 0.12);
-  --md-admonition-fg-color: var(--md-default-fg-color);
-  --md-admonition-bg-color: var(--md-default-bg-color);
-  --md-footer-fg-color: hsla(0, 0%, 100%, 1);
-  --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
-  --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
-  --md-footer-bg-color: hsla(0, 0%, 0%, 0.87);
-  --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
-}
-
-/* /project/mkdocs-docs/matrix/15-pymdownx/1310-highlight/print.scss */
-.highlight :is(.o, .ow) {
-  color: var(--md-code-hl-operator-color);
-}
-.highlight .p {
-  color: var(--md-code-hl-punctuation-color);
-}
-.highlight :is(.cpf, .l, .s, .sb, .sc, .s2, .si, .s1, .ss) {
-  color: var(--md-code-hl-string-color);
-}
-.highlight :is(.cp, .se, .sh, .sr, .sx) {
-  color: var(--md-code-hl-special-color);
-}
-.highlight :is(.m, .mb, .mf, .mh, .mi, .il, .mo) {
-  color: var(--md-code-hl-number-color);
-}
-.highlight :is(.k, .kd, .kn, .kp, .kr, .kt) {
-  color: var(--md-code-hl-keyword-color);
-}
-.highlight :is(.kc, .n) {
-  color: var(--md-code-hl-name-color);
-}
-.highlight :is(.no, .nb, .bp) {
-  color: var(--md-code-hl-constant-color);
-}
-.highlight :is(.nc, .ne, .nf, .nn) {
-  color: var(--md-code-hl-function-color);
-}
-.highlight :is(.nd, .ni, .nl, .nt) {
-  color: var(--md-code-hl-keyword-color);
-}
-.highlight :is(.c, .cm, .c1, .ch, .cs, .sd) {
-  color: var(--md-code-hl-comment-color);
-}
-.highlight :is(.na, .nv, .vc, .vg, .vi) {
-  color: var(--md-code-hl-variable-color);
-}
-.highlight :is(.ge, .gr, .gh, .go, .gp, .gs, .gu, .gt) {
-  color: var(--md-code-hl-generic-color);
-}
-.highlight :is(.gd, .gi) {
-  margin: 0 px2em(-2px);
-  padding: 0 px2em(2px);
-  border-radius: px2rem(2px);
-}
-.highlight .gd {
-  background-color: var(--md-typeset-del-color);
-}
-.highlight .gi {
-  background-color: var(--md-typeset-ins-color);
-}
-.highlight .hll {
-  display: block;
-  margin: 0 px2em(-16px, 13.6px);
-  padding: 0 px2em(16px, 13.6px);
-  background-color: var(--md-code-hl-color);
-}
-.highlight span.filename {
-  position: relative;
-  display: block;
-  margin-top: 1em;
-  padding: px2em(9px, 13.6px) px2em(16px, 13.6px);
-  font-weight: 700;
-  font-size: px2em(13.6px);
-  background-color: var(--md-code-bg-color);
-  border-bottom: px2rem(1px) solid var(--md-default-fg-color--lightest);
-  border-top-left-radius: px2rem(2px);
-  border-top-right-radius: px2rem(2px);
-}
-.highlight span.filename + pre {
-  margin-top: 0;
-}
-.highlight span.filename + pre > code {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.highlight [data-linenos]::before {
-  position: sticky;
-  left: px2em(-16px, 13.6px);
-  z-index: 3;
-  float: left;
-  margin-right: px2em(16px, 13.6px);
-  margin-left: px2em(-16px, 13.6px);
-  padding-left: px2em(16px, 13.6px);
-  color: var(--md-default-fg-color--light);
-  background-color: var(--md-code-bg-color);
-  box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset;
-  content: attr(data-linenos);
-  user-select: none;
-}
-.highlight code a[id] {
-  position: absolute;
-  visibility: hidden;
-}
-.highlight code[data-md-copying] .hll {
-  display: contents;
-}
-.highlight code[data-md-copying] .md-annotation {
-  display: none;
-}
-
-.highlighttable {
-  display: flow-root;
-}
-.highlighttable :is(tbody, td) {
-  display: block;
-  padding: 0;
-}
-.highlighttable tr {
-  display: flex;
-}
-.highlighttable pre {
-  margin: 0;
-}
-.highlighttable th.filename {
-  flex-grow: 1;
-  padding: 0;
-  text-align: left;
-}
-.highlighttable .linenos {
-  padding: px2em(10.5px, 13.6px) px2em(16px, 13.6px);
-  padding-right: 0;
-  font-size: px2em(13.6px);
-  background-color: var(--md-code-bg-color);
-  border-top-left-radius: px2rem(2px);
-  border-bottom-left-radius: px2rem(2px);
-  user-select: none;
-}
-.highlighttable .linenodiv {
-  padding-right: px2em(8px, 13.6px);
-  box-shadow: px2rem(-1px) 0 var(--md-default-fg-color--lightest) inset;
-}
-.highlighttable .linenodiv pre {
-  color: var(--md-default-fg-color--light);
-  text-align: right;
-}
-.highlighttable .code {
-  flex: 1;
-  min-width: 0;
-}
-
-.linenodiv a {
-  color: inherit;
-}
-
-.md-typeset .highlighttable {
-  margin: 1em 0;
-  direction: ltr;
-}
-.md-typeset .highlighttable code {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.md-typeset :is(.highlight, .highlighttable) + .result {
-  margin-top: calc(-1em + px2em(-2px));
-  padding: 0 px2em(16px);
-  overflow: visible;
-  border: px2rem(1px) solid var(--md-code-bg-color);
-  border-top-width: px2rem(2px);
-  border-bottom-right-radius: px2rem(2px);
-  border-bottom-left-radius: px2rem(2px);
-}
-.md-typeset :is(.highlight, .highlighttable) + .result::after {
-  display: block;
-  clear: both;
-  content: "";
+#pdf-content .pdf-section h2::before {
+  content: counter(section-counter) "." counter(subsection-counter) ". ";
 }
 
 /* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
@@ -540,6 +327,4 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
-/* /project/mkdocs-docs/matrix/15-pymdownx/1300-colors/print.scss */
-/* /project/mkdocs-docs/matrix/15-pymdownx/1310-highlight/print.scss */
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-numbering-pdf-toc/print.scss */
