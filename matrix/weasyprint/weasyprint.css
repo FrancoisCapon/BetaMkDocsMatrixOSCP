@@ -57,9 +57,14 @@ html {
   break-before: left;
 }
 
+:root {
+  --page-margin: 2cm;
+  --page-margin-negative: -2cm;
+}
+
 @page {
   size: A4;
-  margin: 2cm;
+  margin: var(--page-margin);
   margin-top: 2.5cm;
   @top-left {
     display: block;
@@ -288,16 +293,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1025-section-list/print.scss */
 .pdf-section ul {
-  margin: 0;
-  padding: 0;
-  padding-left: 1.25rem;
   list-style-type: "●  ";
 }
 .pdf-section ul li::marker {
-  color: var(--color-primary);
   font-size: 0.65rem;
   line-height: 1.5rem;
   font-family: Monospace;
+}
+.pdf-section ul, .pdf-section ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 1.25rem;
+}
+.pdf-section ul li::marker, .pdf-section ol li::marker {
+  color: var(--color-primary);
 }
 
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
@@ -321,10 +330,10 @@ h1, h2, h3, h4, h5, h6 {
 .pdf-section figure img, .pdf-section pre {
   border-radius: var(--block-border-radius);
 }
-.pdf-section ul {
+.pdf-section ul, .pdf-section ol {
   margin-top: var(--block-margin-top-050);
 }
-.pdf-section ul li {
+.pdf-section ul li, .pdf-section ol li {
   margin-top: var(--block-margin-top-050);
 }
 
@@ -745,6 +754,135 @@ h1, h2, h3, h4, h5, h6 {
   color: #666666;
 }
 
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1510-chapter-page/print.scss */
+#pdf-content .pdf-chapter-page {
+  page: chapter;
+}
+#pdf-content .pdf-chapter-page .pdf-chapter-page-title {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: var(--page-margin-negative);
+  left: var(--page-margin-negative);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+#pdf-content .pdf-chapter-page .pdf-chapter-page-title span {
+  display: block;
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-on-primary);
+  font-size: 34pt;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 5cm;
+  padding: 10pt;
+  width: 100%;
+  font-family: SansSerifBold;
+}
+#pdf-content .pdf-chapter-page h1 {
+  position: relative;
+  bottom: 10cm;
+}
+
+@page chapter {
+  @top-right {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-cover/print.scss */
+#pdf-page-cover {
+  break-after: always;
+}
+
+#pdf-page-last {
+  break-before: always;
+}
+
+#pdf-page-cover, #pdf-page-last {
+  page: cover-last;
+}
+#pdf-page-cover div, #pdf-page-last div {
+  position: absolute;
+  top: 0;
+  bottom: var(--page-margin-negative);
+  right: var(--page-margin-negative);
+  left: var(--page-margin-negative);
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-on-primary);
+}
+#pdf-page-cover div h1, #pdf-page-last div h1 {
+  position: absolute;
+  top: 6cm;
+  font-size: 40pt;
+  text-align: center;
+  margin: 0;
+  padding: 10pt;
+  width: 100%;
+  font-family: SansSerifBold;
+}
+#pdf-page-cover div h2, #pdf-page-last div h2 {
+  position: absolute;
+  top: 12cm;
+  font-size: 30pt;
+  text-align: center;
+  margin: 0;
+  padding: 10pt;
+  width: 100%;
+  font-family: SansSerifBold;
+}
+#pdf-page-cover div h3, #pdf-page-last div h3 {
+  position: absolute;
+  bottom: var(--page-margin);
+  right: var(--page-margin);
+  font-size: 20pt;
+  text-align: right;
+  margin: 0;
+  padding: 0pt;
+  width: auto;
+  font-family: SansSerifBold;
+}
+
+@page cover-last {
+  background-color: var(--color-primary-dark);
+  @top-right {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
 /* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
@@ -762,3 +900,5 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1211-pymdown-highlight-default/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1510-chapter-page/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-cover/print.scss */

@@ -1,0 +1,53 @@
+#pdf-content .pdf-chapter-page{
+    page: chapter;
+    .pdf-chapter-page-title {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: var(--page-margin-negative);
+        left: var(--page-margin-negative);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        span {
+            display: block;
+            background-color: var(--color-primary-dark);
+            color: var(--color-text-on-primary);
+            font-size: 34pt;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 5cm;
+            padding: 10pt;
+            width: 100%;
+            font-family: SansSerifBold;
+        }
+    }
+
+    h1 {
+        position: relative;
+        bottom: 10cm;
+    }
+}
+
+@page chapter {
+    @top-right {
+        content: none;
+      }
+      @top-center {
+        content: none;
+      }
+      @top-left {
+        content: none;
+      }
+      @bottom-left {
+        content: none;
+      }
+      @bottom-center {
+        content: none;
+      }
+      @bottom-right {
+        content: none;
+      }
+}
