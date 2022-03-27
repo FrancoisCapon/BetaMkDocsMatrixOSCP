@@ -1,0 +1,14 @@
+
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
+
+@page section {
+    @top-left {
+        content: string(chapter-title);
+      }
+      @top-center {
+        content: '';
+      }
+      @top-right {
+        content:  string(section-title);
+      }
+}

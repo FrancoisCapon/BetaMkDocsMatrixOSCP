@@ -1,5 +1,5 @@
 
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-cover/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-cover-last/print.scss */
 #pdf-page-cover {
   break-after: always;
 }
@@ -16,27 +16,24 @@
         left: var(--page-margin-negative);
         margin: 0;
         padding: 0;
-        background-color: var(--color-primary-dark);
         color: var(--color-text-on-primary);
+        font-family: SansSerifBold;
         h1 {
             position: absolute;
             top: 6cm;
             font-size: 40pt;
             text-align: center;
-            margin: 0;
             padding: 10pt;
             width: 100%;
-            font-family: SansSerifBold;
+            background-color: aqua;
         }
         h2 {
           position: absolute;
           top: 12cm;
           font-size: 30pt;
           text-align: center;
-          margin: 0;
           padding: 10pt;
           width: 100%;
-          font-family: SansSerifBold;
         }
         h3 {
           position: absolute;
@@ -44,7 +41,6 @@
           right: var(--page-margin);
           font-size: 20pt;
           text-align: right;
-          margin: 0;
           padding: 0pt;
           width: auto;
           font-family: SansSerifBold;
@@ -53,7 +49,7 @@
 }
 
 @page cover-last {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary-dark) !important;
     @top-right {
         content: none;
       }

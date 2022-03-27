@@ -1,0 +1,31 @@
+@use "sass:color";
+
+//$primary: #54b4eb; //mkdocs
+$primary: #A90C1C;
+$primary-dark: color.adjust($primary, $lightness: -05%);
+$primary-light: color.adjust($primary, $lightness: +20%);
+
+:root {
+  --color-primary: #{$primary};
+
+  --color-primary-dark: #{$primary-dark};
+  --color-primary-light: #{$primary-light};
+
+  --color-background-code: #E8E8E8;
+
+}
+
+.pdf-section {
+  th {
+    background-color: var(--color-primary) !important;
+    color: var(--color-text-on-primary);
+  }
+
+  h1 {
+    color: var(--color-primary) !important;
+  }
+}
+
+@page {
+  background-color: whitesmoke !important;
+}

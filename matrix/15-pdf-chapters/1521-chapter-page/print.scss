@@ -1,5 +1,3 @@
-
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1510-chapter-page/print.scss */
 #pdf-content .pdf-chapter-page{
     page: chapter;
     .pdf-chapter-page-title {
@@ -30,6 +28,7 @@
     h1 {
         position: relative;
         bottom: 10cm;
+        string-set: chapter-title content(); // in a flow
     }
 }
 
