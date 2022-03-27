@@ -107,7 +107,7 @@ html {
 /* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
 :root {
   --color-text-default: #333;
-  --color-background-code: #e9ecef;
+  --color-background-code: #F8F8F8;
   --color-text-heading: black;
 }
 
@@ -215,6 +215,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1022-section-table/print.scss */
+:root {
+  --color-table-row-even: whitesmoke;
+}
+
 .pdf-section table {
   margin: auto;
   box-sizing: border-box;
@@ -231,7 +235,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-primary-light);
 }
 .pdf-section table tr:nth-child(even) td {
-  background-color: whitesmoke;
+  background-color: var(--color-table-row-even);
 }
 .pdf-section table + figcaption {
   margin-top: 0.5rem;
@@ -297,53 +301,448 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
-.pdf-section table, .pdf-section figure, .pdf-section img, .pdf-section pre, .pdf-section hr {
-  margin-top: 1rem;
-}
-.pdf-section * + p {
-  margin-top: 1rem;
-}
-.pdf-section p + p {
-  margin-top: 0.75rem;
-}
-.pdf-section figure img, .pdf-section pre {
-  border-radius: 0.35rem;
+:root {
+  --block-margin-top-100: 1rem;
+  --block-margin-top-075: 0.75rem;
+  --block-margin-top-050: 0.50rem;
+  --block-margin-top-025: 0.25rem;
+  --block-border-radius: 0.35rem;
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
+.pdf-section table, .pdf-section figure, .pdf-section img, .pdf-section pre, .pdf-section hr {
+  margin-top: var(--block-margin-top-100);
+}
+.pdf-section * + p {
+  margin-top: var(--block-margin-top-100);
+}
+.pdf-section p + p {
+  margin-top: var(--block-margin-top-075);
+}
+.pdf-section figure img, .pdf-section pre {
+  border-radius: var(--block-border-radius);
+}
+.pdf-section ul {
+  margin-top: var(--block-margin-top-050);
+}
+.pdf-section ul li {
+  margin-top: var(--block-margin-top-050);
+}
+
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
 #pdf-content {
+  counter-reset: chapter-counter;
+}
+#pdf-content .pdf-section:first-child {
+  counter-increment: chapter-counter;
+  bookmark-label: counter(chapter-counter) ". " "Introduction";
+  bookmark-level: 1;
   counter-reset: section-counter;
 }
 #pdf-content .pdf-section h1 {
   counter-increment: section-counter;
-  bookmark-label: counter(section-counter) ". " content(text);
-  bookmark-level: 1;
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) ". " content(text);
+  bookmark-level: 2;
   counter-reset: subsection-counter;
 }
 #pdf-content .pdf-section h2 {
   counter-increment: subsection-counter;
-  bookmark-label: counter(section-counter) "." counter(subsection-counter) ". " content(text);
-  bookmark-level: 2;
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". " content(text);
+  bookmark-level: 3;
   counter-reset: subsubsection-counter;
 }
 #pdf-content .pdf-section h3 {
   counter-increment: subsubsection-counter;
-  bookmark-label: counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". " content(text);
-  bookmark-level: 3;
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". " content(text);
+  bookmark-level: 4;
 }
-
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1091-sections-heading-numbering/print.scss */
-#pdf-content {
+#pdf-content .pdf-chapter {
   counter-reset: section-counter;
 }
+#pdf-content .pdf-chapter .pdf-chapter-page span::before {
+  content: counter(chapter-counter) ". ";
+}
+#pdf-content .pdf-chapter .pdf-chapter-page span {
+  counter-increment: chapter-counter;
+  bookmark-label: counter(chapter-counter) ". " content(text);
+  bookmark-level: 1;
+}
+#pdf-content .pdf-chapter .pdf-section h1 {
+  counter-increment: section-counter;
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) ". " content(text);
+  bookmark-level: 2;
+  counter-reset: subsection-counter;
+}
+#pdf-content .pdf-chapter .pdf-section h2 {
+  counter-increment: subsection-counter;
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". " content(text);
+  bookmark-level: 3;
+  counter-reset: subsubsection-counter;
+}
+#pdf-content .pdf-chapter .pdf-section h3 {
+  counter-increment: subsubsection-counter;
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". " content(text);
+  bookmark-level: 4;
+}
+
 #pdf-content .pdf-section h1::before {
-  content: counter(section-counter) ". ";
+  content: counter(chapter-counter) "." counter(section-counter) ". ";
 }
 #pdf-content .pdf-section h2::before {
-  content: counter(section-counter) "." counter(subsection-counter) ". ";
+  content: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". ";
 }
 #pdf-content .pdf-section h3::before {
-  content: counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". ";
+  content: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". ";
+}
+
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
+#pdf-content {
+  counter-reset: figure-counter listing-counter table-counter;
+}
+#pdf-content img + figcaption {
+  counter-increment: figure-counter;
+}
+#pdf-content img + figcaption::before {
+  content: "Figure " counter(figure-counter) " - ";
+}
+#pdf-content table + figcaption {
+  counter-increment: table-counter;
+}
+#pdf-content table + figcaption::before {
+  content: "Table " counter(table-counter) " - ";
+}
+#pdf-content .highlight + figcaption, #pdf-content pre + figcaption {
+  counter-increment: listing-counter;
+}
+#pdf-content .highlight + figcaption::before, #pdf-content pre + figcaption::before {
+  content: "Listing " counter(listing-counter) " - ";
+}
+
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
+.pdf-section div.admonition {
+  margin-top: var(--block-margin-top-100);
+  border-left: solid 2px;
+  border-left-color: var(--color-primary);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  break-inside: avoid;
+}
+.pdf-section div.admonition p.admonition-title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-family: SansSerifBold;
+}
+.pdf-section div.admonition p.admonition-title + * {
+  margin-top: 0;
+}
+.pdf-section div.admonition p {
+  text-align: justify;
+}
+
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1211-pymdown-highlight-default/print.scss */
+.pdf-section .highlight {
+  border-radius: var(--block-border-radius);
+}
+
+.pdf-section {
+  /* Comment */
+  /* Error */
+  /* Keyword */
+  /* Operator */
+  /* Comment.Hashbang */
+  /* Comment.Multiline */
+  /* Comment.Preproc */
+  /* Comment.PreprocFile */
+  /* Comment.Single */
+  /* Comment.Special */
+  /* Generic.Deleted */
+  /* Generic.Emph */
+  /* Generic.Error */
+  /* Generic.Heading */
+  /* Generic.Inserted */
+  /* Generic.Output */
+  /* Generic.Prompt */
+  /* Generic.Strong */
+  /* Generic.Subheading */
+  /* Generic.Traceback */
+  /* Keyword.Constant */
+  /* Keyword.Declaration */
+  /* Keyword.Namespace */
+  /* Keyword.Pseudo */
+  /* Keyword.Reserved */
+  /* Keyword.Type */
+  /* Literal.Number */
+  /* Literal.String */
+  /* Name.Attribute */
+  /* Name.Builtin */
+  /* Name.Class */
+  /* Name.Constant */
+  /* Name.Decorator */
+  /* Name.Entity */
+  /* Name.Exception */
+  /* Name.Function */
+  /* Name.Label */
+  /* Name.Namespace */
+  /* Name.Tag */
+  /* Name.Variable */
+  /* Operator.Word */
+  /* Text.Whitespace */
+  /* Literal.Number.Bin */
+  /* Literal.Number.Float */
+  /* Literal.Number.Hex */
+  /* Literal.Number.Integer */
+  /* Literal.Number.Oct */
+  /* Literal.String.Affix */
+  /* Literal.String.Backtick */
+  /* Literal.String.Char */
+  /* Literal.String.Delimiter */
+  /* Literal.String.Doc */
+  /* Literal.String.Double */
+  /* Literal.String.Escape */
+  /* Literal.String.Heredoc */
+  /* Literal.String.Interpol */
+  /* Literal.String.Other */
+  /* Literal.String.Regex */
+  /* Literal.String.Single */
+  /* Literal.String.Symbol */
+  /* Name.Builtin.Pseudo */
+  /* Name.Function.Magic */
+  /* Name.Variable.Class */
+  /* Name.Variable.Global */
+  /* Name.Variable.Instance */
+  /* Name.Variable.Magic */
+  /* Literal.Number.Integer.Long */
+}
+.pdf-section .highlight .hll {
+  background-color: #ffffcc;
+}
+.pdf-section .highlight {
+  background: #f8f8f8;
+}
+.pdf-section .highlight .c {
+  color: #408080;
+  font-style: italic;
+}
+.pdf-section .highlight .err {
+  border: 1px solid #FF0000;
+}
+.pdf-section .highlight .k {
+  color: #008000;
+  font-weight: bold;
+}
+.pdf-section .highlight .o {
+  color: #666666;
+}
+.pdf-section .highlight .ch {
+  color: #408080;
+  font-style: italic;
+}
+.pdf-section .highlight .cm {
+  color: #408080;
+  font-style: italic;
+}
+.pdf-section .highlight .cp {
+  color: #BC7A00;
+}
+.pdf-section .highlight .cpf {
+  color: #408080;
+  font-style: italic;
+}
+.pdf-section .highlight .c1 {
+  color: #408080;
+  font-style: italic;
+}
+.pdf-section .highlight .cs {
+  color: #408080;
+  font-style: italic;
+}
+.pdf-section .highlight .gd {
+  color: #A00000;
+}
+.pdf-section .highlight .ge {
+  font-style: italic;
+}
+.pdf-section .highlight .gr {
+  color: #FF0000;
+}
+.pdf-section .highlight .gh {
+  color: #000080;
+  font-weight: bold;
+}
+.pdf-section .highlight .gi {
+  color: #00A000;
+}
+.pdf-section .highlight .go {
+  color: #888888;
+}
+.pdf-section .highlight .gp {
+  color: #000080;
+  font-weight: bold;
+}
+.pdf-section .highlight .gs {
+  font-weight: bold;
+}
+.pdf-section .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+.pdf-section .highlight .gt {
+  color: #0044DD;
+}
+.pdf-section .highlight .kc {
+  color: #008000;
+  font-weight: bold;
+}
+.pdf-section .highlight .kd {
+  color: #008000;
+  font-weight: bold;
+}
+.pdf-section .highlight .kn {
+  color: #008000;
+  font-weight: bold;
+}
+.pdf-section .highlight .kp {
+  color: #008000;
+}
+.pdf-section .highlight .kr {
+  color: #008000;
+  font-weight: bold;
+}
+.pdf-section .highlight .kt {
+  color: #B00040;
+}
+.pdf-section .highlight .m {
+  color: #666666;
+}
+.pdf-section .highlight .s {
+  color: #BA2121;
+}
+.pdf-section .highlight .na {
+  color: #7D9029;
+}
+.pdf-section .highlight .nb {
+  color: #008000;
+}
+.pdf-section .highlight .nc {
+  color: #0000FF;
+  font-weight: bold;
+}
+.pdf-section .highlight .no {
+  color: #880000;
+}
+.pdf-section .highlight .nd {
+  color: #AA22FF;
+}
+.pdf-section .highlight .ni {
+  color: #999999;
+  font-weight: bold;
+}
+.pdf-section .highlight .ne {
+  color: #D2413A;
+  font-weight: bold;
+}
+.pdf-section .highlight .nf {
+  color: #0000FF;
+}
+.pdf-section .highlight .nl {
+  color: #A0A000;
+}
+.pdf-section .highlight .nn {
+  color: #0000FF;
+  font-weight: bold;
+}
+.pdf-section .highlight .nt {
+  color: #008000;
+  font-weight: bold;
+}
+.pdf-section .highlight .nv {
+  color: #19177C;
+}
+.pdf-section .highlight .ow {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.pdf-section .highlight .w {
+  color: #bbbbbb;
+}
+.pdf-section .highlight .mb {
+  color: #666666;
+}
+.pdf-section .highlight .mf {
+  color: #666666;
+}
+.pdf-section .highlight .mh {
+  color: #666666;
+}
+.pdf-section .highlight .mi {
+  color: #666666;
+}
+.pdf-section .highlight .mo {
+  color: #666666;
+}
+.pdf-section .highlight .sa {
+  color: #BA2121;
+}
+.pdf-section .highlight .sb {
+  color: #BA2121;
+}
+.pdf-section .highlight .sc {
+  color: #BA2121;
+}
+.pdf-section .highlight .dl {
+  color: #BA2121;
+}
+.pdf-section .highlight .sd {
+  color: #BA2121;
+  font-style: italic;
+}
+.pdf-section .highlight .s2 {
+  color: #BA2121;
+}
+.pdf-section .highlight .se {
+  color: #BB6622;
+  font-weight: bold;
+}
+.pdf-section .highlight .sh {
+  color: #BA2121;
+}
+.pdf-section .highlight .si {
+  color: #BB6688;
+  font-weight: bold;
+}
+.pdf-section .highlight .sx {
+  color: #008000;
+}
+.pdf-section .highlight .sr {
+  color: #BB6688;
+}
+.pdf-section .highlight .s1 {
+  color: #BA2121;
+}
+.pdf-section .highlight .ss {
+  color: #19177C;
+}
+.pdf-section .highlight .bp {
+  color: #008000;
+}
+.pdf-section .highlight .fm {
+  color: #0000FF;
+}
+.pdf-section .highlight .vc {
+  color: #19177C;
+}
+.pdf-section .highlight .vg {
+  color: #19177C;
+}
+.pdf-section .highlight .vi {
+  color: #19177C;
+}
+.pdf-section .highlight .vm {
+  color: #19177C;
+}
+.pdf-section .highlight .il {
+  color: #666666;
 }
 
 /* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
@@ -359,5 +758,7 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1025-section-list/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1091-sections-heading-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1211-pymdown-highlight-default/print.scss */

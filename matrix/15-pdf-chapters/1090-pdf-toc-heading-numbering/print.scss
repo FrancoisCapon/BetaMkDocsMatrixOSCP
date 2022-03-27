@@ -1,5 +1,3 @@
-
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
 $chapter-number: counter(chapter-counter) ". ";
 $section-number: counter(chapter-counter) "." counter(section-counter) ". ";
 $subsection-number: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". ";

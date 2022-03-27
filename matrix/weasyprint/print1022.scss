@@ -1,5 +1,9 @@
 
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1022-section-table/print.scss */
+:root {
+    --color-table-row-even: whitesmoke;
+ }
+
 .pdf-section {
     table {
         margin: auto;
@@ -18,7 +22,7 @@
 
         }
         tr:nth-child(even) td {
-            background-color: whitesmoke;
+            background-color: var(--color-table-row-even);
         }
     }
 

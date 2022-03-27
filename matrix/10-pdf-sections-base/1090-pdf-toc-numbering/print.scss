@@ -1,0 +1,40 @@
+$section-number: counter(section-counter) ". ";
+$subsection-number: counter(section-counter) "." counter(subsection-counter) ". ";
+$subsubsection-number: counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". "; 
+
+#pdf-content {
+    counter-reset: section-counter;
+    .pdf-section {
+        h1 {
+            counter-increment: section-counter;
+            bookmark-label: $section-number content(text);
+            bookmark-level: 1;
+            counter-reset: subsection-counter;
+        }
+        h2 {
+            counter-increment: subsection-counter;
+            bookmark-label: $subsection-number content(text);
+            bookmark-level: 2;
+            counter-reset: subsubsection-counter;
+        }
+        h3 {
+            counter-increment: subsubsection-counter;
+            bookmark-label: $subsubsection-number content(text);
+            bookmark-level: 3;
+        }
+    }
+}
+
+#pdf-content {
+    .pdf-section {
+        h1::before {
+            content: $section-number;
+        }
+        h2::before {
+            content: $subsection-number;
+        }
+        h3::before {
+            content: $subsubsection-number;
+        }
+    }
+}

@@ -38,8 +38,14 @@
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
 @use "print1029.scss";
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1090-pdf-toc/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
 @use "print1090.scss";
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1091-sections-heading-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
 @use "print1091.scss";
+
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
+@use "print1210.scss";
+
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1211-pymdown-highlight-default/print.scss */
+@use "print1211.scss";

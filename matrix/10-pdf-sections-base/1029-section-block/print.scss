@@ -1,14 +1,30 @@
+
+:root {
+   --block-margin-top-100: 1rem;
+   --block-margin-top-075: 0.75rem;
+   --block-margin-top-050: 0.50rem;
+   --block-margin-top-025: 0.25rem;
+   --block-border-radius: 0.35rem;
+}
+
 .pdf-section {
    table, figure, img, pre, hr {
-      margin-top: 1rem;
+      margin-top: var(--block-margin-top-100);
    }
    * + p {
-      margin-top: 1rem;
+      margin-top: var(--block-margin-top-100);
    }
    p + p {
-      margin-top: 0.75rem;
+      margin-top: var(--block-margin-top-075);
    }
    figure img, pre {
-      border-radius: 0.35rem;
+      border-radius: var(--block-border-radius);
+   }
+
+   ul {
+      margin-top: var(--block-margin-top-050);
+      li {
+         margin-top: var(--block-margin-top-050);
+      }
    }
 }
