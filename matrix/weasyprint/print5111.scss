@@ -1,9 +1,15 @@
 
 /* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
+$data-oscp-id: "OSID: 314157";
+
 :root {
     --page-cover-subtitle: "Penetration Test Report for Internal Lab";
     --data-oscp-email: "john.doe@lost.tld";
-    --data-oscp-osid: "OSID: 314157";
+    --data-oscp-osid: "#{$data-oscp-id}";
+}
+
+#pdf-page-cover {
+  string-set: chapter-title $data-oscp-id;
 }
 
 #pdf-page-cover > div {
@@ -30,6 +36,7 @@
 
     #oscp-osid {
       top: 16cm;
+      // string-set: chapter-title content(before);
     }
 
     #oscp-email, #oscp-osid {

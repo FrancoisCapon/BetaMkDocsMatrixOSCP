@@ -982,6 +982,10 @@ h1, h2, h3, h4, h5, h6 {
   --data-oscp-osid: "OSID: 314157";
 }
 
+#pdf-page-cover {
+  string-set: chapter-title "OSID: 314157";
+}
+
 #pdf-page-cover > div {
   background-color: black !important;
   /*     #oscp-osid {
