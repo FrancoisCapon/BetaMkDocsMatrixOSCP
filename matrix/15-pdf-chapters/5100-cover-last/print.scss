@@ -6,31 +6,33 @@
 }
 #pdf-page-cover, #pdf-page-last{
     page: cover-last;
-    div {
+    > div {
         position: absolute;
-        top: 0;
+        top: -2.5cm;
         bottom: var(--page-margin-negative);
         right: var(--page-margin-negative);
         left: var(--page-margin-negative);
         margin: 0;
         padding: 0;
         color: var(--color-text-on-primary);
+        background-color: var(--color-primary-dark);
         font-family: SansSerifBold;
         h1 {
             position: absolute;
             top: 6cm;
             font-size: 40pt;
             text-align: center;
-            padding: 10pt;
+            padding-top: 10pt;
+            padding-bottom: 10pt;
             width: 100%;
-            background-color: aqua;
         }
         h2 {
           position: absolute;
           top: 12cm;
           font-size: 30pt;
           text-align: center;
-          padding: 10pt;
+          padding-top: 10pt;
+          padding-bottom: 10pt;
           width: 100%;
         }
         h3 {
@@ -47,7 +49,7 @@
 }
 
 @page cover-last {
-    background-color: var(--color-primary-dark) !important;
+    
     @top-right {
         content: none;
       }

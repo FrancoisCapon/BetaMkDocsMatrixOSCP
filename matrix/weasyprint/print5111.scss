@@ -1,0 +1,73 @@
+
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
+:root {
+    --page-cover-subtitle: "Penetration Test Report for Internal Lab";
+    --data-oscp-email: "john.doe@lost.tld";
+    --data-oscp-osid: "OSID: 314157";
+}
+
+#pdf-page-cover > div {
+    background-color: black !important;
+    h1 {
+        background-color: var(--color-primary-dark);
+    }
+
+    h2::before {
+      content: var(--page-cover-subtitle);
+    }
+    
+    h2 {
+      top: 10cm !important;
+    }
+  
+    #oscp-email::before {
+      content: var(--data-oscp-email);
+    }
+
+    #oscp-email {
+      top: 14cm;
+    }
+
+    #oscp-osid {
+      top: 16cm;
+    }
+
+    #oscp-email, #oscp-osid {
+      right: 0;
+      left: 0;
+      text-align: center;
+      //background-color: blue;
+    }
+
+    #oscp-osid::before {
+      content: var(--data-oscp-osid);
+    }
+
+    #oscp-logo {
+      position: absolute;
+      left: 0;
+      right:0;
+      bottom: var(--page-margin);
+      background-image: url('/project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/../assets/offsec-logo-00.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: var(--page-margin);
+      background-position: center;
+    }
+
+/*     #oscp-osid {
+      string-set: chapter-title content(before);
+    } */
+
+    // h3 {
+    //   left: var(--page-margin);
+    //   background-image: url('/project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/../assets/offsec-logo-00.svg');
+    //   background-repeat: no-repeat;
+    //   background-size: contain;
+    //   width: 100%;
+    //   height: 2cm;
+    //   background-position: center;
+    //   //bottom: 4cm !important;
+    // }
+  }

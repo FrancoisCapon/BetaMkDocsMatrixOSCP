@@ -860,7 +860,7 @@ h1, h2, h3, h4, h5, h6 {
     content: none;
   }
 }
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustment /print.scss */
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
 :root {
   --color-primary: #A90C1C;
   --color-primary-dark: #910a18;
@@ -871,14 +871,26 @@ h1, h2, h3, h4, h5, h6 {
 .pdf-section th {
   background-color: var(--color-primary) !important;
   color: var(--color-text-on-primary);
+  border-color: var(--color-text-default) !important;
 }
 .pdf-section h1 {
   color: var(--color-primary) !important;
 }
 
 @page {
+  size: letter !important;
   background-color: whitesmoke !important;
 }
+@page chapter {
+  background-color: lightgrey !important;
+  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/../assets/offsec-logo-00.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right 50%;
+}
+#pdf-content .pdf-chapter-page .pdf-chapter-page-title span {
+  background-color: var(--color-primary);
+}
+
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-cover-last/print.scss */
 #pdf-page-cover {
   break-after: always;
@@ -891,35 +903,37 @@ h1, h2, h3, h4, h5, h6 {
 #pdf-page-cover, #pdf-page-last {
   page: cover-last;
 }
-#pdf-page-cover div, #pdf-page-last div {
+#pdf-page-cover > div, #pdf-page-last > div {
   position: absolute;
-  top: 0;
+  top: -2.5cm;
   bottom: var(--page-margin-negative);
   right: var(--page-margin-negative);
   left: var(--page-margin-negative);
   margin: 0;
   padding: 0;
   color: var(--color-text-on-primary);
+  background-color: var(--color-primary-dark);
   font-family: SansSerifBold;
 }
-#pdf-page-cover div h1, #pdf-page-last div h1 {
+#pdf-page-cover > div h1, #pdf-page-last > div h1 {
   position: absolute;
   top: 6cm;
   font-size: 40pt;
   text-align: center;
-  padding: 10pt;
+  padding-top: 10pt;
+  padding-bottom: 10pt;
   width: 100%;
-  background-color: aqua;
 }
-#pdf-page-cover div h2, #pdf-page-last div h2 {
+#pdf-page-cover > div h2, #pdf-page-last > div h2 {
   position: absolute;
   top: 12cm;
   font-size: 30pt;
   text-align: center;
-  padding: 10pt;
+  padding-top: 10pt;
+  padding-bottom: 10pt;
   width: 100%;
 }
-#pdf-page-cover div h3, #pdf-page-last div h3 {
+#pdf-page-cover > div h3, #pdf-page-last > div h3 {
   position: absolute;
   bottom: var(--page-margin);
   right: var(--page-margin);
@@ -931,7 +945,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @page cover-last {
-  background-color: var(--color-primary-dark) !important;
   @top-right {
     content: none;
   }
@@ -951,6 +964,70 @@ h1, h2, h3, h4, h5, h6 {
     content: none;
   }
 }
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
+:root {
+  --page-cover-subtitle: "Penetration Test Report for Internal Lab";
+  --data-oscp-email: "john.doe@lost.tld";
+  --data-oscp-osid: "OSID: 314157";
+}
+
+#pdf-page-cover > div {
+  background-color: black !important;
+  /*     #oscp-osid {
+        string-set: chapter-title content(before);
+      } */
+}
+#pdf-page-cover > div h1 {
+  background-color: var(--color-primary-dark);
+}
+#pdf-page-cover > div h2::before {
+  content: var(--page-cover-subtitle);
+}
+#pdf-page-cover > div h2 {
+  top: 10cm !important;
+}
+#pdf-page-cover > div #oscp-email::before {
+  content: var(--data-oscp-email);
+}
+#pdf-page-cover > div #oscp-email {
+  top: 14cm;
+}
+#pdf-page-cover > div #oscp-osid {
+  top: 16cm;
+}
+#pdf-page-cover > div #oscp-email, #pdf-page-cover > div #oscp-osid {
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+#pdf-page-cover > div #oscp-osid::before {
+  content: var(--data-oscp-osid);
+}
+#pdf-page-cover > div #oscp-logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--page-margin);
+  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/../assets/offsec-logo-00.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: var(--page-margin);
+  background-position: center;
+}
+
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/print.scss */
+#pdf-page-last div {
+  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/../assets/offsec-logo-00.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+#pdf-page-last div h1 {
+  top: 5cm;
+  background-color: var(--color-primary-dark);
+}
+
 /* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
@@ -970,5 +1047,7 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustment /print.scss */
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-cover-last/print.scss */
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/print.scss */

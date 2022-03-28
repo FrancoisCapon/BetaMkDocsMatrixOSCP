@@ -1,0 +1,13 @@
+#pdf-page-last div{
+    background-image: url('../assets/offsec-logo-00.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+
+    h1 {
+        top: 5.0cm;
+        background-color: var(--color-primary-dark);
+        //background-color: black;
+    }
+}
+

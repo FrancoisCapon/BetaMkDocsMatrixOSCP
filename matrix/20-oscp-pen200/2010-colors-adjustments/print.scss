@@ -19,6 +19,7 @@ $primary-light: color.adjust($primary, $lightness: +20%);
   th {
     background-color: var(--color-primary) !important;
     color: var(--color-text-on-primary);
+    border-color: var(--color-text-default) !important;
   }
 
   h1 {
@@ -27,5 +28,24 @@ $primary-light: color.adjust($primary, $lightness: +20%);
 }
 
 @page {
+  size: letter !important;
   background-color: whitesmoke !important;
 }
+
+@page chapter{
+  background-color: lightgrey !important;
+  background-image: url('../assets/offsec-logo-00.svg');
+  background-repeat: no-repeat;
+  //background-size: contain;
+  background-position: bottom right 50%;
+}
+
+#pdf-content .pdf-chapter-page{
+  .pdf-chapter-page-title {
+      span {
+          background-color: var(--color-primary);
+      }
+    }
+}
+
+
