@@ -10,7 +10,7 @@
 }
 
 .pdf-section {
-   table, figure, img, pre, hr {
+   table, figure, img, pre, hr, dl, dt {
       margin-top: var(--block-margin-top-100);
    }
    * + p {
@@ -29,4 +29,5 @@
          margin-top: var(--block-margin-top-050);
       }
    }
+
 }

@@ -308,6 +308,17 @@ h1, h2, h3, h4, h5, h6 {
 .pdf-section ul li::marker, .pdf-section ol li::marker {
   color: var(--color-primary);
 }
+.pdf-section dt {
+  font-family: SansSerifBold;
+}
+.pdf-section dt code {
+  font-family: MonospaceBold;
+}
+.pdf-section dt::before {
+  content: "■ ";
+  font-family: Monospace;
+  color: var(--color-primary);
+}
 
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
 :root {
@@ -318,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
   --block-border-radius: 0.35rem;
 }
 
-.pdf-section table, .pdf-section figure, .pdf-section img, .pdf-section pre, .pdf-section hr {
+.pdf-section table, .pdf-section figure, .pdf-section img, .pdf-section pre, .pdf-section hr, .pdf-section dl, .pdf-section dt {
   margin-top: var(--block-margin-top-100);
 }
 .pdf-section * + p {

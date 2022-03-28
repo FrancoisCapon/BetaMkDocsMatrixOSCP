@@ -18,4 +18,17 @@
             color: var(--color-primary);
         }
     }
+
+    dt {
+        font-family: SansSerifBold;
+        code {
+            font-family: MonospaceBold;
+        }
+    }
+
+    dt::before {
+        content: "■ ";
+        font-family: Monospace;
+        color: var(--color-primary);
+    }
 }
