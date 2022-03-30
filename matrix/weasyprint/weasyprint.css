@@ -109,6 +109,11 @@ html {
   page-break-before: always;
 }
 
+span.pdf-page-break {
+  display: block;
+  page-break-after: always;
+}
+
 /* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
 :root {
   --color-text-default: #333;
@@ -805,6 +810,59 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
+.pdf-section .highlight {
+  border-radius: var(--block-border-radius);
+}
+.pdf-section .highlighttable {
+  margin-left: 0;
+  width: 100%;
+  border: none;
+  page-break-inside: avoid;
+}
+.pdf-section .highlighttable td {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.pdf-section .highlighttable td pre {
+  margin-top: 0;
+  border-radius: 0;
+}
+.pdf-section .highlighttable td.linenos {
+  width: 1rem;
+}
+.pdf-section .highlighttable td.linenos pre {
+  border-top-left-radius: var(--block-border-radius);
+  border-bottom-left-radius: var(--block-border-radius);
+  font-size: 0.75rem;
+  padding-right: 0.5rem;
+}
+.pdf-section .highlighttable td.linenos pre span.normal {
+  display: inline-block;
+  border-right: solid 1px silver;
+  padding-right: 0.5rem;
+}
+.pdf-section .highlighttable td.code pre {
+  border-top-right-radius: var(--block-border-radius);
+  border-bottom-right-radius: var(--block-border-radius);
+  padding-left: 0;
+}
+.pdf-section .highlighttable td.code pre code {
+  margin: 0;
+  padding: 0;
+}
+
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
+.pdf-section .highlight .hll {
+  background-color: transparent !important;
+  font-family: MonospaceBold !important;
+  color: var(--color-primary) !important;
+}
+.pdf-section .highlight .hll * {
+  color: var(--color-primary) !important;
+}
+
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
 @page section {
   @top-left {
@@ -1055,6 +1113,8 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
 /* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
 /* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */

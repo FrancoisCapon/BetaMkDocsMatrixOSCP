@@ -62,3 +62,8 @@ $top-border-bottom-width: 0.05cm;
 .pdf-section {
   page-break-before: always;
 }
+
+span.pdf-page-break {
+  display: block;
+  page-break-after: always;
+}

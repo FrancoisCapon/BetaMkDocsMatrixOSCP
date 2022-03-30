@@ -19,7 +19,7 @@ For more details, see the [Installation Guide].
 Getting started is super easy. To create a new project, run the following
 command from the command line:
 
-```bash
+```bash hl_lines="2"
 mkdocs new my-project
 cd my-project
 ```
@@ -38,11 +38,21 @@ as you work on it. Make sure you're in the same directory as the `mkdocs.yml`
 configuration file, and then start the server by running the `mkdocs serve`
 command:
 
-```bash
+<span class="pdf-page-break"></span>
+
+```hl_lines="1 4" linenums="1"
 $ mkdocs serve
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
 [I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
 [I 160402 15:50:43 handlers:58] Start watching changes
 [I 160402 15:50:43 handlers:60] Start detecting changes
 ```

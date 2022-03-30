@@ -81,8 +81,8 @@ configuration file. Start by reading the <a href="#/project/mkdocs-docs/docs/get
 <p>Getting started is super easy. To create a new project, run the following
 command from the command line:</p>
 <div class="highlight"><pre><span></span><code>mkdocs new my-project
-<span class="nb">cd</span> my-project
-</code></pre></div>
+<span class="hll"><span class="nb">cd</span> my-project
+</span></code></pre></div>
 <p>Take a moment to review the initial project that has been created for you.</p>
 <p>
 <figure><img src="/project/mkdocs-docs/docs/img/initial-layout.png"/><figcaption>The initial MkDocs layout</figcaption>
@@ -96,13 +96,36 @@ folder just contains a single documentation page, named <code>index.md</code>.</
 as you work on it. Make sure you're in the same directory as the <code>mkdocs.yml</code>
 configuration file, and then start the server by running the <code>mkdocs serve</code>
 command:</p>
-<div class="highlight"><pre><span></span><code>$ mkdocs serve
-INFO    -  Building documentation...
+<p><span class="pdf-page-break"></span></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll">$ mkdocs serve
+</span>INFO    -  Building documentation...
 INFO    -  Cleaning site directory
-<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 server:271<span class="o">]</span> Serving on http://127.0.0.1:8000
-<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 handlers:58<span class="o">]</span> Start watching changes
-<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 handlers:60<span class="o">]</span> Start detecting changes
+<span class="hll">[I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
+</span>[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
 </code></pre></div>
+</td></tr></table>
 <p>Open up <code>http://127.0.0.1:8000/</code> in your browser, and you'll see the default
 home page being displayed:</p>
 <p>

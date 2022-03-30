@@ -1,0 +1,54 @@
+
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
+.pdf-section {
+
+    .highlight { 
+        border-radius: var(--block-border-radius);
+    }
+
+    .highlighttable {
+            margin-left: 0;
+            width: 100%;
+            border: none;
+            page-break-inside: avoid;
+
+            td {
+                border: none;
+                padding: 0;
+                margin: 0;
+                pre {
+                    margin-top: 0;
+                    border-radius: 0;
+                }
+            }
+
+            td.linenos {
+                width: 1rem;
+                pre {
+                    border-top-left-radius: var(--block-border-radius);
+                    border-bottom-left-radius: var(--block-border-radius);
+                    font-size: 0.75rem;
+                    padding-right: 0.5rem;
+                    span.normal {
+                        display: inline-block;
+                        border-right: solid 1px silver;
+                        padding-right: 0.5rem;
+                    }
+                }
+            }
+
+            td.code {
+                pre {
+                    border-top-right-radius: var(--block-border-radius);
+                    border-bottom-right-radius: var(--block-border-radius);
+                    padding-left: 0;
+                    code {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                }
+            }
+    }
+
+}
