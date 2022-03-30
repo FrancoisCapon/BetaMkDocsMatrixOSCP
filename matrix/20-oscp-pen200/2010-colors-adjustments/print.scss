@@ -40,9 +40,27 @@ $primary-light: color.adjust($primary, $lightness: +20%);
       color: var(--color-text-heading);
     }
 
-    tr:nth-child(odd) td {
+    tr:nth-child(odd) td{
       background-color: var(--color-table-row-even);
-  }
+   }
+
+   tr.level-0 td{
+     background-color: var(--color-primary) !important;
+     color: var(--color-text-on-primary);
+   }
+   a.level-0, a.level-0::after {
+     //color: var(--color-primary) !important;
+     color: var(--color-text-on-primary) !important;
+   }
+
+   a.level-1 {
+     font-family: SansSerifBold;
+   }
+
+   // odd even too
+  //  tr.level-3 {
+  //    display: none;
+  //  }
 
     td {
       a {

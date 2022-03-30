@@ -44,11 +44,14 @@
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
 @use "print1091.scss";
 
-/* /project/mkdocs-docs/matrix/11-pdf-toc/1100-toc-page/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
 @use "print1100.scss";
 
-/* /project/mkdocs-docs/matrix/11-pdf-toc/1110-toc-content/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
 @use "print1110.scss";
+
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1120-toc-numbering/print.scss */
+@use "print1120.scss";
 
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
 @use "print1210.scss";

@@ -5,13 +5,14 @@
 
 @page toc {
     @top-right {
-        content: none;
+      // start trop fort : https://www.w3.org/TR/css-gcpm-3/#string-start
+        content: string(level-1-title, start); 
       }
       @top-center {
-        content: none;
+        content: '';
       }
       @top-left {
-        content: none;
+        content: string(level-0-title, start);;
       }
       @bottom-left {
         content: none;

@@ -1,5 +1,5 @@
 
-/* /project/mkdocs-docs/matrix/11-pdf-toc/1110-toc-content/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
 :root{
     --table-of-content-title: "Table of Contents"
 }
@@ -37,10 +37,6 @@ $indent: 1.5rem;
                 width: 100%;
                 line-height: 2.25;
 
-                ::before {
-
-                }
-
                 &::after {
                     content: target-counter(attr(href), page);
                     float:right;
@@ -49,11 +45,12 @@ $indent: 1.5rem;
 
                 &.level-0 {
                     padding-left: $padding;
-                    color: var(--color-text-heading)
+                    color: var(--color-text-heading);
+                    font-family: SansSerifBold;
                 }
                 &.level-1 {
                     padding-left: calc($padding + $indent);
-                    // color: var(--color-text-heading)
+                    color: var(--color-text-heading);
                 }
                 &.level-2 {
                     padding-left: calc($padding + 2 * $indent);

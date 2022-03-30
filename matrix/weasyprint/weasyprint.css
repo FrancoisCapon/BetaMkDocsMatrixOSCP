@@ -447,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
   content: "Listing " counter(listing-counter) " - ";
 }
 
-/* /project/mkdocs-docs/matrix/11-pdf-toc/1100-toc-page/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
 #pdf-toc {
   page: toc;
   break-before: always;
@@ -455,13 +455,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @page toc {
   @top-right {
-    content: none;
+    content: string(level-1-title, start);
   }
   @top-center {
-    content: none;
+    content: "";
   }
   @top-left {
-    content: none;
+    content: string(level-0-title, start);
   }
   @bottom-left {
     content: none;
@@ -479,7 +479,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0.25cm;
   }
 }
-/* /project/mkdocs-docs/matrix/11-pdf-toc/1110-toc-content/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
 :root {
   --table-of-content-title: "Table of Contents" ;
 }
@@ -519,15 +519,55 @@ h1, h2, h3, h4, h5, h6 {
 #pdf-toc table td a.level-0 {
   padding-left: 0.5rem;
   color: var(--color-text-heading);
+  font-family: SansSerifBold;
 }
 #pdf-toc table td a.level-1 {
   padding-left: 2rem;
+  color: var(--color-text-heading);
 }
 #pdf-toc table td a.level-2 {
   padding-left: 3.5rem;
 }
 #pdf-toc table td a.level-3 {
   padding-left: 5rem;
+}
+
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1120-toc-numbering/print.scss */
+#pdf-toc {
+  counter-increment: level-0-counter;
+}
+#pdf-toc tr.level-0 {
+  counter-increment: level-0-counter;
+  counter-reset: level-1;
+}
+#pdf-toc tr.level-0 a::before {
+  content: counter(level-0-counter) ". ";
+}
+#pdf-toc tr.level-0 a {
+  string-set: level-0-title content();
+}
+#pdf-toc tr.level-1 {
+  counter-increment: level-1-counter;
+  counter-reset: level-2-counter;
+}
+#pdf-toc tr.level-1 a::before {
+  content: counter(level-0-counter) "." counter(level-1-counter) ". ";
+}
+#pdf-toc tr.level-1 a {
+  string-set: level-1-title content();
+}
+#pdf-toc tr.level-2 {
+  counter-increment: level-2-counter;
+  counter-reset: level-3-counter;
+}
+#pdf-toc tr.level-2 a::before {
+  content: counter(level-0-counter) "." counter(level-1-counter) "." counter(level-2-counter) ". ";
+}
+#pdf-toc tr.level-3 {
+  counter-increment: level-3-counter;
+}
+#pdf-toc tr.level-3 a::before {
+  content: counter(level-0-counter) "." counter(level-1-counter) "." counter(level-2-counter) "." counter(level-3-counter) ". ";
 }
 
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
@@ -1026,6 +1066,16 @@ h1, h2, h3, h4, h5, h6 {
 #pdf-toc table tr:nth-child(odd) td {
   background-color: var(--color-table-row-even);
 }
+#pdf-toc table tr.level-0 td {
+  background-color: var(--color-primary) !important;
+  color: var(--color-text-on-primary);
+}
+#pdf-toc table a.level-0, #pdf-toc table a.level-0::after {
+  color: var(--color-text-on-primary) !important;
+}
+#pdf-toc table a.level-1 {
+  font-family: SansSerifBold;
+}
 #pdf-toc table td a {
   line-height: 2.5rem;
 }
@@ -1223,8 +1273,9 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
-/* /project/mkdocs-docs/matrix/11-pdf-toc/1100-toc-page/print.scss */
-/* /project/mkdocs-docs/matrix/11-pdf-toc/1110-toc-content/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1120-toc-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
 /* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
