@@ -16,9 +16,14 @@ $indent: 1.5rem;
             background-color: var(--color-table-row-even);
         }
 
-        th::before {
-            content: var(--table-of-content-title);
-            font-size: 25pt;
+        th {
+            display: inline-block;
+            margin-bottom: calc(1.25 * $indent);
+
+            &::before {
+                content: var(--table-of-content-title);
+                font-size: 25pt;
+            }
         }
 
         td {

@@ -491,6 +491,10 @@ h1, h2, h3, h4, h5, h6 {
 #pdf-toc table tr:nth-child(odd) td {
   background-color: var(--color-table-row-even);
 }
+#pdf-toc table th {
+  display: inline-block;
+  margin-bottom: 1.875rem;
+}
 #pdf-toc table th::before {
   content: var(--table-of-content-title);
   font-size: 25pt;
