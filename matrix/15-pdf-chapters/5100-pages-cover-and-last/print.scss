@@ -1,23 +1,28 @@
+#pdf-page-cover, #pdf-page-last {
+  color: var(--color-text-on-primary);
+  font-family: SansSerifBold;
+  h1 {
+    position: absolute;
+    font-size: 40pt;
+    text-align: center;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    width: 100%;
+  }
+}
+
 #pdf-page-cover {
+  page: cover;
   break-after: always;
 }
 #pdf-page-last {
-  break-before: always;
+  page: last;
+  break-before: always
 }
-#pdf-page-cover, #pdf-page-last{
-    page: cover-last;
 
-    color: var(--color-text-on-primary);
-    font-family: SansSerifBold;
-
+#pdf-page-cover {
     h1 {
-        position: absolute;
         top: 6cm;
-        font-size: 40pt;
-        text-align: center;
-        padding-top: 10pt;
-        padding-bottom: 10pt;
-        width: 100%;
     }
     h2 {
       position: absolute;
@@ -46,25 +51,33 @@
   }
 }
 
-@page cover-last {
-    margin: 0;
-    background-color: var(--color-primary-dark);
-    @top-right {
-        content: none;
-      }
-      @top-center {
-        content: none;
-      }
-      @top-left {
-        content: none;
-      }
-      @bottom-left {
-        content: none;
-      }
-      @bottom-center {
-        content: none;
-      }
-      @bottom-right {
-        content: none;
-      }
+@mixin page-cover-last {
+  margin: 0;
+  background-color: var(--color-primary-dark);
+  @top-right {
+      content: none;
+    }
+    @top-center {
+      content: none;
+    }
+    @top-left {
+      content: none;
+    }
+    @bottom-left {
+      content: none;
+    }
+    @bottom-center {
+      content: none;
+    }
+    @bottom-right {
+      content: none;
+    }
+}
+
+@page cover {
+  @include page-cover-last;
+}
+
+@page last {
+  @include page-cover-last;
 }

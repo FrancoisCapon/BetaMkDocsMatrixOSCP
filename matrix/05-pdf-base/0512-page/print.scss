@@ -1,9 +1,16 @@
 // https://www.w3.org/TR/css-page-3/#progression
 html { break-before: left }
 
+$margin: 2cm;
+$margin-top: 2.5cm;
+
+$top-margin-bottom: 0.35cm;
+$top-padding-bottom: 0.15cm;
+$top-border-bottom-width: 0.05cm;
+
 :root {
-  --page-margin: 2cm;
-  --page-margin-top: 2.5cm;
+  --page-margin: #{$margin};
+  --page-margin-top: #{$margin-top};
   //--page-margin-negative: -2cm;
 }
 
@@ -16,19 +23,19 @@ html { break-before: left }
     display: block;
     content: '@top-left';
     font-size: 0.80rem;
-    margin-bottom: 0.35cm;
-    padding-bottom: 0.15cm;
+    margin-bottom: $top-margin-bottom;
+    padding-bottom: $top-padding-bottom;
     vertical-align: bottom;
     width: 33%;
   }
   @top-center {
-    content: '@top-center';
+    content: '@top-center'; // !important;
     display: block;
-    border-bottom: 0.05cm solid;
+    border-bottom: $top-border-bottom-width solid;
     border-bottom-color: var(--color-primary);
     width: 100%;
-    margin-bottom: 0.35cm;
-    padding-bottom: 0.1cm; // 0.15 - 0.05 (border)
+    margin-bottom: $top-margin-bottom;
+    padding-bottom: calc($top-padding-bottom - $top-border-bottom-width); //0.1cm; // 0.15 - 0.05 (border)
     vertical-align: bottom;
     font-size: 0.80rem;
   }
@@ -36,8 +43,8 @@ html { break-before: left }
     display: block;
     content: '@top-right';
     font-size:  0.80rem;
-    margin-bottom: 0.35cm;
-    padding-bottom: 0.15cm;
+    margin-bottom: $top-margin-bottom;
+    padding-bottom: $top-padding-bottom;
     vertical-align: bottom;
     width: 33%;
   }

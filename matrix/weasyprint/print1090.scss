@@ -39,10 +39,10 @@ $subsubsection-number: counter(chapter-counter) "." counter(section-counter) "."
     }
 
     .pdf-chapter {
-        .pdf-chapter-page span::before {
+        > h1::before {
             content: counter(chapter-counter) ". ";
         }
-        .pdf-chapter-page span {
+        > h1 {
             counter-increment: chapter-counter;
             bookmark-label: $chapter-number content(text);
             bookmark-level: 1;

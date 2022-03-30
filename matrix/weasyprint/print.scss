@@ -47,7 +47,7 @@
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
 @use "print1210.scss";
 
-/* /project/mkdocs-docs/matrix/12-markdown-extensions/1211-pymdown-highlight-default/print.scss */
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
 @use "print1211.scss";
 
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
@@ -56,5 +56,17 @@
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
 @use "print1521.scss";
 
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
+@use "print2010.scss";
+
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/print.scss */
+@use "print2020.scss";
+
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
 @use "print5100.scss";
+
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
+@use "print5111.scss";
+
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/print.scss */
+@use "print5900.scss";
