@@ -149,9 +149,39 @@ home page being displayed:</p>
 <figure><img src="/project/mkdocs-docs/docs/img/screenshot.png"/><figcaption>The MkDocs live server</figcaption>
 </figure>
 </p>
+<p><span class="pdf-page-break"></span></p>
 <p>The dev-server also supports auto-reloading, and will rebuild your documentation
 whenever anything in the configuration file, documentation directory, or theme
 directory changes.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll">$ mkdocs serve
+</span>INFO    -  Building documentation...
+INFO    -  Cleaning site directory
+<span class="hll">[I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
+</span>[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+</code></pre></div>
+</td></tr></table>
 <p>Open the <code>docs/index.md</code> document in your text editor of choice, change the
 initial heading to <code>MkLorum</code>, and save your changes. Your browser will
 auto-reload and you should see your updated documentation immediately.</p>
