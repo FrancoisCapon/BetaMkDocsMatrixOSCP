@@ -4,6 +4,7 @@
 $primary: #A90C1C;
 $primary-dark: color.adjust($primary, $lightness: -05%);
 $primary-light: color.adjust($primary, $lightness: +20%);
+// $color-table-row-even: color.adjust(whitesmoke, $lightness: -0%);
 
 :root {
   --color-primary: #{$primary};
@@ -13,6 +14,8 @@ $primary-light: color.adjust($primary, $lightness: +20%);
 
   --color-background-code: #E8E8E8;
 
+  // --color-table-row-even:  #{$color-table-row-even};
+  --color-table-row-even: var(--color-background-code);
 }
 
 .pdf-section {
@@ -22,8 +25,34 @@ $primary-light: color.adjust($primary, $lightness: +20%);
     border-color: var(--color-text-default) !important;
   }
 
+  td code {
+    background-color: transparent;
+  }
+
   h1 {
     color: var(--color-primary) !important;
+  }
+}
+
+#pdf-toc {
+  table {
+    th {
+      color: var(--color-text-heading);
+    }
+
+    tr:nth-child(odd) td {
+      background-color: var(--color-table-row-even);
+  }
+
+    td {
+      a {
+        line-height: 2.50rem;
+      }
+
+      a::after {
+        color: var(--color-primary);
+      }
+    }
   }
 }
 

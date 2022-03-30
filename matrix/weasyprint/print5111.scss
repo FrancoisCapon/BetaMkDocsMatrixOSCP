@@ -1,0 +1,53 @@
+
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
+$data-oscp-id: "OSID: 314157"; // for string-set
+
+:root {
+    --page-cover-subtitle: "Penetration Test Report for Internal Lab";
+    --data-oscp-email: "john.doe@lost.tld";
+    // --data-oscp-osid: "OSID: 314157";
+    --data-oscp-osid: "#{$data-oscp-id}";
+}
+
+#pdf-page-cover {
+  //string-set: chapter-title var(--data-oscp-osid);
+  // WP 54.2
+  // [WARNING] Unsupported computed value ""OSID: 314157"" set in variable '--data-oscp-osid' for property 'string-set'.
+  string-set: chapter-title $data-oscp-id;
+}
+
+#pdf-page-cover {
+    h1 {
+        background-color: var(--color-primary-dark);
+    }
+
+    h2::before {
+      content: var(--page-cover-subtitle);
+    }
+    
+    h2 {
+      top: 10cm !important;
+    }
+
+    #oscp-email, #oscp-osid {
+      right: 0;
+      left: 0;
+      text-align: center;
+    }
+  
+    #oscp-email::before {
+      content: var(--data-oscp-email);
+    }
+
+    #oscp-email {
+      top: 14cm;
+    }
+
+    #oscp-osid::before {
+      content: var(--data-oscp-osid);
+    }
+
+    #oscp-osid {
+      top: 16cm;
+    }
+}

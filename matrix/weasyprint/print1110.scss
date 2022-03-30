@@ -4,7 +4,7 @@
     --table-of-content-title: "Table of Contents"
 }
 
-$padding: 0.25rem;
+$padding: 0.5rem;
 $indent: 1.5rem;
 
 #pdf-toc {
@@ -49,9 +49,11 @@ $indent: 1.5rem;
 
                 &.level-0 {
                     padding-left: $padding;
+                    color: var(--color-text-heading)
                 }
                 &.level-1 {
                     padding-left: calc($padding + $indent);
+                    // color: var(--color-text-heading)
                 }
                 &.level-2 {
                     padding-left: calc($padding + 2 * $indent);
