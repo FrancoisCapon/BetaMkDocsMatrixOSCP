@@ -1,8 +1,1 @@
-[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/deploying-your-docs.html@readthedocs for internal URI reference
-[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/customizing-your-theme.html@using-the-theme_dir for internal URI reference
-[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/configuration.html@google_analytics for internal URI reference
-[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/themes.html@search_and_themes for internal URI reference
-[ERROR] No anchor #/project/mkdocs-docs/docs/dev-guide/themes.html@search_and_themes for internal URI reference
-[ERROR] No anchor #/project/mkdocs-docs/docs/user-guide/writing-your-docs.html@multilevel-documentation for internal URI reference
-[WARNING] fsSelection bits 7, 8 and 9 are only defined in OS/2 table version 4 and up: version 3
 [WARNING] fsSelection bits 7, 8 and 9 are only defined in OS/2 table version 4 and up: version 3

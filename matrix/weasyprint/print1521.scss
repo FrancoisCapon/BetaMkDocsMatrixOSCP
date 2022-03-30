@@ -1,40 +1,23 @@
 
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
-#pdf-content .pdf-chapter-page{
+#pdf-content .pdf-chapter > h1 {
     page: chapter;
-    .pdf-chapter-page-title {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: var(--page-margin-negative);
-        left: var(--page-margin-negative);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        span {
-            display: block;
-            background-color: var(--color-primary-dark);
-            color: var(--color-text-on-primary);
-            font-size: 34pt;
-            text-align: center;
-            margin: 0;
-            margin-bottom: 5cm;
-            padding: 10pt;
-            width: 100%;
-            font-family: SansSerifBold;
-        }
-    }
+    string-set: chapter-title content();
 
-    h1 {
-        position: relative;
-        bottom: 10cm;
-        string-set: chapter-title content(); // in a flow
-    }
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-on-primary);
+    font-size: 34pt;
+    text-align: center;
+    padding: 10pt;
+    width: 100%;
+    font-family: SansSerifBold;
+
+    position: relative;
+    top: 10cm;
 }
 
 @page chapter {
+    margin: 0;
     @top-right {
         content: none;
       }

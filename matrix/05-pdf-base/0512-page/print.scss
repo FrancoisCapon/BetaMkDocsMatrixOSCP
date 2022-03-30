@@ -3,13 +3,14 @@ html { break-before: left }
 
 :root {
   --page-margin: 2cm;
-  --page-margin-negative: -2cm;
+  --page-margin-top: 2.5cm;
+  //--page-margin-negative: -2cm;
 }
 
 @page {
   size: A4;
   margin: var(--page-margin);
-  margin-top: 2.5cm;
+  margin-top: var(--page-margin-top);
 
   @top-left {
     display: block;
