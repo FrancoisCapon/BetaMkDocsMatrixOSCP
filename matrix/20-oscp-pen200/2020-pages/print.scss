@@ -1,4 +1,6 @@
 @use "print512" as page;
+// WP 54.2 :
+//  background-position: center bottom var(--page-margin); no error but no bottom;
 
 @page {
     size: letter !important;
@@ -25,7 +27,7 @@
     background-image: url('../assets/offsec-logo-00.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: black;
+    background-color: black !important;
 }
 
 // WP 54.2 :

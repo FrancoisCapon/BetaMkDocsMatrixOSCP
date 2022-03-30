@@ -891,7 +891,7 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: black;
+  background-color: black !important;
 }
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
 #pdf-page-cover, #pdf-page-last {
