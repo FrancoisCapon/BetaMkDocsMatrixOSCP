@@ -56,6 +56,7 @@ INFO    -  Cleaning site directory
 [I 160402 15:50:43 handlers:58] Start watching changes
 [I 160402 15:50:43 handlers:60] Start detecting changes
 ```
+<figcaption>Code with lines numbers and lines highlighted</figcaption> 
 
 Open up `http://127.0.0.1:8000/` in your browser, and you'll see the default
 home page being displayed:

@@ -1,0 +1,33 @@
+
+/* /project/mkdocs-docs/matrix/11-pdf-toc/1100-toc-page/print.scss */
+#pdf-toc {
+    page: toc;
+    break-before: always;
+}
+
+@page toc {
+    @top-right {
+        content: none;
+      }
+      @top-center {
+        content: none;
+      }
+      @top-left {
+        content: none;
+      }
+      @bottom-left {
+        content: none;
+      }
+      @bottom-center {
+        content: none;
+      }
+      @bottom-center {
+        background-color: var(--color-primary);
+        color: var(--color-text-on-primary);
+        content: counter(page);
+        height: 1cm;
+        text-align: center;
+        width: 1cm;
+        margin-top: 0.25cm;
+      }
+}

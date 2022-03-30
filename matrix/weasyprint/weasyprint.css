@@ -52,7 +52,7 @@ html * {
   font-weight: 500;
   src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firamono-medium.ttf");
 }
-/* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0512-pages/print.scss */
 html {
   break-before: left;
 }
@@ -60,6 +60,11 @@ html {
 :root {
   --page-margin: 2cm;
   --page-margin-top: 2.5cm;
+}
+
+#pdf-top-page {
+  position: fixed;
+  color: red;
 }
 
 @page {
@@ -442,6 +447,84 @@ h1, h2, h3, h4, h5, h6 {
   content: "Listing " counter(listing-counter) " - ";
 }
 
+/* /project/mkdocs-docs/matrix/11-pdf-toc/1100-toc-page/print.scss */
+#pdf-toc {
+  page: toc;
+  break-before: always;
+}
+
+@page toc {
+  @top-right {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-center {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    content: counter(page);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+    margin-top: 0.25cm;
+  }
+}
+/* /project/mkdocs-docs/matrix/11-pdf-toc/1110-toc-content/print.scss */
+:root {
+  --table-of-content-title: "Table of Contents" ;
+}
+
+#pdf-toc table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#pdf-toc table tr:nth-child(odd) td {
+  background-color: var(--color-table-row-even);
+}
+#pdf-toc table th::before {
+  content: var(--table-of-content-title);
+  font-size: 25pt;
+}
+#pdf-toc table td {
+  border-top: 1px solid silver;
+  border-bottom: 1px solid silver;
+}
+#pdf-toc table td a {
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--color-text-default);
+  width: 100%;
+  line-height: 2.25;
+}
+#pdf-toc table td a::after {
+  content: target-counter(attr(href), page);
+  float: right;
+  padding-right: 0.25rem;
+}
+#pdf-toc table td a.level-0 {
+  padding-left: 0.25rem;
+}
+#pdf-toc table td a.level-1 {
+  padding-left: 1.75rem;
+}
+#pdf-toc table td a.level-2 {
+  padding-left: 3.25rem;
+}
+#pdf-toc table td a.level-3 {
+  padding-left: 4.75rem;
+}
+
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
 .pdf-section div.admonition {
   margin-top: var(--block-margin-top-100);
@@ -465,21 +548,12 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
 }
 
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
-.pdf-section .highlight {
-  border-radius: var(--block-border-radius);
-}
-
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1211-pygments-style-default/print.scss */
 .pdf-section {
   /* Comment */
   /* Error */
-  /* Generic */
   /* Keyword */
-  /* Literal */
-  /* Name */
   /* Operator */
-  /* Other */
-  /* Punctuation */
   /* Comment.Hashbang */
   /* Comment.Multiline */
   /* Comment.Preproc */
@@ -502,7 +576,6 @@ h1, h2, h3, h4, h5, h6 {
   /* Keyword.Pseudo */
   /* Keyword.Reserved */
   /* Keyword.Type */
-  /* Literal.Date */
   /* Literal.Number */
   /* Literal.String */
   /* Name.Attribute */
@@ -515,11 +588,10 @@ h1, h2, h3, h4, h5, h6 {
   /* Name.Function */
   /* Name.Label */
   /* Name.Namespace */
-  /* Name.Other */
-  /* Name.Property */
   /* Name.Tag */
   /* Name.Variable */
   /* Operator.Word */
+  /* Text.Whitespace */
   /* Literal.Number.Bin */
   /* Literal.Number.Float */
   /* Literal.Number.Hex */
@@ -553,70 +625,50 @@ h1, h2, h3, h4, h5, h6 {
   background: #f8f8f8;
 }
 .pdf-section .highlight .c {
-  color: #8f5902;
+  color: #408080;
   font-style: italic;
 }
 .pdf-section .highlight .err {
-  color: #a40000;
-  border: 1px solid #ef2929;
-}
-.pdf-section .highlight .g {
-  color: #000000;
+  border: 1px solid #FF0000;
 }
 .pdf-section .highlight .k {
-  color: #204a87;
+  color: #008000;
   font-weight: bold;
-}
-.pdf-section .highlight .l {
-  color: #000000;
-}
-.pdf-section .highlight .n {
-  color: #000000;
 }
 .pdf-section .highlight .o {
-  color: #ce5c00;
-  font-weight: bold;
-}
-.pdf-section .highlight .x {
-  color: #000000;
-}
-.pdf-section .highlight .p {
-  color: #000000;
-  font-weight: bold;
+  color: #666666;
 }
 .pdf-section .highlight .ch {
-  color: #8f5902;
+  color: #408080;
   font-style: italic;
 }
 .pdf-section .highlight .cm {
-  color: #8f5902;
+  color: #408080;
   font-style: italic;
 }
 .pdf-section .highlight .cp {
-  color: #8f5902;
-  font-style: italic;
+  color: #BC7A00;
 }
 .pdf-section .highlight .cpf {
-  color: #8f5902;
+  color: #408080;
   font-style: italic;
 }
 .pdf-section .highlight .c1 {
-  color: #8f5902;
+  color: #408080;
   font-style: italic;
 }
 .pdf-section .highlight .cs {
-  color: #8f5902;
+  color: #408080;
   font-style: italic;
 }
 .pdf-section .highlight .gd {
-  color: #a40000;
+  color: #A00000;
 }
 .pdf-section .highlight .ge {
-  color: #000000;
   font-style: italic;
 }
 .pdf-section .highlight .gr {
-  color: #ef2929;
+  color: #FF0000;
 }
 .pdf-section .highlight .gh {
   color: #000080;
@@ -626,14 +678,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #00A000;
 }
 .pdf-section .highlight .go {
-  color: #000000;
-  font-style: italic;
+  color: #888888;
 }
 .pdf-section .highlight .gp {
-  color: #8f5902;
+  color: #000080;
+  font-weight: bold;
 }
 .pdf-section .highlight .gs {
-  color: #000000;
   font-weight: bold;
 }
 .pdf-section .highlight .gu {
@@ -641,173 +692,161 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 .pdf-section .highlight .gt {
-  color: #a40000;
-  font-weight: bold;
+  color: #0044DD;
 }
 .pdf-section .highlight .kc {
-  color: #204a87;
+  color: #008000;
   font-weight: bold;
 }
 .pdf-section .highlight .kd {
-  color: #204a87;
+  color: #008000;
   font-weight: bold;
 }
 .pdf-section .highlight .kn {
-  color: #204a87;
+  color: #008000;
   font-weight: bold;
 }
 .pdf-section .highlight .kp {
-  color: #204a87;
-  font-weight: bold;
+  color: #008000;
 }
 .pdf-section .highlight .kr {
-  color: #204a87;
+  color: #008000;
   font-weight: bold;
 }
 .pdf-section .highlight .kt {
-  color: #204a87;
-  font-weight: bold;
-}
-.pdf-section .highlight .ld {
-  color: #000000;
+  color: #B00040;
 }
 .pdf-section .highlight .m {
-  color: #0000cf;
-  font-weight: bold;
+  color: #666666;
 }
 .pdf-section .highlight .s {
-  color: #4e9a06;
+  color: #BA2121;
 }
 .pdf-section .highlight .na {
-  color: #c4a000;
+  color: #7D9029;
 }
 .pdf-section .highlight .nb {
-  color: #204a87;
+  color: #008000;
 }
 .pdf-section .highlight .nc {
-  color: #000000;
-}
-.pdf-section .highlight .no {
-  color: #000000;
-}
-.pdf-section .highlight .nd {
-  color: #5c35cc;
+  color: #0000FF;
   font-weight: bold;
 }
+.pdf-section .highlight .no {
+  color: #880000;
+}
+.pdf-section .highlight .nd {
+  color: #AA22FF;
+}
 .pdf-section .highlight .ni {
-  color: #ce5c00;
+  color: #999999;
+  font-weight: bold;
 }
 .pdf-section .highlight .ne {
-  color: #cc0000;
+  color: #D2413A;
   font-weight: bold;
 }
 .pdf-section .highlight .nf {
-  color: #000000;
+  color: #0000FF;
 }
 .pdf-section .highlight .nl {
-  color: #f57900;
+  color: #A0A000;
 }
 .pdf-section .highlight .nn {
-  color: #000000;
-}
-.pdf-section .highlight .nx {
-  color: #000000;
-}
-.pdf-section .highlight .py {
-  color: #000000;
+  color: #0000FF;
+  font-weight: bold;
 }
 .pdf-section .highlight .nt {
-  color: #204a87;
+  color: #008000;
   font-weight: bold;
 }
 .pdf-section .highlight .nv {
-  color: #000000;
+  color: #19177C;
 }
 .pdf-section .highlight .ow {
-  color: #204a87;
+  color: #AA22FF;
   font-weight: bold;
+}
+.pdf-section .highlight .w {
+  color: #bbbbbb;
 }
 .pdf-section .highlight .mb {
-  color: #0000cf;
-  font-weight: bold;
+  color: #666666;
 }
 .pdf-section .highlight .mf {
-  color: #0000cf;
-  font-weight: bold;
+  color: #666666;
 }
 .pdf-section .highlight .mh {
-  color: #0000cf;
-  font-weight: bold;
+  color: #666666;
 }
 .pdf-section .highlight .mi {
-  color: #0000cf;
-  font-weight: bold;
+  color: #666666;
 }
 .pdf-section .highlight .mo {
-  color: #0000cf;
-  font-weight: bold;
+  color: #666666;
 }
 .pdf-section .highlight .sa {
-  color: #4e9a06;
+  color: #BA2121;
 }
 .pdf-section .highlight .sb {
-  color: #4e9a06;
+  color: #BA2121;
 }
 .pdf-section .highlight .sc {
-  color: #4e9a06;
+  color: #BA2121;
 }
 .pdf-section .highlight .dl {
-  color: #4e9a06;
+  color: #BA2121;
 }
 .pdf-section .highlight .sd {
-  color: #8f5902;
+  color: #BA2121;
   font-style: italic;
 }
 .pdf-section .highlight .s2 {
-  color: #4e9a06;
+  color: #BA2121;
 }
 .pdf-section .highlight .se {
-  color: #4e9a06;
+  color: #BB6622;
+  font-weight: bold;
 }
 .pdf-section .highlight .sh {
-  color: #4e9a06;
+  color: #BA2121;
 }
 .pdf-section .highlight .si {
-  color: #4e9a06;
+  color: #BB6688;
+  font-weight: bold;
 }
 .pdf-section .highlight .sx {
-  color: #4e9a06;
+  color: #008000;
 }
 .pdf-section .highlight .sr {
-  color: #4e9a06;
+  color: #BB6688;
 }
 .pdf-section .highlight .s1 {
-  color: #4e9a06;
+  color: #BA2121;
 }
 .pdf-section .highlight .ss {
-  color: #4e9a06;
+  color: #19177C;
 }
 .pdf-section .highlight .bp {
-  color: #3465a4;
+  color: #008000;
 }
 .pdf-section .highlight .fm {
-  color: #000000;
+  color: #0000FF;
 }
 .pdf-section .highlight .vc {
-  color: #000000;
+  color: #19177C;
 }
 .pdf-section .highlight .vg {
-  color: #000000;
+  color: #19177C;
 }
 .pdf-section .highlight .vi {
-  color: #000000;
+  color: #19177C;
 }
 .pdf-section .highlight .vm {
-  color: #000000;
+  color: #19177C;
 }
 .pdf-section .highlight .il {
-  color: #0000cf;
-  font-weight: bold;
+  color: #666666;
 }
 
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
@@ -851,16 +890,6 @@ h1, h2, h3, h4, h5, h6 {
 .pdf-section .highlighttable td.code pre code {
   margin: 0;
   padding: 0;
-}
-
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
-.pdf-section .highlight .hll {
-  background-color: transparent !important;
-  font-family: MonospaceBold !important;
-  color: var(--color-primary) !important;
-}
-.pdf-section .highlight .hll * {
-  color: var(--color-primary) !important;
 }
 
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
@@ -910,46 +939,6 @@ h1, h2, h3, h4, h5, h6 {
   @bottom-right {
     content: none;
   }
-}
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
-:root {
-  --color-primary: #A90C1C;
-  --color-primary-dark: #910a18;
-  --color-primary-light: #f02b3f;
-  --color-background-code: #E8E8E8;
-}
-
-.pdf-section th {
-  background-color: var(--color-primary) !important;
-  color: var(--color-text-on-primary);
-  border-color: var(--color-text-default) !important;
-}
-.pdf-section h1 {
-  color: var(--color-primary) !important;
-}
-
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/print.scss */
-@page {
-  size: letter !important;
-  background-color: whitesmoke !important;
-}
-@page chapter {
-  background-color: lightgrey !important;
-  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom 2cm;
-}
-@page cover {
-  background-color: black !important;
-  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom 2cm;
-}
-@page last {
-  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: black !important;
 }
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
 #pdf-page-cover, #pdf-page-last {
@@ -1046,66 +1035,16 @@ h1, h2, h3, h4, h5, h6 {
     content: none;
   }
 }
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
-:root {
-  --page-cover-subtitle: "Penetration Test Report for Internal Lab";
-  --data-oscp-email: "john.doe@lost.tld";
-  --data-oscp-osid: "OSID: 314157";
-}
-
-#pdf-page-cover {
-  string-set: chapter-title "OSID: 314157";
-}
-
-#pdf-page-cover h1 {
-  background-color: var(--color-primary-dark);
-}
-#pdf-page-cover h2::before {
-  content: var(--page-cover-subtitle);
-}
-#pdf-page-cover h2 {
-  top: 10cm !important;
-}
-#pdf-page-cover #oscp-email, #pdf-page-cover #oscp-osid {
-  right: 0;
-  left: 0;
-  text-align: center;
-}
-#pdf-page-cover #oscp-email::before {
-  content: var(--data-oscp-email);
-}
-#pdf-page-cover #oscp-email {
-  top: 14cm;
-}
-#pdf-page-cover #oscp-osid::before {
-  content: var(--data-oscp-osid);
-}
-#pdf-page-cover #oscp-osid {
-  top: 16cm;
-}
-
 /* /project/mkdocs-docs/matrix/30-my-oscp/5112-cover-scss/print.scss */
 :root {
   --page-cover-subtitle: "Penetration Test Report for Internal Lab";
-  --data-oscp-email: "marry.poppins@pamela-lyndon-travers.writer";
+  --data-oscp-email: "marry.poppins@pltravers.writer";
   --data-oscp-osid: "OSID: 271828";
-}
-
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/print.scss */
-#pdf-page-last div {
-  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/../assets/offsec-logo-00.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: black;
-}
-#pdf-page-last div h1 {
-  top: 5cm;
-  background-color: var(--color-primary-dark);
 }
 
 /* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
-/* /project/mkdocs-docs/matrix/05-pdf-base/0512-page/print.scss */
+/* /project/mkdocs-docs/matrix/05-pdf-base/0512-pages/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
 /* /project/mkdocs-docs/matrix/05-pdf-base/0514-pdf-boomarks-none/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
@@ -1118,15 +1057,12 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc/1100-toc-page/print.scss */
+/* /project/mkdocs-docs/matrix/11-pdf-toc/1110-toc-content/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1211-pygments-style-default/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
 /* /project/mkdocs-docs/matrix/30-my-oscp/5112-cover-scss/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/print.scss */
