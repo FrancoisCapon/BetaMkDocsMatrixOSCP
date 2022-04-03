@@ -75,7 +75,7 @@ html {
     display: block;
     content: "@top-left";
     font-size: 0.8rem;
-    margin-bottom: 0.35cm;
+    margin-bottom: 0.5cm;
     padding-bottom: 0.15cm;
     vertical-align: bottom;
     width: 33%;
@@ -86,16 +86,16 @@ html {
     border-bottom: 0.05cm solid;
     border-bottom-color: var(--color-primary);
     width: 100%;
+    margin-bottom: 0.5cm;
     padding-bottom: 0.1cm;
     vertical-align: bottom;
     font-size: 0.8rem;
-    background-color: silver;
   }
   @top-right {
     display: block;
     content: "@top-right";
     font-size: 0.8rem;
-    margin-bottom: 0.35cm;
+    margin-bottom: 0.5cm;
     padding-bottom: 0.15cm;
     vertical-align: bottom;
     width: 33%;
@@ -107,12 +107,7 @@ html {
     height: 1cm;
     text-align: center;
     width: 1cm;
-    margin-top: 0.25cm;
-  }
-  @bottom-left {
-    width: 100%;
-    background-color: silver;
-    content: "";
+    margin-top: 0.5cm;
   }
 }
 .fc-pdf-section {
@@ -171,7 +166,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: SansSerifBold;
   font-size: 2.3rem;
   string-set: section-title content();
-  background-color: chartreuse;
 }
 .fc-pdf-section h2 {
   font-family: SansSerif;
