@@ -8,13 +8,12 @@
 }
 
 .fc-pdf-section {
-
+   // https://github.com/Kozea/WeasyPrint/issues/115
+   // https://drafts.csswg.org/css-break-4/#break-margins
    * {
       margin-break: discard; 
    }
-
-
-
+   
    table, figure, img, pre, hr, dl, dt {
       margin-top: var(--block-margin-top-100);
    }
