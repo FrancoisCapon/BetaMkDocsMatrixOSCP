@@ -1,0 +1,76 @@
+
+/* /project/mkdocs-docs/matrix/05-pdf-base/0512-pages/print.scss */
+// https://www.w3.org/TR/css-page-3/#progression
+html { break-before: left }
+
+$margin: 2cm;
+$margin-top: 2.5cm;
+
+$top-margin-bottom: 0.35cm;
+$top-padding-bottom: 0.15cm;
+$top-border-bottom-width: 0.05cm;
+
+:root {
+  --page-margin: #{$margin};
+  --page-margin-top: #{$margin-top};
+}
+
+#fc-pdf-top-page {
+  position: fixed;
+  color:red
+}
+
+@page {
+
+  size: A4;
+  margin: var(--page-margin);
+  margin-top: var(--page-margin-top);
+
+  @top-left {
+    display: block;
+    content: '@top-left';
+    font-size: 0.80rem;
+    margin-bottom: $top-margin-bottom;
+    padding-bottom: $top-padding-bottom;
+    vertical-align: bottom;
+    width: 33%;
+  }
+  @top-center {
+    content: '@top-center'; // !important;
+    display: block;
+    border-bottom: $top-border-bottom-width solid;
+    border-bottom-color: var(--color-primary);
+    width: 100%;
+    margin-bottom: $top-margin-bottom;
+    padding-bottom: calc($top-padding-bottom - $top-border-bottom-width); //0.1cm; // 0.15 - 0.05 (border)
+    vertical-align: bottom;
+    font-size: 0.80rem;
+  }
+  @top-right {
+    display: block;
+    content: '@top-right';
+    font-size:  0.80rem;
+    margin-bottom: $top-margin-bottom;
+    padding-bottom: $top-padding-bottom;
+    vertical-align: bottom;
+    width: 33%;
+  }
+  @bottom-center {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    content: counter(page);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+    margin-top: 0.25cm;
+  }
+}
+
+.fc-pdf-section {
+  page-break-before: always;
+}
+
+span.fc-pdf-page-break {
+  display: block;
+  page-break-after: always;
+}

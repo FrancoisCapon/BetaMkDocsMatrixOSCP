@@ -1,0 +1,27 @@
+
+/* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
+// https://python-markdown.github.io/extensions/admonition/
+
+.fc-pdf-section {
+    div.admonition {
+        margin-top: var(--block-margin-top-100);
+        border-left: solid 2px;
+        border-left-color: var(--color-primary);
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        break-inside: avoid;
+        p.admonition-title {
+            margin-top: 0.5rem;
+            margin-bottom: 0.25rem;
+            font-family: SansSerifBold;
+        }
+        p.admonition-title + * {
+            margin-top: 0;
+        }
+        p {
+            text-align: justify;
+        }
+    }
+}

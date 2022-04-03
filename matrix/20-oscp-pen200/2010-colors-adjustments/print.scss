@@ -18,7 +18,23 @@ $primary-light: color.adjust($primary, $lightness: +20%);
   --color-table-row-even: var(--color-background-code);
 }
 
-.pdf-section {
+
+.fc-pdf-section {
+  code {
+    mark.oscp-cmd, mark.oscp-hacked {
+      background-color: transparent;
+      font-family: MonospaceBold;
+    }
+    mark.oscp-cmd {
+      color: dodgerblue;
+    }
+    mark.oscp-hacked {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.fc-pdf-section {
   th {
     background-color: var(--color-primary) !important;
     color: var(--color-text-on-primary);
@@ -34,7 +50,7 @@ $primary-light: color.adjust($primary, $lightness: +20%);
   }
 }
 
-#pdf-toc {
+#fc-pdf-toc {
   table {
     th {
       color: var(--color-text-heading);
@@ -45,12 +61,13 @@ $primary-light: color.adjust($primary, $lightness: +20%);
    }
 
    tr.level-0 td{
-     background-color: var(--color-primary) !important;
-     color: var(--color-text-on-primary);
+     //background-color: var(--color-primary) !important;
+     //color: var(--color-text-on-primary); 
    }
    a.level-0, a.level-0::after {
-     //color: var(--color-primary) !important;
-     color: var(--color-text-on-primary) !important;
+     color: var(--color-primary) !important;
+     font-size: 1.1rem;
+     //color: var(--color-text-on-primary) !important;
    }
 
    a.level-1 {

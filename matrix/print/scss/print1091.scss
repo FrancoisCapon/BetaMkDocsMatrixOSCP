@@ -1,0 +1,36 @@
+
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
+#fc-pdf-content {
+
+    counter-reset: figure-counter listing-counter table-counter;
+
+    img + figcaption {
+        counter-increment: figure-counter;
+    }
+
+    img + figcaption::before {
+        content: "Figure " counter(figure-counter) " - " ;
+    }
+
+    table + figcaption {
+        counter-increment: table-counter;
+    }
+
+    table + figcaption::before {
+        content: "Table " counter(table-counter) " - " ;
+    }
+
+    table.highlighttable + figcaption { // listing not table
+        counter-increment: table-counter -1;
+    }
+
+    table.highlighttable + figcaption, .highlight + figcaption, pre + figcaption{
+        counter-increment: listing-counter;
+    }
+
+    table.highlighttable + figcaption::before, .highlight + figcaption::before, pre + figcaption::before {
+        content: "Listing " counter(listing-counter) " - " ;
+    }
+}
+
+// QUESTION NOT ?

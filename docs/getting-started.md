@@ -38,7 +38,7 @@ as you work on it. Make sure you're in the same directory as the `mkdocs.yml`
 configuration file, and then start the server by running the `mkdocs serve`
 command:
 
-<span class="pdf-page-break"></span>
+<span class="fc-pdf-page-break"></span>
 
 ```hl_lines="1 4" linenums="1"
 $ mkdocs serve
@@ -63,17 +63,17 @@ home page being displayed:
 
 ![The MkDocs live server](img/screenshot.png)
 
-<span class="pdf-page-break"></span>
+<span class="fc-pdf-page-break"></span>
 
-The dev-server also supports auto-reloading, and will rebuild your documentation
+The <code><mark class="oscp-cmd">dev-server</mark></code> also supports auto-reloading, and will rebuild your documentation
 whenever anything in the configuration file, documentation directory, or theme
 directory changes.
 
-```hl_lines="1 4" linenums="1"
-$ mkdocs serve
+<pre><code>
+$ <mark class="oscp-cmd">mkdocs serve</mark>
 INFO    -  Building documentation...
-INFO    -  Cleaning site directory
-[I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
+INFO    -  <mark>Cleaning site directory</mark>
+[I 160402 15:50:43 server:271] <mark class="oscp-hacked">Serving on http://127.0.0.1:8000</mark>
 [I 160402 15:50:43 handlers:58] Start watching changes
 [I 160402 15:50:43 handlers:60] Start detecting changes
 [I 160402 15:50:43 handlers:58] Start watching changes
@@ -81,10 +81,11 @@ INFO    -  Cleaning site directory
 [I 160402 15:50:43 handlers:58] Start watching changes
 [I 160402 15:50:43 handlers:60] Start detecting changes
 [I 160402 15:50:43 handlers:58] Start watching changes
-[I 160402 15:50:43 handlers:60] Start detecting changes
-[I 160402 15:50:43 handlers:58] Start watching changes
-[I 160402 15:50:43 handlers:60] Start detecting changes
-```
+[I 160402 15:50:43 handlers:60] Start detecting changes &lt;halt>
+[I 160402 15:50:43 handlers:58] Start watching changes >
+[I 160402 15:50:43 handlers:60] Start detecting changes >
+</code></pre>
+<figcaption>Direct HTML <code>pre code mark</code> with classes to highlight a part of code</figcaption>
 
 Open the `docs/index.md` document in your text editor of choice, change the
 initial heading to `MkLorum`, and save your changes. Your browser will

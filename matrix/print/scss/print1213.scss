@@ -1,0 +1,16 @@
+
+/* /project/mkdocs-docs/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
+.fc-pdf-section {
+
+    .highlight { 
+        .hll {
+            background-color: transparent !important;
+            font-family: MonospaceBold !important;
+            color: var(--color-primary) !important;
+            * {
+                color: var(--color-primary) !important;
+            }
+        }
+    };
+
+}

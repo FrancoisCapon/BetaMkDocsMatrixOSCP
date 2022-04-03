@@ -13,7 +13,7 @@ $top-border-bottom-width: 0.05cm;
   --page-margin-top: #{$margin-top};
 }
 
-#pdf-top-page {
+#fc-pdf-top-page {
   position: fixed;
   color:red
 }
@@ -64,11 +64,11 @@ $top-border-bottom-width: 0.05cm;
   }
 }
 
-.pdf-section {
+.fc-pdf-section {
   page-break-before: always;
 }
 
-span.pdf-page-break {
+span.fc-pdf-page-break {
   display: block;
   page-break-after: always;
 }

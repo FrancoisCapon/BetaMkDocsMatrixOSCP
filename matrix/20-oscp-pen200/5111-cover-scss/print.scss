@@ -7,14 +7,14 @@ $data-oscp-id: "OSID: 314157"; // for string-set
     --data-oscp-osid: "#{$data-oscp-id}";
 }
 
-#pdf-page-cover {
+#fc-pdf-page-cover {
   //string-set: chapter-title var(--data-oscp-osid);
   // WP 54.2
   // [WARNING] Unsupported computed value ""OSID: 314157"" set in variable '--data-oscp-osid' for property 'string-set'.
   string-set: chapter-title $data-oscp-id;
 }
 
-#pdf-page-cover {
+#fc-pdf-page-cover {
     h1 {
         background-color: var(--color-primary-dark);
     }

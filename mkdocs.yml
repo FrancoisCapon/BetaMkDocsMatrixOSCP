@@ -51,7 +51,10 @@ markdown_extensions:
     # - pymdownx.snippets
     - pymdownx.superfences
 
-    - markdown_captions # must be installed
+    # fc must be installed
+    # https://pypi.org/project/markdown-captions/
+    - markdown_captions # must be installed https://pypi.org/project/markdown-captions/
+    
     # - md_in_html # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
     - toc:
 #        permalink: "#"
@@ -68,6 +71,7 @@ copyright: Copyright &copy; 2014 <a href="https://twitter.com/_tomchristie">Tom 
 
 plugins:
     - search
+    # fc export plugin
     - md2wpmr:
         number_column : 50
         number_row_toc : 5200

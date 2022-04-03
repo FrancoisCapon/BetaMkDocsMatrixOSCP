@@ -1,0 +1,25 @@
+
+/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
+@page section{
+  size: A4;
+  margin: 2cm;
+  margin-top: 2.5cm;
+
+  @top-left {
+    content: '';
+  }
+  @top-center {
+    content: string(section-title);
+  }
+  @top-right {
+    content: '';
+  }
+}
+
+.fc-pdf-section {
+  page-break-before: always;
+}
+
+.fc-pdf-section {
+  page: section;
+}

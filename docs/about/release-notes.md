@@ -904,6 +904,8 @@ user created and third-party templates:
 | previous_page     | [page.previous_page]|
 | next_page         | [page.next_page]    |
 
+<figcaption>Caption of the second table</figcaption>
+
 [page]: ../dev-guide/themes.md#page
 [page.title]: ../dev-guide/themes.md#pagetitle
 [page.content]: ../dev-guide/themes.md#pagecontent

@@ -2,7 +2,7 @@ $level-1-number: counter(level-0-counter) "." counter(level-1-counter) ". ";
 $level-2-number: counter(level-0-counter) "." counter(level-1-counter) "." counter(level-2-counter) ". ";
 $level-3-number: counter(level-0-counter) "." counter(level-1-counter) "." counter(level-2-counter)  "." counter(level-3-counter)  ". "; 
 
-#pdf-toc {
+#fc-pdf-toc {
     //counter-reset: level-0-counter, level-1-counter;
     counter-increment: level-0-counter;
     tr.level-0 {

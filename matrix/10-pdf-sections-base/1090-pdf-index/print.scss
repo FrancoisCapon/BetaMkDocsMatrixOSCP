@@ -2,9 +2,9 @@ $section-number: counter(section-counter) ". ";
 $subsection-number: counter(section-counter) "." counter(subsection-counter) ". ";
 $subsubsection-number: counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". "; 
 
-#pdf-content {
+#fc-pdf-content {
     counter-reset: section-counter;
-    .pdf-section {
+    .fc-pdf-section {
         h1 {
             counter-increment: section-counter;
             bookmark-label: $section-number content(text);
@@ -25,8 +25,8 @@ $subsubsection-number: counter(section-counter) "." counter(subsection-counter) 
     }
 }
 
-#pdf-content {
-    .pdf-section {
+#fc-pdf-content {
+    .fc-pdf-section {
         h1::before {
             content: $section-number;
         }

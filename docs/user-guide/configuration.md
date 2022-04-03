@@ -747,7 +747,7 @@ markdown_extensions:
         permalink: true
     admonition: {}
 ```
-<span class="wpmr-pdf-page-break"></span>
+<span class="wpmr-fc-pdf-page-break"></span>
 Then, for the "foo" site, the primary configuration file would be defined at
 `foo/mkdocs.yml`:
 
