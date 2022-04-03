@@ -41,10 +41,12 @@ $top-border-bottom-width: 0.05cm;
     border-bottom: $top-border-bottom-width solid;
     border-bottom-color: var(--color-primary);
     width: 100%;
-    margin-bottom: $top-margin-bottom;
+    //margin-bottom: $top-margin-bottom;
     padding-bottom: calc($top-padding-bottom - $top-border-bottom-width); //0.1cm; // 0.15 - 0.05 (border)
     vertical-align: bottom;
     font-size: 0.80rem;
+
+    background-color: silver;
   }
   @top-right {
     display: block;
@@ -63,6 +65,12 @@ $top-border-bottom-width: 0.05cm;
     text-align: center;
     width: 1cm;
     margin-top: 0.25cm;
+  }
+
+  @bottom-left {
+    width: 100%;
+    background-color: silver;
+    content: '';
   }
 }
 

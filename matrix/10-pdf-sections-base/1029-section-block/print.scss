@@ -8,6 +8,13 @@
 }
 
 .fc-pdf-section {
+
+   * {
+      margin-break: discard; 
+   }
+
+
+
    table, figure, img, pre, hr, dl, dt {
       margin-top: var(--block-margin-top-100);
    }

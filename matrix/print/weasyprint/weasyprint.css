@@ -86,10 +86,10 @@ html {
     border-bottom: 0.05cm solid;
     border-bottom-color: var(--color-primary);
     width: 100%;
-    margin-bottom: 0.35cm;
     padding-bottom: 0.1cm;
     vertical-align: bottom;
     font-size: 0.8rem;
+    background-color: silver;
   }
   @top-right {
     display: block;
@@ -108,6 +108,11 @@ html {
     text-align: center;
     width: 1cm;
     margin-top: 0.25cm;
+  }
+  @bottom-left {
+    width: 100%;
+    background-color: silver;
+    content: "";
   }
 }
 .fc-pdf-section {
@@ -166,6 +171,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: SansSerifBold;
   font-size: 2.3rem;
   string-set: section-title content();
+  background-color: chartreuse;
 }
 .fc-pdf-section h2 {
   font-family: SansSerif;
@@ -339,6 +345,9 @@ h1, h2, h3, h4, h5, h6 {
   --block-border-radius: 0.35rem;
 }
 
+.fc-pdf-section * {
+  margin-break: discard;
+}
 .fc-pdf-section table, .fc-pdf-section figure, .fc-pdf-section img, .fc-pdf-section pre, .fc-pdf-section hr, .fc-pdf-section dl, .fc-pdf-section dt {
   margin-top: var(--block-margin-top-100);
 }
