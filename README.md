@@ -18,4 +18,20 @@ Après chargement du dépôt, il doit être installé avec Beautiful Soup ans vo
 pip install -e .
 pip install beautifulsoup4
 ```
+## :two: La matrice
+Cette matrice est une matrice d'exemple qui utilise la documentation de MkDocs avec quelques légères modifications pour différents tests de mise en forme.
+Le plugin et sa configuration est ajouter au fichier `mkdocs.yml`.
+```yaml
+...
+plugins:
+    - search
+    # fc export plugin
+    - md2wpmr:
+        number_column : 50
+        number_row_toc : 5200
+        number_row_pages : 5400
+```
+Le plugin n'est appelé que lors du build `mkdocs build`.
+ 
+Attention le plugin stop le build après l'export, donc il est nécessaire de le désactiver (en commentant ses lignes) pour obtenir un build site "normal".
 
