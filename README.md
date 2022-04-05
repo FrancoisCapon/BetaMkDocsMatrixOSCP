@@ -19,7 +19,7 @@ pip install -e .
 pip install beautifulsoup4
 ```
 ## :two: La matrice
-Cette matrice est une matrice d'exemple qui utilise la documentation de MkDocs avec quelques légères modifications pour différents tests de mise en forme.
+La matrice du dépôt est une matrice d'exemple qui utilise la documentation de MkDocs avec quelques légères modifications pour différents tests de mise en forme.
 Le plugin et sa configuration est ajouter au fichier `mkdocs.yml`.
 ```yaml
 ...
@@ -31,7 +31,17 @@ plugins:
         number_row_toc : 5200
         number_row_pages : 5400
 ```
-Le plugin n'est appelé que lors du build `mkdocs build`.
- 
-Attention le plugin stop le build après l'export, donc il est nécessaire de le désactiver (en commentant ses lignes) pour obtenir un build site "normal".
+* Le plugin n'est appelé que lors du build `mkdocs build`.
+* Attention le plugin stop le build après l'export, donc il est nécessaire de le désactiver (en commentant ses lignes) pour obtenir un build site "normal".
+* Après validation du processus sur ce projet d'exemple, la matrice doit être recopier dans votre "projet OSCP".
+
+## :three: Les Robots WeasyPrint
+La documentation du dépôt **[TheWeasyPrintMatrixRobotsProject](https://github.com/FrancoisCapon/TheWeasyPrintMatrixRobotsProject#readme)** traite de tous les aspects relatifs aux Robots.
+
+Le lancement de la génération du PDF s'effectue depuis un "environnement Robots WeasyPrint" (container recommandé) en lançant le script Python `print.py` situé à la racine de la matrice :
+```python
+#!/usr/bin/env python3
+from weasyprintmatrixrobots.robot_manager import Manager
+Manager('.').do_job()
+```
 
