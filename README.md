@@ -13,7 +13,7 @@ Le final [`print.pdf`](https://github.com/FrancoisCapon/BetaMkDocsMatrixOSCP/raw
 1. les [Robots WeasyPrint](https://github.com/FrancoisCapon/TheWeasyPrintMatrixRobotsProject) qui vont produire le PDF à partir de la matrice
 
 ## 1️⃣ Le plugin [MD2WPMR](https://github.com/FrancoisCapon/BetaMD2WPMR)
-Après chargement du dépôt, il doit être installé avec Beautiful Soup ans votre "environnement python" MkDocs  :
+Après chargement du dépôt, il doit être installé avec Beautiful Soup ans votre "environnement Python MkDocs"  :
 ```
 pip install -e .
 pip install beautifulsoup4
@@ -36,7 +36,7 @@ plugins:
 * Après validation du processus sur ce projet d'exemple, la matrice doit être recopier dans votre "projet OSCP".
 
 ## :three: Les Robots WeasyPrint
-La documentation du dépôt **[TheWeasyPrintMatrixRobotsProject](https://github.com/FrancoisCapon/TheWeasyPrintMatrixRobotsProject#readme)** traite de tous les aspects relatifs aux Robots.
+La documentation du dépôt **[TheWeasyPrintMatrixRobotsProject](https://github.com/FrancoisCapon/TheWeasyPrintMatrixRobotsProject#readme)** traite de tous les aspects relatifs aux Robots :robot:.
 
 Le lancement de la génération du PDF s'effectue depuis un "environnement Robots WeasyPrint" (container recommandé) en lançant le script Python `print.py` situé à la racine de la matrice :
 ```python
