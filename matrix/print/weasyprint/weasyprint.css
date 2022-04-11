@@ -361,73 +361,74 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: var(--block-margin-top-050);
 }
 
+/* /project/mkdocs-docs/matrix/30-my-oscp/1091-pdf-toc-heading-no-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
 #fc-pdf-content {
   counter-reset: chapter-counter;
 }
 #fc-pdf-content .fc-pdf-section:first-child {
   counter-increment: chapter-counter;
-  bookmark-label: counter(chapter-counter) ". " "Introduction";
+  bookmark-label: "" "Introduction";
   bookmark-level: 1;
   counter-reset: section-counter;
 }
 #fc-pdf-content .fc-pdf-section h1 {
   counter-increment: section-counter;
-  bookmark-label: counter(chapter-counter) "." counter(section-counter) ". " content(text);
+  bookmark-label: "" content(text);
   bookmark-level: 2;
   counter-reset: subsection-counter;
 }
 #fc-pdf-content .fc-pdf-section h2 {
   counter-increment: subsection-counter;
-  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". " content(text);
+  bookmark-label: "" content(text);
   bookmark-level: 3;
   counter-reset: subsubsection-counter;
 }
 #fc-pdf-content .fc-pdf-section h3 {
   counter-increment: subsubsection-counter;
-  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". " content(text);
+  bookmark-label: "" content(text);
   bookmark-level: 4;
 }
 #fc-pdf-content .fc-pdf-chapter {
   counter-reset: section-counter;
 }
 #fc-pdf-content .fc-pdf-chapter > h1::before {
-  content: counter(chapter-counter) ". ";
+  content: "";
 }
 #fc-pdf-content .fc-pdf-chapter > h1 {
   counter-increment: chapter-counter;
-  bookmark-label: counter(chapter-counter) ". " content(text);
+  bookmark-label: "" content(text);
   bookmark-level: 1;
 }
 #fc-pdf-content .fc-pdf-chapter .fc-pdf-section h1 {
   counter-increment: section-counter;
-  bookmark-label: counter(chapter-counter) "." counter(section-counter) ". " content(text);
+  bookmark-label: "" content(text);
   bookmark-level: 2;
   counter-reset: subsection-counter;
 }
 #fc-pdf-content .fc-pdf-chapter .fc-pdf-section h2 {
   counter-increment: subsection-counter;
-  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". " content(text);
+  bookmark-label: "" content(text);
   bookmark-level: 3;
   counter-reset: subsubsection-counter;
 }
 #fc-pdf-content .fc-pdf-chapter .fc-pdf-section h3 {
   counter-increment: subsubsection-counter;
-  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". " content(text);
+  bookmark-label: "" content(text);
   bookmark-level: 4;
 }
 
 #fc-pdf-content .fc-pdf-section h1::before {
-  content: counter(chapter-counter) "." counter(section-counter) ". ";
+  content: "";
 }
 #fc-pdf-content .fc-pdf-section h2::before {
-  content: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". ";
+  content: "";
 }
 #fc-pdf-content .fc-pdf-section h3::before {
-  content: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". ";
+  content: "";
 }
 
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1095-caption-numbering/print.scss */
 #fc-pdf-content {
   counter-reset: figure-counter listing-counter table-counter;
 }
@@ -538,42 +539,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 5rem;
 }
 
-/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1120-toc-numbering/print.scss */
-#fc-pdf-toc {
-  counter-increment: level-0-counter;
-}
-#fc-pdf-toc tr.level-0 {
-  counter-increment: level-0-counter;
-  counter-reset: level-1;
-}
-#fc-pdf-toc tr.level-0 a::before {
-  content: counter(level-0-counter) ". ";
-}
+/* /project/mkdocs-docs/matrix/30-my-oscp/1120-toc-no-numbering/print.scss */
 #fc-pdf-toc tr.level-0 a {
   string-set: level-0-title content();
 }
-#fc-pdf-toc tr.level-1 {
-  counter-increment: level-1-counter;
-  counter-reset: level-2-counter;
-}
-#fc-pdf-toc tr.level-1 a::before {
-  content: counter(level-0-counter) "." counter(level-1-counter) ". ";
-}
 #fc-pdf-toc tr.level-1 a {
   string-set: level-1-title content();
-}
-#fc-pdf-toc tr.level-2 {
-  counter-increment: level-2-counter;
-  counter-reset: level-3-counter;
-}
-#fc-pdf-toc tr.level-2 a::before {
-  content: counter(level-0-counter) "." counter(level-1-counter) "." counter(level-2-counter) ". ";
-}
-#fc-pdf-toc tr.level-3 {
-  counter-increment: level-3-counter;
-}
-#fc-pdf-toc tr.level-3 a::before {
-  content: counter(level-0-counter) "." counter(level-1-counter) "." counter(level-2-counter) "." counter(level-3-counter) ". ";
 }
 
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
@@ -1286,10 +1257,11 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1025-section-list/print.scss */
 /* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/30-my-oscp/1091-pdf-toc-heading-no-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1095-caption-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
 /* /project/mkdocs-docs/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
-/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1120-toc-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/30-my-oscp/1120-toc-no-numbering/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
 /* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */

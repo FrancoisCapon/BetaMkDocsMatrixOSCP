@@ -41,8 +41,11 @@
 /* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
 @use "print1090.scss";
 
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1091-caption-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/30-my-oscp/1091-pdf-toc-heading-no-numbering/print.scss */
 @use "print1091.scss";
+
+/* /project/mkdocs-docs/matrix/15-pdf-chapters/1095-caption-numbering/print.scss */
+@use "print1095.scss";
 
 /* /project/mkdocs-docs/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
 @use "print1100.scss";
@@ -50,7 +53,7 @@
 /* /project/mkdocs-docs/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
 @use "print1110.scss";
 
-/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1120-toc-numbering/print.scss */
+/* /project/mkdocs-docs/matrix/30-my-oscp/1120-toc-no-numbering/print.scss */
 @use "print1120.scss";
 
 /* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */

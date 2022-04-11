@@ -1,7 +1,4 @@
-$chapter-number: counter(chapter-counter) ". ";
-$section-number: counter(chapter-counter) "." counter(section-counter) ". ";
-$subsection-number: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". ";
-$subsubsection-number: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". "; 
+@use "print1091.scss" as c; // counter
 
 #fc-pdf-content {
 
@@ -11,7 +8,7 @@ $subsubsection-number: counter(chapter-counter) "." counter(section-counter) "."
     // => fake chapter
     .fc-pdf-section:first-child { 
         counter-increment: chapter-counter;
-        bookmark-label: $chapter-number "Introduction";
+        bookmark-label: c.$chapter-number "Introduction";
         bookmark-level: 1;
         counter-reset: section-counter;
     }
@@ -19,30 +16,30 @@ $subsubsection-number: counter(chapter-counter) "." counter(section-counter) "."
     .fc-pdf-section {
         h1 {
             counter-increment: section-counter;
-            bookmark-label: $section-number content(text);
+            bookmark-label: c.$section-number content(text);
             bookmark-level: 2;
             counter-reset: subsection-counter;
         }
         h2 {
             counter-increment: subsection-counter;
-            bookmark-label:  $subsection-number content(text);
+            bookmark-label:  c.$subsection-number content(text);
             bookmark-level: 3;
             counter-reset: subsubsection-counter;
         }
         h3 {
             counter-increment: subsubsection-counter;
-            bookmark-label: $subsubsection-number content(text);
+            bookmark-label: c.$subsubsection-number content(text);
             bookmark-level: 4;
         }
     }
 
     .fc-pdf-chapter {
         > h1::before {
-            content: counter(chapter-counter) ". ";
+            content: c.$chapter-number;
         }
         > h1 {
             counter-increment: chapter-counter;
-            bookmark-label: $chapter-number content(text);
+            bookmark-label: c.$chapter-number content(text);
             bookmark-level: 1;
         }
         counter-reset: section-counter; 
@@ -50,21 +47,21 @@ $subsubsection-number: counter(chapter-counter) "." counter(section-counter) "."
 
             h1 {
                 counter-increment: section-counter;
-                bookmark-label: $section-number content(text);
+                bookmark-label: c.$section-number content(text);
                 bookmark-level: 2;
                 counter-reset: subsection-counter;
             }
 
             h2 {
                 counter-increment: subsection-counter;
-                bookmark-label: $subsection-number content(text);
+                bookmark-label: c.$subsection-number content(text);
                 bookmark-level: 3;
                 counter-reset: subsubsection-counter;
             }
 
             h3 {
                 counter-increment: subsubsection-counter;
-                bookmark-label: $subsubsection-number content(text);
+                bookmark-label: c.$subsubsection-number content(text);
                 bookmark-level: 4;
             }
         }
@@ -74,13 +71,13 @@ $subsubsection-number: counter(chapter-counter) "." counter(section-counter) "."
 #fc-pdf-content {
     .fc-pdf-section {
         h1::before {
-            content: $section-number;
+            content: c.$section-number;
         }
         h2::before {
-            content: $subsection-number;
+            content: c.$subsection-number;
         }
         h3::before {
-            content: $subsubsection-number;
+            content: c.$subsubsection-number;
         }
     }
 }

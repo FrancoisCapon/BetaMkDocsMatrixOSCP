@@ -1,0 +1,4 @@
+$chapter-number: counter(chapter-counter) ". ";
+$section-number: counter(chapter-counter) "." counter(section-counter) ". ";
+$subsection-number: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". ";
+$subsubsection-number: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". "; 
