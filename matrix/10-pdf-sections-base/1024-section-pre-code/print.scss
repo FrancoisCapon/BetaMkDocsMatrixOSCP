@@ -6,9 +6,12 @@
         line-height: 1rem;
         width: 100%;
         overflow: hidden;
-        code {
+        > code {
+            display: block; // 1021 display: inline-block => "overflow page" if pre too big !!
             padding: 0;
             font-size: 0.85rem;
+            border-radius: 0;
+            background-color: inherit;
         }
     }
 
