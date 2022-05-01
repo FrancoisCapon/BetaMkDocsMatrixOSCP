@@ -48,3 +48,11 @@ from weasyprintmatrixrobots.robot_manager import Manager
 Manager('.').do_job()
 ```
 
+## :question: FAQ
+
+### Comment gérer manuellement les sauts de pages ?
+Il est possible de forcer manuellement des sauts de pages en plaçant le code ci-dessous à l'endroit désiré dans le markdown.
+```html
+<span class="fc-pdf-page-break"></span>
+```
+Etant donné que c'est un `span`, le rendu `HTML` n'est pas affecté.
