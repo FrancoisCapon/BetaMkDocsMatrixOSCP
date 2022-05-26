@@ -2,16 +2,18 @@
     pre {
         background-color: var(--color-background-code);
         box-sizing: border-box;
-        padding: 1rem;
+        padding: 0;
         line-height: 1rem;
         width: 100%;
-        overflow: hidden;
         > code {
             display: block; // 1021 display: inline-block => "overflow page" if pre too big !!
-            padding: 0;
+            overflow: hidden;
+            margin: 1rem;
+            padding-bottom: 1rem;
             font-size: 0.85rem;
             border-radius: 0;
             background-color: inherit;
+            //white-space: pre-wrap;
         }
     }
 

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0510-html/print.scss */
 html {
   color: var(--color-text-default);
   font-family: SansSerif;
@@ -14,45 +14,45 @@ html * {
   padding: 0;
 }
 
-/* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/print.scss */
 @font-face {
   font-family: SansSerif;
   font-weight: 400;
-  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-regular.otf");
+  src: url("/project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/firasans-regular.otf");
 }
 @font-face {
   font-family: SansSerifItalic;
   font-style: italic;
   font-weight: 400;
-  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-italic.otf");
+  src: url("/project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/firasans-italic.otf");
 }
 @font-face {
   font-family: SansSerifLight;
   font-weight: 300;
-  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-light.otf");
+  src: url("/project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/firasans-light.otf");
 }
 @font-face {
   font-family: SansSerifLightItalic;
   font-style: italic;
   font-weight: 300;
-  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-lightitalic.otf");
+  src: url("/project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/firasans-lightitalic.otf");
 }
 @font-face {
   font-family: SansSerifBold;
   font-weight: 600;
-  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firasans-bold.otf");
+  src: url("/project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/firasans-bold.otf");
 }
 @font-face {
   font-family: Monospace;
   font-weight: 400;
-  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firamono-regular.ttf");
+  src: url("/project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/firamono-regular.ttf");
 }
 @font-face {
   font-family: MonospaceBold;
   font-weight: 500;
-  src: url("/project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/firamono-medium.ttf");
+  src: url("/project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/firamono-medium.ttf");
 }
-/* /project/mkdocs-docs/matrix/05-pdf-base/0512-pages/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0512-pages/print.scss */
 html {
   break-before: left;
 }
@@ -119,7 +119,7 @@ span.fc-pdf-page-break {
   page-break-after: always;
 }
 
-/* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0513-colors/print.scss */
 :root {
   --color-text-default: #333;
   --color-background-code: #F8F8F8;
@@ -133,12 +133,12 @@ span.fc-pdf-page-break {
   --color-primary-light: #b3b3b3;
 }
 
-/* /project/mkdocs-docs/matrix/05-pdf-base/0514-pdf-boomarks-none/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0514-pdf-boomarks-none/print.scss */
 h1, h2, h3, h4, h5, h6 {
   bookmark-level: none;
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1010-page/print.scss */
 @page section {
   size: A4;
   margin: 2cm;
@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
   page: section;
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1020-section-headings/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1020-section-headings/print.scss */
 .fc-pdf-section h1 {
   font-family: SansSerifBold;
   font-size: 2.3rem;
@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-heading);
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
 .fc-pdf-section a {
   color: var(--color-primary);
   text-decoration: none;
@@ -229,7 +229,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: MonospaceBold;
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1022-section-table/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1022-section-table/print.scss */
 :root {
   --color-table-row-even: whitesmoke;
 }
@@ -259,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
   content: "Table - ";
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
 .fc-pdf-section figure {
   margin: 0;
   padding: 0;
@@ -284,24 +284,28 @@ h1, h2, h3, h4, h5, h6 {
   content: "Figure - ";
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
 .fc-pdf-section pre {
   background-color: var(--color-background-code);
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 0;
   line-height: 1rem;
   width: 100%;
-  overflow: hidden;
 }
-.fc-pdf-section pre code {
-  padding: 0;
+.fc-pdf-section pre > code {
+  display: block;
+  overflow: hidden;
+  margin: 1rem;
+  padding-bottom: 1rem;
   font-size: 0.85rem;
+  border-radius: 0;
+  background-color: inherit;
 }
 .fc-pdf-section pre + figcaption::before {
   content: "Listing - ";
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1025-section-list/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1025-section-list/print.scss */
 .fc-pdf-section ul {
   list-style-type: "●  ";
 }
@@ -330,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
 
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1029-section-block/print.scss */
 :root {
   --block-margin-top-100: 1rem;
   --block-margin-top-075: 0.75rem;
@@ -361,74 +365,74 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: var(--block-margin-top-050);
 }
 
-/* /project/mkdocs-docs/matrix/30-my-oscp/1091-pdf-toc-heading-no-numbering/print.scss */
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1091-pdf-toc-heading-numbering-counters/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
 #fc-pdf-content {
   counter-reset: chapter-counter;
 }
 #fc-pdf-content .fc-pdf-section:first-child {
   counter-increment: chapter-counter;
-  bookmark-label: "" "Introduction";
+  bookmark-label: counter(chapter-counter) ". " "Introduction";
   bookmark-level: 1;
   counter-reset: section-counter;
 }
 #fc-pdf-content .fc-pdf-section h1 {
   counter-increment: section-counter;
-  bookmark-label: "" content(text);
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) ". " content(text);
   bookmark-level: 2;
   counter-reset: subsection-counter;
 }
 #fc-pdf-content .fc-pdf-section h2 {
   counter-increment: subsection-counter;
-  bookmark-label: "" content(text);
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". " content(text);
   bookmark-level: 3;
   counter-reset: subsubsection-counter;
 }
 #fc-pdf-content .fc-pdf-section h3 {
   counter-increment: subsubsection-counter;
-  bookmark-label: "" content(text);
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". " content(text);
   bookmark-level: 4;
 }
 #fc-pdf-content .fc-pdf-chapter {
   counter-reset: section-counter;
 }
 #fc-pdf-content .fc-pdf-chapter > h1::before {
-  content: "";
+  content: counter(chapter-counter) ". ";
 }
 #fc-pdf-content .fc-pdf-chapter > h1 {
   counter-increment: chapter-counter;
-  bookmark-label: "" content(text);
+  bookmark-label: counter(chapter-counter) ". " content(text);
   bookmark-level: 1;
 }
 #fc-pdf-content .fc-pdf-chapter .fc-pdf-section h1 {
   counter-increment: section-counter;
-  bookmark-label: "" content(text);
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) ". " content(text);
   bookmark-level: 2;
   counter-reset: subsection-counter;
 }
 #fc-pdf-content .fc-pdf-chapter .fc-pdf-section h2 {
   counter-increment: subsection-counter;
-  bookmark-label: "" content(text);
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". " content(text);
   bookmark-level: 3;
   counter-reset: subsubsection-counter;
 }
 #fc-pdf-content .fc-pdf-chapter .fc-pdf-section h3 {
   counter-increment: subsubsection-counter;
-  bookmark-label: "" content(text);
+  bookmark-label: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". " content(text);
   bookmark-level: 4;
 }
 
 #fc-pdf-content .fc-pdf-section h1::before {
-  content: "";
+  content: counter(chapter-counter) "." counter(section-counter) ". ";
 }
 #fc-pdf-content .fc-pdf-section h2::before {
-  content: "";
+  content: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". ";
 }
 #fc-pdf-content .fc-pdf-section h3::before {
-  content: "";
+  content: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". ";
 }
 
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1095-caption-numbering/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1095-caption-numbering/print.scss */
 #fc-pdf-content {
   counter-reset: figure-counter listing-counter table-counter;
 }
@@ -454,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
   content: "Listing " counter(listing-counter) " - ";
 }
 
-/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
 #fc-pdf-toc {
   page: toc;
   break-before: always;
@@ -486,7 +490,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0.25cm;
   }
 }
-/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
 :root {
   --table-of-content-title: "Table of Contents" ;
 }
@@ -539,15 +543,45 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 5rem;
 }
 
-/* /project/mkdocs-docs/matrix/30-my-oscp/1120-toc-no-numbering/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/11-pdf-toc-page/1120-toc-numbering/print.scss */
+#fc-pdf-toc {
+  counter-increment: level-0-counter;
+}
+#fc-pdf-toc tr.level-0 {
+  counter-increment: level-0-counter;
+  counter-reset: level-1;
+}
+#fc-pdf-toc tr.level-0 a::before {
+  content: counter(level-0-counter) ". ";
+}
 #fc-pdf-toc tr.level-0 a {
   string-set: level-0-title content();
+}
+#fc-pdf-toc tr.level-1 {
+  counter-increment: level-1-counter;
+  counter-reset: level-2-counter;
+}
+#fc-pdf-toc tr.level-1 a::before {
+  content: counter(level-0-counter) "." counter(level-1-counter) ". ";
 }
 #fc-pdf-toc tr.level-1 a {
   string-set: level-1-title content();
 }
+#fc-pdf-toc tr.level-2 {
+  counter-increment: level-2-counter;
+  counter-reset: level-3-counter;
+}
+#fc-pdf-toc tr.level-2 a::before {
+  content: counter(level-0-counter) "." counter(level-1-counter) "." counter(level-2-counter) ". ";
+}
+#fc-pdf-toc tr.level-3 {
+  counter-increment: level-3-counter;
+}
+#fc-pdf-toc tr.level-3 a::before {
+  content: counter(level-0-counter) "." counter(level-1-counter) "." counter(level-2-counter) "." counter(level-3-counter) ". ";
+}
 
-/* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
 .fc-pdf-section div.admonition {
   margin-top: var(--block-margin-top-100);
   border-left: solid 2px;
@@ -570,7 +604,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
 }
 
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
 .fc-pdf-section .highlight {
   border-radius: var(--block-border-radius);
 }
@@ -915,7 +949,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
 .fc-pdf-section .highlight {
   border-radius: var(--block-border-radius);
 }
@@ -923,42 +957,65 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0;
   width: 100%;
   border: none;
-  page-break-inside: avoid;
+  overflow: hidden;
+  background-color: var(--color-background-code);
+  border-radius: var(--block-border-radius);
 }
 .fc-pdf-section .highlighttable td {
   border: none;
   padding: 0;
   margin: 0;
+  background-color: transparent;
 }
 .fc-pdf-section .highlighttable td pre {
   margin-top: 0;
-  border-radius: 0;
+  border-radius: 0 !important;
+  background-color: transparent;
 }
 .fc-pdf-section .highlighttable td.linenos {
-  width: 1rem;
+  width: 3rem;
 }
 .fc-pdf-section .highlighttable td.linenos pre {
-  border-top-left-radius: var(--block-border-radius);
-  border-bottom-left-radius: var(--block-border-radius);
+  display: inline-block;
+  box-sizing: border-box;
   font-size: 0.75rem;
+  padding: 1rem;
   padding-right: 0.5rem;
+  text-align: right;
 }
 .fc-pdf-section .highlighttable td.linenos pre span.normal {
   display: inline-block;
   border-right: solid 1px silver;
   padding-right: 0.5rem;
 }
-.fc-pdf-section .highlighttable td.code pre {
-  border-top-right-radius: var(--block-border-radius);
-  border-bottom-right-radius: var(--block-border-radius);
-  padding-left: 0;
+.fc-pdf-section .highlighttable td.code {
+  border-radius: 0 !important;
+  overflow: hidden;
 }
-.fc-pdf-section .highlighttable td.code pre code {
-  margin: 0;
+.fc-pdf-section .highlighttable td.code .highlight {
+  width: var(--code-block-numbered-line-code-width);
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+.fc-pdf-section .highlighttable td.code .highlight pre {
   padding: 0;
+  margin: 0;
+  display: block;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+.fc-pdf-section .highlighttable td.code .highlight pre code {
+  display: block;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  white-space: pre;
+  background-color: transparent !important;
+  border-radius: 0 !important;
 }
 
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
 .fc-pdf-section .highlight .hll {
   background-color: transparent !important;
   font-family: MonospaceBold !important;
@@ -968,7 +1025,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary) !important;
 }
 
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
 @page section {
   @top-left {
     content: string(chapter-title);
@@ -980,7 +1037,7 @@ h1, h2, h3, h4, h5, h6 {
     content: string(section-title);
   }
 }
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
 #fc-pdf-content .fc-pdf-chapter > h1 {
   page: chapter;
   string-set: chapter-title content();
@@ -1016,7 +1073,7 @@ h1, h2, h3, h4, h5, h6 {
     content: none;
   }
 }
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
 :root {
   --color-primary: #A90C1C;
   --color-primary-dark: #910a18;
@@ -1068,30 +1125,34 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
 
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/print.scss */
 @page {
   size: letter !important;
   background-color: whitesmoke !important;
 }
 @page chapter {
   background-color: lightgrey !important;
-  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
+  background-image: url("/project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
   background-repeat: no-repeat;
   background-position: center bottom 2cm;
 }
 @page cover {
   background-color: black !important;
-  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
+  background-image: url("/project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
   background-repeat: no-repeat;
   background-position: center bottom 2cm;
 }
 @page last {
-  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
+  background-image: url("/project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black !important;
 }
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
+:root {
+  --code-block-numbered-line-code-width: 41rem;
+}
+
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
 #fc-pdf-page-cover, #fc-pdf-page-last {
   color: var(--color-text-on-primary);
   font-family: SansSerifBold;
@@ -1186,7 +1247,7 @@ h1, h2, h3, h4, h5, h6 {
     content: none;
   }
 }
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
 :root {
   --page-cover-subtitle: "Penetration Test Report for Internal Lab";
   --data-oscp-email: "john.doe@lost.tld";
@@ -1224,16 +1285,16 @@ h1, h2, h3, h4, h5, h6 {
   top: 16cm;
 }
 
-/* /project/mkdocs-docs/matrix/30-my-oscp/5112-cover-scss/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/30-my-oscp/5112-cover-scss/print.scss */
 :root {
   --page-cover-subtitle: "Penetration Test Report for Internal Lab";
   --data-oscp-email: "marry.poppins@pltravers.writer";
   --data-oscp-osid: "OSID: 271828";
 }
 
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/5900-last/print.scss */
 #fc-pdf-page-last div {
-  background-image: url("/project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/../assets/offsec-logo-00.svg");
+  background-image: url("/project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/5900-last/../assets/offsec-logo-00.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
@@ -1243,34 +1304,34 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-primary-dark);
 }
 
-/* /project/mkdocs-docs/matrix/05-pdf-base/0510-html/print.scss */
-/* /project/mkdocs-docs/matrix/05-pdf-base/0511-fonts/print.scss */
-/* /project/mkdocs-docs/matrix/05-pdf-base/0512-pages/print.scss */
-/* /project/mkdocs-docs/matrix/05-pdf-base/0513-colors/print.scss */
-/* /project/mkdocs-docs/matrix/05-pdf-base/0514-pdf-boomarks-none/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1010-page/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1020-section-headings/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1022-section-table/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1025-section-list/print.scss */
-/* /project/mkdocs-docs/matrix/10-pdf-sections-base/1029-section-block/print.scss */
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
-/* /project/mkdocs-docs/matrix/30-my-oscp/1091-pdf-toc-heading-no-numbering/print.scss */
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1095-caption-numbering/print.scss */
-/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
-/* /project/mkdocs-docs/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
-/* /project/mkdocs-docs/matrix/30-my-oscp/1120-toc-no-numbering/print.scss */
-/* /project/mkdocs-docs/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
-/* /project/mkdocs-docs/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/print.scss */
-/* /project/mkdocs-docs/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
-/* /project/mkdocs-docs/matrix/30-my-oscp/5112-cover-scss/print.scss */
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/5900-last/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0510-html/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0511-fonts/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0512-pages/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0513-colors/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/05-pdf-base/0514-pdf-boomarks-none/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1010-page/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1020-section-headings/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1021-section-inline/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1022-section-table/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1023-section-figure-img/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1024-section-pre-code/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1025-section-list/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/10-pdf-sections-base/1029-section-block/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1090-pdf-toc-heading-numbering/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1091-pdf-toc-heading-numbering-counters/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1095-caption-numbering/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/11-pdf-toc-page/1100-toc-page/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/11-pdf-toc-page/1110-toc-content/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/11-pdf-toc-page/1120-toc-numbering/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/12-markdown-extensions/1210-python-admonition/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/1211-pymdown-highlight-tango/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/12-markdown-extensions/1212-pymdown-highlight/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/1213-pymdown-highlight-lines/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/5111-cover-scss/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/30-my-oscp/5112-cover-scss/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/5900-last/print.scss */

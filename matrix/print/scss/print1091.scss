@@ -1,8 +1,6 @@
 
-/* /project/mkdocs-docs/matrix/30-my-oscp/1091-pdf-toc-heading-no-numbering/print.scss */
-$chapter-number: "";
-$section-number: "";
-$subsection-number: "";
-$subsubsection-number: "";
-
-
+/* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1091-pdf-toc-heading-numbering-counters/print.scss */
+$chapter-number: counter(chapter-counter) ". ";
+$section-number: counter(chapter-counter) "." counter(section-counter) ". ";
+$subsection-number: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) ". ";
+$subsubsection-number: counter(chapter-counter) "." counter(section-counter) "." counter(subsection-counter) "." counter(subsubsection-counter) ". "; 

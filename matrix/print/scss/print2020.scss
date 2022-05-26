@@ -1,5 +1,5 @@
 
-/* /project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/print.scss */
 @use "print512" as page;
 // WP 54.2 :
 //  background-position: center bottom var(--page-margin); no error but no bottom;
@@ -10,7 +10,7 @@
 }
 
 @mixin bottom-logo {
-    background-image: url('/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg');
+    background-image: url('/project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg');
     background-repeat: no-repeat;
     background-position: center bottom page.$margin; 
 }
@@ -26,11 +26,16 @@
 }
 
 @page last {
-    background-image: url('/project/mkdocs-docs/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg');
+    background-image: url('/project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/../assets/offsec-logo-00.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black !important;
 }
+
+:root {
+    --code-block-numbered-line-code-width: 41rem; // US + margin 2cm;
+}
+
 
 // WP 54.2 :
 //  background-position: center bottom var(--page-margin); no error but no bottom;

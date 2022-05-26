@@ -30,6 +30,11 @@
     background-color: black !important;
 }
 
+:root {
+    --code-block-numbered-line-code-width: 41rem; // US + margin 2cm;
+}
+
+
 // WP 54.2 :
 //  background-position: center bottom var(--page-margin); no error but no bottom;
 // [WARNING] Ignored `background-position-x: center` at 882:3, unknown property.
