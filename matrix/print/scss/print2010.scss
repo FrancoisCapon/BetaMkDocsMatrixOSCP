@@ -22,30 +22,15 @@ $primary-light: color.adjust($primary, $lightness: +20%);
 
 
 .fc-pdf-section {
-  code {
-    mark.oscp-cmd, mark.oscp-hacked {
-      background-color: transparent;
-      font-family: MonospaceBold;
-    }
-    mark.oscp-cmd {
-      color: dodgerblue;
-    }
-    mark.oscp-hacked {
-      color: var(--color-primary);
-    }
-  }
-}
-
-.fc-pdf-section {
   th {
     background-color: var(--color-primary) !important;
     color: var(--color-text-on-primary);
     border-color: var(--color-text-default) !important;
   }
 
-  td code {
+td code {
     background-color: transparent;
-  }
+}
 
   h1 {
     color: var(--color-primary) !important;

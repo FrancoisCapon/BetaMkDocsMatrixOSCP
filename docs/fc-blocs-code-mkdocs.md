@@ -53,14 +53,48 @@ import sys
 import socket
 ```
 
+### La gestion des retours à la ligne
+
+Le retour à la ligne dans les blocs de code non numérotés est automatique :
+
+```python hl_lines="5-6"
+ntfea10000 = pack('<BBH', 0, 0, 0xffdd) + 'A'*0xffde
+
+ntfea11000 = (pack('<BBH', 0, 0, 0) + '\x00')*600  # with these fea, ntfea size is 0x1c20
+ntfea11000 += pack('<BBH', 0, 0, 0xf3bd) + 'A'*0xf3be  # 0x10fe8 - 0x1c20 - 0xc = 0xf3bc
+
+ntfea1f000 = (pack('<BBH', 0, 0, 0) + '\x00')*0x2494  # with these fea, ntfea size is 0x1b6f0
+ntfea1f000 += pack('<BBH', 0, 0, 0x48ed) + 'A'*0x48ee  # 0x1ffe8 - 0x1b6f0 - 0xc = 0x48ec
+```
+<figcaption>Bloc de code avec retour à ligne automatique</figcaption>
+
+La proprité CSS correspndante est `white-space: pre-wrap;`.
+
+!!! attention
+    La notion de retour à la ligne "doux" n'existant pas dans un document PDF, un copier/coller du code ne donnera pas le résultat attendu.
+
+```python hl_lines="5-6" linenums="1"
+ntfea10000 = pack('<BBH', 0, 0, 0xffdd) + 'A'*0xffde
+
+ntfea11000 = (pack('<BBH', 0, 0, 0) + '\x00')*600  # with these fea, ntfea size is 0x1c20
+ntfea11000 += pack('<BBH', 0, 0, 0xf3bd) + 'A'*0xf3be  # 0x10fe8 - 0x1c20 - 0xc = 0xf3bc
+
+ntfea1f000 = (pack('<BBH', 0, 0, 0) + '\x00')*0x2494  # with these fea, ntfea size is 0x1b6f0
+ntfea1f000 += pack('<BBH', 0, 0, 0x48ed) + 'A'*0x48ee  # 0x1ffe8 - 0x1b6f0 - 0xc = 0x48ec
+```
+<figcaption>Bloc de code numéroté donc sans retour à ligne automatique</figcaption>
+
+!!! remarque
+    La fonctionnalité n'est pas disponible pour les blocs de code numérotés car elle "casse" la numérotion des lignes aussi bien en rendu HTML qu'en rendu PDF.
+
 ## Bloc de Code `HTML` MkDocs
 
 Ce sont des blocs de code standard `HTML`, des éléments peuvent être mis en évidence en utilisant la balise `<mark>`.
 
 !!! note
-    Il est nécessaire de traduire les chevrons ouvrants en entité HTML `&lt;` s'il peuvent être interprété comme l'ouverture d'un balise HTML.
+    Il est nécessaire de traduire les chevrons ouvrants en entité HTML `&lt;` s'il peuvent être interprété comme l'ouverture d'un balise HTML (exemple en ligne 7).
 
-```html
+```html linenums="1"
 <pre><code>
 <mark>$ mkdocs serve</mark>
 INFO    -  Building documentation...
@@ -72,7 +106,7 @@ INFO    -  Cleaning site directory
 [I 160402 15:50:43 handlers:60] Start detecting changes <halt>
 </code></pre>
 ```
-<figcaption>Exemple de bloc de code HTML</figcaption>
+<figcaption>Exemple d'un bloc de code HTML</figcaption>
 
 <pre><code>
 <mark>$ mkdocs serve</mark>
@@ -84,5 +118,5 @@ INFO    -  Cleaning site directory</mark>
 [I 160402 15:50:43 handlers:58] Start watching changes < halt>
 [I 160402 15:50:43 handlers:60] Start detecting changes <halt>
 </code></pre>
-
+<figcaption>Rendu d'un bloc de code HTML</figcaption>
 

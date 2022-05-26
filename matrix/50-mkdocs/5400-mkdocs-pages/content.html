@@ -328,6 +328,22 @@ from struct import pack
 </span><span class="hll">import socket
 </span></code></pre></div>
 </td></tr></table>
+<h3 id="0e3bffc542d13520946bb35d3832fda0">La gestion des retours à la ligne</h3>
+<p>Le retour à la ligne dans les blocs de code non numérotés est automatique :</p>
+<div class="highlight"><pre><span></span><code><span class="n">ntfea10000</span> <span class="o">=</span> <span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xffdd</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'A'</span><span class="o">*</span><span class="mh">0xffde</span>
+
+<span class="n">ntfea11000</span> <span class="o">=</span> <span class="p">(</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\x00</span><span class="s1">'</span><span class="p">)</span><span class="o">*</span><span class="mi">600</span>  <span class="c1"># with these fea, ntfea size is 0x1c20</span>
+<span class="n">ntfea11000</span> <span class="o">+=</span> <span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xf3bd</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'A'</span><span class="o">*</span><span class="mh">0xf3be</span>  <span class="c1"># 0x10fe8 - 0x1c20 - 0xc = 0xf3bc</span>
+<span class="hll">
+</span><span class="hll"><span class="n">ntfea1f000</span> <span class="o">=</span> <span class="p">(</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\x00</span><span class="s1">'</span><span class="p">)</span><span class="o">*</span><span class="mh">0x2494</span>  <span class="c1"># with these fea, ntfea size is 0x1b6f0</span>
+</span><span class="n">ntfea1f000</span> <span class="o">+=</span> <span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x48ed</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'A'</span><span class="o">*</span><span class="mh">0x48ee</span>  <span class="c1"># 0x1ffe8 - 0x1b6f0 - 0xc = 0x48ec</span>
+</code></pre></div>
+<figcaption>Bloc de code avec retour à ligne automatique</figcaption>
+<p>La proprité CSS correspndante est <code>white-space: pre-wrap;</code>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>La notion de retour à la ligne "doux" n'existant pas dans un document PDF, un copier/coller du code ne donnera pas le résultat attendu.</p>
+</div>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -343,13 +359,27 @@ from struct import pack
 </span><span class="n">ntfea1f000</span> <span class="o">+=</span> <span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x48ed</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'A'</span><span class="o">*</span><span class="mh">0x48ee</span>  <span class="c1"># 0x1ffe8 - 0x1b6f0 - 0xc = 0x48ec</span>
 </code></pre></div>
 </td></tr></table>
+<figcaption>Bloc de code numéroté donc sans retour à ligne automatique</figcaption>
+<div class="admonition remarque">
+<p class="admonition-title">Remarque</p>
+<p>La fonctionnalité n'est pas disponible pour les blocs de code numérotés car elle "casse" la numérotion des lignes aussi bien en rendu HTML qu'en rendu PDF.</p>
+</div>
 <h2 id="170e1d5326b398128875b19586589d0c">Bloc de Code <code>HTML</code> MkDocs</h2>
 <p>Ce sont des blocs de code standard <code>HTML</code>, des éléments peuvent être mis en évidence en utilisant la balise <code>&lt;mark&gt;</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Il est nécessaire de traduire les chevrons ouvrants en entité HTML <code>&amp;lt;</code> s'il peuvent être interprété comme l'ouverture d'un balise HTML.</p>
+<p>Il est nécessaire de traduire les chevrons ouvrants en entité HTML <code>&amp;lt;</code> s'il peuvent être interprété comme l'ouverture d'un balise HTML (exemple en ligne 7).</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>$ mkdocs serve<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span>
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
@@ -360,7 +390,8 @@ INFO    -  Cleaning site directory
 [I 160402 15:50:43 handlers:60] Start detecting changes <span class="p">&lt;</span><span class="nt">halt</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </code></pre></div>
-<figcaption>Exemple de bloc de code HTML</figcaption>
+</td></tr></table>
+<figcaption>Exemple d'un bloc de code HTML</figcaption>
 <pre><code>
 <mark>$ mkdocs serve</mark>
 INFO    -  Building documentation...
@@ -370,98 +401,52 @@ INFO    -  Cleaning site directory
 [I 160402 15:50:43 handlers:60] Start detecting changes &lt;halt&gt;
 [I 160402 15:50:43 handlers:58] Start watching changes &lt; halt&gt;
 [I 160402 15:50:43 handlers:60] Start detecting changes <halt>
-</halt></code></pre></div><div class="fc-pdf-section" id="28b628253f33501eca49bae00f5fae62"><h1 id="5eb3f5c582e5827e7751b7628bfe2426">Les blocs de Code OSCP</h1>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
-<span class="hll"><span class="c1"># Note: see how to craft FEALIST in eternalblue_poc.</span>
-</span><span class="kn">from</span> <span class="nn">impacket</span> <span class="kn">import</span> <span class="n">smb</span>
-<span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="n">pack</span>
-<span class="hll"><span class="kn">import</span> <span class="nn">sys</span>
-</span><span class="hll"><span class="kn">import</span> <span class="nn">socket</span>
-</span></code></pre></div>
-</td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
-<span class="kn">from</span> <span class="nn">impacket</span> <span class="kn">import</span> <span class="n">smb</span>
-<span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="n">pack</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">socket</span>
-
-<span class="sd">'''</span>
-<span class="sd">EternalBlue exploit for Windows 7/2008 by sleepya</span>
-<span class="sd">The exploit might FAIL and CRASH a target system (depended on what is overwritten)</span>
-
-<span class="sd">EDB Note: Shellcode</span>
-<span class="sd">- x64 ~ https://github.com/offensive-security/exploit-database-bin-sploits/raw/master/bin-sploits/42030.asm</span>
-<span class="sd">- x86 ~ https://github.com/offensive-security/exploit-database-bin-sploits/raw/master/bin-sploits/42031.asm</span>
-
-<span class="sd">Tested on:</span>
-<span class="sd">- Windows 7 SP1 x64</span>
-<span class="sd">- Windows 2008 R2 SP1 x64</span>
-<span class="sd">- Windows 7 SP1 x86</span>
-<span class="sd">- Windows 2008 SP1 x64</span>
-<span class="sd">- Windows 2008 SP1 x86</span>
-
-<span class="sd">'''</span>
-
-<span class="c1"># Note: see how to craft FEALIST in eternalblue_poc.py</span>
-
-<span class="c1"># wanted overflown buffer size (this exploit support only 0x10000 and 0x11000)</span>
-<span class="c1"># the size 0x10000 is easier to debug when setting breakpoint in SrvOs2FeaToNt() because it is called only 2 time</span>
-<span class="c1"># the size 0x11000 is used in nsa exploit. this size is more reliable.</span>
-<span class="n">NTFEA_SIZE</span> <span class="o">=</span> <span class="mh">0x11000</span>
-<span class="c1"># the NTFEA_SIZE above is page size. We need to use most of last page preventing any data at the end of last page</span>
-
-<span class="n">ntfea10000</span> <span class="o">=</span> <span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xffdd</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'A'</span><span class="o">*</span><span class="mh">0xffde</span>
-
-<span class="n">ntfea11000</span> <span class="o">=</span> <span class="p">(</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\x00</span><span class="s1">'</span><span class="p">)</span><span class="o">*</span><span class="mi">600</span>  <span class="c1"># with these fea, ntfea size is 0x1c20</span>
-<span class="n">ntfea11000</span> <span class="o">+=</span> <span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xf3bd</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'A'</span><span class="o">*</span><span class="mh">0xf3be</span>  <span class="c1"># 0x10fe8 - 0x1c20 - 0xc = 0xf3bc</span>
-
-<span class="n">ntfea1f000</span> <span class="o">=</span> <span class="p">(</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\x00</span><span class="s1">'</span><span class="p">)</span><span class="o">*</span><span class="mh">0x2494</span>  <span class="c1"># with these fea, ntfea size is 0x1b6f0</span>
-<span class="n">ntfea1f000</span> <span class="o">+=</span> <span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;BBH'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x48ed</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'A'</span><span class="o">*</span><span class="mh">0x48ee</span>  <span class="c1"># 0x1ffe8 - 0x1b6f0 - 0xc = 0x48ec</span>
-
-<span class="n">ntfea</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0x10000</span> <span class="p">:</span> <span class="n">ntfea10000</span><span class="p">,</span> <span class="mh">0x11000</span> <span class="p">:</span> <span class="n">ntfea11000</span> <span class="p">}</span>
+</halt></code></pre>
+<figcaption>Rendu d'un bloc de code HTML</figcaption></div><div class="fc-pdf-section" id="28b628253f33501eca49bae00f5fae62"><h1 id="7d516145c18622a85e1aaad256d50260">Les blocs de Code HTML "OSCP"</h1>
+<h2 id="707e0bc9cafddc5f18555c139bf6f383">Mise en évidence</h2>
+<p>Trois types de mise en évidence "OSCP" (̀<code>2012-code-block</code>) sont disponbibles en utilisant des balises spécifiques, les noms des balises correspondent à l'utilisation qui semblent en être faite dans le document de référence :</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>
+kali@kali:~$ <span class="p">&lt;</span><span class="nt">oscp-cmd</span><span class="p">&gt;</span>searchsploit afd windows<span class="p">&lt;/</span><span class="nt">oscp-cmd</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">oscp-parameter</span><span class="p">&gt;</span>local<span class="p">&lt;/</span><span class="nt">oscp-parameter</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;</span><span class="nt">oscp-hacked</span><span class="p">&gt;</span>Microsoft Windows XP/2003 | windows/local/6757.txt<span class="p">&lt;/</span><span class="nt">oscp-hacked</span><span class="p">&gt;</span>
+...
+<span class="cm">&lt;!-- les anciennes balise mark + class oscp sont toujours disponibles--&gt;</span>
+<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table></div></div></div>
+<figcaption>Exemple de mise en évidence d'une partie du listing</figcaption>
+<pre><code>
+kali@kali:~$ <oscp-cmd>searchsploit afd windows</oscp-cmd> <oscp-parameter>local</oscp-parameter>
+---------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                  |  Path
+---------------------------------------------------------------- ---------------------------------
+Microsoft Windows (x86) - 'afd.sys' Local Privilege Escalation  | windows_x86/local/40564.c
+<oscp-hacked>Microsoft Windows 7 (x86) - 'afd.sys' Dangling Pointer Privileg | windows_x86/local/39446.py</oscp-hacked>
+Microsoft Windows XP - 'afd.sys' Local Kernel Denial of Service | windows/dos/17133.c
+<mark class="oscp-hacked">Microsoft Windows XP/2003 - 'afd.sys' Local Privilege Escalatio | windows/local/6757.txt</mark>
+Microsoft Windows XP/2003 - 'afd.sys' Local Privilege Escalatio | windows/local/18176.py
+---------------------------------------------------------------- ---------------------------------
+Shellcodes: No Result
+kali@kali:~$
+</code></pre>
+<figcaption>Résultat "OSCP"</figcaption>
+<h2 id="ae23b35a6686d7f011c42b9ae8f37229">Passage à la ligne</h2>
+<p>Le passage à la ligne n'est pas activé par défaut, car ce type de bloc de code est principalement utilisé pour illustrer le résultat de commande ; le passage à la ligne peut ne pas être le résultat attendu mais il est possible de l'activer à l'aide de la classe <code>fc-pdf-white-space-pre-wrap</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"fc-pdf-white-space-pre-wrap"</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>
+Most field in overwritten (corrupted) srvnet struct can be any value ...
+</code></pre></div>
+<figcaption>Exemple de bloc de code avec passage à la ligne forcée</figcaption>
+<pre class="fc-pdf-white-space-pre-wrap"><code>
+Most field in overwritten (corrupted) srvnet struct can be any value because it will be left without free (memory leak) after processing
+Here is the important fields on x64
+- offset 0x58 (VOID*) : pointer to a struct contained pointer to function. the pointer to function is called when done receiving SMB request.
+                          The value MUST point to valid (might be fake) struct.
+- offset 0x70 (MDL)   : MDL for describe receiving SMB request buffer
+  - 0x70 (VOID*)    : MDL.Next should be NULL
+  - 0x78 (USHORT)   : MDL.Size should be some value that not too small
+  - 0x7a (USHORT)   : MDL.MdlFlags should be 0x1004 (MDL_NETWORK_HEADER|MDL_SOURCE_IS_NONPAGED_POOL)
+  - 0x80 (VOID*)    : MDL.Process should be NULL
+  - 0x88 (VOID*)    : MDL.MappedSystemVa MUST be a received network buffer address. Controlling this value get arbitrary write.
+                        The address for arbitrary write MUST be subtracted by a number of sent bytes (0x80 in this exploit).
+</code></pre>
+<figcaption>Résultat du passage à la ligne forcée</figcaption></div></div></div>

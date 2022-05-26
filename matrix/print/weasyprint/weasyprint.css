@@ -953,10 +953,14 @@ h1, h2, h3, h4, h5, h6 {
 .fc-pdf-section .highlight {
   border-radius: var(--block-border-radius);
 }
+.fc-pdf-section .highlight > pre > code {
+  white-space: pre-wrap;
+}
 .fc-pdf-section .highlighttable {
   margin-left: 0;
   width: 100%;
   border: none;
+  break-inside: avoid;
   overflow: hidden;
   background-color: var(--color-background-code);
   border-radius: var(--block-border-radius);
@@ -1082,17 +1086,6 @@ h1, h2, h3, h4, h5, h6 {
   --color-table-row-even: var(--color-background-code);
 }
 
-.fc-pdf-section code mark.oscp-cmd, .fc-pdf-section code mark.oscp-hacked {
-  background-color: transparent;
-  font-family: MonospaceBold;
-}
-.fc-pdf-section code mark.oscp-cmd {
-  color: dodgerblue;
-}
-.fc-pdf-section code mark.oscp-hacked {
-  color: var(--color-primary);
-}
-
 .fc-pdf-section th {
   background-color: var(--color-primary) !important;
   color: var(--color-text-on-primary);
@@ -1123,6 +1116,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 #fc-pdf-toc table td a::after {
   color: var(--color-primary);
+}
+
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2012-code-block/print.scss */
+.fc-pdf-section pre > code mark.oscp-cmd, .fc-pdf-section pre > code oscp-cmd, .fc-pdf-section pre > code mark.oscp-hacked, .fc-pdf-section pre > code oscp-hacked, .fc-pdf-section pre > code oscp-parameter {
+  background-color: transparent;
+  font-family: MonospaceBold;
+}
+.fc-pdf-section pre > code mark.oscp-cmd, .fc-pdf-section pre > code oscp-cmd {
+  color: dodgerblue;
+}
+.fc-pdf-section pre > code mark.oscp-hacked, .fc-pdf-section pre > code oscp-hacked {
+  color: var(--color-primary);
+}
+.fc-pdf-section pre > code oscp-parameter {
+  color: limegreen;
+}
+.fc-pdf-section pre.fc-pdf-white-space-pre-wrap {
+  white-space: pre-wrap !important;
 }
 
 /* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/print.scss */
@@ -1330,6 +1341,7 @@ h1, h2, h3, h4, h5, h6 {
 /* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1520-sections-pages/print.scss */
 /* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/1521-chapter-page/print.scss */
 /* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2010-colors-adjustments/print.scss */
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2012-code-block/print.scss */
 /* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2020-pages/print.scss */
 /* /project/BetaMkDocsMatrixOSCP/matrix/15-pdf-chapters/5100-pages-cover-and-last/print.scss */
 /* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/5111-cover-scss/print.scss */

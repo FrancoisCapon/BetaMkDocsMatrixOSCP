@@ -4,6 +4,9 @@
 
     .highlight { 
         border-radius: var(--block-border-radius);
+        > pre > code {
+            white-space: pre-wrap;
+        }
     }
 
     .highlighttable {
@@ -11,6 +14,7 @@
             width: 100%;
             border: none;
             //display: block;
+            break-inside: avoid;
         
             overflow: hidden;
             background-color: var(--color-background-code);

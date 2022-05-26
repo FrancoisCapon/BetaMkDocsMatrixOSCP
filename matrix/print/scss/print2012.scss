@@ -1,0 +1,22 @@
+
+/* /project/BetaMkDocsMatrixOSCP/matrix/20-oscp-pen200/2012-code-block/print.scss */
+.fc-pdf-section {
+    pre > code {
+      mark.oscp-cmd, oscp-cmd, mark.oscp-hacked, oscp-hacked, oscp-parameter {
+        background-color: transparent;
+        font-family: MonospaceBold;
+      }
+      mark.oscp-cmd,oscp-cmd {
+        color: dodgerblue;
+      }
+      mark.oscp-hacked, oscp-hacked {
+        color: var(--color-primary);
+      }
+      oscp-parameter {
+        color: limegreen;
+      }
+    }
+    pre.fc-pdf-white-space-pre-wrap {
+        white-space: pre-wrap !important;
+    }
+  }
