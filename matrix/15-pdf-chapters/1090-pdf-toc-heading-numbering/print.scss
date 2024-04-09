@@ -1,37 +1,24 @@
 @use "print1091.scss" as c; // counter
 
 #fc-pdf-content {
-
-    counter-reset: chapter-counter;
-
-    // sections without chapter at the beginning
-    // => fake chapter
-    .fc-pdf-section:first-child { 
-        counter-increment: chapter-counter;
-        bookmark-label: c.$chapter-number "Introduction";
-        bookmark-level: 1;
-        counter-reset: section-counter;
-    }
-
-    .fc-pdf-section {
-        h1 {
-            counter-increment: section-counter;
-            bookmark-label: c.$section-number content(text);
-            bookmark-level: 2;
-            counter-reset: subsection-counter;
+   
+    .fc-pdf-section.introductory {
+        h1 { 
+            bookmark-label: content(text);
+            bookmark-level: 1;
         }
         h2 {
-            counter-increment: subsection-counter;
-            bookmark-label:  c.$subsection-number content(text);
-            bookmark-level: 3;
-            counter-reset: subsubsection-counter;
+            bookmark-label: content(text);
+            bookmark-level: 2;
         }
         h3 {
-            counter-increment: subsubsection-counter;
-            bookmark-label: c.$subsubsection-number content(text);
-            bookmark-level: 4;
+            bookmark-label: content(text);
+            bookmark-level: 3;
         }
     }
+
+    //counter-reset: chapter-counter;
+    counter-increment: chapter-counter 0;
 
     .fc-pdf-chapter {
         > h1::before {
@@ -43,7 +30,7 @@
             bookmark-level: 1;
         }
         counter-reset: section-counter; 
-        .fc-pdf-section  {
+        .fc-pdf-section.chaptered  {
 
             h1 {
                 counter-increment: section-counter;
@@ -69,7 +56,7 @@
 }
 
 #fc-pdf-content {
-    .fc-pdf-section {
+    .fc-pdf-section.chaptered {
         h1::before {
             content: c.$section-number;
         }
