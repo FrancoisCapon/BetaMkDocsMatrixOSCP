@@ -28,9 +28,12 @@ plugins:
     - search
     # fc export plugin
     - md2wpmr:
+        # matrix
         number_column : 50
         number_row_toc : 5200
         number_row_pages : 5400
+        # toc
+        toc_page_level_depth: 2
 ```
 * Le plugin n'est appelé que lors du build `mkdocs build`.
 * Attention le plugin stop le build après l'export, donc il est nécessaire de le désactiver (en commentant ses lignes) pour obtenir un build site "normal".
