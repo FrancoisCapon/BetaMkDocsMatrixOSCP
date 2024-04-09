@@ -32,16 +32,16 @@ nav:
         - Localizing Your Theme: user-guide/localizing-your-theme.md
         - Configuration: user-guide/configuration.md
         - Deploying Your Docs: user-guide/deploying-your-docs.md
-    # - Developer Guide:
-    #     - Overview: dev-guide/index.md
-    #     # - Themes: 
-    #     - dev-guide/themes.md
-    #     - Translations: dev-guide/translations.md
-    #    - Plugins: dev-guide/plugins.md
-    # - About:
-    #     - Release Notes: about/release-notes.md
-    #     - Contributing: about/contributing.md
-    #     - License: about/license.md
+    - Developer Guide:
+        - Overview: dev-guide/index.md
+        # - Themes: 
+        - dev-guide/themes.md
+        - Translations: dev-guide/translations.md
+        - Plugins: dev-guide/plugins.md
+    - About:
+        - Release Notes: about/release-notes.md
+        - Contributing: about/contributing.md
+        - License: about/license.md
 
 extra_css:
     - css/extra.css
