@@ -5,7 +5,7 @@ $level-3-number: counter(level-0-counter) "." counter(level-1-counter) "." count
 #fc-pdf-toc {
     tr.level-0 {
         counter-increment:level-0-counter;
-        counter-reset: level-1;
+        counter-reset: level-1-counter;
         a::before {
             content: counter(level-0-counter) ". ";
         }
